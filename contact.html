@@ -244,7 +244,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 24px;
         }
@@ -252,7 +252,7 @@
         /* Hero Section */
         .hero {
             text-align: center;
-            padding: 60px 0 80px;
+            padding: 60px 0 60px;
         }
 
         .hero h1 {
@@ -272,31 +272,53 @@
             margin: 0 auto;
         }
 
-        /* Contact Cards */
-        .contact-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 32px;
-            margin-bottom: 80px;
+        /* Contact Tabs */
+        .contact-tabs {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 48px;
         }
 
+        .tab-button {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .tab-button:hover {
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+            background: rgba(74, 192, 255, 0.05);
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #7FBFF2 100%);
+            color: var(--bg-dark);
+            border-color: transparent;
+            box-shadow: 0 4px 16px rgba(74, 192, 255, 0.3);
+        }
+
+        /* Contact Card */
         .contact-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 48px;
             backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .contact-card:hover {
-            border-color: var(--accent-blue);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(74, 192, 255, 0.15);
+            margin-bottom: 80px;
         }
 
         .contact-card-header {
             margin-bottom: 32px;
+            text-align: center;
         }
 
         .contact-card-header h2 {
@@ -314,20 +336,26 @@
         .contact-card-benefits {
             list-style: none;
             margin-bottom: 32px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
         }
 
         .contact-card-benefits li {
             font-size: 15px;
             color: var(--text-secondary);
-            padding: 8px 0;
-            padding-left: 28px;
+            padding: 12px 16px;
+            padding-left: 44px;
             position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .contact-card-benefits li::before {
             content: '✓';
             position: absolute;
-            left: 0;
+            left: 16px;
             color: var(--accent-green);
             font-weight: 700;
             font-size: 18px;
@@ -335,9 +363,13 @@
 
         /* Form Styles */
         .contact-form {
-            display: flex;
+            display: none;
             flex-direction: column;
             gap: 20px;
+        }
+
+        .contact-form.active {
+            display: flex;
         }
 
         .form-group {
@@ -547,12 +579,16 @@
                 font-size: 18px;
             }
 
-            .contact-cards {
-                grid-template-columns: 1fr;
-            }
-
             .contact-card {
                 padding: 32px 24px;
+            }
+
+            .contact-tabs {
+                flex-direction: column;
+            }
+
+            .tab-button {
+                width: 100%;
             }
 
             .footer-content {
@@ -572,6 +608,10 @@
 
             .contact-card-header h2 {
                 font-size: 24px;
+            }
+
+            .contact-card {
+                padding: 24px 20px;
             }
 
             .footer-content {
@@ -650,10 +690,20 @@
                 <p>Whether you're interested in a demo or need technical support, we're here to help.</p>
             </div>
 
-            <!-- Contact Cards -->
-            <div class="contact-cards">
-                <!-- Sales Card -->
-                <div class="contact-card">
+            <!-- Contact Tabs -->
+            <div class="contact-tabs">
+                <button class="tab-button active" onclick="switchTab('sales')">
+                    Contact Sales
+                </button>
+                <button class="tab-button" onclick="switchTab('support')">
+                    Contact Support
+                </button>
+            </div>
+
+            <!-- Contact Card -->
+            <div class="contact-card">
+                <!-- Sales Section -->
+                <div id="sales-section">
                     <div class="contact-card-header">
                         <h2>Contact Sales</h2>
                         <p>Request a demo and see how Fokal can help your team</p>
@@ -663,7 +713,7 @@
                         <li>Learn which plan is right for your team</li>
                         <li>Get onboarding help</li>
                     </ul>
-                    <form class="contact-form" onsubmit="handleSalesSubmit(event)">
+                    <form class="contact-form active" id="sales-form" onsubmit="handleFormSubmit(event, 'sales')">
                         <div class="form-group">
                             <label for="sales-name">Full name</label>
                             <input type="text" id="sales-name" name="name" required placeholder="John Smith">
@@ -690,13 +740,10 @@
                         </div>
                         <button type="submit" class="form-submit">Send Message</button>
                     </form>
-                    <div class="email-alternative">
-                        <p>You can also email us at <a href="mailto:sales@fokal.com">sales@fokal.com</a></p>
-                    </div>
                 </div>
 
-                <!-- Support Card -->
-                <div class="contact-card">
+                <!-- Support Section -->
+                <div id="support-section" style="display: none;">
                     <div class="contact-card-header">
                         <h2>Contact Support</h2>
                         <p>Technical issues or product questions?</p>
@@ -706,7 +753,7 @@
                         <li>Product questions</li>
                         <li>Account assistance</li>
                     </ul>
-                    <form class="contact-form" onsubmit="handleSupportSubmit(event)">
+                    <form class="contact-form active" id="support-form" onsubmit="handleFormSubmit(event, 'support')">
                         <div class="form-group">
                             <label for="support-name">Full name</label>
                             <input type="text" id="support-name" name="name" required placeholder="John Smith">
@@ -733,9 +780,10 @@
                         </div>
                         <button type="submit" class="form-submit">Send Message</button>
                     </form>
-                    <div class="email-alternative">
-                        <p>You can also email us at <a href="mailto:support@fokal.com">support@fokal.com</a></p>
-                    </div>
+                </div>
+
+                <div class="email-alternative">
+                    <p>You can also email us at <a href="mailto:hello@fokal.com">hello@fokal.com</a></p>
                 </div>
             </div>
         </div>
@@ -828,25 +876,35 @@
             alert('Google Sign In would be implemented here');
         }
 
-        // Sales form submission
-        function handleSalesSubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData);
+        // Tab switching
+        function switchTab(tab) {
+            // Update tab buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
 
-            console.log('Sales inquiry:', data);
-            alert('Thank you for your inquiry! Our sales team will contact you shortly.');
-            event.target.reset();
+            // Show/hide sections
+            const salesSection = document.getElementById('sales-section');
+            const supportSection = document.getElementById('support-section');
+
+            if (tab === 'sales') {
+                salesSection.style.display = 'block';
+                supportSection.style.display = 'none';
+            } else {
+                salesSection.style.display = 'none';
+                supportSection.style.display = 'block';
+            }
         }
 
-        // Support form submission
-        function handleSupportSubmit(event) {
+        // Form submission
+        function handleFormSubmit(event, type) {
             event.preventDefault();
             const formData = new FormData(event.target);
             const data = Object.fromEntries(formData);
+            data.type = type;
 
-            console.log('Support request:', data);
-            alert('Thank you for contacting support! We will get back to you as soon as possible.');
+            console.log('Contact form submission:', data);
+            alert(`Thank you for your ${type} inquiry! We will contact you shortly at ${data.email}.`);
             event.target.reset();
         }
     </script>
