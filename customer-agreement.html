@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fokal Customer Agreement - Comprehensive agreement outlining the terms of service, pricing, and policies for our customers.">
+    <meta name="keywords" content="customer agreement, terms of service, subscription agreement, legal">
+    <meta property="og:title" content="Customer Agreement | Fokal">
+    <meta property="og:description" content="Comprehensive agreement outlining the terms of service for our customers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fokal.com/customer-agreement.html">
+    <title>Customer Agreement | Fokal</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- Google Fonts - DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0E0E10;
+            --bg-panel: #161618;
+            --card-bg: rgba(17, 24, 32, 0.8);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --text-primary: #E5E9F0;
+            --text-secondary: #C6CDD8;
+            --text-muted: #9DA6B5;
+            --text-subtle: #8A93A1;
+            --accent-blue: #4AC0FF;
+            --accent-green: #00E676;
+            --accent-amber: #FFA726;
+            --border-color: #1A2230;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(14, 14, 16, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
+            z-index: 1000;
+            padding: 16px 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 32px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 24px 80px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+
+        .back-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .last-updated {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 32px;
+        }
+
+        .separator {
+            height: 1px;
+            background: var(--card-border);
+            margin: 32px 0;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        ul {
+            margin-left: 24px;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        em {
+            color: var(--accent-blue);
+        }
+
+        .end-note {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.svg" alt="Fokal">
+            </a>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <a href="terms-and-conditions.html" class="back-link">
+            <svg class="back-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Back to Terms and Conditions
+        </a>
+
+        <h1>Fokal Customer Agreement</h1>
+        <p class="last-updated">Last Updated: July 11, 2025</p>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>Preamble</h2>
+            <p>
+                This Customer Agreement ("<strong>Agreement</strong>") is a legally-binding contract between <strong>Altair Innovations Pty Ltd</strong>, an Australian company incorporated in New South Wales with its registered office in Sydney ("<strong>Fokal</strong>", "<strong>we</strong>", "<strong>our</strong>", "<strong>us</strong>"), and the individual or entity accepting these terms ("<strong>Customer</strong>", "<strong>you</strong>", "<strong>your</strong>"). By creating an account, clicking "I Agree", or otherwise accessing or using the Fokal platform, you acknowledge that you have read, understood, and agree to be bound by this Agreement.
+            </p>
+            <p>
+                If you are entering into this Agreement on behalf of a company or other organisation, you represent that you have authority to bind that entity; in that case, "you" and "your" refer to that entity.
+            </p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>1. Definitions</h2>
+            <p><strong>1.1 "Service"</strong> means the web-based Fokal software-as-a-service platform, including its dashboards, analytics, and any related websites, documentation, features, or content that we make available to you now or in the future.</p>
+            <p><strong>1.2 "Starter Plan"</strong> means the single-seat, single-brand subscription tier currently priced at US $50 per month or US $500 per year (paid up front).</p>
+            <p><strong>1.3 "Customer Data"</strong> means any data, content, domain names, websites, or other materials that you submit to, or authorise us to retrieve or process through, the Service.</p>
+            <p><strong>1.4 "Generated Output"</strong> means any text, images, metrics, reports, or other content produced by the Service—including any content created by generative AI models—based on Customer Data, public data, or other inputs.</p>
+            <p><strong>1.5 "Proprietary Metrics"</strong> means Fokal-generated metrics such as "AI Visibility Rate", "Recommendation Score", "Share-of-Voice %", or any successor metrics or scores branded by Fokal.</p>
+            <p><strong>1.6 "Sub-Processor"</strong> means any third-party service provider we engage to process data on our behalf (e.g. Render, AWS, OpenAI, Stripe, Mixpanel, Google OAuth).</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>2. Scope of Service</h2>
+            <p><strong>2.1 Starter-Only Access.</strong> During the Subscription Term (Section 8.1) and subject to compliance with this Agreement, we grant you a non-exclusive, non-transferable, revocable right to access and use the Service under the Starter Plan for one (1) natural person user and one (1) brand domain only. No public API, bulk-data export, or multi-user functionality is included.</p>
+            <p><strong>2.2 Internal Business Use.</strong> You may use the Service and Generated Output solely for your own internal business purposes (or personal purposes if you are an individual consumer) and not for providing services to third parties, reselling, sublicensing, or white-labelling.</p>
+            <p><strong>2.3 Hosting Location and Transfers.</strong> The Service is hosted on Render's cloud infrastructure in Oregon, USA. By using the Service, you consent to your data being stored and processed in the United States and in any other country where Fokal or its Sub-Processors operate.</p>
+            <p><strong>2.4 Customer-Site Crawling.</strong> By supplying a brand domain or competitor domain, you expressly authorise Fokal to crawl, cache, and analyse those websites (including all sub-pages) for the purpose of providing the Service. Crawling may persist even if you later delete your account and may occur without your further intervention.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>3. Modifications and Beta Features</h2>
+            <p><strong>3.1 Platform Evolution.</strong> Fokal is an evolving platform. We may add, modify, or remove features (including beta or experimental features) at any time. We will endeavour to notify you of material changes that diminish core functionality. Continued use after a change constitutes acceptance.</p>
+            <p><strong>3.2 Beta Features.</strong> Any feature labelled "beta", "preview", "experimental", or similar is offered "as is", may be discontinued at any time, and may be subject to additional terms.</p>
+            <p><strong>3.3 Pricing Changes.</strong> Launch pricing is promotional. We reserve the right to change plan structures or prices. Price increases take effect on renewal, and we will provide at least thirty (30) days' prior notice. You may cancel before the new price applies.</p>
+            <p><strong>3.4 Amendments to Agreement.</strong> We may amend this Agreement to reflect changes in law, features, or business requirements. Material amendments become effective seven (7) days after notice unless required sooner by law. If you object, you may terminate before the effective date; otherwise, continuing to use the Service constitutes acceptance.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>4. Account Registration and Security</h2>
+            <p><strong>4.1 Accurate Information.</strong> You must provide and maintain accurate, current, and complete registration information (e.g. email address).</p>
+            <p><strong>4.2 Authentication.</strong> Access is secured via magic-link email login and/or OAuth. You are responsible for safeguarding your email account and any credentials.</p>
+            <p><strong>4.3 Single-Seat Restriction.</strong> Each Starter subscription is limited to one individual human user. Sharing logins, simultaneous sessions from multiple people, or other work-arounds are prohibited. We may monitor usage (IP/device, concurrent sessions) and suspend or terminate accounts that violate this clause.</p>
+            <p><strong>4.4 Security Incidents.</strong> You must promptly notify us of unauthorised access or suspected breaches involving your account. We may disable or reset credentials at our discretion.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>5. Acceptable Use</h2>
+            <p><strong>5.1 Prohibited Conduct.</strong> You shall not:</p>
+            <ul>
+                <li>(a) reverse engineer, decompile, or attempt to discover the Service's source code or underlying algorithms;</li>
+                <li>(b) scrape, crawl, or harvest data from the Service's UI or dashboards by automated means (bots, scripts, or similar);</li>
+                <li>(c) circumvent usage limits, seat limits, or security measures;</li>
+                <li>(d) input or disseminate unlawful, harmful, infringing, or deceptive content;</li>
+                <li>(e) interfere with or overload our infrastructure; or</li>
+                <li>(f) violate any applicable law or third-party rights.</li>
+            </ul>
+            <p><strong>5.2 Accurate Domains; Permission to Scrape.</strong> You warrant that you have all necessary rights and permissions to authorise us to crawl and analyse any domain you provide (whether owned by you or a competitor) and that such crawling may continue after account deletion.</p>
+            <p><strong>5.3 Competitive Benchmarking.</strong> Insights on competitor domains must be used responsibly and lawfully. You may not use the Service to harass, defame, or mislead third parties.</p>
+            <p><strong>5.4 Attribution.</strong> If you publish or publicly share Proprietary Metrics or other Fokal-derived content, you must credit Fokal (e.g. "Source: Fokal") and retain any watermarks or branding.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>6. Intellectual Property and Data</h2>
+            <p><strong>6.1 Ownership by Fokal.</strong> All rights, title, and interest in the Service, Service IP, and Proprietary Metrics remain with Fokal and its licensors.</p>
+            <p><strong>6.2 Customer Data Licence.</strong> You grant Fokal a worldwide, royalty-free, sublicensable, irrevocable (except as provided in Section 10) licence to use, reproduce, modify, create derivative works from, distribute, display, and process Customer Data as necessary to (a) operate and improve the Service; (b) train or fine-tune our AI models; and (c) develop new products and services. The Starter Plan does <strong>not</strong> include an opt-out from AI training.</p>
+            <p><strong>6.3 Third-Party Content.</strong> Content crawled from public websites (including competitor sites) remains the property of its owners. We rely on fair-use principles to transform and display small snippets for commentary and analysis. If notified of infringement, we will remove or restrict access as appropriate.</p>
+            <p><strong>6.4 Generated Output Licence to Customer.</strong> Subject to payment of fees and compliance with this Agreement, Fokal grants you a perpetual, non-exclusive, non-transferable licence to use, reproduce, and publicly distribute Generated Output (e.g. AI-generated articles) without additional attribution, provided you do not misrepresent authorship or remove embedded Fokal branding or Proprietary Metrics.</p>
+            <p><strong>6.5 No Exclusivity.</strong> Generated Output is produced by probabilistic AI models and may be identical or similar to output generated for others. You obtain no exclusivity or intellectual-property ownership in Generated Output.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>7. AI Output; Disclaimers</h2>
+            <p><strong>7.1 Probabilistic Nature.</strong> Generated Output may be inaccurate, outdated, biased, or duplicated. Fokal makes no warranty regarding correctness, completeness, or uniqueness.</p>
+            <p><strong>7.2 No Professional Advice.</strong> All insights are informational and not professional, legal, financial, or marketing advice. You must independently verify critical decisions.</p>
+            <p><strong>7.3 Defamation and Harmful Content.</strong> AI may occasionally produce offensive or defamatory text. If you believe output violates rights or is harmful, notify us at once; we will review and, at our discretion, remove or amend the content.</p>
+            <p><strong>7.4 Third-Party Data Reliability.</strong> Our analysis relies on publicly available or third-party data sources beyond our control. We do not guarantee the Service will detect every brand mention or yield optimal SEO results.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>8. Fees and Payment</h2>
+            <p><strong>8.1 Subscription Term and Renewals.</strong> Subscriptions run month-to-month or year-to-year (as selected) and renew automatically unless cancelled before the renewal date.</p>
+            <p><strong>8.2 Pricing.</strong> Starter pricing is US $50 per month or US $500 per year. Future price changes apply on renewal with thirty (30) days' notice.</p>
+            <p><strong>8.3 Taxes.</strong> Prices exclude all applicable taxes. You are responsible for any VAT, GST, sales, withholding, or similar taxes (other than taxes on Fokal's income).</p>
+            <p><strong>8.4 Payment Processing.</strong> Payments are processed by Stripe. You authorise recurring charges. Declined payments may result in suspension.</p>
+            <p><strong>8.5 No Refunds.</strong> Except where required by law or explicitly stated, all fees are non-refundable. We may issue discretionary credits or refunds for platform errors.</p>
+            <p><strong>8.6 Late Payments.</strong> Overdue amounts may accrue interest at 1.5% per month (or the maximum legal rate) and we may recover collection costs, including reasonable attorneys' fees.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>9. Term and Termination</h2>
+            <p><strong>9.1 Termination by Customer.</strong> You may cancel via the in-app billing page or by emailing support. Access continues until the end of the paid term.</p>
+            <p><strong>9.2 Termination or Suspension by Fokal.</strong> We may suspend or terminate immediately upon:</p>
+            <ul>
+                <li>(a) material breach (including non-payment) not cured within seven (7) days;</li>
+                <li>(b) legal or regulatory requirement;</li>
+                <li>(c) security risk or harm to the Service; or</li>
+                <li>(d) discontinuation of the Service.</li>
+            </ul>
+            <p><strong>9.3 Refund upon Our Termination for Convenience.</strong> If we terminate the Service for convenience (not due to your breach), we will refund any unused, prepaid fees on a pro-rata basis.</p>
+            <p><strong>9.4 Effects of Termination.</strong> Upon termination: (i) your right to access the Service ceases; (ii) outstanding fees become immediately due; (iii) Sections 5–6, 7, 10–15, and any clause that by nature should survive will survive. We recommend exporting important outputs before closure; we may delete data after termination except as required by law or as retained in aggregated form.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>10. Privacy and Data Protection</h2>
+            <p><strong>10.1 Privacy Policy.</strong> Use of the Service is governed by our separate Privacy Policy, which is incorporated by reference.</p>
+            <p><strong>10.2 Analytics.</strong> We track events (e.g. sign-ups, logins, query usage) via Mixpanel and similar tools to improve the Service and compile anonymised benchmarks.</p>
+            <p><strong>10.3 International Transfers.</strong> Personal data may be processed in the US or other jurisdictions. Where required, we rely on Standard Contractual Clauses or similar transfer mechanisms.</p>
+            <p><strong>10.4 Data Subject Rights.</strong> We will honour valid requests to access, correct, or delete personal data, subject to statutory or operational limits. Deletion does not apply to data we lawfully obtain from public sources or that has been irreversibly aggregated or anonymised.</p>
+            <p><strong>10.5 Account Deletion.</strong> You may request deletion of personal account data (email, billing, login records). Public-web content cached during crawling is not considered Customer Personal Data and may be retained in aggregated form after account deletion.</p>
+            <p><strong>10.6 No Sensitive Data.</strong> You will not submit health information, payment card numbers (outside Stripe's secure form), children's data, or other special categories of personal data.</p>
+            <p><strong>10.7 Marketing Communications.</strong> You consent to receive newsletters and promotional emails; you may opt-out at any time via the unsubscribe link.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>11. Service Level, Security, and Disclaimers</h2>
+            <p><strong>11.1 Availability.</strong> We aim for continuous availability but provide the Service "as is" and "as available" without uptime guarantees. Enterprise SLAs may be offered under separate terms.</p>
+            <p><strong>11.2 Security Measures.</strong> We use industry-standard controls (e.g. HTTPS, encryption in transit, secure hosting) but cannot guarantee absolute security. You are responsible for securing your own systems and credentials.</p>
+            <p><strong>11.3 Disclaimer of Warranties.</strong> We expressly disclaim all warranties, express or implied, including merchantability, fitness for a particular purpose, accuracy, and non-infringement. You assume all risk of using the Service and Generated Output.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>12. Indemnification</h2>
+            <p><strong>12.1 Customer Indemnity.</strong> You will defend, indemnify, and hold Fokal harmless against claims, damages, and expenses (including reasonable attorneys' fees) arising from (a) your breach of this Agreement; (b) your misuse of the Service; (c) Customer Data or domains you authorise us to crawl; or (d) your violation of law.</p>
+            <p><strong>12.2 Fokal Indemnity.</strong> We will defend and indemnify you against third-party claims that our core proprietary technology (excluding open-source components, Customer Data, or Generated Output) directly infringes a US or Australian patent or registered copyright, provided you (i) promptly notify us, (ii) give us sole control of defence and settlement, and (iii) cooperate as needed. Our liability is limited to Section 13.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>13. Limitation of Liability</h2>
+            <p><strong>13.1 Exclusion of Indirect Damages.</strong> Neither party will be liable for indirect, incidental, special, consequential, or punitive damages, or loss of profits, revenue, data, or goodwill.</p>
+            <p><strong>13.2 Aggregate Cap.</strong> Fokal's total liability in any rolling six-month period will not exceed the fees you paid for the Service in that period, or AUD $100 if you paid none.</p>
+            <p><strong>13.3 Essential Purpose.</strong> The limitations above apply even if a remedy fails of its essential purpose and to the maximum extent permitted by law.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>14. Compliance with Laws</h2>
+            <p><strong>14.1 Export and Sanctions.</strong> You represent you are not subject to embargoes or sanctions and will not use the Service in prohibited territories. You will comply with all export-control, sanctions, and anti-corruption laws.</p>
+            <p><strong>14.2 Lawful Use.</strong> You must ensure your use of the Service and Generated Output complies with applicable laws, including data-protection, intellectual-property, and competition laws.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>15. Governing Law and Dispute Resolution</h2>
+            <p><strong>15.1 Governing Law.</strong> This Agreement is governed by the laws of New South Wales, Australia, excluding conflict-of-law rules.</p>
+            <p><strong>15.2 Venue.</strong> The courts of Sydney, NSW, have exclusive jurisdiction. Each party waives objection to venue or inconvenient forum.</p>
+            <p><strong>15.3 Injunctive Relief.</strong> Either party may seek injunctive or equitable relief in any jurisdiction to protect its intellectual property or confidential information.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <section>
+            <h2>16. Miscellaneous</h2>
+            <p><strong>16.1 No-Charge Trials.</strong> Trial or free accounts are provided "as is" without warranties and may be terminated at any time.</p>
+            <p><strong>16.2 Confidentiality.</strong> Each party shall keep the other's non-public information confidential and use it only to fulfil this Agreement, except where disclosure is required by law.</p>
+            <p><strong>16.3 Notices.</strong> Notices to Fokal must be sent to <em>patrick@fokal.com</em> and to our registered street address. Notices to you will be sent to your account email and are deemed delivered 24 hours after sending.</p>
+            <p><strong>16.4 DMCA / Takedown.</strong> Copyright complaints should be sent to <em>patrick@fokal.com</em> with sufficient detail. We will respond expeditiously and may remove content or terminate repeat infringers.</p>
+            <p><strong>16.5 Entire Agreement.</strong> This Agreement, together with any referenced policies or addenda, constitutes the entire agreement and supersedes all prior discussions.</p>
+            <p><strong>16.6 No Waiver.</strong> Failure to enforce any provision is not a waiver.</p>
+            <p><strong>16.7 Severability.</strong> If any provision is unenforceable, the remainder stays in effect; parties will negotiate a valid replacement clause.</p>
+            <p><strong>16.8 Assignment.</strong> You may not assign this Agreement without our written consent. We may assign to an affiliate, successor, or acquirer.</p>
+            <p><strong>16.9 Relationship.</strong> The parties are independent contractors; nothing creates a partnership, joint venture, or employment relationship.</p>
+            <p><strong>16.10 Force Majeure.</strong> Neither party is liable for delays or failures caused by events beyond reasonable control (excluding payment obligations).</p>
+            <p><strong>16.11 Contact.</strong> Questions? Email <em>patrick@fokal.com</em>. We value feedback and aim to resolve issues promptly.</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <p class="end-note">End of Agreement</p>
+    </main>
+</body>
+</html>

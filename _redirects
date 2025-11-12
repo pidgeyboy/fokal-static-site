@@ -1,0 +1,19 @@
+# Redirect rules for clean URLs (without .html extension)
+# Used by Netlify if deploying there
+
+/           /index.html           200
+/about      /about.html           200
+/features   /features.html        200
+/pricing    /pricing.html         200
+/blog       /blog.html            200
+/companies  /companies.html       200
+
+# Legal pages
+/privacy-policy           /privacy-policy.html          200
+/terms-and-conditions     /terms-and-conditions.html    200
+/terms-of-use             /terms-of-use.html            200
+/customer-agreement       /customer-agreement.html      200
+
+# Company profiles
+/companies/stake/*        /companies/stake/:splat       200
+/companies/superhero/*    /companies/superhero/:splat   200

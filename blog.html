@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Blog | Fokal - AI Search Visibility & Brand Monitoring Insights</title>
+    <meta name="title" content="Blog | Fokal - AI Search Visibility & Brand Monitoring Insights">
+    <meta name="description" content="Expert insights on AI search optimization, brand visibility, and digital marketing strategies. Learn how to get your brand cited by ChatGPT, Perplexity, and other AI engines.">
+    <meta name="keywords" content="ai search, brand visibility, seo, content marketing, ai optimization, chatgpt seo, brand monitoring">
+    <meta name="author" content="Fokal">
+    <link rel="canonical" href="https://www.fokal.com/blog.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fokal.com/blog.html">
+    <meta property="og:title" content="Blog | Fokal - AI Search Visibility Insights">
+    <meta property="og:description" content="Expert insights on AI search optimization, brand visibility, and digital marketing strategies.">
+    <meta property="og:image" content="https://www.fokal.com/blog-og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Fokal">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.fokal.com/blog.html">
+    <meta name="twitter:title" content="Blog | Fokal - AI Search Visibility Insights">
+    <meta name="twitter:description" content="Expert insights on AI search optimization, brand visibility, and digital marketing strategies.">
+    <meta name="twitter:image" content="https://www.fokal.com/blog-og-image.jpg">
+    <meta name="twitter:creator" content="@fokal">
+    <meta name="twitter:site" content="@fokal">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Fokal Blog RSS Feed" href="https://www.fokal.com/blog/rss.xml">
+
+    <!-- Google Fonts - DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "Fokal",
+                "url": "https://www.fokal.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.fokal.com/fokal-wordmark-icon.svg",
+                    "width": "600",
+                    "height": "60"
+                },
+                "sameAs": [
+                    "https://twitter.com/fokal",
+                    "https://linkedin.com/company/fokal"
+                ],
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "Customer Support",
+                    "email": "hello@fokal.com"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "url": "https://www.fokal.com",
+                "name": "Fokal",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Fokal"
+                },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://www.fokal.com/search?q={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.fokal.com"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog"
+                    }
+                ]
+            },
+            {
+                "@type": "Blog",
+                "url": "https://www.fokal.com/blog.html",
+                "name": "Fokal Blog",
+                "description": "Expert insights on AI search optimization, brand visibility, and digital marketing strategies.",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Fokal"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0E0E10;
+            --bg-panel: #161618;
+            --card-bg: rgba(17, 24, 32, 0.8);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --text-primary: #E5E9F0;
+            --text-secondary: #C6CDD8;
+            --text-muted: #9DA6B5;
+            --text-subtle: #8A93A1;
+            --accent-blue: #4AC0FF;
+            --accent-green: #00E676;
+            --accent-amber: #FFA726;
+            --border-color: #1A2230;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(14, 14, 16, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
+            z-index: 1000;
+            padding: 16px 0;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(14, 14, 16, 0.95);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--text-primary);
+        }
+
+        .nav-cta-google {
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: #FFFFFF;
+            color: #1F1F1F;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-cta-google:hover {
+            background: #F8F9FA;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-cta-google svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Blog Hero Section */
+        .blog-hero {
+            padding: 180px 24px 80px;
+            text-align: center;
+            background: var(--bg-dark);
+        }
+
+        .blog-hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .blog-hero p {
+            font-size: 20px;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Filter Pills */
+        .filter-section {
+            padding: 40px 24px;
+            background: var(--bg-dark);
+        }
+
+        .filter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-pill {
+            padding: 10px 20px;
+            border-radius: 24px;
+            border: 1px solid var(--card-border);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .filter-pill:hover,
+        .filter-pill.active {
+            background: var(--accent-blue);
+            color: var(--bg-dark);
+            border-color: var(--accent-blue);
+        }
+
+        /* Blog Grid */
+        .blog-grid-section {
+            padding: 60px 24px 120px;
+            background: var(--bg-dark);
+        }
+
+        .blog-grid-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        /* Blog Card */
+        .blog-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(20px);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            border-color: rgba(74, 192, 255, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            background: linear-gradient(135deg, rgba(74, 192, 255, 0.1) 0%, rgba(0, 230, 118, 0.1) 100%);
+        }
+
+        .blog-card-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card-category {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            background: rgba(74, 192, 255, 0.1);
+            color: var(--accent-blue);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .blog-card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .blog-card-excerpt {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .blog-card-author-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(74, 192, 255, 0.3);
+        }
+
+        .blog-card-author-info {
+            flex: 1;
+        }
+
+        .blog-card-author-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .blog-card-meta-info {
+            font-size: 12px;
+            color: var(--text-subtle);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 11, 13, 0.95);
+            border-top: 1px solid var(--border-color);
+            padding: 64px 0 32px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 64px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+
+        .footer-section h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding: 24px 32px 0;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            color: var(--text-subtle);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .blog-hero h1 {
+                font-size: 42px;
+            }
+
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .blog-hero {
+                padding: 140px 24px 60px;
+            }
+
+            .blog-hero h1 {
+                font-size: 32px;
+            }
+
+            .blog-hero p {
+                font-size: 18px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .filter-container {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding-bottom: 8px;
+            }
+
+            .filter-pill {
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/fokal-wordmark-icon.svg" alt="Fokal" style="height: 32px; width: auto;">
+            </a>
+            <div class="nav-menu">
+                <a href="/index.html">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/features.html">Features</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/blog.html" class="active">Blog</a>
+                <button class="nav-cta-google" onclick="window.location.href='/'">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <h1>Insights & Resources</h1>
+        <p>Expert strategies for AI search optimization, brand visibility, and modern digital marketing. Learn how to get your brand cited and recommended by AI engines.</p>
+    </section>
+
+    <!-- Filter Pills -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <a href="#" class="filter-pill active">All Posts</a>
+            <a href="#" class="filter-pill">AI Search</a>
+            <a href="#" class="filter-pill">SEO</a>
+            <a href="#" class="filter-pill">Content Marketing</a>
+            <a href="#" class="filter-pill">Brand Monitoring</a>
+            <a href="#" class="filter-pill">Case Studies</a>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-grid-section">
+        <div class="blog-grid-container">
+            <div class="blog-grid">
+
+                <!-- Blog Post 1 -->
+                <a href="/test-blog-post.html" class="blog-card">
+                    <img src="https://via.placeholder.com/800x450/1a2332/4AC0FF?text=AI+Search+Visibility" alt="How AI Search is Changing Brand Visibility in 2025" class="blog-card-image" loading="lazy">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">AI Search</span>
+                        <h3 class="blog-card-title">How AI Search is Changing Brand Visibility in 2025</h3>
+                        <p class="blog-card-excerpt">The shift from traditional search to AI-powered answers is transforming how brands get discovered. Learn the key differences and strategies for success.</p>
+                        <div class="blog-card-meta">
+                            <img src="/patrick-photo.jpg" alt="Patrick" class="blog-card-author-img">
+                            <div class="blog-card-author-info">
+                                <div class="blog-card-author-name">Patrick</div>
+                                <div class="blog-card-meta-info">8 min read · Jan 15, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 2 -->
+                <a href="/test-blog-post.html" class="blog-card">
+                    <img src="https://via.placeholder.com/800x450/1a2332/00E676?text=Content+Strategy" alt="Content Strategies That Get You Cited by ChatGPT" class="blog-card-image" loading="lazy">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Content Marketing</span>
+                        <h3 class="blog-card-title">Content Strategies That Get You Cited by ChatGPT</h3>
+                        <p class="blog-card-excerpt">Not all content is created equal in the AI age. Discover the specific formats and structures that AI engines prefer when citing sources.</p>
+                        <div class="blog-card-meta">
+                            <img src="/patrick-photo.jpg" alt="Patrick" class="blog-card-author-img">
+                            <div class="blog-card-author-info">
+                                <div class="blog-card-author-name">Patrick</div>
+                                <div class="blog-card-meta-info">12 min read · Jan 12, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 3 -->
+                <a href="/test-blog-post.html" class="blog-card">
+                    <img src="https://via.placeholder.com/800x450/1a2332/FFA726?text=SEO+Guide" alt="Technical SEO for AI Visibility: The Complete Guide" class="blog-card-image" loading="lazy">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">SEO</span>
+                        <h3 class="blog-card-title">Technical SEO for AI Visibility: The Complete Guide</h3>
+                        <p class="blog-card-excerpt">From robots.txt to llms.txt, learn the technical optimizations that help AI engines find, crawl, and trust your content.</p>
+                        <div class="blog-card-meta">
+                            <img src="/harry-photo.jpg" alt="Harry" class="blog-card-author-img">
+                            <div class="blog-card-author-info">
+                                <div class="blog-card-author-name">Harry</div>
+                                <div class="blog-card-meta-info">15 min read · Jan 10, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 4 -->
+                <a href="/test-blog-post.html" class="blog-card">
+                    <img src="https://via.placeholder.com/800x450/1a2332/4AC0FF?text=Brand+Monitoring" alt="Why Your Brand Isn't Showing Up in AI Search Results" class="blog-card-image" loading="lazy">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Brand Monitoring</span>
+                        <h3 class="blog-card-title">Why Your Brand Isn't Showing Up in AI Search Results</h3>
+                        <p class="blog-card-excerpt">Invisible in ChatGPT and Perplexity? Here are the 7 most common reasons brands fail to appear in AI-generated answers.</p>
+                        <div class="blog-card-meta">
+                            <img src="/patrick-photo.jpg" alt="Patrick" class="blog-card-author-img">
+                            <div class="blog-card-author-info">
+                                <div class="blog-card-author-name">Patrick</div>
+                                <div class="blog-card-meta-info">10 min read · Jan 8, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 5 -->
+                <a href="/test-blog-post.html" class="blog-card">
+                    <img src="https://via.placeholder.com/800x450/1a2332/00E676?text=Case+Study" alt="Case Study: How Reyourrun Increased AI Citations by 400%" class="blog-card-image" loading="lazy">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Case Studies</span>
+                        <h3 class="blog-card-title">Case Study: How Reyourrun Increased AI Citations by 400%</h3>
+                        <p class="blog-card-excerpt">From zero to hero in 90 days. See exactly how one fitness brand went from invisible to recommended across major AI search platforms.</p>
+                        <div class="blog-card-meta">
+                            <img src="/patrick-photo.jpg" alt="Patrick" class="blog-card-author-img">
+                            <div class="blog-card-author-info">
+                                <div class="blog-card-author-name">Patrick</div>
+                                <div class="blog-card-meta-info">14 min read · Jan 5, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 6 -->
+                <a href="/test-blog-post.html" class="blog-card">
+                    <img src="https://via.placeholder.com/800x450/1a2332/FFA726?text=Wikipedia+Guide" alt="The Complete Guide to Wikipedia for Brand Visibility" class="blog-card-image" loading="lazy">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Brand Monitoring</span>
+                        <h3 class="blog-card-title">The Complete Guide to Wikipedia for Brand Visibility</h3>
+                        <p class="blog-card-excerpt">Wikipedia remains one of the most cited sources by AI engines. Learn how to create, edit, and maintain your brand's Wikipedia presence.</p>
+                        <div class="blog-card-meta">
+                            <img src="/harry-photo.jpg" alt="Harry" class="blog-card-author-img">
+                            <div class="blog-card-author-info">
+                                <div class="blog-card-author-name">Harry</div>
+                                <div class="blog-card-meta-info">18 min read · Jan 3, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 7 -->
+                <a href="/test-blog-post.html" class="blog-card">
+                    <img src="https://via.placeholder.com/800x450/1a2332/4AC0FF?text=Domain+Authority" alt="Building Domain Authority for AI Search Rankings" class="blog-card-image" loading="lazy">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">SEO</span>
+                        <h3 class="blog-card-title">Building Domain Authority for AI Search Rankings</h3>
+                        <p class="blog-card-excerpt">AI engines prioritize trusted sources. Discover proven strategies to build domain authority that translates to more citations.</p>
+                        <div class="blog-card-meta">
+                            <img src="/patrick-photo.jpg" alt="Patrick" class="blog-card-author-img">
+                            <div class="blog-card-author-info">
+                                <div class="blog-card-author-name">Patrick</div>
+                                <div class="blog-card-meta-info">11 min read · Dec 29, 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 8 -->
+                <a href="/test-blog-post.html" class="blog-card">
+                    <img src="https://via.placeholder.com/800x450/1a2332/00E676?text=Content+Formats" alt="Content Formats AI Engines Love to Cite" class="blog-card-image" loading="lazy">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Content Marketing</span>
+                        <h3 class="blog-card-title">Content Formats AI Engines Love to Cite</h3>
+                        <p class="blog-card-excerpt">Not all blog posts are equal. Learn which content formats get the most traction with AI search engines and how to create them.</p>
+                        <div class="blog-card-meta">
+                            <img src="/patrick-photo.jpg" alt="Patrick" class="blog-card-author-img">
+                            <div class="blog-card-author-info">
+                                <div class="blog-card-author-name">Patrick</div>
+                                <div class="blog-card-meta-info">9 min read · Dec 27, 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 9 -->
+                <a href="/test-blog-post.html" class="blog-card">
+                    <img src="https://via.placeholder.com/800x450/1a2332/FFA726?text=Competitor+Analysis" alt="Competitive Intelligence: What Your Competitors Are Doing Right" class="blog-card-image" loading="lazy">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Brand Monitoring</span>
+                        <h3 class="blog-card-title">Competitive Intelligence: What Your Competitors Are Doing Right</h3>
+                        <p class="blog-card-excerpt">Analyze your competitors' AI search performance and identify gaps you can exploit to gain visibility advantage.</p>
+                        <div class="blog-card-meta">
+                            <img src="/harry-photo.jpg" alt="Harry" class="blog-card-author-img">
+                            <div class="blog-card-author-info">
+                                <div class="blog-card-author-name">Harry</div>
+                                <div class="blog-card-meta-info">13 min read · Dec 24, 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="/fokal-wordmark-icon.svg" alt="Fokal" style="height: 32px; width: auto; margin-bottom: 16px;">
+                <p>Uncover your online visibility gaps. Find exactly where your brand is missing and get the solutions to close each gap.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul class="footer-links">
+                    <li><a href="/index.html">How It Works</a></li>
+                    <li><a href="/pricing.html">Pricing</a></li>
+                    <li><a href="/features.html">Features</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fokal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Nav scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Filter pills
+        document.querySelectorAll('.filter-pill').forEach(pill => {
+            pill.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

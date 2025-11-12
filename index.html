@@ -1,0 +1,3402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uncover your online visibility gaps. Find exactly where your brand is missing and get the solutions to close each gap. Fokal reveals visibility gaps across search engines, AI platforms, and media coverage.">
+    <meta name="keywords" content="visibility gaps, AI search, brand monitoring, SEO gaps, media coverage, competitor analysis">
+    <meta property="og:title" content="Uncover Your Online Visibility Gaps | Fokal">
+    <meta property="og:description" content="Find exactly where your brand is missing. Get the solutions to close each gap.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fokal.com/index.html">
+    <title>Uncover Your Online Visibility Gaps | Fokal</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- Google Fonts - DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Colors from /greatness page */
+            --bg-dark: #0E0E10;
+            --bg-panel: #161618;
+            --card-bg: rgba(17, 24, 32, 0.8);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --text-primary: #E5E9F0;
+            --text-secondary: #C6CDD8;
+            --text-muted: #9DA6B5;
+            --text-subtle: #8A93A1;
+            --accent-blue: #4AC0FF;
+            --accent-green: #00E676;
+            --accent-amber: #FFA726;
+            --border-color: #1A2230;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(14, 14, 16, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
+            z-index: 1000;
+            padding: 16px 0;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(14, 14, 16, 0.95);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .nav-logo img {
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo:hover img {
+            transform: scale(1.02);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #7FBFF2 100%);
+            color: var(--bg-dark);
+            padding: 8px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 12px rgba(74, 192, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-cta:hover::before {
+            left: 100%;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(74, 192, 255, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-wide {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding: 140px 24px 80px;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, #0A0B0D 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(74, 192, 255, 0.2) 0%, rgba(74, 192, 255, 0.05) 40%, transparent 70%);
+            pointer-events: none;
+            animation: gradientPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientPulse {
+            0%, 100% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: translateX(-50%) scale(1.1);
+            }
+        }
+
+        /* Animated grid background */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(74, 192, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74, 192, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+            animation: gridFloat 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes gridFloat {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(74, 192, 255, 0.1);
+            border: 1px solid rgba(74, 192, 255, 0.3);
+            border-radius: 100px;
+            padding: 8px 20px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-badge::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(74, 192, 255, 0.3) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 32px;
+            letter-spacing: -0.03em;
+            background: linear-gradient(180deg, #FFFFFF 0%, #C6CDD8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+            text-shadow: 0 0 80px rgba(74, 192, 255, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+            line-height: 1.5;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-description {
+            font-size: 17px;
+            color: var(--text-subtle);
+            margin-bottom: 48px;
+            line-height: 1.65;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 48px;
+            animation: fadeInUp 0.8s ease-out 1s both;
+        }
+
+        .trust-logos {
+            display: flex;
+            align-items: center;
+            opacity: 0.6;
+        }
+
+        .trust-logo {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px;
+        }
+
+        .trust-logo:not(:first-child) {
+            margin-left: -8px;
+        }
+
+        .trust-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .trust-text {
+            font-size: 14px;
+            color: var(--text-subtle);
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #7FBFF2 100%);
+            color: #0A0B0D;
+            box-shadow: 0 4px 16px rgba(74, 192, 255, 0.25);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(74, 192, 255, 0.35);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .btn-google {
+            background: #FFFFFF;
+            color: #1F1F1F;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-google:hover {
+            background: #F8F9FA;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-google svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), #3AA0D9);
+            color: #FFFFFF;
+            border: none;
+            box-shadow: 0 4px 16px rgba(74, 192, 255, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #3AA0D9, var(--accent-blue));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(74, 192, 255, 0.4);
+        }
+
+        .nav-cta-google {
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: #FFFFFF;
+            color: #1F1F1F;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-cta-google:hover {
+            background: #F8F9FA;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-cta-google svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--text-primary);
+        }
+
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100vh;
+            background: rgba(14, 14, 16, 0.98);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid var(--card-border);
+            z-index: 1000;
+            padding: 80px 32px 32px;
+            overflow-y: auto;
+            transition: right 0.3s ease;
+            box-shadow: -4px 0 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .mobile-menu-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .mobile-menu-cta {
+            margin-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Dashboard Preview */
+        .dashboard-preview {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .dashboard-frame {
+            background: rgba(22, 22, 24, 0.6);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            backdrop-filter: blur(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .dashboard-frame:hover {
+            transform: translateY(-4px);
+        }
+
+        .dashboard-header {
+            background: rgba(28, 28, 31, 0.8);
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .dashboard-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--text-subtle);
+            opacity: 0.3;
+            transition: all 0.3s ease;
+        }
+
+        .dot.red {
+            background: #FF5F57;
+            opacity: 1;
+            box-shadow: 0 0 10px rgba(255, 95, 87, 0.5);
+        }
+        .dot.yellow {
+            background: #FFBD2E;
+            opacity: 1;
+            box-shadow: 0 0 10px rgba(255, 189, 46, 0.5);
+        }
+        .dot.green {
+            background: #28CA42;
+            opacity: 1;
+            box-shadow: 0 0 10px rgba(40, 202, 66, 0.5);
+        }
+
+        .dashboard-mockup {
+            padding: 32px 32px 80px;
+            background: linear-gradient(180deg, rgba(14, 14, 16, 0.9) 0%, rgba(10, 11, 13, 0.95) 100%);
+            min-height: 600px;
+            position: relative;
+        }
+
+        .mockup-alert {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(251, 146, 60, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+            backdrop-filter: blur(20px);
+            box-shadow:
+                0 8px 32px rgba(251, 146, 60, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .mockup-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            animation: slideInLeft 0.6s ease-out 0.2s both;
+        }
+
+        .mockup-tab {
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .mockup-tab:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .mockup-tab.active {
+            background: rgba(74, 192, 255, 0.15);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            box-shadow: 0 0 20px rgba(74, 192, 255, 0.3);
+        }
+
+        .mockup-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .mockup-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0;
+            animation: cardPopIn 0.5s ease-out forwards;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .mockup-card:nth-child(1) { animation-delay: 0.4s; }
+        .mockup-card:nth-child(2) { animation-delay: 0.5s; }
+        .mockup-card:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes cardPopIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .mockup-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(74, 192, 255, 0.3), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mockup-card:hover::before {
+            opacity: 1;
+        }
+
+        .mockup-card:hover {
+            border-color: rgba(74, 192, 255, 0.3);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(74, 192, 255, 0.2) inset,
+                0 0 40px rgba(74, 192, 255, 0.2);
+        }
+
+        /* Floating Badges */
+        .floating-badge {
+            position: absolute;
+            background: rgba(28, 28, 31, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            white-space: nowrap;
+            backdrop-filter: blur(20px);
+        }
+
+        .badge-1 {
+            top: 20px;
+            left: -100px;
+            animation: floatBadge 4s infinite ease-in-out;
+        }
+
+        .badge-2 {
+            top: 50%;
+            right: -100px;
+            animation: floatBadge 4s infinite ease-in-out 1.3s;
+        }
+
+        .badge-3 {
+            bottom: 40px;
+            left: -80px;
+            animation: floatBadge 4s infinite ease-in-out 2.6s;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% {
+                transform: translateY(0) rotate(-1deg);
+            }
+            25% {
+                transform: translateY(-12px) rotate(1deg);
+            }
+            75% {
+                transform: translateY(-6px) rotate(-0.5deg);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 120px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            background: linear-gradient(180deg, #FFFFFF 0%, #C6CDD8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 20px;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Problem Section - LINEAR EXPANDABLE CARD STYLE */
+        .carousel-container {
+            position: relative;
+            margin-top: 64px;
+            overflow: visible;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 80px;
+        }
+
+        .carousel-track-wrapper {
+            overflow: hidden;
+            position: relative;
+            padding: 0 2px;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 32px;
+            padding: 0;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-slide {
+            flex: 0 0 calc((100% - 64px) / 3);
+            min-width: 0;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(74, 192, 255, 0.15) 0%, rgba(17, 24, 32, 0.95) 100%);
+            border: 1px solid rgba(74, 192, 255, 0.4);
+            backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-nav svg {
+            width: 24px;
+            height: 24px;
+            color: var(--accent-blue);
+            transition: all 0.3s ease;
+        }
+
+        .carousel-nav:hover {
+            background: linear-gradient(135deg, rgba(74, 192, 255, 0.25) 0%, rgba(17, 24, 32, 1) 100%);
+            border-color: rgba(74, 192, 255, 0.6);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 24px rgba(74, 192, 255, 0.4);
+        }
+
+        .carousel-nav:hover svg {
+            color: #FFFFFF;
+            transform: scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: 20px;
+        }
+
+        .carousel-nav.next {
+            right: 20px;
+        }
+
+        .carousel-nav:disabled {
+            opacity: 0.2;
+            cursor: not-allowed;
+            background: rgba(17, 24, 32, 0.6);
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .carousel-nav:disabled:hover {
+            background: rgba(17, 24, 32, 0.6);
+            border-color: rgba(255, 255, 255, 0.08);
+            transform: translateY(-50%);
+            box-shadow: none;
+        }
+
+        .carousel-nav:disabled svg {
+            color: var(--text-subtle);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 40px;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--accent-blue);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 1400px) {
+            .carousel-container {
+                padding: 0 70px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .carousel-slide {
+                flex: 0 0 calc((100% - 32px) / 2);
+            }
+
+            .carousel-container {
+                max-width: 900px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .carousel-slide {
+                flex: 0 0 100%;
+            }
+
+            .carousel-container {
+                max-width: 600px;
+                padding: 0 60px;
+            }
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            margin-top: 64px;
+        }
+
+        .problem-card-visual {
+            background: rgba(17, 24, 32, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(20px);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .problem-card-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top center, rgba(74, 192, 255, 0.05), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .problem-card-visual:hover::before {
+            opacity: 1;
+        }
+
+        .problem-card-visual:hover {
+            border-color: rgba(74, 192, 255, 0.25);
+            box-shadow:
+                0 24px 60px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(74, 192, 255, 0.1) inset;
+        }
+
+        .problem-card-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(180deg, #0f1011 0%, #08090a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .problem-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .problem-card-visual:hover .problem-card-image img {
+            transform: scale(1.05);
+        }
+
+        .problem-card-footer {
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            position: relative;
+        }
+
+        .problem-card-footer h3 {
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+            flex: 1;
+            padding-right: 8px;
+        }
+
+        .expand-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .expand-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .expand-button svg {
+            width: 20px;
+            height: 20px;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .problem-card-visual.expanded .expand-button svg {
+            transform: rotate(45deg);
+        }
+
+        .problem-card-expandable {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .problem-card-visual.expanded .problem-card-expandable {
+            max-height: 500px;
+        }
+
+        .problem-card-content {
+            padding: 0 32px 32px 32px;
+        }
+
+        .problem-card-content p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .problem-highlight {
+            font-size: 15px;
+            color: #FB923C;
+            font-weight: 600;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Solution Steps */
+        .solution-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        .step {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-8px);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #7FBFF2 100%);
+            color: #0A0B0D;
+            border-radius: 14px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(74, 192, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover .step-number {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 32px rgba(74, 192, 255, 0.6);
+        }
+
+        .step h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .step p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Gaps Grid */
+        .gaps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .gap-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(20px);
+            position: relative;
+        }
+
+        .gap-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-blue), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gap-card:hover::after {
+            opacity: 1;
+        }
+
+        .gap-card:hover {
+            border-color: rgba(74, 192, 255, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .gap-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .gap-card p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1100px;
+            margin: 48px auto 0;
+        }
+
+        .pricing-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 48px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(20px);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .pricing-card.featured {
+            border-color: rgba(74, 192, 255, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(74, 192, 255, 0.2);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+            box-shadow: 0 24px 70px rgba(74, 192, 255, 0.3);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #7FBFF2 100%);
+            color: #0A0B0D;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 4px 16px rgba(74, 192, 255, 0.4);
+        }
+
+        .pricing-card h3 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .price {
+            font-size: 56px;
+            font-weight: 800;
+            margin: 20px 0;
+            background: linear-gradient(180deg, #FFFFFF 0%, #C6CDD8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pricing-card .price-period {
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 28px 0;
+        }
+
+        .pricing-card li {
+            padding: 10px 0;
+            font-size: 16px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .pricing-card li::before {
+            content: '✓';
+            color: var(--accent-green);
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 18px;
+        }
+
+        /* Testimonials */
+        /* Editorial Card - Side by Side */
+        .case-study-editorial {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .case-study-editorial::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-blue) 0%, transparent 50%);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .case-study-editorial::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(74, 192, 255, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .case-study-editorial:hover {
+            border-color: rgba(74, 192, 255, 0.15);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .case-study-editorial:hover::before {
+            opacity: 0.6;
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            min-height: 380px;
+            position: relative;
+        }
+
+        /* Photo Side */
+        .photo-side {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(26, 26, 28, 0.8) 0%, rgba(10, 11, 13, 0.9) 100%);
+        }
+
+        .founder-photo-large {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: grayscale(10%) brightness(1.05);
+            transition: all 0.4s ease;
+        }
+
+        .case-study-editorial:hover .founder-photo-large {
+            transform: scale(1.02);
+            filter: grayscale(0%) brightness(1.1);
+        }
+
+        .photo-side::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(14, 14, 16, 0.4) 100%);
+            pointer-events: none;
+        }
+
+        /* Content Side */
+        .content-side {
+            padding: 40px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .founder-info-minimal {
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .founder-info-minimal strong {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .founder-info-minimal span {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: block;
+        }
+
+        /* Quote - Cleaner without border */
+        .case-study-quote-clean {
+            font-size: 20px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .case-study-quote-clean::before {
+            content: '"';
+            font-size: 72px;
+            color: rgba(74, 192, 255, 0.12);
+            position: absolute;
+            left: -4px;
+            top: -20px;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        /* Read More Link */
+        .read-more-inline {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+            padding-left: 24px;
+        }
+
+        .read-more-inline:hover {
+            gap: 10px;
+            color: #5DB2FF;
+        }
+
+        /* CTA Button */
+        .cta-wrapper {
+            text-align: center;
+            padding: 40px 0 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            margin-top: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .case-study-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-side {
+                min-height: 400px;
+                max-height: 450px;
+            }
+
+            .founder-photo-large {
+                object-position: center 20%;
+            }
+
+            .content-side {
+                padding: 40px 32px;
+            }
+
+            .case-study-quote-clean {
+                font-size: 18px;
+                padding-left: 20px;
+            }
+
+            .case-study-quote-clean::before {
+                font-size: 64px;
+                top: -16px;
+            }
+
+            .cta-wrapper {
+                padding: 32px 0 8px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .case-study-editorial {
+                border-radius: 20px;
+            }
+
+            .photo-side {
+                min-height: 320px;
+            }
+
+            .content-side {
+                padding: 32px 24px;
+            }
+
+            .founder-info-minimal strong {
+                font-size: 16px;
+            }
+
+            .case-study-quote-clean {
+                font-size: 17px;
+                padding-left: 16px;
+            }
+
+            .case-study-quote-clean::before {
+                font-size: 56px;
+                top: -14px;
+                left: -2px;
+            }
+
+            .read-more-inline {
+                font-size: 14px;
+                padding-left: 16px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .pricing-card {
+                padding: 36px 28px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .container, .container-wide {
+                padding: 0 20px;
+            }
+
+            .carousel-container {
+                padding: 0 50px;
+            }
+        }
+
+        /* FAQ Section - Accordion */
+        .faq-list {
+            max-width: 900px;
+            margin: 48px auto 0;
+        }
+
+        .faq-item {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            margin-bottom: 16px;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(74, 192, 255, 0.3);
+        }
+
+        .faq-item.active {
+            border-color: rgba(74, 192, 255, 0.4);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 28px;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-question h4 {
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+            flex: 1;
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--accent-blue);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 28px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 800px;
+            padding: 0 28px 24px 28px;
+        }
+
+        .faq-answer p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .faq-answer ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 12px 0 0 0;
+        }
+
+        .faq-answer ul li {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 8px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .faq-answer ul li::before {
+            content: '•';
+            position: absolute;
+            left: 8px;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 100px 24px;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, #0A0B0D 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(74, 192, 255, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            animation: gradientPulse 6s ease-in-out infinite;
+        }
+
+        .final-cta h2 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #C6CDD8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta p {
+            font-size: 22px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section-header h2 {
+                font-size: 36px;
+            }
+
+            .final-cta h2 {
+                font-size: 36px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+
+            .mockup-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-cta .btn {
+                width: 100%;
+            }
+
+            .mockup-tabs {
+                display: none;
+            }
+        }
+
+        /* Animation styles for scroll entrance */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger animation delays for cards */
+        .problems-grid .problem-card-visual:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .problems-grid .problem-card-visual:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .problems-grid .problem-card-visual:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        /* Closing line animation */
+        .closing-line {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition-delay: 0.5s;
+        }
+
+        .closing-line.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Logo hover effects */
+        .logo-item {
+            opacity: 0.7;
+            filter: grayscale(100%) brightness(1.2);
+            transition: all 0.4s ease;
+        }
+
+        .logo-item:hover {
+            opacity: 1 !important;
+            filter: grayscale(0%) brightness(1) !important;
+            transform: translateY(-4px) scale(1.05);
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Example card hover effects */
+        .example-card {
+            transition: all 0.3s ease;
+        }
+
+        .example-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(74, 192, 255, 0.3) !important;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Number counter animation */
+        @keyframes countUp {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .count-up {
+            animation: countUp 1s ease-out;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 11, 13, 0.95);
+            border-top: 1px solid var(--border-color);
+            padding: 64px 0 32px;
+            margin-top: 0;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 64px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand img {
+            height: 28px;
+            width: auto;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand-social {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .footer-brand-social a {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-brand-social a:hover {
+            background: rgba(74, 192, 255, 0.1);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .footer-brand-social svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .footer-section h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 32px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: var(--text-subtle);
+        }
+
+        @media (max-width: 968px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 48px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/fokal-wordmark-icon.svg" alt="Fokal" style="height: 32px; width: auto;">
+            </a>
+            <div class="nav-menu">
+                <a href="/index.html">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/features.html">Features</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/blog.html">Blog</a>
+                <button class="nav-cta-google" onclick="signInWithGoogle()">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    Join with Google
+                </button>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Close menu" style="position: absolute; top: 20px; right: 20px;">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="/index.html" onclick="toggleMobileMenu()">Home</a>
+            <a href="/about.html" onclick="toggleMobileMenu()">About</a>
+            <a href="/features.html" onclick="toggleMobileMenu()">Features</a>
+            <a href="/pricing.html" onclick="toggleMobileMenu()">Pricing</a>
+            <a href="/blog.html" onclick="toggleMobileMenu()">Blog</a>
+        </div>
+        <div class="mobile-menu-cta">
+            <button class="btn btn-google" onclick="signInWithGoogle()" style="width: 100%; justify-content: center;">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                Join with Google
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container-wide">
+            <div class="hero-content">
+                <h1>Fokal finds where you're missing online and makes fixing it easy.</h1>
+                <p class="hero-subtitle">Get seen in all the right places. Be found in Google, ChatGPT, media coverage, and more.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-google" onclick="signInWithGoogle()">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                        </svg>
+                        Join with Google
+                    </button>
+                    <a href="#demo" class="btn btn-secondary">
+                        See how it works
+                    </a>
+                </div>
+
+                <!-- Trust Section -->
+                <div class="hero-trust">
+                    <div class="trust-logos">
+                        <div class="trust-logo">
+                            <img src="/lovable-uploads/67e3aafe-1389-4197-a7d1-0d5d39f31ed2.png" alt="Brand logo">
+                        </div>
+                        <div class="trust-logo">
+                            <img src="/lovable-uploads/cbcc93e7-40c0-42f8-bfab-57c2ef2cef2c.png" alt="Brand logo">
+                        </div>
+                        <div class="trust-logo">
+                            <img src="https://cdn.prod.website-files.com/6508b185489d13a549d8062d/651b4c194568421f3d94785f_hero-logo-bg.png" alt="Brand logo">
+                        </div>
+                    </div>
+                    <p class="trust-text">150+ Brands Closing Their Visibility Gaps</p>
+                </div>
+            </div>
+
+            <!-- Dashboard Preview -->
+            <div class="dashboard-preview" id="demo">
+                <div class="dashboard-frame">
+                    <div class="dashboard-header">
+                        <div class="dashboard-dots">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                    </div>
+                    <div class="dashboard-mockup">
+                        <!-- Alert Banner -->
+                        <div class="mockup-alert">
+                            <p style="color: var(--accent-amber); font-weight: 600; margin-bottom: 8px;">
+                                ⚠️ Your Brand is Missing from Where People Look
+                            </p>
+                            <p style="color: var(--text-secondary); font-size: 14px;">
+                                When people ask ChatGPT about your category, competitors appear while you don't.<br>
+                                Brands in your category average <span class="gap-count">12</span> visibility gaps across search, AI, and media. Let's find yours.
+                            </p>
+                        </div>
+                        <!-- Filter Tabs -->
+                        <div class="mockup-tabs">
+                            <div class="mockup-tab active">All gaps (12)</div>
+                            <div class="mockup-tab">AI Search (6)</div>
+                            <div class="mockup-tab">Technical SEO (1)</div>
+                        </div>
+                        <!-- Gap Cards Grid -->
+                        <div class="mockup-grid">
+                            <div class="mockup-card">
+                                <p style="font-size: 12px; color: var(--text-subtle); margin-bottom: 8px;">
+                                    Real example: Enterprise Open Source
+                                </p>
+                                <h3 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">
+                                    Legacy vs. modern positioning gap
+                                </h3>
+                                <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+                                    "What are the best enterprise platforms for hybrid cloud management?" — Red Hat has the solution but appears 0/3 times. AWS and Azure win every mention.
+                                </p>
+                                <div style="padding-top: 16px; border-top: 1px solid var(--border-color);">
+                                    <span style="color: var(--accent-blue); font-size: 12px; font-weight: 500;">
+                                        Click to see solution →
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="mockup-card">
+                                <p style="font-size: 12px; color: var(--text-subtle); margin-bottom: 8px;">
+                                    Real example: Investment Platform
+                                </p>
+                                <h3 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">
+                                    Partial visibility trap
+                                </h3>
+                                <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+                                    Stake dominates "beginner investing" but is invisible on "managed funds and ETFs"—exactly where their buyers research next.
+                                </p>
+                                <div style="padding-top: 16px; border-top: 1px solid var(--border-color);">
+                                    <span style="color: var(--accent-blue); font-size: 12px; font-weight: 500;">
+                                        Click to see solution →
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="mockup-card">
+                                <p style="font-size: 12px; color: var(--text-subtle); margin-bottom: 8px;">
+                                    Real example: Design Platform
+                                </p>
+                                <h3 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">
+                                    Use case gaps
+                                </h3>
+                                <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+                                    Canva (75% visibility) still loses on "design and order printed materials"—missing 16/21 competitor mentions in a query they're perfect for.
+                                </p>
+                                <div style="padding-top: 16px; border-top: 1px solid var(--border-color);">
+                                    <span style="color: var(--accent-blue); font-size: 12px; font-weight: 500;">
+                                        Click to see solution →
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Floating badges -->
+                <div class="floating-badge badge-1">
+                    <span style="color: var(--accent-blue);">✨</span> 2,600+ queries tested
+                </div>
+                <div class="floating-badge badge-2">
+                    <span style="color: var(--accent-green);">✓</span> 12 gaps found
+                </div>
+                <div class="floating-badge badge-3">
+                    <span style="color: var(--accent-amber);">⚡</span> 137K+ citations
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <!-- Stats Section -->
+    <section style="background-color: var(--bg-dark); padding: 100px 0;">
+        <div class="container">
+            <!-- Lead with the punch line -->
+            <div style="text-align: center; max-width: 900px; margin: 0 auto 60px;">
+                <h2 style="font-size: 48px; font-weight: 700; color: var(--text-primary); line-height: 1.25; margin-bottom: 20px; letter-spacing: -0.01em;">
+                    Most brands are invisible where buyers look
+                </h2>
+                <p style="font-size: 20px; color: var(--text-secondary); line-height: 1.6;">
+                    We've analyzed Google searches, AI platforms, media coverage, and comparison sites across every major industry.
+                </p>
+            </div>
+
+            <!-- Hero stat -->
+            <div style="text-align: center; margin-bottom: 48px;">
+                <div style="font-size: 72px; font-weight: 800; color: var(--accent-blue); line-height: 1; margin-bottom: 12px; letter-spacing: -0.03em;">
+                    10%
+                </div>
+                <p style="font-size: 18px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">
+                    Only 1 in 10 places buyers look
+                </p>
+                <p style="font-size: 16px; color: var(--text-subtle); margin-top: 12px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Most brands are invisible in 9 out of 10 places customers search. Even industry leaders miss 1 in 4 opportunities.
+                </p>
+            </div>
+
+            <!-- Supporting stats in a single row -->
+            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto;">
+                <div style="background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 32px; text-align: center; backdrop-filter: blur(20px);">
+                    <svg style="width: 32px; height: 32px; margin: 0 auto 16px; fill: var(--accent-blue);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
+                    </svg>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">2,600+</div>
+                    <div style="font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Customer Questions</div>
+                </div>
+                <div style="background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 32px; text-align: center; backdrop-filter: blur(20px);">
+                    <svg style="width: 32px; height: 32px; margin: 0 auto 16px; fill: #9C27B0;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">21,000+</div>
+                    <div style="font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Websites & News Sources</div>
+                </div>
+                <div style="background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 32px; text-align: center; backdrop-filter: blur(20px);">
+                    <svg style="width: 32px; height: 32px; margin: 0 auto 16px; fill: var(--accent-green);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">137K+</div>
+                    <div style="font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Brand Appearances</div>
+                </div>
+                <div style="background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 32px; text-align: center; backdrop-filter: blur(20px);">
+                    <svg style="width: 32px; height: 32px; margin: 0 auto 16px; fill: var(--accent-amber);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z"/>
+                    </svg>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--accent-amber); margin-bottom: 8px;">8-12</div>
+                    <div style="font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Places You're Missing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Headline & Logo Section -->
+    <section style="background-color: #0A0B0D; padding: 80px 0;">
+        <div class="container">
+            <!-- Headline -->
+            <div style="text-align: center; margin-bottom: 64px;">
+                <h2 style="font-size: 48px; font-weight: 700; color: var(--text-primary); line-height: 1.3; max-width: 900px; margin: 0 auto; letter-spacing: -0.01em;">
+                    Find where you're missing. Close the gaps.
+                </h2>
+            </div>
+
+            <!-- Logo Row -->
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 56px; row-gap: 40px;">
+                <!-- Google -->
+                <div class="logo-item" style="height: 36px;">
+                    <img src="/logos/Google-logo.svg" alt="Google" style="height: 36px; width: auto;">
+                </div>
+
+                <!-- ChatGPT / OpenAI -->
+                <div class="logo-item" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="/logos/openai.svg" alt="ChatGPT" style="height: 32px; width: auto; color: var(--text-primary);">
+                    <span style="font-size: 19px; font-weight: 500; color: var(--text-primary);">ChatGPT</span>
+                </div>
+
+                <!-- Perplexity -->
+                <div class="logo-item" style="height: 34px;">
+                    <img src="/logos/perplexity-logo.svg" alt="Perplexity" style="height: 34px; width: auto;">
+                </div>
+
+                <!-- AI Mode (Google) -->
+                <div class="logo-item" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="/logos/google-white-icon.svg" alt="Google AI Mode" style="height: 32px; width: auto;">
+                    <span style="font-size: 19px; font-weight: 500; color: var(--text-primary);">AI Mode</span>
+                </div>
+
+                <!-- Forbes -->
+                <div class="logo-item" style="height: 32px;">
+                    <img src="/logos/forbes-logo.svg" alt="Forbes" style="height: 32px; width: auto;">
+                </div>
+
+                <!-- Business Insider -->
+                <div class="logo-item" style="height: 30px;">
+                    <img src="/logos/business-insider-logo.svg" alt="Business Insider" style="height: 30px; width: auto;">
+                </div>
+
+                <!-- TechCrunch -->
+                <div class="logo-item" style="height: 34px;">
+                    <img src="/logos/tech-crunch-logo.svg" alt="TechCrunch" style="height: 34px; width: auto;">
+                </div>
+            </div>
+
+            <!-- Subline -->
+            <p style="text-align: center; margin-top: 48px; font-size: 18px; color: var(--text-muted); max-width: 700px; margin-left: auto; margin-right: auto;">
+                We monitor all these platforms and more to identify exactly where you're missing in your online visibility.
+            </p>
+        </div>
+    </section>
+
+    <!-- Problem Section - WITH VISUAL ILLUSTRATIONS -->
+    <section style="background-color: var(--bg-dark); padding: 120px 0;">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Eight ways you're invisible online</h2>
+                <p style="font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 16px auto 0;">
+                    After analyzing 158 brands across 2,600+ queries, we've identified the 8 most common visibility gaps. Most brands have at least 5.
+                </p>
+            </div>
+
+            <div class="carousel-container">
+                <button class="carousel-nav prev" onclick="moveCarousel(-1)" aria-label="Previous">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="carousel-track-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                    <!-- Card 1: Search Gaps -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="search-gaps.png" alt="Search gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Search Gaps</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Missing from Google, ChatGPT, and other search platforms where buyers look</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Media Coverage -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="media-gaps.png" alt="Media coverage gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Media Coverage</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Absent from industry publications, news sites, and PR opportunities</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Content Gaps -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="content-gaps.png" alt="Content gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Content Gaps</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Competitors have SEO-winning content formats you're missing completely</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Citation Gaps -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="citation-gaps.png" alt="Citation gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Citation Gaps</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Trusted sources reference everyone in your space except you</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Technical SEO -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="technical-seo.png" alt="Technical SEO issues">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Technical SEO</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Configuration issues blocking search engines and AI crawlers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Comparison Gaps -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="comparison-gap.png" alt="Comparison gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Comparison Gaps</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Missing from "vs" pages, alternatives sites, and buyer guides</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Backlink Gaps -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="backlink-gaps.png" alt="Backlink gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Backlink Gaps</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Competitors getting linked where you should be mentioned</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 8: Wikipedia Presence -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="wikipedia=presence.png" alt="Wikipedia gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Wikipedia Presence</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>The trust signal every platform checks first — where you're absent or wrong</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate cards for continuous scroll -->
+                    <!-- Card 1: Search Gaps (Duplicate) -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="search-gaps.png" alt="Search gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Search Gaps</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Missing from Google, ChatGPT, and other search platforms where buyers look</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Media Coverage (Duplicate) -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="media-gaps.png" alt="Media coverage gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Media Coverage</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Absent from industry publications, news sites, and PR opportunities</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Content Gaps (Duplicate) -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="content-gaps.png" alt="Content gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Content Gaps</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Competitors have SEO-winning content formats you're missing completely</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Citation Gaps (Duplicate) -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="citation-gaps.png" alt="Citation gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Citation Gaps</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Trusted sources reference everyone in your space except you</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Technical SEO (Duplicate) -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="technical-seo.png" alt="Technical SEO issues">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Technical SEO</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Configuration issues blocking search engines and AI crawlers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Comparison Gaps (Duplicate) -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="comparison-gap.png" alt="Comparison gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Comparison Gaps</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Missing from "vs" pages, alternatives sites, and buyer guides</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Backlink Gaps (Duplicate) -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="backlink-gaps.png" alt="Backlink gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Backlink Gaps</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>Competitors getting linked where you should be mentioned</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 8: Wikipedia Presence (Duplicate) -->
+                    <div class="carousel-slide">
+                        <div class="problem-card-visual">
+                            <div class="problem-card-image">
+                                <img src="wikipedia=presence.png" alt="Wikipedia gaps">
+                            </div>
+                            <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
+                                <h3>Wikipedia Presence</h3>
+                                <div class="expand-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="problem-card-expandable">
+                                <div class="problem-card-content">
+                                    <p>The trust signal every platform checks first — where you're absent or wrong</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <button class="carousel-nav next" onclick="moveCarousel(1)" aria-label="Next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="carousel-dots" id="carouselDots"></div>
+
+            <div class="closing-line animate-on-scroll" style="text-align: center; margin-top: 64px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 17px; color: var(--text-muted); line-height: 1.6;">
+                    These gaps exist across search, AI, and media. You just can't see them — until now.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section - What You Get -->
+    <section style="background-color: #0A0B0D; padding: 120px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything you need to fix each gap</h2>
+                <p>Not just reports—actionable solutions with templates, contacts, content, and code.</p>
+            </div>
+
+            <div class="gaps-grid">
+                <!-- Feature 1: Email & Media Outreach -->
+                <div class="gap-card">
+                    <svg style="width: 32px; height: 32px; margin-bottom: 16px; color: var(--accent-blue);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <h4>Email & LinkedIn Outreach</h4>
+                    <p>Pre-written, personalized outreach templates + verified journalist contacts and editor information for immediate outreach via email or LinkedIn.</p>
+                </div>
+
+                <!-- Feature 2: Content Generation -->
+                <div class="gap-card">
+                    <svg style="width: 32px; height: 32px; margin-bottom: 16px; color: var(--accent-blue);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14,2 14,8 20,8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10,9 9,9 8,9"></polyline>
+                    </svg>
+                    <h4>Full Content Drafts</h4>
+                    <p>Publication-ready articles optimized to rank in search engines and get cited by AI platforms. Complete drafts ready to publish.</p>
+                </div>
+
+                <!-- Feature 3: Domain Intelligence -->
+                <div class="gap-card">
+                    <svg style="width: 32px; height: 32px; margin-bottom: 16px; color: var(--accent-blue);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <h4>Domain Intelligence</h4>
+                    <p>See which publications AI engines cite most in your industry. Know exactly where to get featured to maximize AI visibility across ChatGPT, Perplexity, and Gemini.</p>
+                </div>
+
+                <!-- Feature 4: Technical Fixes -->
+                <div class="gap-card">
+                    <svg style="width: 32px; height: 32px; margin-bottom: 16px; color: var(--accent-blue);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    <h4>Technical Fixes</h4>
+                    <p>Copy-paste solutions for llms.txt, robots.txt, sitemaps, indexing issues, and structured data. Fix technical SEO problems in minutes without a developer.</p>
+                </div>
+
+                <!-- Feature 5: PR Opportunities -->
+                <div class="gap-card">
+                    <svg style="width: 32px; height: 32px; margin-bottom: 16px; color: var(--accent-blue);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <h4>Real-Time PR Opportunities</h4>
+                    <p>Get matched with journalist requests seeking expert sources, complete with pre-written responses drafted for your brand. Get featured in major publications.</p>
+                </div>
+
+                <!-- Feature 6: Wikipedia Guidance -->
+                <div class="gap-card">
+                    <svg style="width: 32px; height: 32px; margin-bottom: 16px; color: var(--accent-blue);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                    <h4>Wikipedia Analysis & Drafts</h4>
+                    <p>Full Wikipedia page drafts when you need a new page, or ready-to-submit edits for existing pages. Includes proper citations, NPOV compliance, and step-by-step implementation guidance.</p>
+                </div>
+
+                <!-- Feature 7: Content Briefs -->
+                <div class="gap-card">
+                    <svg style="width: 32px; height: 32px; margin-bottom: 16px; color: var(--accent-blue);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 20h9"></path>
+                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                    </svg>
+                    <h4>Detailed Content Briefs</h4>
+                    <p>SERP analysis, competitor content research, keyword targeting, section outlines, and talking points. Clear roadmap for your content team or writers.</p>
+                </div>
+
+                <!-- Feature 8: Progress Tracking -->
+                <div class="gap-card">
+                    <svg style="width: 32px; height: 32px; margin-bottom: 16px; color: var(--accent-blue);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                    <h4>Action History & Tracking</h4>
+                    <p>Monitor every fix with action history, track citations gained, pages published, and ranking improvements. See progress across all gaps in one dashboard.</p>
+                </div>
+            </div>
+
+            <!-- Bottom CTA -->
+            <div style="text-align: center; margin-top: 64px;">
+                <p style="font-size: 18px; color: var(--text-secondary); margin-bottom: 24px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Every gap comes with everything you need to fix it. No additional tools, no guesswork, no empty reports.
+                </p>
+                <a href="/" class="btn btn-primary">See Your Gaps</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section style="background-color: var(--bg-dark); padding: 120px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>From invisible to unmissable in three steps</h2>
+            </div>
+
+            <div class="solution-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>We map your visibility</h3>
+                    <p>We map your entire online presence: search engines, AI platforms, media coverage, industry publications, comparison sites, and competitor strategies.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We generate solutions</h3>
+                    <p>Our system identifies visibility gaps, calculates traffic impact, prioritizes by opportunity size, and backs everything with evidence.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>You take action</h3>
+                    <p>Click any gap to get email templates, journalist contacts, full article drafts, code snippets, Wikipedia edits—everything you need to fix it immediately.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Gap Examples Section -->
+    <section style="background-color: var(--bg-dark); padding: 120px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Even category leaders have blind spots</h2>
+                <p>Here's what we found analyzing actual companies—including brands with 75% visibility.</p>
+            </div>
+
+            <!-- Example Cards Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 64px;">
+
+                <!-- Card 1: Canva -->
+                <div class="example-card" style="background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 32px 28px; backdrop-filter: blur(20px); text-align: center;">
+                    <img src="canva-logo.svg" alt="Canva" style="height: 32px; margin-bottom: 20px; opacity: 0.9;">
+                    <p style="font-size: 18px; font-weight: 600; color: var(--accent-amber); line-height: 1.4; margin: 0;">
+                        "Invisible in 16 of 21 design tool comparisons"
+                    </p>
+                </div>
+
+                <!-- Card 2: Stake -->
+                <div class="example-card" style="background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 32px 28px; backdrop-filter: blur(20px); text-align: center;">
+                    <img src="stake-logo.svg" alt="Stake" style="height: 32px; margin-bottom: 20px; opacity: 0.9;">
+                    <p style="font-size: 18px; font-weight: 600; color: var(--accent-amber); line-height: 1.4; margin: 0;">
+                        "Missing where beginner investors actually research"
+                    </p>
+                </div>
+
+                <!-- Card 3: Red Hat -->
+                <div class="example-card" style="background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 32px 28px; backdrop-filter: blur(20px); text-align: center;">
+                    <img src="redhat-logo.svg" alt="Red Hat" style="height: 32px; margin-bottom: 20px; opacity: 0.9;">
+                    <p style="font-size: 18px; font-weight: 600; color: var(--accent-amber); line-height: 1.4; margin: 0;">
+                        "Zero visibility when buyers search 'hybrid cloud solutions'"
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Credibility Subtext -->
+            <p style="text-align: center; margin-top: 32px; font-size: 14px; color: var(--text-subtle);">
+                Based on 2,600+ buyer research queries across ChatGPT, Gemini, and Perplexity
+            </p>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-top: 64px;">
+                <p style="font-size: 18px; color: var(--text-muted); margin-bottom: 24px;">
+                    These aren't hypotheticals. These are real gaps costing real companies customers.
+                </p>
+                <a href="/" class="btn btn-primary">Show me where I'm missing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" style="background-color: #0A0B0D; padding: 120px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Start seeing what you're missing</h2>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Starter Plan -->
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <p style="color: var(--text-muted); font-size: 14px;">Discover gaps & unlock fixes</p>
+                    <div class="price">$99<span class="price-period">/month</span></div>
+                    <p style="font-size: 13px; color: var(--text-subtle); margin-top: 8px;">$79/mo billed annually</p>
+                    <ul>
+                        <li>1 brand monitored</li>
+                        <li>5 gaps per month</li>
+                        <li>2 full fix plans per month</li>
+                        <li>All AI engines (weekly refresh)</li>
+                        <li>Top 3 domain & brand insights</li>
+                        <li>Email support (48h SLA)</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="signInWithGoogle()" style="width: 100%; justify-content: center;">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Advanced Plan (Featured) -->
+                <div class="pricing-card featured">
+                    <h3>Advanced</h3>
+                    <p style="color: var(--text-muted); font-size: 14px;">Fix every gap you find</p>
+                    <div class="price">$249<span class="price-period">/month</span></div>
+                    <p style="font-size: 13px; color: var(--text-subtle); margin-top: 8px;">$209/mo billed annually</p>
+                    <ul>
+                        <li>Everything in Starter, plus:</li>
+                        <li>Daily gap scanning</li>
+                        <li>Unlimited fixes (no monthly cap)</li>
+                        <li>Complete domain intelligence</li>
+                        <li>Full brand insights access</li>
+                        <li>Up to 3 team members</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="signInWithGoogle()" style="width: 100%; justify-content: center;">
+                        Start 5-Day Trial
+                    </button>
+                    <p style="font-size: 13px; color: var(--text-subtle); text-align: center; margin-top: 16px;">✓ Credit card required • Full access during trial</p>
+                </div>
+
+                <!-- Agency Plan -->
+                <div class="pricing-card">
+                    <h3>Agency</h3>
+                    <p style="color: var(--text-muted); font-size: 14px;">Multi-brand intelligence</p>
+                    <div class="price">$499<span class="price-period">/month</span></div>
+                    <p style="font-size: 13px; color: var(--text-subtle); margin-top: 8px;">$419/mo billed annually</p>
+                    <ul>
+                        <li>5 brands monitored</li>
+                        <li>Unlimited fixes for all brands</li>
+                        <li>Daily or on-demand engine scans</li>
+                        <li>12+ months history retention</li>
+                        <li>5 user seats included</li>
+                        <li>Dedicated account manager</li>
+                        <li>White-label reports available</li>
+                    </ul>
+                    <a href="mailto:hello@fokal.com" class="btn btn-secondary" style="width: 100%; text-align: center;">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editorial Case Study Section -->
+    <section style="background-color: var(--bg-dark); padding: 120px 0;">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Real founders. Real results.</h2>
+                <p>No content team. No agency. Just the right strategy.</p>
+            </div>
+
+            <div class="case-study-editorial">
+                <div class="case-study-grid">
+                    <!-- Photo Side (45%) -->
+                    <div class="photo-side">
+                        <img src="tim-founder-photo.jpeg" alt="Tim, Founder" class="founder-photo-large">
+                    </div>
+
+                    <!-- Content Side (55%) -->
+                    <div class="content-side">
+                        <div class="founder-info-minimal">
+                            <div>
+                                <strong>Tim</strong>
+                                <span>Founder, reyourrun</span>
+                            </div>
+                        </div>
+
+                        <blockquote class="case-study-quote-clean">
+                            We were spending $15K/mo on content and PR, but ChatGPT didn't mention us once for 'best running sunglasses.' Fokal found 3 missing citations and gave us the exact outreach emails. Two weeks later, we're in the top recommendations.
+                        </blockquote>
+
+                        <a href="#" class="read-more-inline">Read the full story →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="background-color: #0A0B0D; padding: 120px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Is this just another SEO tool?</h4>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. SEO tools show where you rank. We show where you don't exist at all—across search engines, AI platforms, media sites, and comparison pages. Then we give you the exact fixes, not just reports.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Is this only for AI visibility?</h4>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. We find where you're missing across Google search, AI platforms (ChatGPT, Perplexity), comparison sites, media coverage, and more. AI is just one piece of your visibility.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What's included in solutions?</h4>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Everything needed to fix each gap: pre-written email templates (3 variations), verified journalist contacts, full content drafts (2,000+ words), code snippets, Wikipedia edit guidance, PR responses, domain intelligence, and progress tracking. No additional tools or services required.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How quickly can I see results?</h4>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Some fixes work immediately (technical gaps). Others take 1-2 weeks (content). Media outreach and PR varies by response time.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What if I don't have a marketing team?</h4>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>That's exactly who we built this for. Every fix comes with templates, step-by-step instructions, and the exact contacts you need. No marketing experience required.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you support all industries?</h4>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. Visibility gaps exist for every brand online. The specific gaps vary, but the detection and solutions work universally.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How do you know which gaps matter most?</h4>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We've analyzed 137,000+ citations across 21,000+ publications to see which sources AI platforms trust. Each gap is scored by:</p>
+                        <ul>
+                            <li><strong>Source authority</strong> – How often AI cites it</li>
+                            <li><strong>Buyer intent</strong> – Search volume</li>
+                            <li><strong>Competitive pressure</strong> – How many competitors appear there</li>
+                        </ul>
+                        <p style="margin-top: 12px;">We've tested 2,600+ queries to validate this prioritization.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I use this for clients?</h4>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. Agencies and consultants use Fokal to run visibility audits for clients and implement fixes across multiple brands.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What happens after I fix a gap?</h4>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We track it. You'll see when your brand starts appearing in search results, AI responses, or gets media mentions. Some changes happen in days, others take weeks—we show you the progress.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Stop losing visibility to competitors</h2>
+            <p style="font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 24px auto; line-height: 1.7;">
+                Every day, buyers find your competitors in places you don't even know exist. See exactly where you're missing and how to fix it.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+                <a href="/" class="btn btn-primary">Get Your Free Scan</a>
+            </div>
+            <p style="font-size: 14px; color: var(--text-subtle); margin-top: 16px;">
+                Takes 60 seconds • No credit card required
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <img src="/fokal-wordmark-icon.svg" alt="Fokal">
+                <p>Find where you're missing online and make fixing it easy. Get seen in all the right places.</p>
+                <div class="footer-brand-social">
+                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product Links -->
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Features</a></li>
+                    <li><a href="/">Pricing</a></li>
+                    <li><a href="/">How It Works</a></li>
+                    <li><a href="/">Use Cases</a></li>
+                </ul>
+            </div>
+
+            <!-- Company Links -->
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal Links -->
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Privacy Policy</a></li>
+                    <li><a href="/">Terms of Service</a></li>
+                    <li><a href="/">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fokal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+
+            // Prevent body scroll when menu is open
+            if (menu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Toggle card expansion
+        function toggleCard(event, card) {
+            event.stopPropagation();
+            card.classList.toggle('expanded');
+        }
+
+        // Carousel functionality
+        let currentIndex = 0;
+        const track = document.getElementById('carouselTrack');
+        const dotsContainer = document.getElementById('carouselDots');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = 8; // Use only original 8 for calculations (not the duplicates)
+
+        // Calculate how many slides are visible
+        function getSlidesPerView() {
+            if (window.innerWidth <= 768) return 1;
+            if (window.innerWidth <= 1200) return 2;
+            return 3;
+        }
+
+        // Calculate max index - we want to show all 8 unique cards
+        function getMaxIndex() {
+            return Math.max(0, totalSlides - getSlidesPerView());
+        }
+
+        // Create dots based on unique cards only
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            const slidesPerView = getSlidesPerView();
+            const numDots = Math.ceil(totalSlides / slidesPerView);
+
+            for (let i = 0; i < numDots; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'carousel-dot';
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i * slidesPerView));
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // Update carousel position
+        function updateCarousel() {
+            const slideWidth = slides[0].offsetWidth;
+            const gap = 32;
+            const offset = -(currentIndex * (slideWidth + gap));
+            track.style.transform = `translateX(${offset}px)`;
+
+            // Update dots
+            const slidesPerView = getSlidesPerView();
+            const dots = dotsContainer.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === Math.floor(currentIndex / slidesPerView));
+            });
+
+            // Update button states
+            const prevBtn = document.querySelector('.carousel-nav.prev');
+            const nextBtn = document.querySelector('.carousel-nav.next');
+
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= getMaxIndex();
+        }
+
+        // Move carousel
+        function moveCarousel(direction) {
+            const maxIndex = getMaxIndex();
+            currentIndex = Math.max(0, Math.min(currentIndex + direction, maxIndex));
+            updateCarousel();
+        }
+
+        // Go to specific slide
+        function goToSlide(index) {
+            currentIndex = Math.min(index, getMaxIndex());
+            updateCarousel();
+        }
+
+        // Initialize carousel
+        createDots();
+        updateCarousel();
+
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                createDots();
+                currentIndex = Math.min(currentIndex, getMaxIndex());
+                updateCarousel();
+            }, 250);
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-on-scroll class
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            animatedElements.forEach(element => observer.observe(element));
+
+            // Number counter animation
+            const gapCount = document.querySelector('.gap-count');
+            if (gapCount) {
+                let count = 0;
+                const target = 12;
+                const duration = 2000;
+                const increment = target / (duration / 16);
+
+                const counter = setInterval(() => {
+                    count += increment;
+                    if (count >= target) {
+                        gapCount.textContent = target;
+                        clearInterval(counter);
+                    } else {
+                        gapCount.textContent = Math.floor(count);
+                    }
+                }, 16);
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', () => {
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

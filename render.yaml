@@ -1,0 +1,53 @@
+services:
+  - type: web
+    name: fokal-static-site
+    runtime: static
+    buildCommand: echo "No build needed for static site"
+    staticPublishPath: ./
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-XSS-Protection
+        value: 1; mode=block
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+    routes:
+      - type: rewrite
+        source: /
+        destination: /index.html
+      - type: rewrite
+        source: /about
+        destination: /about.html
+      - type: rewrite
+        source: /features
+        destination: /features.html
+      - type: rewrite
+        source: /pricing
+        destination: /pricing.html
+      - type: rewrite
+        source: /blog
+        destination: /blog.html
+      - type: rewrite
+        source: /privacy-policy
+        destination: /privacy-policy.html
+      - type: rewrite
+        source: /terms-and-conditions
+        destination: /terms-and-conditions.html
+      - type: rewrite
+        source: /terms-of-use
+        destination: /terms-of-use.html
+      - type: rewrite
+        source: /customer-agreement
+        destination: /customer-agreement.html
+      - type: rewrite
+        source: /companies
+        destination: /companies.html
