@@ -51,3 +51,6 @@ services:
       - type: rewrite
         source: /companies
         destination: /companies.html
+      - type: rewrite
+        source: /contact
+        destination: /contact.html
