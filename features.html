@@ -284,17 +284,68 @@
         /* Footer */
         footer {
             background: var(--bg-dark);
-            padding: 60px 24px 40px;
+            padding: 80px 24px 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand img {
+            height: 32px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-section h4 {
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
             text-align: center;
         }
 
-        .footer-content p {
+        .footer-bottom p {
             color: var(--text-muted);
             font-size: 14px;
         }
@@ -323,6 +374,11 @@
 
             .nav-menu {
                 display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
             }
         }
     </style>
@@ -460,6 +516,37 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
+            <div class="footer-brand">
+                <img src="/fokal-wordmark-icon.svg" alt="Fokal" style="height: 32px; width: auto; margin-bottom: 16px;">
+                <p>Find where you're missing online and make fixing it easy. Get seen in all the right places.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul class="footer-links">
+                    <li><a href="/features">Features</a></li>
+                    <li><a href="/pricing">Pricing</a></li>
+                    <li><a href="/">How It Works</a></li>
+                    <li><a href="/">Use Cases</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms-of-use">Terms of Service</a></li>
+                    <li><a href="/">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <p>&copy; 2025 Fokal. All rights reserved.</p>
         </div>
     </footer>
