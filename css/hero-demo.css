@@ -95,14 +95,22 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
-/* Citation/Meta Info - at top */
-.gap-meta {
+/* Content Wrapper - creates consistent vertical spacing */
+.gap-content-wrapper {
     display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 4px;
+    flex-direction: column;
+    gap: 8px; /* Equivalent to Tailwind space-y-2 */
 }
 
+/* Top Row - Meta + Badge */
+.gap-top-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: -4px; /* Compensate for parent gap, matches mb-1 in Greatness Page */
+}
+
+/* Citations */
 .gap-citations {
     font-family: 'DM Sans', sans-serif;
     font-size: 13px;
@@ -121,6 +129,7 @@
     background: rgba(0, 102, 255, 0.12);
     border: 1px solid rgba(74, 192, 255, 0.2);
     color: #7FBFF2;
+    flex-shrink: 0; /* Prevent badge from shrinking */
 }
 
 /* Title/Type Name */
@@ -130,7 +139,6 @@
     font-weight: 700;
     color: #E5E9F0;
     line-height: 1.375;
-    margin-bottom: 0.25rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -142,13 +150,21 @@
     font-size: 14px;
     line-height: 1.625;
     color: #C6CDD8;
-    margin-top: 8px;
 }
 
-/* Hook Divider */
+/* Hook Divider - First one (before evidence) */
 .gap-hook-divider {
     border-top: 1px solid #1A2230;
-    margin: 12px 0 8px 0;
+    padding-top: 12px; /* pt-3 */
+    margin-top: 8px; /* mt-2 */
+    margin-bottom: 0;
+}
+
+/* Hook Divider - Between details (applied via nth-of-type in JS if needed) */
+.gap-hook-divider + .gap-hook-detail + .gap-hook-divider {
+    margin-top: 8px; /* my-2 symmetric */
+    margin-bottom: 8px;
+    padding-top: 0;
 }
 
 /* Hook - Detail Lines */
@@ -157,7 +173,6 @@
     font-size: 13px;
     line-height: 1.625;
     color: #9DA6B5;
-    margin-bottom: 8px;
 }
 
 /* Button Container */

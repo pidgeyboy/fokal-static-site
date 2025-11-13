@@ -45,22 +45,24 @@ function createGapCard(gap) {
     card.className = 'gap-card';
     card.setAttribute('data-gap-id', gap.id);
 
-    // Build citation/meta info (at top)
+    // Build meta + badge row (at top)
     let metaHTML = '';
+    let badgeHTML = '';
+
     if (gap.citationCount && gap.citationCount > 0) {
         const citationText = gap.citationCount + ' citation' + (gap.citationCount > 1 ? 's' : '');
         const enginesText = gap.engines && gap.engines.length > 0 ? gap.engines.join(', ') : 'Multiple sources';
-        metaHTML = `
-            <div class="gap-meta">
-                <span class="gap-citations">${citationText} • ${enginesText}</span>
-            </div>
-        `;
+        metaHTML = `<span class="gap-citations">${citationText} • ${enginesText}</span>`;
     }
 
-    // Build badge (only if priority >= 75)
-    let badgeHTML = '';
     if (gap.priorityScore && gap.priorityScore >= 75) {
         badgeHTML = '<div class="gap-badge">HIGH IMPACT</div>';
+    }
+
+    // Wrap in flex row if either exists
+    let topRowHTML = '';
+    if (metaHTML || badgeHTML) {
+        topRowHTML = `<div class="gap-top-row">${metaHTML}${badgeHTML}</div>`;
     }
 
     // Split hook on newlines for proper rendering
@@ -84,15 +86,16 @@ function createGapCard(gap) {
     const arrowIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
 
     card.innerHTML = `
-        ${metaHTML}
-        ${badgeHTML}
-        <h3 class="gap-title">${gap.typeName}</h3>
-        ${hookHTML}
-        <div class="gap-button-container">
-            <button class="fix-gap-btn" data-gap-id="${gap.id}">
-                Fix gap
-                ${arrowIcon}
-            </button>
+        <div class="gap-content-wrapper">
+            ${topRowHTML}
+            <h3 class="gap-title">${gap.typeName}</h3>
+            ${hookHTML}
+            <div class="gap-button-container">
+                <button class="fix-gap-btn" data-gap-id="${gap.id}">
+                    Fix gap
+                    ${arrowIcon}
+                </button>
+            </div>
         </div>
     `;
 
