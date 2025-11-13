@@ -77,164 +77,123 @@
     }
 }
 
-/* Gap Card - Simple Greatness Page Style (no browser chrome) */
+/* Gap Card - Exact Greatness Page Style */
 .gap-card {
-    background: rgba(17, 24, 32, 0.6);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    overflow: hidden;
-    backdrop-filter: blur(20px);
+    background: rgba(17, 24, 32, 0.8);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
+    padding: 16px 24px;
 }
 
 .gap-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(74, 192, 255, 0.3);
-    box-shadow: 0 4px 16px rgba(74, 192, 255, 0.2);
+    background: rgba(23, 27, 35, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
-/* Card Content */
-.card-content {
-    padding: 20px;
-    flex: 1;
+/* Citation/Meta Info - at top */
+.gap-meta {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
 }
 
-.gap-preview {
-    width: 100%;
+.gap-citations {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #8A93A1;
 }
 
-.gap-icon {
-    font-size: 32px;
-    margin-bottom: 12px;
-    line-height: 1;
-}
-
+/* Badge - HIGH IMPACT only, conditional */
 .gap-badge {
     display: inline-block;
-    padding: 4px 10px;
+    padding: 2px 8px;
     border-radius: 6px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    margin-bottom: 12px;
-    color: white;
-}
-
-.gap-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-    line-height: 1.3;
-}
-
-.gap-hook {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 6px;
-}
-
-.gap-hook-details {
-    font-size: 14px;
-    color: var(--accent-cyan);
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.gap-hook-footer {
-    font-size: 14px;
-    color: var(--text-subtle);
-    margin-bottom: 20px;
-}
-
-.gap-metrics {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 16px;
-}
-
-.gap-metrics span {
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 600;
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-secondary);
-    border: 1px solid var(--border-subtle);
-}
-
-.gap-metrics span.urgent {
-    background: rgba(255, 95, 87, 0.15);
-    color: var(--accent-red);
-    border-color: var(--accent-red);
-}
-
-.gap-metrics span.high {
-    background: rgba(255, 95, 87, 0.15);
-    color: var(--accent-red);
-    border-color: var(--accent-red);
-}
-
-.gap-metrics span.medium {
-    background: rgba(255, 189, 46, 0.15);
-    color: var(--accent-yellow);
-    border-color: var(--accent-yellow);
-}
-
-.gap-metrics span.low {
-    background: rgba(40, 202, 66, 0.15);
-    color: var(--accent-green);
-    border-color: var(--accent-green);
-}
-
-.gap-metrics span.citation {
-    background: rgba(74, 192, 255, 0.15);
-    color: var(--accent-cyan);
-    border-color: var(--accent-cyan);
-}
-
-.gap-metrics span.quick {
-    background: rgba(40, 202, 66, 0.15);
-    color: var(--accent-green);
-    border-color: var(--accent-green);
-}
-
-/* Card Footer */
-.card-footer {
-    padding: 16px 24px;
-    background: rgba(28, 28, 31, 0.5);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.fix-gap-btn {
-    width: 100%;
-    padding: 10px 20px;
-    background: var(--accent-cyan);
-    color: var(--bg-primary);
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
     font-family: 'DM Sans', sans-serif;
+    background: rgba(0, 102, 255, 0.12);
+    border: 1px solid rgba(74, 192, 255, 0.2);
+    color: #7FBFF2;
+}
+
+/* Title/Type Name */
+.gap-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #E5E9F0;
+    line-height: 1.375;
+    margin-bottom: 0.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Hook - Main Message */
+.gap-hook-main {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.625;
+    color: #C6CDD8;
+    margin-top: 8px;
+}
+
+/* Hook Divider */
+.gap-hook-divider {
+    border-top: 1px solid #1A2230;
+    margin: 12px 0 8px 0;
+}
+
+/* Hook - Detail Lines */
+.gap-hook-detail {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.625;
+    color: #9DA6B5;
+    margin-bottom: 8px;
+}
+
+/* Button Container */
+.gap-button-container {
+    padding-top: 16px;
+    margin-top: 12px;
+}
+
+/* Fix Gap Button - Exact Greatness Page Style */
+.fix-gap-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    background: rgba(74, 192, 255, 0.12);
+    border: 1px solid rgba(74, 192, 255, 0.3);
+    color: #4AC0FF;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .fix-gap-btn:hover {
-    background: #5ACCFF;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(74, 192, 255, 0.4);
+    background: rgba(74, 192, 255, 0.18);
+    border-color: rgba(74, 192, 255, 0.4);
 }
 
-.fix-gap-btn:active {
-    transform: translateY(0);
+/* Arrow Icon */
+.fix-gap-btn svg {
+    width: 16px;
+    height: 16px;
+    color: #4AC0FF;
 }
 
 /* Modal Overlay */

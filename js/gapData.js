@@ -6,16 +6,13 @@ const gaps = [
         id: 1,
         type: 'pr_opportunity',
         typeName: 'Real-Time PR Opportunity',
-        icon: '⏰',
-        badge: { text: 'PR OPPORTUNITY', color: '#FF5F57' },
         priority: 'HIGH',
-        hook: 'Journalist needs fintech experts for article deadline: Dec 18, 2024',
-        hookDetails: '"Looking for founders in the investment platform space to comment on democratizing access to stock markets"',
-        hookFooter: 'Your competitors are already responding—you have 48 hours.',
-        metrics: [
-            { label: 'Deadline', value: '48 hours', class: 'urgent' },
-            { label: 'Priority', value: 'High', class: 'high' }
-        ],
+        priorityScore: 90,
+        citationCount: 0,
+        engines: [],
+        hook: `Journalist needs fintech experts for article deadline: Dec 18, 2024
+"Looking for founders in the investment platform space to comment on democratizing access to stock markets"
+Your competitors are already responding—you have 48 hours.`,
         solution: {
             outlet: 'TechCrunch',
             outletLogo: 'techcrunch', // Will be used to construct path
@@ -55,16 +52,13 @@ CEO, Stake`,
         id: 2,
         type: 'email_outreach',
         typeName: 'Email Outreach',
-        icon: '📧',
-        badge: { text: 'EMAIL OUTREACH', color: '#4AC0FF' },
         priority: 'HIGH',
-        hook: 'StockBrokers.com\'s comparison includes 6 platforms—never mentions Stake',
-        hookDetails: '96 AI citations',
-        hookFooter: 'Forbes, ChatGPT, and Perplexity all reference this. You\'re invisible.',
-        metrics: [
-            { label: 'Citations', value: '96', class: 'citation' },
-            { label: 'Priority', value: 'High', class: 'high' }
-        ],
+        priorityScore: 85,
+        citationCount: 96,
+        engines: ['ChatGPT', 'Perplexity', 'Forbes'],
+        hook: `StockBrokers.com's comparison includes 6 platforms—never mentions Stake
+96 AI citations
+Forbes, ChatGPT, and Perplexity all reference this. You're invisible.`,
         solution: {
             articleTitle: '6 Best Trading Platforms in Australia for 2025',
             domain: 'StockBrokers.com',
@@ -125,16 +119,13 @@ Thanks,
         id: 3,
         type: 'technical_seo',
         typeName: 'Technical SEO',
-        icon: '🛠️',
-        badge: { text: 'TECHNICAL SEO', color: '#28CA42' },
         priority: 'MEDIUM',
-        hook: 'Your site is missing llms.txt—an emerging AI navigation standard',
-        hookDetails: 'ChatGPT, Perplexity, and Claude use this to understand site structure',
-        hookFooter: '5-minute fix for better AI visibility',
-        metrics: [
-            { label: 'Impact', value: 'High', class: 'high' },
-            { label: 'Time', value: '5 min', class: 'quick' }
-        ],
+        priorityScore: 65,
+        citationCount: 0,
+        engines: [],
+        hook: `Your site is missing llms.txt—an emerging AI navigation standard
+ChatGPT, Perplexity, and Claude use this to understand site structure
+5-minute fix for better AI visibility`,
         solution: {
             problemTitle: 'Missing llms.txt File',
             problemDescription: 'Your site is missing llms.txt—an emerging standard that helps AI engines like ChatGPT, Perplexity, and Claude understand your site structure.',
@@ -196,16 +187,13 @@ Thanks,
         id: 4,
         type: 'media_pitch',
         typeName: 'Media Pitch',
-        icon: '🏆',
-        badge: { text: 'MEDIA PITCH', color: '#8B5CF6' },
         priority: 'LOW',
-        hook: 'Finder\'s 2025 Awards featured Tiger Brokers—not you',
-        hookDetails: 'Awards coverage = AI credibility',
-        hookFooter: 'Build relationship for next year\'s recognition',
-        metrics: [
-            { label: 'Type', value: 'Awards', class: 'awards' },
-            { label: 'Priority', value: 'Low', class: 'low' }
-        ],
+        priorityScore: 50,
+        citationCount: 0,
+        engines: [],
+        hook: `Finder's 2025 Awards featured Tiger Brokers—not you
+Awards coverage = AI credibility
+Build relationship for next year's recognition`,
         solution: {
             awardsName: 'Finder Investment Awards 2026',
             organizationName: 'Finder',

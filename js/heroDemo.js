@@ -45,32 +45,54 @@ function createGapCard(gap) {
     card.className = 'gap-card';
     card.setAttribute('data-gap-id', gap.id);
 
-    // Build hook HTML
-    let hookHTML = `<p class="gap-hook">${gap.hook}</p>`;
-    if (gap.hookDetails) {
-        hookHTML += `<p class="gap-hook-details">${gap.hookDetails}</p>`;
-    }
-    if (gap.hookFooter) {
-        hookHTML += `<p class="gap-hook-footer">${gap.hookFooter}</p>`;
+    // Build citation/meta info (at top)
+    let metaHTML = '';
+    if (gap.citationCount && gap.citationCount > 0) {
+        const citationText = gap.citationCount + ' citation' + (gap.citationCount > 1 ? 's' : '');
+        const enginesText = gap.engines && gap.engines.length > 0 ? gap.engines.join(', ') : 'Multiple sources';
+        metaHTML = `
+            <div class="gap-meta">
+                <span class="gap-citations">${citationText} • ${enginesText}</span>
+            </div>
+        `;
     }
 
-    // Build metrics HTML
-    const metricsHTML = gap.metrics.map(metric =>
-        `<span class="${metric.class || ''}">${metric.label}: ${metric.value}</span>`
-    ).join('');
+    // Build badge (only if priority >= 75)
+    let badgeHTML = '';
+    if (gap.priorityScore && gap.priorityScore >= 75) {
+        badgeHTML = '<div class="gap-badge">HIGH IMPACT</div>';
+    }
+
+    // Split hook on newlines for proper rendering
+    const hookLines = gap.hook.split('\n').filter(line => line.trim());
+    const mainMessage = hookLines[0] || '';
+    const detailLines = hookLines.slice(1);
+
+    // Build hook HTML with dividers
+    let hookHTML = `<p class="gap-hook-main">${mainMessage}</p>`;
+    if (detailLines.length > 0) {
+        hookHTML += '<div class="gap-hook-divider"></div>';
+        detailLines.forEach((line, idx) => {
+            hookHTML += `<p class="gap-hook-detail">${line}</p>`;
+            if (idx === 0 && detailLines.length > 1) {
+                hookHTML += '<div class="gap-hook-divider"></div>';
+            }
+        });
+    }
+
+    // ArrowRight SVG icon
+    const arrowIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
 
     card.innerHTML = `
-        <div class="card-content">
-            <div class="gap-icon">${gap.icon}</div>
-            <div class="gap-badge" style="background: ${gap.badge.color}">${gap.badge.text}</div>
-            <h3 class="gap-title">${gap.typeName}</h3>
-            ${hookHTML}
-            <div class="gap-metrics">
-                ${metricsHTML}
-            </div>
-        </div>
-        <div class="card-footer">
-            <button class="fix-gap-btn" data-gap-id="${gap.id}">Fix Gap →</button>
+        ${metaHTML}
+        ${badgeHTML}
+        <h3 class="gap-title">${gap.typeName}</h3>
+        ${hookHTML}
+        <div class="gap-button-container">
+            <button class="fix-gap-btn" data-gap-id="${gap.id}">
+                Fix gap
+                ${arrowIcon}
+            </button>
         </div>
     `;
 
