@@ -1997,6 +1997,212 @@
                 gap: 40px;
             }
         }
+
+        /* Auth Modal Styles */
+        .auth-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .auth-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .auth-modal-content {
+            background: var(--bg-panel);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 440px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .auth-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 32px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .auth-modal-close:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+        }
+
+        .auth-modal-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .auth-modal-header .auth-logo {
+            height: 48px;
+            margin-bottom: 16px;
+        }
+
+        .auth-modal-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .auth-modal-header p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .auth-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            align-self: flex-start;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-group input {
+            padding: 12px 16px;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-primary);
+            font-size: 14px;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .success-message .success-icon {
+            color: var(--accent-green);
+            margin-bottom: 16px;
+        }
+
+        .success-message h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .success-message p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .success-message .user-email {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 16px;
+        }
+
+        .success-message .small-text {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 16px;
+        }
+
+        .auth-footer {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+        }
+
+        .auth-footer .small-text {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .auth-footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .auth-footer a:hover {
+            color: var(--accent-green);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .auth-modal-content {
+                padding: 32px 24px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2012,7 +2218,7 @@
                 <a href="/features.html">Features</a>
                 <a href="/pricing.html">Pricing</a>
                 <a href="/blog.html">Blog</a>
-                <button class="nav-cta-google" onclick="signInWithGoogle()">
+                <button class="nav-cta-google" onclick="showAuthModal()">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                         <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -2046,7 +2252,7 @@
             <a href="/blog.html" onclick="toggleMobileMenu()">Blog</a>
         </div>
         <div class="mobile-menu-cta">
-            <button class="btn btn-google" onclick="signInWithGoogle()" style="width: 100%; justify-content: center;">
+            <button class="btn btn-google" onclick="showAuthModal()" style="width: 100%; justify-content: center;">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                     <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -2065,7 +2271,7 @@
                 <h1>Fokal finds where you're missing online and makes fixing it easy.</h1>
                 <p class="hero-subtitle">Get seen in all the right places. Be found in Google, ChatGPT, media coverage, and more.</p>
                 <div class="hero-cta">
-                    <button class="btn btn-google" onclick="signInWithGoogle()">
+                    <button class="btn btn-google" onclick="showAuthModal()">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                             <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -2922,7 +3128,7 @@
                         <li>Top 3 domain & brand insights</li>
                         <li>Email support (48h SLA)</li>
                     </ul>
-                    <button class="btn btn-primary" onclick="signInWithGoogle()" style="width: 100%; justify-content: center;">
+                    <button class="btn btn-primary" onclick="showAuthModal()" style="width: 100%; justify-content: center;">
                         Get Started
                     </button>
                 </div>
@@ -2942,7 +3148,7 @@
                         <li>Up to 3 team members</li>
                         <li>Priority support</li>
                     </ul>
-                    <button class="btn btn-primary" onclick="signInWithGoogle()" style="width: 100%; justify-content: center;">
+                    <button class="btn btn-primary" onclick="showAuthModal()" style="width: 100%; justify-content: center;">
                         Start 5-Day Trial
                     </button>
                     <p style="font-size: 13px; color: var(--text-subtle); text-align: center; margin-top: 16px;">✓ Credit card required • Full access during trial</p>
@@ -3208,6 +3414,82 @@
         </div>
     </footer>
 
+    <!-- Auth Modal -->
+    <div id="authModal" class="auth-modal">
+        <div class="auth-modal-content">
+            <button class="auth-modal-close" onclick="closeAuthModal()">&times;</button>
+
+            <div class="auth-modal-header">
+                <img src="/fokal-wordmark-icon.svg" alt="Fokal" class="auth-logo">
+                <h2>Sign in to Fokal</h2>
+                <p>Monitor your brand's AI visibility</p>
+            </div>
+
+            <!-- Auth Buttons -->
+            <div id="authButtons" class="auth-buttons">
+                <button class="btn btn-google" onclick="signInWithGoogle()" style="width: 100%; justify-content: center; margin-bottom: 12px;">
+                    <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                        <path fill="none" d="M0 0h48v48H0z"/>
+                    </svg>
+                    <span>Continue with Google</span>
+                </button>
+
+                <button class="btn btn-primary" onclick="showEmailForm()" style="width: 100%; justify-content: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                    <span>Continue with Email</span>
+                </button>
+            </div>
+
+            <!-- Email Form -->
+            <form id="emailForm" class="email-form" style="display: none;" onsubmit="sendMagicLink(event)">
+                <button type="button" class="back-button" onclick="backToAuthOptions()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
+                    </svg>
+                    Back
+                </button>
+
+                <div class="form-group">
+                    <label for="emailInput">Email address</label>
+                    <input type="email" id="emailInput" placeholder="you@example.com" required>
+                </div>
+
+                <button type="submit" id="submitEmailBtn" class="btn btn-primary" style="width: 100%;">
+                    <span class="btn-text">Send Magic Link</span>
+                </button>
+            </form>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="success-icon">
+                    <path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"/><path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"/>
+                </svg>
+                <h3>Check your email</h3>
+                <p>We've sent a sign-in link to:</p>
+                <p class="user-email" id="userEmail"></p>
+                <p class="small-text">Click the link in your email to sign in. The link will expire in 15 minutes.</p>
+                <button class="btn btn-secondary" onclick="backToAuthOptions()" style="margin-top: 20px;">
+                    Back to login options
+                </button>
+            </div>
+
+            <div class="auth-footer">
+                <p class="small-text">
+                    By continuing, you agree to our
+                    <a href="/customer-agreement">Terms of Service</a> and
+                    <a href="/privacy-policy">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Toggle mobile menu
         function toggleMobileMenu() {
@@ -3397,10 +3679,88 @@
             });
         });
 
-        // Redirect to app subdomain for authentication
-        function signInWithGoogle() {
-            window.location.href = 'https://app.fokal.com?source=static_home';
+        // Auth Modal Functions
+        function showAuthModal() {
+            document.getElementById('authModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('emailForm').style.display = 'none';
+            document.getElementById('authButtons').style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+        }
+
+        function signInWithGoogle() {
+            // Redirect to app.fokal.com for Google OAuth flow with auth intent
+            window.location.href = 'https://app.fokal.com?authIntent=google&source=' + encodeURIComponent(window.location.pathname);
+        }
+
+        function showEmailForm() {
+            document.getElementById('authButtons').style.display = 'none';
+            document.getElementById('emailForm').style.display = 'block';
+        }
+
+        function backToAuthOptions() {
+            document.getElementById('emailForm').style.display = 'none';
+            document.getElementById('authButtons').style.display = 'block';
+            document.getElementById('emailInput').value = '';
+        }
+
+        async function sendMagicLink(e) {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            const submitBtn = document.getElementById('submitEmailBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            btnText.textContent = 'Sending...';
+
+            try {
+                const response = await fetch('https://backend.fokal.com/api/auth/magic-link/request', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                if (response.ok) {
+                    document.getElementById('emailForm').style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('userEmail').textContent = email;
+                } else {
+                    alert('Failed to send magic link. Please try again.');
+                }
+            } catch (error) {
+                alert('Network error. Please try again.');
+            } finally {
+                submitBtn.disabled = false;
+                btnText.textContent = 'Send Magic Link';
+            }
+        }
+
+        // Show auth modal on page load if requested
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('showAuth') === 'true') {
+                showAuthModal();
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+
+            // Close modal when clicking outside
+            const modal = document.getElementById('authModal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) closeAuthModal();
+                });
+            }
+        });
     </script>
 </body>
 </html>
