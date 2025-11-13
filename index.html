@@ -3702,7 +3702,8 @@
                 window.google.accounts.id.initialize({
                     client_id: '1054697872150-e2fkcro4f3og26go8pu2fsctq3vvhoud.apps.googleusercontent.com',
                     callback: handleGoogleCallback,
-                    use_fedcm_for_prompt: true
+                    auto_select: false,
+                    cancel_on_tap_outside: true
                 });
                 console.log('Google Sign-In initialized');
             } else {
