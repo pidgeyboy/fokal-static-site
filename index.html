@@ -19,6 +19,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Google Sign-In SDK -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
     <style>
         * {
             margin: 0;
@@ -3693,9 +3696,68 @@
             document.getElementById('successMessage').style.display = 'none';
         }
 
+        // Initialize Google Sign-In
+        function initializeGoogleSignIn() {
+            if (window.google && window.google.accounts && window.google.accounts.id) {
+                window.google.accounts.id.initialize({
+                    client_id: '1054697872150-e2fkcro4f3og26go8pu2fsctq3vvhoud.apps.googleusercontent.com',
+                    callback: handleGoogleCallback,
+                    use_fedcm_for_prompt: true
+                });
+                console.log('Google Sign-In initialized');
+            } else {
+                // Retry if SDK not loaded yet
+                setTimeout(initializeGoogleSignIn, 100);
+            }
+        }
+
+        // Handle Google OAuth callback
+        async function handleGoogleCallback(response) {
+            console.log('Google sign-in successful');
+
+            try {
+                // Send credential to backend
+                const res = await fetch('https://backend.fokal.com/api/auth/google', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({ credential: response.credential })
+                });
+
+                const data = await res.json();
+
+                if (res.ok && data.user) {
+                    // Redirect to dashboard or onboarding
+                    if (data.user.brandId) {
+                        window.location.href = `https://app.fokal.com/brand/${data.user.brandId}`;
+                    } else {
+                        window.location.href = 'https://app.fokal.com/onboarding';
+                    }
+                } else {
+                    alert('Sign in failed. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error during Google sign-in:', error);
+                alert('Sign in failed. Please try again.');
+            }
+        }
+
         function signInWithGoogle() {
-            // Redirect to app.fokal.com for Google OAuth flow with auth intent
-            window.location.href = 'https://app.fokal.com?authIntent=google&source=' + encodeURIComponent(window.location.pathname);
+            // Trigger Google One Tap or redirect
+            if (window.google && window.google.accounts && window.google.accounts.id) {
+                window.google.accounts.id.prompt();
+            } else {
+                alert('Google Sign-In is still loading. Please try again in a moment.');
+            }
+        }
+
+        // Initialize when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeGoogleSignIn);
+        } else {
+            initializeGoogleSignIn();
         }
 
         function showEmailForm() {
