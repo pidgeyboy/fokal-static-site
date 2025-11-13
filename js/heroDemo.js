@@ -26,6 +26,13 @@ function renderGapCards() {
     // Clear existing content
     container.innerHTML = '';
 
+    // Add header alert
+    const alert = document.createElement('div');
+    alert.className = 'demo-alert';
+    alert.style.gridColumn = '1 / -1'; // Span all columns
+    alert.innerHTML = '<p>⚠️ ' + gaps.length + ' gaps found where competitors appear and you don\'t</p>';
+    container.appendChild(alert);
+
     // Render each gap card
     gaps.forEach(gap => {
         const card = createGapCard(gap);
@@ -53,22 +60,13 @@ function createGapCard(gap) {
     ).join('');
 
     card.innerHTML = `
-        <div class="browser-header">
-            <div class="browser-dots">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
-            </div>
-        </div>
         <div class="card-content">
-            <div class="gap-preview">
-                <div class="gap-icon">${gap.icon}</div>
-                <div class="gap-badge" style="background: ${gap.badge.color}">${gap.badge.text}</div>
-                <h3 class="gap-title">${gap.typeName}</h3>
-                ${hookHTML}
-                <div class="gap-metrics">
-                    ${metricsHTML}
-                </div>
+            <div class="gap-icon">${gap.icon}</div>
+            <div class="gap-badge" style="background: ${gap.badge.color}">${gap.badge.text}</div>
+            <h3 class="gap-title">${gap.typeName}</h3>
+            ${hookHTML}
+            <div class="gap-metrics">
+                ${metricsHTML}
             </div>
         </div>
         <div class="card-footer">

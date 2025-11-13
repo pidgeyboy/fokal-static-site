@@ -47,6 +47,22 @@
     line-height: 1.6;
 }
 
+/* Header Alert */
+.demo-alert {
+    background: rgba(255, 189, 46, 0.1);
+    border: 1px solid rgba(255, 189, 46, 0.3);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+}
+
+.demo-alert p {
+    color: #FFBD2E;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0;
+}
+
 /* Gap Cards Grid - optimized for dashboard preview */
 .gap-cards-grid {
     display: grid;
@@ -61,72 +77,31 @@
     }
 }
 
-/* Gap Card with Browser Chrome */
+/* Gap Card - Simple Greatness Page Style (no browser chrome) */
 .gap-card {
-    background: var(--glass-light);
-    border-radius: 16px;
-    border: 1px solid var(--border-subtle);
+    background: rgba(17, 24, 32, 0.6);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     overflow: hidden;
     backdrop-filter: blur(20px);
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.6),
-        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 .gap-card:hover {
-    transform: translateY(-4px);
-    box-shadow:
-        0 8px 32px rgba(74, 192, 255, 0.3),
-        0 20px 60px rgba(0, 0, 0, 0.6),
-        0 0 0 1px rgba(74, 192, 255, 0.2) inset;
-}
-
-/* Browser Window Chrome */
-.browser-header {
-    background: var(--browser-header-bg);
-    padding: 12px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    align-items: center;
-    backdrop-filter: blur(10px);
-}
-
-.browser-dots {
-    display: flex;
-    gap: 8px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.dot.red {
-    background: var(--accent-red);
-    box-shadow: 0 0 10px rgba(255, 95, 87, 0.5);
-}
-
-.dot.yellow {
-    background: var(--accent-yellow);
-    box-shadow: 0 0 10px rgba(255, 189, 46, 0.5);
-}
-
-.dot.green {
-    background: var(--accent-green);
-    box-shadow: 0 0 10px rgba(40, 202, 66, 0.5);
+    transform: translateY(-2px);
+    border-color: rgba(74, 192, 255, 0.3);
+    box-shadow: 0 4px 16px rgba(74, 192, 255, 0.2);
 }
 
 /* Card Content */
 .card-content {
-    padding: 24px;
-    background: linear-gradient(180deg, rgba(14, 14, 16, 0.9) 0%, rgba(10, 11, 13, 0.95) 100%);
-    min-height: 200px;
+    padding: 20px;
+    flex: 1;
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 
 .gap-preview {
