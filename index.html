@@ -2221,7 +2221,7 @@
                 <a href="/features.html">Features</a>
                 <a href="/pricing.html">Pricing</a>
                 <a href="/blog.html">Blog</a>
-                <button class="nav-cta-google" onclick="showAuthModal()">
+                <button class="nav-cta-google" onclick="signInWithGoogle()">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                         <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -2255,7 +2255,7 @@
             <a href="/blog.html" onclick="toggleMobileMenu()">Blog</a>
         </div>
         <div class="mobile-menu-cta">
-            <button class="btn btn-google" onclick="showAuthModal()" style="width: 100%; justify-content: center;">
+            <button class="btn btn-google" onclick="signInWithGoogle()" style="width: 100%; justify-content: center;">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                     <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -2274,7 +2274,7 @@
                 <h1>Fokal finds where you're missing online and makes fixing it easy.</h1>
                 <p class="hero-subtitle">Get seen in all the right places. Be found in Google, ChatGPT, media coverage, and more.</p>
                 <div class="hero-cta">
-                    <button class="btn btn-google" onclick="showAuthModal()">
+                    <button class="btn btn-google" onclick="signInWithGoogle()">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                             <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -2283,9 +2283,9 @@
                         </svg>
                         Join with Google
                     </button>
-                    <a href="#demo" class="btn btn-secondary">
+                    <button class="btn btn-secondary" onclick="showAuthModal()">
                         Start for free →
-                    </a>
+                    </button>
                 </div>
 
                 <!-- Trust Section -->
