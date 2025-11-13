@@ -147,8 +147,9 @@ The main React application (dashboard, auth, features) runs separately at:
 - All pages are self-contained HTML (no build step needed)
 - CSS is inline in `<style>` tags for simplicity
 - FAQ accordion uses vanilla JavaScript
-- Google Sign-In buttons are placeholder (need OAuth config)
-- Backend API: `backend.fokule.com` (to be updated to `backend.fokal.com`)
+- Google Sign-In buttons now redirect to `app.fokal.com`
+- Backend API: `backend.fokal.com`
+- Auth handled by React app at `app.fokal.com`
 
 ## License
 

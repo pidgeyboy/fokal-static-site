@@ -3396,6 +3396,11 @@
                 });
             });
         });
+
+        // Redirect to app subdomain for authentication
+        function signInWithGoogle() {
+            window.location.href = 'https://app.fokal.com?source=static_home';
+        }
     </script>
 </body>
 </html>
