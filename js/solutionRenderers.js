@@ -30,7 +30,7 @@ const SolutionRenderers = {
                             </div>
                             <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
                                 <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Body</span>
-                                <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; line-height: 1.6; color: #C6CDD8;">
+                                <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; line-height: 1.6; color: #C6CDD8;">
                                     ${sol.responseBody.split('\n').map(line => {
                                         if (line.startsWith('•')) {
                                             return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
@@ -102,7 +102,7 @@ const SolutionRenderers = {
                             </div>
                             <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
                                 <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Body</span>
-                                <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; line-height: 1.6; color: #C6CDD8;">
+                                <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; line-height: 1.6; color: #C6CDD8;">
                                     ${sol.emailTemplate.body.split('\n').map(line => {
                                         if (line.startsWith('•')) {
                                             return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
@@ -223,7 +223,7 @@ const SolutionRenderers = {
                             </div>
                             <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
                                 <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Body</span>
-                                <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; line-height: 1.6; color: #C6CDD8;">
+                                <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; line-height: 1.6; color: #C6CDD8;">
                                     ${sol.emailTemplate.body.split('\n').map(line => {
                                         if (line.startsWith('•')) {
                                             return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
