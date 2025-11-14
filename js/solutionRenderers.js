@@ -55,7 +55,7 @@ const SolutionRenderers = {
         `;
     },
 
-    email_outreach: function(gap) {
+    visibility_gap: function(gap) {
         const sol = gap.solution;
         return `
             <div class="solution-container email-outreach">
