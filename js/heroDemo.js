@@ -116,14 +116,7 @@ function createGapCard(gap) {
     card.className = 'gap-card';
     card.setAttribute('data-gap-id', gap.id);
 
-    // Build meta row (at top) - no badges
-    let topRowHTML = '';
-
-    if (gap.citationCount && gap.citationCount > 0) {
-        const citationText = gap.citationCount + ' citation' + (gap.citationCount > 1 ? 's' : '');
-        const enginesText = gap.engines && gap.engines.length > 0 ? gap.engines.join(', ') : 'Multiple sources';
-        topRowHTML = `<div class="gap-top-row"><span class="gap-citations">${citationText} • ${enginesText}</span></div>`;
-    }
+    // No meta/badge row for homepage - just spacing
 
     // Split hook on newlines for proper rendering
     const hookLines = gap.hook.split('\n').filter(line => line.trim());
@@ -147,7 +140,6 @@ function createGapCard(gap) {
 
     card.innerHTML = `
         <div class="gap-content-wrapper">
-            ${topRowHTML}
             <h3 class="gap-title">${gap.typeName}</h3>
             ${hookHTML}
             <div class="gap-button-container">
