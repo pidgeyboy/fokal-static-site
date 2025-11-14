@@ -1,43 +1,128 @@
 // Hero Demo - Main Controller
 // Initializes and controls the interactive gap cards demo
 
+// Query data for carousel
+const queries = [
+    {
+        id: 1,
+        query: "What are the best investment platforms for people new to the stock market in Australia?",
+        competitors: "CommSec, Sharesies, Superhero (+5 more)"
+    },
+    {
+        id: 2,
+        query: "Which Australian stock trading app has the lowest fees?",
+        competitors: "Superhero, Tiger Brokers, CommSec (+4 more)"
+    },
+    {
+        id: 3,
+        query: "Can Australians invest in US stocks easily?",
+        competitors: "CommSec, Tiger Brokers, Moomoo (+6 more)"
+    },
+    {
+        id: 4,
+        query: "What's the best platform for SMSF investing in Australia?",
+        competitors: "Netwealth, CommSec, HUB24 (+5 more)"
+    },
+    {
+        id: 5,
+        query: "Which trading platform is best for beginners learning to invest?",
+        competitors: "CommSec, Sharesies, Pearler (+4 more)"
+    },
+    {
+        id: 6,
+        query: "How can I invest small amounts regularly in Australian shares?",
+        competitors: "Raiz, Spaceship, Sharesies (+3 more)"
+    },
+    {
+        id: 7,
+        query: "What are the alternatives to traditional stockbrokers in Australia?",
+        competitors: "Superhero, Tiger Brokers, Pearler (+5 more)"
+    },
+    {
+        id: 8,
+        query: "Which app lets Australians buy fractional shares?",
+        competitors: "Sharesies, Raiz, Superhero (+2 more)"
+    }
+];
+
+let currentQueryIndex = 0;
+
 function initHeroDemo() {
-    // Render gap cards
-    renderGapCards();
+    // Render query carousel
+    renderQueryCarousel();
+
+    // Render single expanded gap card
+    renderExpandedGapCard();
+
+    // Initialize carousel navigation
+    initCarouselNavigation();
 
     // Initialize modal listeners
     initModalListeners();
 
     // Track page view
     trackEvent('hero_demo_view', {
-        total_gaps: gaps.length
+        total_gaps: gaps.length,
+        total_queries: queries.length
     });
 
-    console.log('Hero demo initialized with', gaps.length, 'gaps');
+    console.log('Hero demo initialized with', gaps.length, 'gaps and', queries.length, 'queries');
 }
 
-function renderGapCards() {
-    const container = document.querySelector('.gap-cards-grid');
+function renderQueryCarousel() {
+    const queryTextEl = document.getElementById('current-query');
+    const competitorsEl = document.getElementById('competitors-list');
+    const counterEl = document.getElementById('query-counter');
+
+    if (!queryTextEl || !competitorsEl || !counterEl) {
+        console.error('Query carousel elements not found');
+        return;
+    }
+
+    const currentQuery = queries[currentQueryIndex];
+    queryTextEl.textContent = `"${currentQuery.query}"`;
+    competitorsEl.textContent = currentQuery.competitors;
+    counterEl.textContent = `Query ${currentQueryIndex + 1} of ${queries.length}`;
+}
+
+function initCarouselNavigation() {
+    const nextBtn = document.getElementById('query-next-btn');
+    if (!nextBtn) {
+        console.error('Next button not found');
+        return;
+    }
+
+    nextBtn.addEventListener('click', function() {
+        // Cycle to next query
+        currentQueryIndex = (currentQueryIndex + 1) % queries.length;
+        renderQueryCarousel();
+
+        // Track carousel navigation
+        trackEvent('query_carousel_next', {
+            query_index: currentQueryIndex
+        });
+    });
+}
+
+function renderExpandedGapCard() {
+    const container = document.querySelector('.expanded-gap-container');
     if (!container) {
-        console.error('Gap cards container not found');
+        console.error('Expanded gap container not found');
         return;
     }
 
     // Clear existing content
     container.innerHTML = '';
 
-    // Add header alert
-    const alert = document.createElement('div');
-    alert.className = 'demo-alert';
-    alert.style.gridColumn = '1 / -1'; // Span all columns
-    alert.innerHTML = '<p>⚠️ ' + gaps.length + ' gaps found where competitors appear and you don\'t</p>';
-    container.appendChild(alert);
+    // Render the visibility gap (ID 2) as expanded card - most compelling example
+    const visibilityGap = gaps.find(g => g.id === 2);
+    if (!visibilityGap) {
+        console.error('Visibility gap not found');
+        return;
+    }
 
-    // Render each gap card
-    gaps.forEach(gap => {
-        const card = createGapCard(gap);
-        container.appendChild(card);
-    });
+    const card = createGapCard(visibilityGap);
+    container.appendChild(card);
 }
 
 function createGapCard(gap) {
@@ -172,7 +257,8 @@ if (document.readyState === 'loading') {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         initHeroDemo,
-        renderGapCards,
+        renderQueryCarousel,
+        renderExpandedGapCard,
         createGapCard
     };
 }

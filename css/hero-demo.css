@@ -47,34 +47,115 @@
     line-height: 1.6;
 }
 
-/* Header Alert */
-.demo-alert {
-    background: rgba(255, 189, 46, 0.1);
-    border: 1px solid rgba(255, 189, 46, 0.3);
-    border-radius: 8px;
-    padding: 16px 20px;
+/* Query Carousel Hero */
+.query-carousel-hero {
+    padding: 32px 40px;
+    background: rgba(17, 24, 32, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.query-alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 24px;
 }
 
-.demo-alert p {
+.alert-icon {
+    font-size: 20px;
+}
+
+.alert-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
     color: #FFBD2E;
+}
+
+.query-content {
+    margin-bottom: 24px;
+}
+
+.query-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #8A93A1;
+    margin-bottom: 12px;
+}
+
+.query-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
     font-weight: 600;
+    color: #E5E9F0;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid #4AC0FF;
+    border-radius: 6px;
+}
+
+.query-result {
+    font-family: 'DM Sans', sans-serif;
     font-size: 15px;
-    margin: 0;
+    color: #C6CDD8;
+    line-height: 1.6;
 }
 
-/* Gap Cards Grid - optimized for dashboard preview */
-.gap-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    width: 100%;
+.result-highlight {
+    font-weight: 600;
+    color: #FF5F57;
 }
 
-@media (max-width: 1024px) {
-    .gap-cards-grid {
-        grid-template-columns: 1fr;
-    }
+.competitors-list {
+    font-weight: 600;
+    color: #E5E9F0;
+}
+
+.query-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.query-counter {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #8A93A1;
+}
+
+.query-next-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(74, 192, 255, 0.12);
+    border: 1px solid rgba(74, 192, 255, 0.3);
+    border-radius: 8px;
+    color: #4AC0FF;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.query-next-btn:hover {
+    background: rgba(74, 192, 255, 0.18);
+    border-color: rgba(74, 192, 255, 0.5);
+}
+
+.query-next-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Expanded Gap Container */
+.expanded-gap-container {
+    padding: 32px 40px;
 }
 
 /* Gap Card - Exact Greatness Page Style */

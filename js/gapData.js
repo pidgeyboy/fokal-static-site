@@ -50,15 +50,15 @@ CEO, Stake`,
     },
     {
         id: 2,
-        type: 'email_outreach',
-        typeName: 'Email Outreach',
+        type: 'visibility_gap',
+        typeName: 'Visibility gap',
         priority: 'HIGH',
         priorityScore: 85,
         citationCount: 96,
-        engines: ['ChatGPT', 'Perplexity', 'Forbes'],
-        hook: `StockBrokers.com's comparison includes 6 platforms—never mentions Stake
-96 AI citations
-Forbes, ChatGPT, and Perplexity all reference this. You're invisible.`,
+        engines: ['Perplexity', 'ChatGPT'],
+        hook: `When people search for options, AI uses sources that don't mention you
+StockBrokers.com's "6 Best Trading Platforms in Australia for 2025"
+They mention Moomoo, CommSec, Superhero, and 4 more – but never Stake.`,
         solution: {
             articleTitle: '6 Best Trading Platforms in Australia for 2025',
             domain: 'StockBrokers.com',
