@@ -789,20 +789,21 @@
         }
 
         .badge-1 {
-            top: 20px;
+            top: 50%;
             left: -100px;
-            animation: floatBadge 4s infinite ease-in-out;
+            transform: translateY(-50%);
+            animation: floatBadgeCenter 4s infinite ease-in-out;
         }
 
         .badge-2 {
-            top: 50%;
+            top: 20px;
             right: -100px;
             animation: floatBadge 4s infinite ease-in-out 1.3s;
         }
 
         .badge-3 {
             bottom: 40px;
-            left: -80px;
+            right: -80px;
             animation: floatBadge 4s infinite ease-in-out 2.6s;
         }
 
@@ -815,6 +816,18 @@
             }
             75% {
                 transform: translateY(-6px) rotate(-0.5deg);
+            }
+        }
+
+        @keyframes floatBadgeCenter {
+            0%, 100% {
+                transform: translateY(-50%) rotate(-1deg);
+            }
+            25% {
+                transform: translateY(calc(-50% - 12px)) rotate(1deg);
+            }
+            75% {
+                transform: translateY(calc(-50% - 6px)) rotate(-0.5deg);
             }
         }
 
