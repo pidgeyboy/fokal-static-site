@@ -12,7 +12,8 @@ const gaps = [
         engines: [],
         hook: `Real-time journalist request with 48-hour deadline
 TechCrunch reporter needs fintech experts: "Looking for founders who can speak to democratizing stock market access"
-Your competitors are already responding—this becomes permanent AI citations.`,
+ChatGPT cites TechCrunch in it's responses
+Respond before your competitors do`,
         solution: {
             outlet: 'TechCrunch',
             outletLogo: 'techcrunch', // Will be used to construct path
