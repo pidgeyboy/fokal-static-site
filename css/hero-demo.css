@@ -95,7 +95,7 @@
 .query-text {
     font-family: 'DM Sans', sans-serif;
     font-size: 15px; /* Smaller query text */
-    font-weight: 600;
+    font-weight: 400; /* Normal weight, not bold */
     font-style: italic;
     color: #E5E9F0;
     line-height: 1.5; /* Tighter line height */
