@@ -5,14 +5,14 @@ const gaps = [
     {
         id: 1,
         type: 'pr_opportunity',
-        typeName: 'Real-Time PR Opportunity',
+        typeName: 'PR opportunity',
         priority: 'HIGH',
         priorityScore: 90,
         citationCount: 0,
         engines: [],
-        hook: `Journalist needs fintech experts for article deadline: Dec 18, 2024
-"Looking for founders in the investment platform space to comment on democratizing access to stock markets"
-Your competitors are already responding—you have 48 hours.`,
+        hook: `Real-time journalist request with 48-hour deadline
+TechCrunch reporter needs fintech experts: "Looking for founders who can speak to democratizing stock market access"
+Your competitors are already responding—this becomes permanent AI citations.`,
         solution: {
             outlet: 'TechCrunch',
             outletLogo: 'techcrunch', // Will be used to construct path
@@ -118,14 +118,14 @@ Thanks,
     {
         id: 3,
         type: 'technical_seo',
-        typeName: 'Technical SEO',
+        typeName: 'Technical SEO fix',
         priority: 'MEDIUM',
         priorityScore: 65,
         citationCount: 0,
         engines: [],
-        hook: `Your site is missing llms.txt—an emerging AI navigation standard
-ChatGPT, Perplexity, and Claude use this to understand site structure
-5-minute fix for better AI visibility`,
+        hook: `Quick technical fix to improve AI visibility
+Your site is missing llms.txt—the file ChatGPT, Perplexity, and Claude use to understand your site structure
+5-minute fix, high impact on AI search results`,
         solution: {
             problemTitle: 'Missing llms.txt File',
             problemDescription: 'Your site is missing llms.txt—an emerging standard that helps AI engines like ChatGPT, Perplexity, and Claude understand your site structure.',
@@ -186,14 +186,14 @@ ChatGPT, Perplexity, and Claude use this to understand site structure
     {
         id: 4,
         type: 'media_pitch',
-        typeName: 'Media Pitch',
+        typeName: 'Awards opportunity',
         priority: 'LOW',
         priorityScore: 50,
         citationCount: 0,
         engines: [],
-        hook: `Finder's 2025 Awards featured Tiger Brokers—not you
-Awards coverage = AI credibility
-Build relationship for next year's recognition`,
+        hook: `Long-term credibility play through industry awards
+Finder's 2025 Investment Awards featured Tiger Brokers and Superhero—you could be next
+Awards = permanent AI citations and authority signals`,
         solution: {
             awardsName: 'Finder Investment Awards 2026',
             organizationName: 'Finder',

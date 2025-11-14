@@ -164,6 +164,39 @@
     height: 14px;
 }
 
+/* Filter Pills - EXACT Greatness Page Design */
+.filter-pills-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.filter-pill {
+    padding: 6px 16px; /* py-1.5 px-4 */
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.03);
+    color: #9DA6B5;
+}
+
+.filter-pill.active {
+    background: rgba(74, 192, 255, 0.15);
+    color: #4AC0FF;
+    border: 1px solid rgba(74, 192, 255, 0.3);
+}
+
+.filter-pill:not(.active):hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
 /* Gap Cards Grid - Single showcase card */
 .gap-cards-grid {
     /* Single card display, no grid needed */

@@ -46,10 +46,22 @@ const queries = [
 ];
 
 let currentQueryIndex = 0;
+let selectedGapType = 'visibility_gap'; // Default to visibility gap
+
+// Gap type display names
+const gapTypeNames = {
+    'pr_opportunity': 'PR Opportunity',
+    'visibility_gap': 'Visibility Gap',
+    'technical_seo': 'Technical SEO',
+    'media_pitch': 'Media Pitch'
+};
 
 function initHeroDemo() {
     // Render query carousel
     renderQueryCarousel();
+
+    // Render filter pills
+    renderFilterPills();
 
     // Render single showcase gap card
     renderShowcaseGapCard();
@@ -104,6 +116,45 @@ function initCarouselNavigation() {
     });
 }
 
+function renderFilterPills() {
+    const container = document.querySelector('.filter-pills-container');
+    if (!container) {
+        console.error('Filter pills container not found');
+        return;
+    }
+
+    // Clear existing content
+    container.innerHTML = '';
+
+    // Get unique gap types from gaps array
+    const gapTypes = gaps.map(g => g.type);
+
+    // Create filter pill for each gap type
+    gapTypes.forEach(type => {
+        const pill = document.createElement('button');
+        pill.className = 'filter-pill';
+        if (type === selectedGapType) {
+            pill.classList.add('active');
+        }
+
+        pill.textContent = gapTypeNames[type] || type;
+
+        // Add click handler
+        pill.addEventListener('click', function() {
+            selectedGapType = type;
+            renderFilterPills(); // Re-render to update active state
+            renderShowcaseGapCard(); // Re-render card with new filter
+
+            // Track filter change
+            trackEvent('filter_change', {
+                gap_type: type
+            });
+        });
+
+        container.appendChild(pill);
+    });
+}
+
 function renderShowcaseGapCard() {
     const container = document.querySelector('.gap-cards-grid');
     if (!container) {
@@ -114,14 +165,14 @@ function renderShowcaseGapCard() {
     // Clear existing content
     container.innerHTML = '';
 
-    // Render the visibility gap (ID 2) as the showcase example
-    const visibilityGap = gaps.find(g => g.id === 2);
-    if (!visibilityGap) {
-        console.error('Visibility gap not found');
+    // Find the gap matching the selected type
+    const selectedGap = gaps.find(g => g.type === selectedGapType);
+    if (!selectedGap) {
+        console.error('Selected gap not found:', selectedGapType);
         return;
     }
 
-    const card = createGapCard(visibilityGap);
+    const card = createGapCard(selectedGap);
     container.appendChild(card);
 }
 
@@ -258,6 +309,7 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         initHeroDemo,
         renderQueryCarousel,
+        renderFilterPills,
         renderShowcaseGapCard,
         createGapCard
     };
