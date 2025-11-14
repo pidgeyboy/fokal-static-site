@@ -103,7 +103,7 @@
 
 .query-result {
     font-family: 'DM Sans', sans-serif;
-    font-size: 13px; /* Smaller result text */
+    font-size: 15px; /* Match query text size */
     color: #C6CDD8;
     line-height: 1.5;
 }
