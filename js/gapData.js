@@ -56,7 +56,7 @@ CEO, Stake`,
         priorityScore: 85,
         citationCount: 96,
         engines: ['Perplexity', 'ChatGPT'],
-        hook: `When people search for options, AI uses sources that don't mention you
+        hook: `When ChatGPT answers "Best investment platforms for new investors in Australia?" it cites:
 StockBrokers.com's "6 Best Trading Platforms in Australia for 2025"
 They mention Moomoo, CommSec, Superhero, and 4 more – but never Stake.`,
         solution: {
