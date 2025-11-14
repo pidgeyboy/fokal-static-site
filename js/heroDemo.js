@@ -11,7 +11,7 @@ let selectedGapType = 'visibility_gap'; // Default to visibility gap
 
 // Gap type display names
 const gapTypeNames = {
-    'pr_opportunity': 'PR Opportunity',
+    'pr_opportunity': 'PR Gap',
     'visibility_gap': 'Visibility Gap',
     'technical_seo': 'Technical SEO',
     'media_pitch': 'Media Pitch'
