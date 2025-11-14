@@ -103,9 +103,15 @@
 
 .query-result {
     font-family: 'DM Sans', sans-serif;
-    font-size: 15px; /* Match query text size */
+    font-size: 13px;
     color: #C6CDD8;
     line-height: 1.5;
+    margin-top: 8px;
+}
+
+.result-label {
+    font-weight: 600;
+    color: #9DA6B5;
 }
 
 .result-highlight {
