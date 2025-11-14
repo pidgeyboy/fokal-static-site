@@ -56,7 +56,9 @@ CEO, Stake`,
         priorityScore: 85,
         citationCount: 400,
         engines: ['Perplexity', 'ChatGPT'],
-        hook: `Why this gap exists
+        hook: `When people ask ChatGPT:
+"Best investment platforms for new investors in Australia?"
+Result: Stake doesn't appear
 ChatGPT cites StockBrokers.com's "6 Best Trading Platforms in Australia for 2025"
 This article has 400+ citations—and zero mentions of Stake.`,
         solution: {
