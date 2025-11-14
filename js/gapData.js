@@ -129,7 +129,8 @@ Thanks,
         engines: [],
         hook: `Quick technical fix to improve AI visibility
 Your site is missing llms.txt—the file ChatGPT, Perplexity, and Claude use to understand your site structure
-5-minute fix, high impact on AI search results`,
+5-minute fix
+Prepares your website for the future`,
         solution: {
             problemTitle: 'Missing llms.txt File',
             problemDescription: 'Your site is missing llms.txt—an emerging standard that helps AI engines like ChatGPT, Perplexity, and Claude understand your site structure.',
