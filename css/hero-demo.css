@@ -81,10 +81,6 @@
     color: #F5F5F5;
 }
 
-.query-content {
-    margin-bottom: 24px;
-}
-
 .query-content > * + * {
     margin-top: 12px; /* space-y-3 */
 }
@@ -120,48 +116,6 @@
 .competitors-list {
     font-weight: 600;
     color: #FB923C; /* Orange for competitors */
-}
-
-.query-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 24px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.query-counter {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: #8A93A1;
-}
-
-.query-next-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: rgba(74, 192, 255, 0.12);
-    border: 1px solid rgba(74, 192, 255, 0.3);
-    border-radius: 8px;
-    color: #4AC0FF;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.query-next-btn:hover {
-    background: rgba(74, 192, 255, 0.18);
-    border-color: rgba(74, 192, 255, 0.5);
-}
-
-.query-next-btn svg {
-    width: 14px;
-    height: 14px;
 }
 
 /* Filter Pills - EXACT Greatness Page Design */
