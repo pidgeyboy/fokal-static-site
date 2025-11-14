@@ -51,13 +51,14 @@ CEO, Stake`,
     {
         id: 2,
         type: 'visibility_gap',
-        typeName: 'Why this gap exists',
+        typeName: 'Visibility gap',
         priority: 'HIGH',
         priorityScore: 85,
         citationCount: 400,
         engines: ['Perplexity', 'ChatGPT'],
-        hook: `ChatGPT is citing StockBrokers.com's "6 Best Trading Platforms in Australia for 2025"
-This article has been cited 400+ times—but never mentions Stake.`,
+        hook: `Why this gap exists
+ChatGPT cites StockBrokers.com's "6 Best Trading Platforms in Australia for 2025"
+This article has 400+ citations—and zero mentions of Stake.`,
         solution: {
             articleTitle: '6 Best Trading Platforms in Australia for 2025',
             domain: 'StockBrokers.com',
