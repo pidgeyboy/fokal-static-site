@@ -261,20 +261,19 @@
     color: #4AC0FF;
 }
 
-/* Modal Overlay */
+/* Modal Overlay - Bottom Drawer Style */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.60);
+    backdrop-filter: blur(8px);
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     z-index: 9999;
-    padding: 20px;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -288,19 +287,19 @@
 .modal-container {
     background: rgba(17, 24, 32, 0.98);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
+    border-radius: 24px 24px 0 0;
     max-width: 900px;
     width: 100%;
-    max-height: 90vh;
+    max-height: 85vh;
     overflow-y: auto;
     position: relative;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-    transform: scale(0.95);
-    transition: transform 0.3s ease;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.4);
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-overlay.active .modal-container {
-    transform: scale(1);
+    transform: translateY(0);
 }
 
 .modal-header {
@@ -337,7 +336,151 @@
 }
 
 .modal-content {
-    padding: 40px;
+    padding: 0;
+}
+
+/* Progressive Disclosure Styles */
+
+/* Solution Hero */
+.solution-hero {
+    text-align: center;
+    padding: 32px 24px 24px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.solution-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(74, 192, 255, 0.1);
+    border: 1px solid rgba(74, 192, 255, 0.3);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-bottom: 16px;
+}
+
+.solution-hero h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.solution-subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+}
+
+/* Primary Action Card */
+.primary-action-card {
+    background: rgba(17, 24, 32, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 24px;
+}
+
+.primary-action-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.contact-highlight {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    margin: 16px 0;
+}
+
+.contact-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    color: #0B1117;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.contact-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.contact-role {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.expand-btn {
+    width: 100%;
+    padding: 12px;
+    background: rgba(74, 192, 255, 0.1);
+    border: 1px solid rgba(74, 192, 255, 0.3);
+    border-radius: 8px;
+    color: var(--accent-blue);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 15px;
+}
+
+.expand-btn:hover {
+    background: rgba(74, 192, 255, 0.15);
+    border-color: rgba(74, 192, 255, 0.4);
+}
+
+/* Collapsible Sections */
+.collapsible-section {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 24px;
+    max-height: 0;
+}
+
+.collapsible-section.expanded {
+    max-height: 2000px;
+}
+
+/* Modal Footer */
+.modal-footer {
+    position: sticky;
+    bottom: 0;
+    background: rgba(17, 24, 32, 0.98);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-subtle);
+    padding: 20px 24px;
+    margin-top: auto;
+}
+
+.modal-footer .primary-btn {
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #4AC0FF 0%, #2EA0E0 100%);
+    color: #0B1117;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-footer .primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(74, 192, 255, 0.4);
 }
 
 /* Solution Container Styles */

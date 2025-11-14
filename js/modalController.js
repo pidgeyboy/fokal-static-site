@@ -69,6 +69,35 @@ function getCurrentGapType() {
     return currentGapType;
 }
 
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (!section) {
+        console.error('Section not found:', sectionId);
+        return;
+    }
+
+    const isExpanded = section.classList.contains('expanded');
+
+    if (isExpanded) {
+        // Collapse
+        section.classList.remove('expanded');
+        section.style.maxHeight = '0';
+    } else {
+        // Expand
+        section.classList.add('expanded');
+        section.style.maxHeight = section.scrollHeight + 'px';
+    }
+
+    // Track toggle event
+    trackEvent('section_toggle', {
+        section_id: sectionId,
+        action: isExpanded ? 'collapse' : 'expand'
+    });
+}
+
+// Make toggleSection available globally for onclick handlers
+window.toggleSection = toggleSection;
+
 function attachCTAListeners() {
     const ctaButtons = document.querySelectorAll('.primary-btn');
     ctaButtons.forEach(button => {
