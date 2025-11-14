@@ -118,6 +118,74 @@
     color: #FB923C; /* Orange for competitors */
 }
 
+/* Hero Info Cards */
+.hero-info-card {
+    background: rgba(17, 24, 32, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.hero-card-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #E5E9F0;
+    margin-bottom: 16px;
+}
+
+.hero-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hero-info-row {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+}
+
+.hero-info-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #9DA6B5;
+    flex-shrink: 0;
+}
+
+.hero-info-value {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: #E5E9F0;
+    line-height: 1.5;
+}
+
+.hero-competitors {
+    font-weight: 600;
+    color: #FB923C;
+}
+
+.hero-citation-source {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #E5E9F0;
+    margin: 0 0 8px 0;
+    line-height: 1.5;
+}
+
+.hero-citation-detail {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: #C6CDD8;
+    margin: 0;
+    line-height: 1.5;
+}
+
 /* Filter Pills - EXACT Greatness Page Design */
 .filter-pills-container {
     display: flex;
