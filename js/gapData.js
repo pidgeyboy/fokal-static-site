@@ -121,7 +121,7 @@ Thanks,
     {
         id: 3,
         type: 'technical_seo',
-        typeName: 'Technical SEO fix',
+        typeName: 'Technical SEO gap',
         priority: 'MEDIUM',
         priorityScore: 65,
         citationCount: 0,
@@ -189,7 +189,7 @@ Your site is missing llms.txt—the file ChatGPT, Perplexity, and Claude use to 
     {
         id: 4,
         type: 'media_pitch',
-        typeName: 'Awards opportunity',
+        typeName: 'Awards gap',
         priority: 'LOW',
         priorityScore: 50,
         citationCount: 0,

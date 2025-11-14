@@ -13,8 +13,8 @@ let selectedGapType = 'visibility_gap'; // Default to visibility gap
 const gapTypeNames = {
     'pr_opportunity': 'PR Gap',
     'visibility_gap': 'Visibility Gap',
-    'technical_seo': 'Technical SEO',
-    'media_pitch': 'Media Pitch'
+    'technical_seo': 'Technical SEO Gap',
+    'media_pitch': 'Awards Gap'
 };
 
 function initHeroDemo() {
