@@ -144,7 +144,7 @@ function createGapCard(gap) {
             ${hookHTML}
             <div class="gap-button-container">
                 <button class="fix-gap-btn" data-gap-id="${gap.id}">
-                    Fix gap
+                    Fix this gap
                     ${arrowIcon}
                 </button>
             </div>
