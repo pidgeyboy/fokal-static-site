@@ -51,8 +51,8 @@ function initHeroDemo() {
     // Render query carousel
     renderQueryCarousel();
 
-    // Render single expanded gap card
-    renderExpandedGapCard();
+    // Render single showcase gap card
+    renderShowcaseGapCard();
 
     // Initialize carousel navigation
     initCarouselNavigation();
@@ -104,17 +104,17 @@ function initCarouselNavigation() {
     });
 }
 
-function renderExpandedGapCard() {
-    const container = document.querySelector('.expanded-gap-container');
+function renderShowcaseGapCard() {
+    const container = document.querySelector('.gap-cards-grid');
     if (!container) {
-        console.error('Expanded gap container not found');
+        console.error('Gap cards container not found');
         return;
     }
 
     // Clear existing content
     container.innerHTML = '';
 
-    // Render the visibility gap (ID 2) as expanded card - most compelling example
+    // Render the visibility gap (ID 2) as the showcase example
     const visibilityGap = gaps.find(g => g.id === 2);
     if (!visibilityGap) {
         console.error('Visibility gap not found');
@@ -258,7 +258,7 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         initHeroDemo,
         renderQueryCarousel,
-        renderExpandedGapCard,
+        renderShowcaseGapCard,
         createGapCard
     };
 }

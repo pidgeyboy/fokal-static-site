@@ -47,77 +47,88 @@
     line-height: 1.6;
 }
 
-/* Query Carousel Hero */
+/* Query Carousel Hero - EXACT Greatness Page Design */
 .query-carousel-hero {
-    padding: 32px 40px;
-    background: rgba(17, 24, 32, 0.4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 24px;
+    background: rgba(17, 24, 32, 0.8);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(251, 146, 60, 0.4); /* ORANGE border - key visual */
+}
+
+.query-carousel-hero .carousel-inner {
+    padding: 24px 32px; /* py-6 px-8 */
 }
 
 .query-alert {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 
 .alert-icon {
-    font-size: 20px;
+    font-size: 24px; /* text-2xl */
 }
 
 .alert-text {
     font-family: 'DM Sans', sans-serif;
     font-size: 18px;
-    font-weight: 700;
-    color: #FFBD2E;
+    font-weight: 600;
+    color: #F5F5F5;
 }
 
 .query-content {
     margin-bottom: 24px;
 }
 
+.query-content > * + * {
+    margin-top: 12px; /* space-y-3 */
+}
+
 .query-label {
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #8A93A1;
-    margin-bottom: 12px;
+    color: #9DA6B5;
 }
 
 .query-text {
     font-family: 'DM Sans', sans-serif;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 600;
+    font-style: italic;
     color: #E5E9F0;
-    line-height: 1.5;
-    margin-bottom: 16px;
-    padding: 16px 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border-left: 3px solid #4AC0FF;
-    border-radius: 6px;
+    line-height: 1.625; /* leading-relaxed */
 }
 
 .query-result {
     font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     color: #C6CDD8;
     line-height: 1.6;
 }
 
 .result-highlight {
     font-weight: 600;
-    color: #FF5F57;
+    color: #E5E9F0;
 }
 
 .competitors-list {
     font-weight: 600;
-    color: #E5E9F0;
+    color: #FB923C; /* Orange for competitors */
 }
 
 .query-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .query-counter {
@@ -153,9 +164,9 @@
     height: 14px;
 }
 
-/* Expanded Gap Container */
-.expanded-gap-container {
-    padding: 32px 40px;
+/* Gap Cards Grid - Single showcase card */
+.gap-cards-grid {
+    /* Single card display, no grid needed */
 }
 
 /* Gap Card - Exact Greatness Page Style */
