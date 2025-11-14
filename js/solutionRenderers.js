@@ -5,13 +5,6 @@ const SolutionRenderers = {
         const sol = gap.solution;
         return `
             <div class="solution-container">
-                <!-- Hero Section -->
-                <div class="solution-hero">
-                    <div class="solution-badge">⏰ Deadline: ${sol.deadline}</div>
-                    <h2>${sol.requestTitle}</h2>
-                    <p class="solution-subtitle">${sol.outlet} • ${sol.journalist}</p>
-                </div>
-
                 <!-- Journalist Request Card -->
                 <div class="primary-action-card">
                     <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 8px;">📰 Journalist Request</h3>
@@ -60,13 +53,6 @@ const SolutionRenderers = {
 
         return `
             <div class="solution-container">
-                <!-- Hero Section -->
-                <div class="solution-hero">
-                    <div class="solution-badge">${sol.citationCount} AI citations</div>
-                    <h2>${sol.articleTitle}</h2>
-                    <p class="solution-subtitle">${sol.domain}</p>
-                </div>
-
                 <!-- Primary Action Card -->
                 <div class="primary-action-card">
                     <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 12px;">Discovered Contact</h3>
@@ -130,13 +116,6 @@ const SolutionRenderers = {
         const sol = gap.solution;
         return `
             <div class="solution-container">
-                <!-- Hero Section -->
-                <div class="solution-hero">
-                    <div class="solution-badge">⏱️ ${sol.estimatedTime} • ${sol.difficulty}</div>
-                    <h2>${sol.problemTitle}</h2>
-                    <p class="solution-subtitle">${sol.impact} impact on AI visibility</p>
-                </div>
-
                 <!-- File Content Card -->
                 <div class="primary-action-card">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
@@ -178,13 +157,6 @@ const SolutionRenderers = {
 
         return `
             <div class="solution-container">
-                <!-- Hero Section -->
-                <div class="solution-hero">
-                    <div class="solution-badge">🏆 ${sol.nextAwardsDate}</div>
-                    <h2>${sol.awardsName}</h2>
-                    <p class="solution-subtitle">${sol.organizationName}</p>
-                </div>
-
                 <!-- Awards Info Card -->
                 <div class="primary-action-card">
                     <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 8px;">🤝 Build Relationship for Future Participation</h3>
