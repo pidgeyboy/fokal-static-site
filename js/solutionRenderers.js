@@ -14,30 +14,34 @@ const SolutionRenderers = {
 
                 <!-- Journalist Request Card -->
                 <div class="primary-action-card">
-                    <h3>📰 Journalist Request</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">${sol.requestDetails}</p>
-                    <button class="expand-btn" onclick="toggleSection('pr-response-section')">
-                        View Pre-Written Response →
-                    </button>
+                    <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 8px;">📰 Journalist Request</h3>
+                    <p style="color: #C6CDD8; line-height: 1.6; margin-bottom: 0; font-size: 14px;">${sol.requestDetails}</p>
                 </div>
 
-                <!-- Collapsible Response -->
-                <div id="pr-response-section" class="collapsible-section">
-                    <div class="template-card" style="margin: 20px 0;">
-                        <div class="template-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                            <h4 style="margin: 0;">✍️ Your Response</h4>
-                            <button class="copy-btn" data-copy="pr-response-content">Copy Response</button>
-                        </div>
-                        <div class="template-content" id="pr-response-content" style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 8px;">
-                            <div style="margin-bottom: 12px;"><strong>Subject:</strong> ${sol.responseSubject}</div>
-                            <div class="email-body">
-                                ${sol.responseBody.split('\n').map(line => {
-                                    if (line.startsWith('•')) {
-                                        return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
-                                    }
-                                    return line ? `<p style="margin-bottom: 8px;">${line}</p>` : '';
-                                }).join('')}
+                <div style="padding: 0 24px;">
+                    <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 12px;">✍️ Your Response</h3>
+
+                    <!-- Response Card - Same format as contact card -->
+                    <div class="contact-card-prod" id="pr-response-content">
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="margin-bottom: 12px;">
+                                <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Subject</span>
+                                <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #E5E9F0; margin-top: 4px; font-weight: 500;">${sol.responseSubject}</p>
                             </div>
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
+                                <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Body</span>
+                                <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; line-height: 1.6; color: #C6CDD8;">
+                                    ${sol.responseBody.split('\n').map(line => {
+                                        if (line.startsWith('•')) {
+                                            return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
+                                        }
+                                        return line ? `<p style="margin-bottom: 8px;">${line}</p>` : '';
+                                    }).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        <div style="flex-shrink: 0; align-self: flex-start;">
+                            <button class="copy-btn" data-copy="pr-response-content" style="padding: 6px 12px; font-size: 13px;">Copy</button>
                         </div>
                     </div>
                 </div>
@@ -87,28 +91,29 @@ const SolutionRenderers = {
                         </div>
                     </div>
 
-                    <button class="expand-btn" onclick="toggleSection('email-template-section')" style="margin-top: 12px;">
-                        View Email Template →
-                    </button>
-                </div>
+                    <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-top: 20px; margin-bottom: 12px;">Email Template</h3>
 
-                <!-- Collapsible Email Template -->
-                <div id="email-template-section" class="collapsible-section">
-                    <div class="template-card" style="margin: 20px 0;">
-                        <div class="template-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                            <h4 style="margin: 0;">Email Template</h4>
-                            <button class="copy-btn" data-copy="email-template-content">Copy</button>
-                        </div>
-                        <div class="template-content" id="email-template-content" style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 8px;">
-                            <div style="margin-bottom: 12px;"><strong>Subject:</strong> ${sol.emailTemplate.subject}</div>
-                            <div class="email-body">
-                                ${sol.emailTemplate.body.split('\n').map(line => {
-                                    if (line.startsWith('•')) {
-                                        return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
-                                    }
-                                    return line ? `<p style="margin-bottom: 8px;">${line}</p>` : '';
-                                }).join('')}
+                    <!-- Email Template Card - Same format as contact card -->
+                    <div class="contact-card-prod" id="email-template-content">
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="margin-bottom: 12px;">
+                                <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Subject</span>
+                                <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #E5E9F0; margin-top: 4px; font-weight: 500;">${sol.emailTemplate.subject}</p>
                             </div>
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
+                                <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Body</span>
+                                <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; line-height: 1.6; color: #C6CDD8;">
+                                    ${sol.emailTemplate.body.split('\n').map(line => {
+                                        if (line.startsWith('•')) {
+                                            return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
+                                        }
+                                        return line ? `<p style="margin-bottom: 8px;">${line}</p>` : '';
+                                    }).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        <div style="flex-shrink: 0; align-self: flex-start;">
+                            <button class="copy-btn" data-copy="email-template-content" style="padding: 6px 12px; font-size: 13px;">Copy</button>
                         </div>
                     </div>
                 </div>
@@ -207,28 +212,29 @@ const SolutionRenderers = {
                         </div>
                     </div>
 
-                    <button class="expand-btn" onclick="toggleSection('awards-email-section')" style="margin-top: 12px;">
-                        View Inquiry Email →
-                    </button>
-                </div>
+                    <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-top: 20px; margin-bottom: 12px;">✉️ Inquiry Email</h3>
 
-                <!-- Collapsible Email Template -->
-                <div id="awards-email-section" class="collapsible-section">
-                    <div class="template-card" style="margin: 20px 0;">
-                        <div class="template-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                            <h4 style="margin: 0;">✉️ Inquiry Email</h4>
-                            <button class="copy-btn" data-copy="awards-email-content">Copy Email</button>
-                        </div>
-                        <div class="template-content" id="awards-email-content" style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 8px;">
-                            <div style="margin-bottom: 12px;"><strong>Subject:</strong> ${sol.emailTemplate.subject}</div>
-                            <div class="email-body">
-                                ${sol.emailTemplate.body.split('\n').map(line => {
-                                    if (line.startsWith('•')) {
-                                        return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
-                                    }
-                                    return line ? `<p style="margin-bottom: 8px;">${line}</p>` : '';
-                                }).join('')}
+                    <!-- Email Template Card - Same format as contact card -->
+                    <div class="contact-card-prod" id="awards-email-content">
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="margin-bottom: 12px;">
+                                <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Subject</span>
+                                <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #E5E9F0; margin-top: 4px; font-weight: 500;">${sol.emailTemplate.subject}</p>
                             </div>
+                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
+                                <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Body</span>
+                                <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 13px; line-height: 1.6; color: #C6CDD8;">
+                                    ${sol.emailTemplate.body.split('\n').map(line => {
+                                        if (line.startsWith('•')) {
+                                            return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
+                                        }
+                                        return line ? `<p style="margin-bottom: 8px;">${line}</p>` : '';
+                                    }).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        <div style="flex-shrink: 0; align-self: flex-start;">
+                            <button class="copy-btn" data-copy="awards-email-content" style="padding: 6px 12px; font-size: 13px;">Copy</button>
                         </div>
                     </div>
                 </div>
