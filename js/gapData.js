@@ -59,7 +59,8 @@ CEO, Stake`,
         hook: `When people ask ChatGPT:
 "Best investment platforms for new investors in Australia?"
 Result: Stake doesn't appear
-ChatGPT cites StockBrokers.com's "6 Best Trading Platforms in Australia for 2025"
+Competitors mentioned: CommSec, Sharesies, Superhero (+5 more)
+ChatGPT uses Stockbrokers.com's "6..." as a source
 This article has 400+ citations—and zero mentions of Stake.`,
         solution: {
             articleTitle: '6 Best Trading Platforms in Australia for 2025',
