@@ -197,7 +197,8 @@ Your site is missing llms.txt—the file ChatGPT, Perplexity, and Claude use to 
         engines: [],
         hook: `Long-term credibility play through industry awards
 Finder's 2025 Investment Awards featured Tiger Brokers and Superhero—you could be next
-Awards = permanent AI citations and authority signals`,
+ChatGPT cites Finder in it's responses
+Awards are a strong authority signal`,
         solution: {
             awardsName: 'Finder Investment Awards 2026',
             organizationName: 'Finder',
