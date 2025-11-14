@@ -116,24 +116,13 @@ function createGapCard(gap) {
     card.className = 'gap-card';
     card.setAttribute('data-gap-id', gap.id);
 
-    // Build meta + badge row (at top)
-    let metaHTML = '';
-    let badgeHTML = '';
+    // Build meta row (at top) - no badges
+    let topRowHTML = '';
 
     if (gap.citationCount && gap.citationCount > 0) {
         const citationText = gap.citationCount + ' citation' + (gap.citationCount > 1 ? 's' : '');
         const enginesText = gap.engines && gap.engines.length > 0 ? gap.engines.join(', ') : 'Multiple sources';
-        metaHTML = `<span class="gap-citations">${citationText} • ${enginesText}</span>`;
-    }
-
-    if (gap.priorityScore && gap.priorityScore >= 75) {
-        badgeHTML = '<div class="gap-badge">HIGH IMPACT</div>';
-    }
-
-    // Wrap in flex row if either exists
-    let topRowHTML = '';
-    if (metaHTML || badgeHTML) {
-        topRowHTML = `<div class="gap-top-row">${metaHTML}${badgeHTML}</div>`;
+        topRowHTML = `<div class="gap-top-row"><span class="gap-citations">${citationText} • ${enginesText}</span></div>`;
     }
 
     // Split hook on newlines for proper rendering

@@ -181,12 +181,9 @@
     gap: 8px; /* Equivalent to Tailwind space-y-2 */
 }
 
-/* Top Row - Meta + Badge */
+/* Top Row - Citations only (no badge) */
 .gap-top-row {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: -4px; /* Compensate for parent gap, matches mb-1 in Greatness Page */
+    margin-bottom: -4px; /* Compensate for parent gap */
 }
 
 /* Citations */
@@ -195,20 +192,6 @@
     font-size: 13px;
     font-weight: 500;
     color: #8A93A1;
-}
-
-/* Badge - HIGH IMPACT only, conditional */
-.gap-badge {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 600;
-    font-family: 'DM Sans', sans-serif;
-    background: rgba(0, 102, 255, 0.12);
-    border: 1px solid rgba(74, 192, 255, 0.2);
-    color: #7FBFF2;
-    flex-shrink: 0; /* Prevent badge from shrinking */
 }
 
 /* Title/Type Name */
