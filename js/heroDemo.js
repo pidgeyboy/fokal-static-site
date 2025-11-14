@@ -3,7 +3,7 @@
 
 // Static query example
 const queryExample = {
-    query: "What are the best investment platforms for people new to the stock market in Australia?",
+    query: "Best investment platforms for new investors in Australia?",
     competitors: "CommSec, Sharesies, Superhero (+5 more)"
 };
 
