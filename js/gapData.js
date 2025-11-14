@@ -54,17 +54,17 @@ CEO, Stake`,
         typeName: 'Visibility gap',
         priority: 'HIGH',
         priorityScore: 85,
-        citationCount: 96,
+        citationCount: 400,
         engines: ['Perplexity', 'ChatGPT'],
-        hook: `When ChatGPT answers "Best investment platforms for new investors in Australia?" it cites:
-StockBrokers.com's "6 Best Trading Platforms in Australia for 2025"
-They mention Moomoo, CommSec, Superhero, and 4 more – but never Stake.`,
+        hook: `ChatGPT is citing StockBrokers.com's "6 Best Trading Platforms in Australia for 2025"
+
+This article has been cited 400+ times—but never mentions Stake.`,
         solution: {
             articleTitle: '6 Best Trading Platforms in Australia for 2025',
             domain: 'StockBrokers.com',
             domainLogo: 'stockbrokers',
             articleUrl: 'https://www.stockbrokers.com/guides/best-trading-platforms-australia',
-            citationCount: 96,
+            citationCount: 400,
             citedBy: ['Forbes', 'ChatGPT', 'Perplexity'],
             lastUpdated: 'Nov 2024',
             gapSummary: 'This comparison includes CommSec, Superhero, Tiger Brokers, and 3 others—but never mentions Stake despite your competitive pricing and feature set.',
