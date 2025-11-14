@@ -127,6 +127,14 @@
     flex-wrap: wrap;
 }
 
+.filter-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #E5E9F0;
+    margin-right: 4px;
+}
+
 .filter-pill {
     padding: 6px 16px; /* py-1.5 px-4 */
     font-family: 'DM Sans', sans-serif;

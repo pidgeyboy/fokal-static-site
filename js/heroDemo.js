@@ -64,6 +64,12 @@ function renderFilterPills() {
     // Get unique gap types from gaps array
     const gapTypes = gaps.map(g => g.type);
 
+    // Add label before pills
+    const label = document.createElement('span');
+    label.className = 'filter-label';
+    label.textContent = `${gaps.length} gaps found:`;
+    container.appendChild(label);
+
     // Create filter pill for each gap type
     gapTypes.forEach(type => {
         const pill = document.createElement('button');
