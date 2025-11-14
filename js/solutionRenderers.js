@@ -53,60 +53,52 @@ const SolutionRenderers = {
 
         return `
             <div class="solution-container">
-                <!-- Primary Action Card -->
-                <div class="primary-action-card">
-                    <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 12px;">Discovered Contact</h3>
+                <h3 style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 12px; padding: 0 24px;">Discovered Contact</h3>
 
-                    <!-- Contact Card - Production Layout -->
-                    <div class="contact-card-prod">
-                        <div style="flex: 1; min-width: 0;">
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9DA6B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                <span style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: #E5E9F0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${primaryContact.name}</span>
-                                ${primaryContact.verified ? '<div style="width: 12px; height: 12px; border-radius: 50%; background: #00E676; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>' : ''}
-                            </div>
-                            <div style="margin-left: 20px; margin-top: 4px;">
-                                <p style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9DA6B5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${primaryContact.role}</p>
-                                <p style="font-family: monospace; font-size: 12px; color: #8A93A1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 2px;">${primaryContact.email}</p>
-                            </div>
+                <!-- Contact Card - Production Layout -->
+                <div class="contact-card-prod" style="margin: 0 24px 20px 24px;">
+                    <div style="flex: 1; min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9DA6B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <span style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: #E5E9F0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${primaryContact.name}</span>
+                            ${primaryContact.verified ? '<div style="width: 12px; height: 12px; border-radius: 50%; background: #00E676; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>' : ''}
                         </div>
-                        <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
-                            <div style="font-family: 'DM Sans', sans-serif; font-size: 12px; padding: 4px 8px; border-radius: 6px; background: rgba(74, 192, 255, 0.12); color: #4AC0FF; border: 1px solid rgba(74, 192, 255, 0.2);">
-                                ${Math.round(primaryContact.confidence * 100)}%
-                            </div>
+                        <div style="margin-left: 20px; margin-top: 4px;">
+                            <p style="font-family: 'DM Sans', sans-serif; font-size: 12px; color: #9DA6B5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${primaryContact.role}</p>
+                            <p style="font-family: monospace; font-size: 12px; color: #8A93A1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 2px;">${primaryContact.email}</p>
                         </div>
                     </div>
-
-                    <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-top: 20px; margin-bottom: 12px;">Email Template</h3>
-
-                    <!-- Email Template Card - Same format as contact card -->
-                    <div class="contact-card-prod" id="email-template-content">
-                        <div style="flex: 1; min-width: 0;">
-                            <div style="margin-bottom: 12px;">
-                                <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Subject</span>
-                                <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #E5E9F0; margin-top: 4px; font-weight: 500;">${sol.emailTemplate.subject}</p>
-                            </div>
-                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
-                                <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Body</span>
-                                <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; line-height: 1.6; color: #C6CDD8;">
-                                    ${sol.emailTemplate.body.split('\n').map(line => {
-                                        if (line.startsWith('•')) {
-                                            return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
-                                        }
-                                        return line ? `<p style="margin-bottom: 8px;">${line}</p>` : '';
-                                    }).join('')}
-                                </div>
-                            </div>
-                        </div>
-                        <div style="flex-shrink: 0; align-self: flex-start;">
-                            <button class="copy-btn" data-copy="email-template-content" style="padding: 6px 12px; font-size: 13px;">Copy</button>
+                    <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+                        <div style="font-family: 'DM Sans', sans-serif; font-size: 12px; padding: 4px 8px; border-radius: 6px; background: rgba(74, 192, 255, 0.12); color: #4AC0FF; border: 1px solid rgba(74, 192, 255, 0.2);">
+                            ${Math.round(primaryContact.confidence * 100)}%
                         </div>
                     </div>
                 </div>
 
-                <!-- Bottom CTA -->
-                <div class="modal-footer">
-                    <button class="primary-btn" data-gap-type="${gap.type}">Get Full Solution →</button>
+                <h3 style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 12px; padding: 0 24px;">Email Template</h3>
+
+                <!-- Email Template Card - Same format as contact card -->
+                <div class="contact-card-prod" id="email-template-content" style="margin: 0 24px 24px 24px;">
+                    <div style="flex: 1; min-width: 0;">
+                        <div style="margin-bottom: 12px;">
+                            <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Subject</span>
+                            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #E5E9F0; margin-top: 4px; font-weight: 500;">${sol.emailTemplate.subject}</p>
+                        </div>
+                        <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
+                            <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Body</span>
+                            <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; line-height: 1.6; color: #C6CDD8;">
+                                ${sol.emailTemplate.body.split('\n').map(line => {
+                                    if (line.startsWith('•')) {
+                                        return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
+                                    }
+                                    return line ? `<p style="margin-bottom: 8px;">${line}</p>` : '';
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    <div style="flex-shrink: 0; align-self: flex-start;">
+                        <button class="copy-btn" data-copy="email-template-content" style="padding: 6px 12px; font-size: 13px;">Copy</button>
+                    </div>
                 </div>
             </div>
         `;
