@@ -28,7 +28,7 @@ const SolutionRenderers = {
                         <div class="step-number">2.</div>
                         <div class="step-content">
                             <div class="step-title">The pitch</div>
-                            <div class="step-description">Pre-written outreach email (customized for your brand)</div>
+                            <div class="step-description">Pre-written outreach email (customized for your brand and recipient)</div>
                         </div>
                     </div>
 
@@ -74,7 +74,7 @@ const SolutionRenderers = {
                         <div class="step-number">2.</div>
                         <div class="step-content">
                             <div class="step-title">The pitch</div>
-                            <div class="step-description">Pre-written response email (customized for your brand)</div>
+                            <div class="step-description">Pre-written response email (customized for your brand and recipient)</div>
                         </div>
                     </div>
 
@@ -166,7 +166,7 @@ const SolutionRenderers = {
                         <div class="step-number">2.</div>
                         <div class="step-content">
                             <div class="step-title">The pitch</div>
-                            <div class="step-description">Pre-written inquiry email (customized for your brand)</div>
+                            <div class="step-description">Pre-written inquiry email (customized for your brand and recipient)</div>
                         </div>
                     </div>
 
