@@ -1543,9 +1543,9 @@
 
 /* Mobile Responsive Styles for Hero Demo */
 @media (max-width: 768px) {
-    /* Dashboard mockup - reduce padding on mobile */
+    /* Dashboard mockup - reduce padding on mobile to match button width */
     .dashboard-mockup {
-        padding: 20px !important;
+        padding: 12px !important;
     }
 
     /* Filter pills - smaller on mobile */
@@ -1559,9 +1559,9 @@
         margin-bottom: 20px;
     }
 
-    /* Gap card - larger text for readability */
+    /* Gap card - adjusted padding for compact mockup */
     .gap-card {
-        padding: 20px;
+        padding: 16px;
     }
 
     .gap-title {
@@ -1594,7 +1594,7 @@
 @media (max-width: 480px) {
     /* Extra small screens - even more compact */
     .dashboard-mockup {
-        padding: 16px !important;
+        padding: 8px !important;
     }
 
     .filter-pill {
@@ -1603,7 +1603,7 @@
     }
 
     .gap-card {
-        padding: 16px;
+        padding: 12px;
     }
 
     .gap-title {
