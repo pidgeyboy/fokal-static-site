@@ -534,7 +534,7 @@
     top: 0;
     background: rgba(28, 28, 31, 0.98);
     backdrop-filter: blur(20px);
-    padding: 20px;
+    padding: 12px 16px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     justify-content: flex-end;
@@ -544,22 +544,23 @@
 .close-modal {
     background: none;
     border: none;
-    font-size: 32px;
+    font-size: 24px;
     color: #fff;
     cursor: pointer;
     opacity: 0.6;
     transition: opacity 0.2s;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
+    border-radius: 6px;
+    padding: 0;
 }
 
 .close-modal:hover {
     opacity: 1;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .modal-content {
