@@ -756,47 +756,74 @@
     margin-bottom: 24px;
 }
 
-.gap-context {
+/* Gap Description */
+.gap-description {
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.gap-description .label {
+    font-size: 13px;
+    color: #9DA6B5;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.gap-description .quote {
+    font-size: 15px;
+    color: #E5E9F0;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Solution Steps */
+.solution-steps {
+    text-align: left;
     margin-bottom: 32px;
 }
 
-.gap-context p {
-    font-size: 15px;
-    color: #C6CDD8;
-    line-height: 1.6;
-    margin-bottom: 8px;
-}
-
-.gap-context .problem {
-    color: #FB923C;
-    font-weight: 600;
-}
-
-/* Solution Items - No Card Wrapper */
-.solution-items {
-    text-align: left;
-    margin: 0 auto 32px;
-    max-width: 400px;
-}
-
-.solution-items h3 {
-    font-size: 12px;
+.solution-steps h3 {
+    font-size: 14px;
     font-weight: 600;
     color: #9DA6B5;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
+    margin-bottom: 20px;
 }
 
-.solution-items .item {
-    font-size: 15px;
-    color: #E5E9F0;
-    padding: 10px 0;
+.step {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    align-items: start;
+}
+
+.step:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    font-size: 16px;
+    font-weight: 700;
+    color: #4AC0FF;
+    flex-shrink: 0;
     line-height: 1.4;
 }
 
-.solution-items .item:first-of-type {
-    padding-top: 0;
+.step-content {
+    flex: 1;
+}
+
+.step-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #E5E9F0;
+    margin-bottom: 4px;
+}
+
+.step-description {
+    font-size: 14px;
+    color: #9DA6B5;
+    line-height: 1.5;
 }
 
 .cta-primary {
@@ -824,11 +851,7 @@
     color: #9DA6B5;
     line-height: 1.6;
     margin: 0;
-}
-
-.coming-soon {
-    color: #4AC0FF;
-    font-weight: 500;
+    font-style: italic;
 }
 
 /* Card Components */

@@ -6,26 +6,44 @@ const SolutionRenderers = {
         return `
             <div class="demo-content">
                 <button class="close-modal" aria-label="Close">&times;</button>
-                <h2>Visibility Gap</h2>
+                <h2>Visibility Gap Solution</h2>
 
-                <div class="gap-context">
-                    <p>ChatGPT cites ${sol.domain} ${sol.citationCount}+ times</p>
-                    <p class="problem">Stake isn't mentioned</p>
+                <div class="gap-description">
+                    <p class="label">The gap you clicked:</p>
+                    <p class="quote">"Stake missing from ${sol.domain} (${sol.citationCount}+ AI citations)"</p>
                 </div>
 
-                <div class="solution-items">
-                    <h3>You'd get:</h3>
-                    <div class="item">→ Contact info</div>
-                    <div class="item">→ Email template</div>
-                    <div class="item">→ Tracking</div>
+                <div class="solution-steps">
+                    <h3>What you'd get with Fokal:</h3>
+
+                    <div class="step">
+                        <div class="step-number">1.</div>
+                        <div class="step-content">
+                            <div class="step-title">The contact</div>
+                            <div class="step-description">Editor at ${sol.domain} (95% verified)</div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2.</div>
+                        <div class="step-content">
+                            <div class="step-title">The pitch</div>
+                            <div class="step-description">Pre-written email: Why Stake fits their comparison</div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3.</div>
+                        <div class="step-content">
+                            <div class="step-title">The tracking</div>
+                            <div class="step-description">Know when Stake gets added to the article</div>
+                        </div>
+                    </div>
                 </div>
 
-                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Start Free - See Your Gaps →</button>
+                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Start Free - Find Your Gaps →</button>
 
-                <p class="footer-note">
-                    We find the gaps, contacts, and write the pitches.<br>
-                    <span class="coming-soon">Coming soon: We send them for you</span>
-                </p>
+                <p class="footer-note">This is an example. Get real solutions for YOUR brand.</p>
             </div>
         `;
     },
@@ -34,26 +52,44 @@ const SolutionRenderers = {
         return `
             <div class="demo-content">
                 <button class="close-modal" aria-label="Close">&times;</button>
-                <h2>PR Opportunity</h2>
+                <h2>PR Gap Solution</h2>
 
-                <div class="gap-context">
-                    <p>TechCrunch reporter needs fintech experts</p>
-                    <p class="problem">48-hour deadline</p>
+                <div class="gap-description">
+                    <p class="label">The gap you clicked:</p>
+                    <p class="quote">"TechCrunch reporter needs fintech experts (48-hour deadline)"</p>
                 </div>
 
-                <div class="solution-items">
-                    <h3>You'd get:</h3>
-                    <div class="item">→ Journalist details</div>
-                    <div class="item">→ Response template</div>
-                    <div class="item">→ Follow-up tracking</div>
+                <div class="solution-steps">
+                    <h3>What you'd get with Fokal:</h3>
+
+                    <div class="step">
+                        <div class="step-number">1.</div>
+                        <div class="step-content">
+                            <div class="step-title">The contact</div>
+                            <div class="step-description">Journalist details at TechCrunch (verified)</div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2.</div>
+                        <div class="step-content">
+                            <div class="step-title">The pitch</div>
+                            <div class="step-description">Pre-written response: Your expertise on their topic</div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3.</div>
+                        <div class="step-content">
+                            <div class="step-title">The tracking</div>
+                            <div class="step-description">Deadline alerts and follow-up reminders</div>
+                        </div>
+                    </div>
                 </div>
 
-                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Start Free - See Your Gaps →</button>
+                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Start Free - Find Your Gaps →</button>
 
-                <p class="footer-note">
-                    We find the gaps, contacts, and write the pitches.<br>
-                    <span class="coming-soon">Coming soon: We send them for you</span>
-                </p>
+                <p class="footer-note">This is an example. Get real solutions for YOUR brand.</p>
             </div>
         `;
     },
@@ -62,26 +98,44 @@ const SolutionRenderers = {
         return `
             <div class="demo-content">
                 <button class="close-modal" aria-label="Close">&times;</button>
-                <h2>Technical SEO Gap</h2>
+                <h2>Technical SEO Gap Solution</h2>
 
-                <div class="gap-context">
-                    <p>Your site is missing llms.txt</p>
-                    <p class="problem">AI engines can't index properly</p>
+                <div class="gap-description">
+                    <p class="label">The gap you clicked:</p>
+                    <p class="quote">"Missing llms.txt file (AI engines can't index properly)"</p>
                 </div>
 
-                <div class="solution-items">
-                    <h3>You'd get:</h3>
-                    <div class="item">→ Ready-to-use file</div>
-                    <div class="item">→ Installation guide</div>
-                    <div class="item">→ Verification check</div>
+                <div class="solution-steps">
+                    <h3>What you'd get with Fokal:</h3>
+
+                    <div class="step">
+                        <div class="step-number">1.</div>
+                        <div class="step-content">
+                            <div class="step-title">The file</div>
+                            <div class="step-description">Ready-to-use llms.txt (copy & paste)</div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2.</div>
+                        <div class="step-content">
+                            <div class="step-title">The guide</div>
+                            <div class="step-description">Step-by-step installation instructions</div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3.</div>
+                        <div class="step-content">
+                            <div class="step-title">The tracking</div>
+                            <div class="step-description">Monitor when AI engines access your file</div>
+                        </div>
+                    </div>
                 </div>
 
-                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Start Free - See Your Gaps →</button>
+                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Start Free - Find Your Gaps →</button>
 
-                <p class="footer-note">
-                    We find the gaps, contacts, and write the pitches.<br>
-                    <span class="coming-soon">Coming soon: We send them for you</span>
-                </p>
+                <p class="footer-note">This is an example. Get real solutions for YOUR brand.</p>
             </div>
         `;
     },
@@ -90,26 +144,44 @@ const SolutionRenderers = {
         return `
             <div class="demo-content">
                 <button class="close-modal" aria-label="Close">&times;</button>
-                <h2>Awards Opportunity</h2>
+                <h2>Awards Gap Solution</h2>
 
-                <div class="gap-context">
-                    <p>Finder Investment Awards 2026</p>
-                    <p class="problem">Your competitors won in 2025</p>
+                <div class="gap-description">
+                    <p class="label">The gap you clicked:</p>
+                    <p class="quote">"Finder Investment Awards 2026 (your competitors won in 2025)"</p>
                 </div>
 
-                <div class="solution-items">
-                    <h3>You'd get:</h3>
-                    <div class="item">→ Awards contact</div>
-                    <div class="item">→ Inquiry email</div>
-                    <div class="item">→ Application timeline</div>
+                <div class="solution-steps">
+                    <h3>What you'd get with Fokal:</h3>
+
+                    <div class="step">
+                        <div class="step-number">1.</div>
+                        <div class="step-content">
+                            <div class="step-title">The contact</div>
+                            <div class="step-description">Awards coordinator at Finder (90% verified)</div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2.</div>
+                        <div class="step-content">
+                            <div class="step-title">The pitch</div>
+                            <div class="step-description">Pre-written inquiry: Why Stake should participate</div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3.</div>
+                        <div class="step-content">
+                            <div class="step-title">The tracking</div>
+                            <div class="step-description">Application deadlines and submission timeline</div>
+                        </div>
+                    </div>
                 </div>
 
-                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Start Free - See Your Gaps →</button>
+                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Start Free - Find Your Gaps →</button>
 
-                <p class="footer-note">
-                    We find the gaps, contacts, and write the pitches.<br>
-                    <span class="coming-soon">Coming soon: We send them for you</span>
-                </p>
+                <p class="footer-note">This is an example. Get real solutions for YOUR brand.</p>
             </div>
         `;
     }
