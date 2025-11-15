@@ -1403,10 +1403,13 @@
     color: #C4B5FD;
 }
 
-/* What You'll Get Section */
+/* What You'll Get Section - Card Style */
 .what-youll-get {
-    padding: 0 24px;
-    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0 24px 24px 24px;
 }
 
 .what-youll-get h3 {

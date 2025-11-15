@@ -6,8 +6,8 @@ const SolutionRenderers = {
         return `
             <div class="solution-container">
                 <!-- What You'll Get - AT TOP -->
-                <div class="what-youll-get" style="margin-top: 24px;">
-                    <h3 style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                <div class="what-youll-get">
+                    <h3 style="display: flex; align-items: center; gap: 8px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         <span>What you'll get for this gap</span>
                     </h3>
@@ -63,8 +63,8 @@ const SolutionRenderers = {
         return `
             <div class="solution-container">
                 <!-- What You'll Get - AT TOP -->
-                <div class="what-youll-get" style="margin-top: 24px;">
-                    <h3 style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                <div class="what-youll-get">
+                    <h3 style="display: flex; align-items: center; gap: 8px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                         <span>What you'll get for this gap</span>
                     </h3>
@@ -118,7 +118,7 @@ const SolutionRenderers = {
         return `
             <div class="solution-container">
                 <!-- What You'll Get - AT TOP -->
-                <div class="what-youll-get" style="margin-top: 24px;">
+                <div class="what-youll-get">
                     <h3 style="display: flex; align-items: center; gap: 8px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
                         <span>What you'll get for this gap</span>
@@ -175,7 +175,7 @@ const SolutionRenderers = {
         return `
             <div class="solution-container">
                 <!-- What You'll Get - AT TOP -->
-                <div class="what-youll-get" style="margin-top: 24px;">
+                <div class="what-youll-get">
                     <h3 style="display: flex; align-items: center; gap: 8px;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                         <span>What you'll get for this gap</span>
