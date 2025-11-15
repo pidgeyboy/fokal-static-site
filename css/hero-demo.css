@@ -1403,6 +1403,44 @@
     color: #C4B5FD;
 }
 
+/* What You'll Get Section */
+.what-youll-get {
+    padding: 0 24px;
+    margin-bottom: 24px;
+}
+
+.what-youll-get h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #E5E9F0;
+    margin-bottom: 16px;
+}
+
+.deliverables-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.deliverables-list li {
+    padding: 10px 0;
+    padding-left: 28px;
+    position: relative;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #C6CDD8;
+}
+
+.deliverables-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00E676;
+    font-weight: 600;
+}
+
 /* Responsive adjustments for new elements */
 @media (max-width: 768px) {
     .demo-context-banner {

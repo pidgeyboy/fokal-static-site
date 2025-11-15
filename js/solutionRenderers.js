@@ -14,47 +14,7 @@ const SolutionRenderers = {
                     </div>
                 </div>
 
-                <!-- Journalist Request Card -->
-                <div class="primary-action-card">
-                    <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 8px;">📰 Journalist Request</h3>
-                    <p style="color: #C6CDD8; line-height: 1.6; margin-bottom: 0; font-size: 14px;">${sol.requestDetails}</p>
-                </div>
-
-                <div style="padding: 0 24px;">
-                    <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 12px;">✍️ Your Response</h3>
-
-                    <!-- Response Card - Same format as contact card -->
-                    <div class="contact-card-prod" id="pr-response-content">
-                        <div style="flex: 1; min-width: 0;">
-                            <div style="margin-bottom: 12px;">
-                                <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Subject</span>
-                                <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #E5E9F0; margin-top: 4px; font-weight: 500;">${sol.responseSubject}</p>
-                            </div>
-                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
-                                <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Body</span>
-                                <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; line-height: 1.6; color: #C6CDD8;">
-                                    ${sol.responseBody.split('\n').map(line => {
-                                        if (line.startsWith('•')) {
-                                            return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
-                                        }
-                                        return line ? `<p style="margin-bottom: 8px;">${line}</p>` : '';
-                                    }).join('')}
-                                </div>
-                            </div>
-                        </div>
-                        <div style="flex-shrink: 0; align-self: flex-start;">
-                            <button class="copy-btn" data-copy="pr-response-content" style="padding: 6px 12px; font-size: 13px;">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Volume Indicator -->
-                <div class="volume-indicator">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
-                    <span>This PR opportunity + <strong>12 live requests</strong> updated daily</span>
-                </div>
-
-                <!-- Why This Matters Section -->
+                <!-- Why This Matters Section - MOVED UP -->
                 <div class="why-matters-section">
                     <div style="font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
                         <span style="font-size: 18px;">⚡</span>
@@ -74,6 +34,32 @@ const SolutionRenderers = {
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                         We monitor journalist requests 24/7 and alert you before deadlines
                     </div>
+                </div>
+
+                <!-- Journalist Request Card -->
+                <div class="primary-action-card">
+                    <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 8px;">📰 Journalist Request</h3>
+                    <p style="color: #C6CDD8; line-height: 1.6; margin-bottom: 0; font-size: 14px;">${sol.requestDetails}</p>
+                </div>
+
+                <!-- What You'll Get - REPLACES full response -->
+                <div class="what-youll-get">
+                    <h3 style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        <span>What you'll get for this gap</span>
+                    </h3>
+                    <ul class="deliverables-list">
+                        <li>Pre-written response email (subject + personalized pitch)</li>
+                        <li>Journalist contact and outlet information</li>
+                        <li>Deadline tracking and reminders</li>
+                        <li>Expert positioning and key talking points</li>
+                    </ul>
+                </div>
+
+                <!-- Volume Indicator -->
+                <div class="volume-indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                    <span>This PR opportunity + <strong>12 live requests</strong> updated daily</span>
                 </div>
 
                 <!-- Bottom CTA -->
@@ -100,6 +86,28 @@ const SolutionRenderers = {
                     </div>
                 </div>
 
+                <!-- Why This Matters Section - MOVED UP -->
+                <div class="why-matters-section">
+                    <div style="font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 18px;">⚡</span>
+                        <span>Why this matters</span>
+                    </div>
+                    <div class="comparison-grid">
+                        <div class="comparison-item without">
+                            <div class="comparison-label">Without Fokal</div>
+                            <div>Manually searching thousands of articles hoping to find missing mentions</div>
+                        </div>
+                        <div class="comparison-item with">
+                            <div class="comparison-label">With Fokal</div>
+                            <div>Automated discovery + contact finding + pitch templates</div>
+                        </div>
+                    </div>
+                    <div class="monitoring-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        We monitor this article daily and alert you to changes
+                    </div>
+                </div>
+
                 <h3 style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 12px; padding: 0 24px;">Discovered Contact</h3>
 
                 <!-- Contact Card - Production Layout -->
@@ -122,58 +130,24 @@ const SolutionRenderers = {
                     </div>
                 </div>
 
-                <h3 style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 12px; padding: 0 24px;">Email Template</h3>
-
-                <!-- Email Template Card - Same format as contact card -->
-                <div class="contact-card-prod" id="email-template-content" style="margin: 0 24px 24px 24px;">
-                    <div style="flex: 1; min-width: 0;">
-                        <div style="margin-bottom: 12px;">
-                            <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Subject</span>
-                            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #E5E9F0; margin-top: 4px; font-weight: 500;">${sol.emailTemplate.subject}</p>
-                        </div>
-                        <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
-                            <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Body</span>
-                            <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; line-height: 1.6; color: #C6CDD8;">
-                                ${sol.emailTemplate.body.split('\n').map(line => {
-                                    if (line.startsWith('•')) {
-                                        return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
-                                    }
-                                    return line ? `<p style="margin-bottom: 8px;">${line}</p>` : '';
-                                }).join('')}
-                            </div>
-                        </div>
-                    </div>
-                    <div style="flex-shrink: 0; align-self: flex-start;">
-                        <button class="copy-btn" data-copy="email-template-content" style="padding: 6px 12px; font-size: 13px;">Copy</button>
-                    </div>
+                <!-- What You'll Get - REPLACES full email template -->
+                <div class="what-youll-get">
+                    <h3 style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span>What you'll get for this gap</span>
+                    </h3>
+                    <ul class="deliverables-list">
+                        <li>Pre-written email template (subject + personalized pitch)</li>
+                        <li>Contact verification and confidence scoring</li>
+                        <li>Pitch angle based on article context</li>
+                        <li>Follow-up reminders and tracking</li>
+                    </ul>
                 </div>
 
                 <!-- Volume Indicator -->
                 <div class="volume-indicator">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
                     <span>This citation gap + <strong>47 more</strong> discovered for Stake</span>
-                </div>
-
-                <!-- Why This Matters Section -->
-                <div class="why-matters-section">
-                    <div style="font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-                        <span style="font-size: 18px;">⚡</span>
-                        <span>Why this matters</span>
-                    </div>
-                    <div class="comparison-grid">
-                        <div class="comparison-item without">
-                            <div class="comparison-label">Without Fokal</div>
-                            <div>Manually searching thousands of articles hoping to find missing mentions</div>
-                        </div>
-                        <div class="comparison-item with">
-                            <div class="comparison-label">With Fokal</div>
-                            <div>Automated discovery + contact finding + pitch templates</div>
-                        </div>
-                    </div>
-                    <div class="monitoring-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        We monitor this article daily and alert you to changes
-                    </div>
                 </div>
 
                 <!-- Bottom CTA -->
@@ -198,40 +172,7 @@ const SolutionRenderers = {
                     </div>
                 </div>
 
-                <!-- File Content Card -->
-                <div class="primary-action-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                        <h3>📄 llms.txt File</h3>
-                        <button class="copy-btn" data-copy="llms-file-content">Copy File</button>
-                    </div>
-                    <div id="llms-file-content" style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255, 255, 255, 0.08); padding: 16px; border-radius: 8px; overflow-x: auto;">
-                        <pre style="margin: 0; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.6; color: #E5E9F0;">${sol.fileContent}</pre>
-                    </div>
-                </div>
-
-                <!-- Quick Steps -->
-                <div style="padding: 0 24px 24px;">
-                    <h3 style="font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: 16px;">🚀 Quick Setup</h3>
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        ${sol.steps.slice(0, 3).map((step, idx) => `
-                            <div style="display: flex; gap: 12px; align-items: start;">
-                                <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(74, 192, 255, 0.1); border: 1px solid rgba(74, 192, 255, 0.3); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--accent-blue); flex-shrink: 0;">${idx + 1}</div>
-                                <div style="flex: 1;">
-                                    <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">${step.title}</div>
-                                    <div style="font-size: 14px; color: var(--text-muted); line-height: 1.5;">${step.description}</div>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <!-- Volume Indicator -->
-                <div class="volume-indicator">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
-                    <span>This technical fix + <strong>4 more optimizations</strong> discovered</span>
-                </div>
-
-                <!-- Why This Matters Section -->
+                <!-- Why This Matters Section - MOVED UP -->
                 <div class="why-matters-section">
                     <div style="font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
                         <span style="font-size: 18px;">⚡</span>
@@ -251,6 +192,37 @@ const SolutionRenderers = {
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                         We track when AI engines access your optimizations
                     </div>
+                </div>
+
+                <!-- File Content Card -->
+                <div class="primary-action-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h3>📄 llms.txt File</h3>
+                        <button class="copy-btn" data-copy="llms-file-content">Copy File</button>
+                    </div>
+                    <div id="llms-file-content" style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255, 255, 255, 0.08); padding: 16px; border-radius: 8px; overflow-x: auto;">
+                        <pre style="margin: 0; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.6; color: #E5E9F0;">${sol.fileContent}</pre>
+                    </div>
+                </div>
+
+                <!-- What You'll Get -->
+                <div class="what-youll-get">
+                    <h3 style="display: flex; align-items: center; gap: 8px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        <span>What you'll get for this gap</span>
+                    </h3>
+                    <ul class="deliverables-list">
+                        <li>Ready-to-use llms.txt file (copy & paste)</li>
+                        <li>Step-by-step implementation guide</li>
+                        <li>Verification checklist to ensure proper setup</li>
+                        <li>Monitoring tools to track AI engine access</li>
+                    </ul>
+                </div>
+
+                <!-- Volume Indicator -->
+                <div class="volume-indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                    <span>This technical fix + <strong>4 more optimizations</strong> discovered</span>
                 </div>
 
                 <!-- Bottom CTA -->
@@ -277,9 +249,31 @@ const SolutionRenderers = {
                     </div>
                 </div>
 
-                <!-- Awards Info Card -->
+                <!-- Why This Matters Section - MOVED UP -->
+                <div class="why-matters-section">
+                    <div style="font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 18px;">⚡</span>
+                        <span>Why this matters</span>
+                    </div>
+                    <div class="comparison-grid">
+                        <div class="comparison-item without">
+                            <div class="comparison-label">Without Fokal</div>
+                            <div>Miss award deadlines and industry recognition opportunities</div>
+                        </div>
+                        <div class="comparison-item with">
+                            <div class="comparison-label">With Fokal</div>
+                            <div>Automated tracking + contact discovery + submission reminders</div>
+                        </div>
+                    </div>
+                    <div class="monitoring-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        We track award programs year-round and alert you to new opportunities
+                    </div>
+                </div>
+
+                <!-- Awards Opportunity Card -->
                 <div class="primary-action-card">
-                    <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 8px;">🤝 Build Relationship for Future Participation</h3>
+                    <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 8px;">🏆 Awards Opportunity</h3>
                     <p style="color: #C6CDD8; line-height: 1.6; margin-bottom: 12px; font-size: 14px;">${sol.description}</p>
 
                     <h4 style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 8px;">Key Contact</h4>
@@ -303,60 +297,26 @@ const SolutionRenderers = {
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-top: 20px; margin-bottom: 12px;">✉️ Inquiry Email</h3>
-
-                    <!-- Email Template Card - Same format as contact card -->
-                    <div class="contact-card-prod" id="awards-email-content">
-                        <div style="flex: 1; min-width: 0;">
-                            <div style="margin-bottom: 12px;">
-                                <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Subject</span>
-                                <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; color: #E5E9F0; margin-top: 4px; font-weight: 500;">${sol.emailTemplate.subject}</p>
-                            </div>
-                            <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 12px;">
-                                <span style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: #9DA6B5; text-transform: uppercase; letter-spacing: 0.5px;">Body</span>
-                                <div style="margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; line-height: 1.6; color: #C6CDD8;">
-                                    ${sol.emailTemplate.body.split('\n').map(line => {
-                                        if (line.startsWith('•')) {
-                                            return `<p style="margin-left: 20px; margin-bottom: 8px;">${line}</p>`;
-                                        }
-                                        return line ? `<p style="margin-bottom: 8px;">${line}</p>` : '';
-                                    }).join('')}
-                                </div>
-                            </div>
-                        </div>
-                        <div style="flex-shrink: 0; align-self: flex-start;">
-                            <button class="copy-btn" data-copy="awards-email-content" style="padding: 6px 12px; font-size: 13px;">Copy</button>
-                        </div>
-                    </div>
+                <!-- What You'll Get -->
+                <div class="what-youll-get">
+                    <h3 style="display: flex; align-items: center; gap: 8px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span>What you'll get for this gap</span>
+                    </h3>
+                    <ul class="deliverables-list">
+                        <li>Pre-written inquiry email (subject + personalized pitch)</li>
+                        <li>Contact verification and confidence scoring</li>
+                        <li>Award eligibility criteria and submission deadlines</li>
+                        <li>Relationship-building approach and follow-up strategy</li>
+                    </ul>
                 </div>
 
                 <!-- Volume Indicator -->
                 <div class="volume-indicator">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
                     <span>This award + <strong>15 opportunities</strong> tracked with deadlines</span>
-                </div>
-
-                <!-- Why This Matters Section -->
-                <div class="why-matters-section">
-                    <div style="font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-                        <span style="font-size: 18px;">⚡</span>
-                        <span>Why this matters</span>
-                    </div>
-                    <div class="comparison-grid">
-                        <div class="comparison-item without">
-                            <div class="comparison-label">Without Fokal</div>
-                            <div>Miss award deadlines and industry recognition opportunities</div>
-                        </div>
-                        <div class="comparison-item with">
-                            <div class="comparison-label">With Fokal</div>
-                            <div>Automated tracking + contact discovery + submission reminders</div>
-                        </div>
-                    </div>
-                    <div class="monitoring-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        We track award programs year-round and alert you to new opportunities
-                    </div>
                 </div>
 
                 <!-- Bottom CTA -->
