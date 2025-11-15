@@ -1308,3 +1308,110 @@
         padding: 16px 20px;
     }
 }
+
+/* Demo Context Banner */
+.demo-context-banner {
+    display: flex;
+    align-items: start;
+    gap: 16px;
+    background: rgba(74, 192, 255, 0.08);
+    border: 1px solid rgba(74, 192, 255, 0.2);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 0 24px 24px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #E5E9F0;
+}
+
+/* Volume Indicator */
+.volume-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    margin: 0 24px 20px 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #C6CDD8;
+}
+
+.volume-indicator strong {
+    color: #4AC0FF;
+    font-weight: 600;
+}
+
+/* Why This Matters Section */
+.why-matters-section {
+    background: rgba(139, 92, 246, 0.05);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0 24px 24px 24px;
+    font-family: 'DM Sans', sans-serif;
+    color: #E5E9F0;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.comparison-item {
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.comparison-item.without {
+    background: rgba(255, 95, 87, 0.08);
+    border: 1px solid rgba(255, 95, 87, 0.2);
+    color: #FFB4AB;
+}
+
+.comparison-item.with {
+    background: rgba(40, 202, 66, 0.08);
+    border: 1px solid rgba(40, 202, 66, 0.2);
+    color: #A6E3AF;
+}
+
+.comparison-label {
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.monitoring-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 8px;
+    font-size: 13px;
+    color: #C4B5FD;
+}
+
+/* Responsive adjustments for new elements */
+@media (max-width: 768px) {
+    .demo-context-banner {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}

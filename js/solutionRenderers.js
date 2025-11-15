@@ -5,6 +5,15 @@ const SolutionRenderers = {
         const sol = gap.solution;
         return `
             <div class="solution-container">
+                <!-- Demo Context Banner -->
+                <div class="demo-context-banner">
+                    <div style="font-size: 20px; margin-bottom: 8px;">💡</div>
+                    <div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">DEMO: This is what Fokal found for Stake</div>
+                        <div style="opacity: 0.8;">When you connect YOUR brand, we'll find gaps like this for you—automatically</div>
+                    </div>
+                </div>
+
                 <!-- Journalist Request Card -->
                 <div class="primary-action-card">
                     <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 8px;">📰 Journalist Request</h3>
@@ -39,9 +48,38 @@ const SolutionRenderers = {
                     </div>
                 </div>
 
+                <!-- Volume Indicator -->
+                <div class="volume-indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                    <span>This PR opportunity + <strong>12 live requests</strong> updated daily</span>
+                </div>
+
+                <!-- Why This Matters Section -->
+                <div class="why-matters-section">
+                    <div style="font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 18px;">⚡</span>
+                        <span>Why this matters</span>
+                    </div>
+                    <div class="comparison-grid">
+                        <div class="comparison-item without">
+                            <div class="comparison-label">Without Fokal</div>
+                            <div>Miss time-sensitive PR opportunities with tight deadlines</div>
+                        </div>
+                        <div class="comparison-item with">
+                            <div class="comparison-label">With Fokal</div>
+                            <div>Real-time alerts + pre-written responses + journalist contacts</div>
+                        </div>
+                    </div>
+                    <div class="monitoring-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        We monitor journalist requests 24/7 and alert you before deadlines
+                    </div>
+                </div>
+
                 <!-- Bottom CTA -->
                 <div class="modal-footer">
-                    <button class="primary-btn" data-gap-type="${gap.type}">Get Full Solution →</button>
+                    <button class="primary-btn" onclick="signInWithGoogle()">Start for free →</button>
+                    <p style="text-align: center; font-size: 13px; color: var(--text-muted); margin-top: 12px;">See your brand's visibility gaps in 60 seconds</p>
                 </div>
             </div>
         `;
@@ -53,6 +91,15 @@ const SolutionRenderers = {
 
         return `
             <div class="solution-container">
+                <!-- Demo Context Banner -->
+                <div class="demo-context-banner">
+                    <div style="font-size: 20px; margin-bottom: 8px;">💡</div>
+                    <div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">DEMO: This is what Fokal found for Stake</div>
+                        <div style="opacity: 0.8;">When you connect YOUR brand, we'll find gaps like this for you—automatically</div>
+                    </div>
+                </div>
+
                 <h3 style="font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 12px; padding: 0 24px;">Discovered Contact</h3>
 
                 <!-- Contact Card - Production Layout -->
@@ -100,6 +147,40 @@ const SolutionRenderers = {
                         <button class="copy-btn" data-copy="email-template-content" style="padding: 6px 12px; font-size: 13px;">Copy</button>
                     </div>
                 </div>
+
+                <!-- Volume Indicator -->
+                <div class="volume-indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                    <span>This citation gap + <strong>47 more</strong> discovered for Stake</span>
+                </div>
+
+                <!-- Why This Matters Section -->
+                <div class="why-matters-section">
+                    <div style="font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 18px;">⚡</span>
+                        <span>Why this matters</span>
+                    </div>
+                    <div class="comparison-grid">
+                        <div class="comparison-item without">
+                            <div class="comparison-label">Without Fokal</div>
+                            <div>Manually searching thousands of articles hoping to find missing mentions</div>
+                        </div>
+                        <div class="comparison-item with">
+                            <div class="comparison-label">With Fokal</div>
+                            <div>Automated discovery + contact finding + pitch templates</div>
+                        </div>
+                    </div>
+                    <div class="monitoring-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        We monitor this article daily and alert you to changes
+                    </div>
+                </div>
+
+                <!-- Bottom CTA -->
+                <div class="modal-footer">
+                    <button class="primary-btn" onclick="signInWithGoogle()">Start for free →</button>
+                    <p style="text-align: center; font-size: 13px; color: var(--text-muted); margin-top: 12px;">See your brand's visibility gaps in 60 seconds</p>
+                </div>
             </div>
         `;
     },
@@ -108,6 +189,15 @@ const SolutionRenderers = {
         const sol = gap.solution;
         return `
             <div class="solution-container">
+                <!-- Demo Context Banner -->
+                <div class="demo-context-banner">
+                    <div style="font-size: 20px; margin-bottom: 8px;">💡</div>
+                    <div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">DEMO: This is what Fokal found for Stake</div>
+                        <div style="opacity: 0.8;">When you connect YOUR brand, we'll find gaps like this for you—automatically</div>
+                    </div>
+                </div>
+
                 <!-- File Content Card -->
                 <div class="primary-action-card">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
@@ -135,9 +225,38 @@ const SolutionRenderers = {
                     </div>
                 </div>
 
+                <!-- Volume Indicator -->
+                <div class="volume-indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                    <span>This technical fix + <strong>4 more optimizations</strong> discovered</span>
+                </div>
+
+                <!-- Why This Matters Section -->
+                <div class="why-matters-section">
+                    <div style="font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 18px;">⚡</span>
+                        <span>Why this matters</span>
+                    </div>
+                    <div class="comparison-grid">
+                        <div class="comparison-item without">
+                            <div class="comparison-label">Without Fokal</div>
+                            <div>Miss technical optimizations that improve AI search visibility</div>
+                        </div>
+                        <div class="comparison-item with">
+                            <div class="comparison-label">With Fokal</div>
+                            <div>Automated detection + ready-to-use files + implementation guides</div>
+                        </div>
+                    </div>
+                    <div class="monitoring-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        We track when AI engines access your optimizations
+                    </div>
+                </div>
+
                 <!-- Bottom CTA -->
                 <div class="modal-footer">
-                    <button class="primary-btn" data-gap-type="${gap.type}">Get Full Solution →</button>
+                    <button class="primary-btn" onclick="signInWithGoogle()">Start for free →</button>
+                    <p style="text-align: center; font-size: 13px; color: var(--text-muted); margin-top: 12px;">See your brand's visibility gaps in 60 seconds</p>
                 </div>
             </div>
         `;
@@ -149,6 +268,15 @@ const SolutionRenderers = {
 
         return `
             <div class="solution-container">
+                <!-- Demo Context Banner -->
+                <div class="demo-context-banner">
+                    <div style="font-size: 20px; margin-bottom: 8px;">💡</div>
+                    <div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">DEMO: This is what Fokal found for Stake</div>
+                        <div style="opacity: 0.8;">When you connect YOUR brand, we'll find gaps like this for you—automatically</div>
+                    </div>
+                </div>
+
                 <!-- Awards Info Card -->
                 <div class="primary-action-card">
                     <h3 style="font-size: 15px; font-weight: 500; color: #E5E9F0; margin-bottom: 8px;">🤝 Build Relationship for Future Participation</h3>
@@ -203,9 +331,38 @@ const SolutionRenderers = {
                     </div>
                 </div>
 
+                <!-- Volume Indicator -->
+                <div class="volume-indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                    <span>This award + <strong>15 opportunities</strong> tracked with deadlines</span>
+                </div>
+
+                <!-- Why This Matters Section -->
+                <div class="why-matters-section">
+                    <div style="font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 18px;">⚡</span>
+                        <span>Why this matters</span>
+                    </div>
+                    <div class="comparison-grid">
+                        <div class="comparison-item without">
+                            <div class="comparison-label">Without Fokal</div>
+                            <div>Miss award deadlines and industry recognition opportunities</div>
+                        </div>
+                        <div class="comparison-item with">
+                            <div class="comparison-label">With Fokal</div>
+                            <div>Automated tracking + contact discovery + submission reminders</div>
+                        </div>
+                    </div>
+                    <div class="monitoring-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        We track award programs year-round and alert you to new opportunities
+                    </div>
+                </div>
+
                 <!-- Bottom CTA -->
                 <div class="modal-footer">
-                    <button class="primary-btn" data-gap-type="${gap.type}">Get Full Solution →</button>
+                    <button class="primary-btn" onclick="signInWithGoogle()">Start for free →</button>
+                    <p style="text-align: center; font-size: 13px; color: var(--text-muted); margin-top: 12px;">See your brand's visibility gaps in 60 seconds</p>
                 </div>
             </div>
         `;
