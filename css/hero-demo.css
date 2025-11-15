@@ -766,33 +766,31 @@
     font-weight: 600;
 }
 
-.solution-list {
+/* Solution Items - No Card Wrapper */
+.solution-items {
     text-align: left;
-    margin-bottom: 32px;
-    padding: 20px 24px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+    margin: 0 auto 32px;
+    max-width: 400px;
 }
 
-.solution-list h3 {
-    font-size: 14px;
+.solution-items h3 {
+    font-size: 12px;
     font-weight: 600;
     color: #9DA6B5;
     margin-bottom: 16px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
 }
 
-.solution-list .item {
+.solution-items .item {
     font-size: 15px;
     color: #E5E9F0;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 10px 0;
+    line-height: 1.4;
 }
 
-.solution-list .item:last-child {
-    border-bottom: none;
+.solution-items .item:first-of-type {
+    padding-top: 0;
 }
 
 .cta-primary {

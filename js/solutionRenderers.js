@@ -12,7 +12,7 @@ const SolutionRenderers = {
                     <p class="problem">Stake isn't mentioned</p>
                 </div>
 
-                <div class="solution-list">
+                <div class="solution-items">
                     <h3>You'd get:</h3>
                     <div class="item">→ Contact info</div>
                     <div class="item">→ Email template</div>
@@ -39,7 +39,7 @@ const SolutionRenderers = {
                     <p class="problem">48-hour deadline</p>
                 </div>
 
-                <div class="solution-list">
+                <div class="solution-items">
                     <h3>You'd get:</h3>
                     <div class="item">→ Journalist details</div>
                     <div class="item">→ Response template</div>
@@ -66,7 +66,7 @@ const SolutionRenderers = {
                     <p class="problem">AI engines can't index properly</p>
                 </div>
 
-                <div class="solution-list">
+                <div class="solution-items">
                     <h3>You'd get:</h3>
                     <div class="item">→ Ready-to-use file</div>
                     <div class="item">→ Installation guide</div>
@@ -93,7 +93,7 @@ const SolutionRenderers = {
                     <p class="problem">Your competitors won in 2025</p>
                 </div>
 
-                <div class="solution-list">
+                <div class="solution-items">
                     <h3>You'd get:</h3>
                     <div class="item">→ Awards contact</div>
                     <div class="item">→ Inquiry email</div>
