@@ -14,29 +14,29 @@ const SolutionRenderers = {
                 </div>
 
                 <div class="solution-steps">
-                    <h3>What you'd get with Fokal:</h3>
+                    <h3>What you'd get:</h3>
 
                     <div class="step">
-                        <div class="step-number">1</div>
+                        <div class="step-number">1.</div>
                         <div class="step-content">
                             <div class="step-title">The contact</div>
-                            <div class="step-description">Editor at ${sol.domain} (95% verified)</div>
+                            <div class="step-description">Verified editor email + LinkedIn (in this case: ${sol.domain})</div>
                         </div>
                     </div>
 
                     <div class="step">
-                        <div class="step-number">2</div>
+                        <div class="step-number">2.</div>
                         <div class="step-content">
                             <div class="step-title">The pitch</div>
-                            <div class="step-description">Pre-written email: Why Stake fits their comparison</div>
+                            <div class="step-description">Pre-written outreach email (customized for your brand)</div>
                         </div>
                     </div>
 
                     <div class="step">
-                        <div class="step-number">3</div>
+                        <div class="step-number">3.</div>
                         <div class="step-content">
                             <div class="step-title">The tracking</div>
-                            <div class="step-description">Know when Stake gets added to the article</div>
+                            <div class="step-description">Alert when you get mentioned in the article</div>
                         </div>
                     </div>
                 </div>
@@ -60,29 +60,29 @@ const SolutionRenderers = {
                 </div>
 
                 <div class="solution-steps">
-                    <h3>What you'd get with Fokal:</h3>
+                    <h3>What you'd get:</h3>
 
                     <div class="step">
-                        <div class="step-number">1</div>
+                        <div class="step-number">1.</div>
                         <div class="step-content">
                             <div class="step-title">The contact</div>
-                            <div class="step-description">Journalist details at TechCrunch (verified)</div>
+                            <div class="step-description">Verified journalist email + LinkedIn (in this case: TechCrunch)</div>
                         </div>
                     </div>
 
                     <div class="step">
-                        <div class="step-number">2</div>
+                        <div class="step-number">2.</div>
                         <div class="step-content">
                             <div class="step-title">The pitch</div>
-                            <div class="step-description">Pre-written response: Your expertise on their topic</div>
+                            <div class="step-description">Pre-written response email (customized for your brand)</div>
                         </div>
                     </div>
 
                     <div class="step">
-                        <div class="step-number">3</div>
+                        <div class="step-number">3.</div>
                         <div class="step-content">
                             <div class="step-title">The tracking</div>
-                            <div class="step-description">Deadline alerts and follow-up reminders</div>
+                            <div class="step-description">Deadline alerts + follow-up reminders</div>
                         </div>
                     </div>
                 </div>
@@ -106,18 +106,18 @@ const SolutionRenderers = {
                 </div>
 
                 <div class="solution-steps">
-                    <h3>What you'd get with Fokal:</h3>
+                    <h3>What you'd get:</h3>
 
                     <div class="step">
-                        <div class="step-number">1</div>
+                        <div class="step-number">1.</div>
                         <div class="step-content">
                             <div class="step-title">The file</div>
-                            <div class="step-description">Ready-to-use llms.txt (copy & paste)</div>
+                            <div class="step-description">Ready-to-use llms.txt (customized for your brand)</div>
                         </div>
                     </div>
 
                     <div class="step">
-                        <div class="step-number">2</div>
+                        <div class="step-number">2.</div>
                         <div class="step-content">
                             <div class="step-title">The guide</div>
                             <div class="step-description">Step-by-step installation instructions</div>
@@ -125,7 +125,7 @@ const SolutionRenderers = {
                     </div>
 
                     <div class="step">
-                        <div class="step-number">3</div>
+                        <div class="step-number">3.</div>
                         <div class="step-content">
                             <div class="step-title">The tracking</div>
                             <div class="step-description">Monitor when AI engines access your file</div>
@@ -152,26 +152,26 @@ const SolutionRenderers = {
                 </div>
 
                 <div class="solution-steps">
-                    <h3>What you'd get with Fokal:</h3>
+                    <h3>What you'd get:</h3>
 
                     <div class="step">
-                        <div class="step-number">1</div>
+                        <div class="step-number">1.</div>
                         <div class="step-content">
                             <div class="step-title">The contact</div>
-                            <div class="step-description">Awards coordinator at Finder (90% verified)</div>
+                            <div class="step-description">Verified awards coordinator email + LinkedIn (in this case: Finder)</div>
                         </div>
                     </div>
 
                     <div class="step">
-                        <div class="step-number">2</div>
+                        <div class="step-number">2.</div>
                         <div class="step-content">
                             <div class="step-title">The pitch</div>
-                            <div class="step-description">Pre-written inquiry: Why Stake should participate</div>
+                            <div class="step-description">Pre-written inquiry email (customized for your brand)</div>
                         </div>
                     </div>
 
                     <div class="step">
-                        <div class="step-number">3</div>
+                        <div class="step-number">3.</div>
                         <div class="step-content">
                             <div class="step-title">The tracking</div>
                             <div class="step-description">Application deadlines and submission timeline</div>
