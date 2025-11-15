@@ -5,6 +5,7 @@ const SolutionRenderers = {
         const sol = gap.solution;
         return `
             <div class="demo-content">
+                <button class="close-modal" aria-label="Close">&times;</button>
                 <h2>Visibility Gap</h2>
 
                 <div class="gap-context">
@@ -32,6 +33,7 @@ const SolutionRenderers = {
     pr_opportunity: function(gap) {
         return `
             <div class="demo-content">
+                <button class="close-modal" aria-label="Close">&times;</button>
                 <h2>PR Opportunity</h2>
 
                 <div class="gap-context">
@@ -59,6 +61,7 @@ const SolutionRenderers = {
     technical_seo: function(gap) {
         return `
             <div class="demo-content">
+                <button class="close-modal" aria-label="Close">&times;</button>
                 <h2>Technical SEO Gap</h2>
 
                 <div class="gap-context">
@@ -86,6 +89,7 @@ const SolutionRenderers = {
     media_pitch: function(gap) {
         return `
             <div class="demo-content">
+                <button class="close-modal" aria-label="Close">&times;</button>
                 <h2>Awards Opportunity</h2>
 
                 <div class="gap-context">
