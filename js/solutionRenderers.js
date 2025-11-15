@@ -17,7 +17,7 @@ const SolutionRenderers = {
                     <h3>What you'd get with Fokal:</h3>
 
                     <div class="step">
-                        <div class="step-number">1.</div>
+                        <div class="step-number">1</div>
                         <div class="step-content">
                             <div class="step-title">The contact</div>
                             <div class="step-description">Editor at ${sol.domain} (95% verified)</div>
@@ -25,7 +25,7 @@ const SolutionRenderers = {
                     </div>
 
                     <div class="step">
-                        <div class="step-number">2.</div>
+                        <div class="step-number">2</div>
                         <div class="step-content">
                             <div class="step-title">The pitch</div>
                             <div class="step-description">Pre-written email: Why Stake fits their comparison</div>
@@ -33,7 +33,7 @@ const SolutionRenderers = {
                     </div>
 
                     <div class="step">
-                        <div class="step-number">3.</div>
+                        <div class="step-number">3</div>
                         <div class="step-content">
                             <div class="step-title">The tracking</div>
                             <div class="step-description">Know when Stake gets added to the article</div>
@@ -63,7 +63,7 @@ const SolutionRenderers = {
                     <h3>What you'd get with Fokal:</h3>
 
                     <div class="step">
-                        <div class="step-number">1.</div>
+                        <div class="step-number">1</div>
                         <div class="step-content">
                             <div class="step-title">The contact</div>
                             <div class="step-description">Journalist details at TechCrunch (verified)</div>
@@ -71,7 +71,7 @@ const SolutionRenderers = {
                     </div>
 
                     <div class="step">
-                        <div class="step-number">2.</div>
+                        <div class="step-number">2</div>
                         <div class="step-content">
                             <div class="step-title">The pitch</div>
                             <div class="step-description">Pre-written response: Your expertise on their topic</div>
@@ -79,7 +79,7 @@ const SolutionRenderers = {
                     </div>
 
                     <div class="step">
-                        <div class="step-number">3.</div>
+                        <div class="step-number">3</div>
                         <div class="step-content">
                             <div class="step-title">The tracking</div>
                             <div class="step-description">Deadline alerts and follow-up reminders</div>
@@ -109,7 +109,7 @@ const SolutionRenderers = {
                     <h3>What you'd get with Fokal:</h3>
 
                     <div class="step">
-                        <div class="step-number">1.</div>
+                        <div class="step-number">1</div>
                         <div class="step-content">
                             <div class="step-title">The file</div>
                             <div class="step-description">Ready-to-use llms.txt (copy & paste)</div>
@@ -117,7 +117,7 @@ const SolutionRenderers = {
                     </div>
 
                     <div class="step">
-                        <div class="step-number">2.</div>
+                        <div class="step-number">2</div>
                         <div class="step-content">
                             <div class="step-title">The guide</div>
                             <div class="step-description">Step-by-step installation instructions</div>
@@ -125,7 +125,7 @@ const SolutionRenderers = {
                     </div>
 
                     <div class="step">
-                        <div class="step-number">3.</div>
+                        <div class="step-number">3</div>
                         <div class="step-content">
                             <div class="step-title">The tracking</div>
                             <div class="step-description">Monitor when AI engines access your file</div>
@@ -155,7 +155,7 @@ const SolutionRenderers = {
                     <h3>What you'd get with Fokal:</h3>
 
                     <div class="step">
-                        <div class="step-number">1.</div>
+                        <div class="step-number">1</div>
                         <div class="step-content">
                             <div class="step-title">The contact</div>
                             <div class="step-description">Awards coordinator at Finder (90% verified)</div>
@@ -163,7 +163,7 @@ const SolutionRenderers = {
                     </div>
 
                     <div class="step">
-                        <div class="step-number">2.</div>
+                        <div class="step-number">2</div>
                         <div class="step-content">
                             <div class="step-title">The pitch</div>
                             <div class="step-description">Pre-written inquiry: Why Stake should participate</div>
@@ -171,7 +171,7 @@ const SolutionRenderers = {
                     </div>
 
                     <div class="step">
-                        <div class="step-number">3.</div>
+                        <div class="step-number">3</div>
                         <div class="step-content">
                             <div class="step-title">The tracking</div>
                             <div class="step-description">Application deadlines and submission timeline</div>
