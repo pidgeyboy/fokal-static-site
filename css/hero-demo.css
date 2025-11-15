@@ -818,12 +818,14 @@
     font-weight: 600;
     color: #E5E9F0;
     margin-bottom: 4px;
+    text-align: left;
 }
 
 .step-description {
     font-size: 14px;
     color: #9DA6B5;
     line-height: 1.5;
+    text-align: left;
 }
 
 .cta-primary {
