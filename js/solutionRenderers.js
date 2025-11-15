@@ -114,7 +114,7 @@ const SolutionRenderers = {
                         <h3>📄 llms.txt File</h3>
                         <button class="copy-btn" data-copy="llms-file-content">Copy File</button>
                     </div>
-                    <div id="llms-file-content" style="background: rgba(0,0,0,0.4); padding: 16px; border-radius: 8px; overflow-x: auto;">
+                    <div id="llms-file-content" style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255, 255, 255, 0.08); padding: 16px; border-radius: 8px; overflow-x: auto;">
                         <pre style="margin: 0; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.6; color: #E5E9F0;">${sol.fileContent}</pre>
                     </div>
                 </div>
