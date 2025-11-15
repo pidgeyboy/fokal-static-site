@@ -5,7 +5,7 @@ const gaps = [
     {
         id: 1,
         type: 'pr_opportunity',
-        typeName: 'PR gap',
+        typeName: 'Public Relations gap',
         priority: 'HIGH',
         priorityScore: 90,
         citationCount: 0,
