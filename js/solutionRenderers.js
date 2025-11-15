@@ -11,6 +11,7 @@ const SolutionRenderers = {
                 <div class="gap-description">
                     <p class="label">The gap you clicked:</p>
                     <p class="quote">"Stake missing from ${sol.domain} (${sol.citationCount}+ AI citations)"</p>
+                    <p class="solution-intro">We found the right contact and created the right pitch.</p>
                 </div>
 
                 <div class="solution-steps">
@@ -49,6 +50,7 @@ const SolutionRenderers = {
                 <div class="gap-description">
                     <p class="label">The gap you clicked:</p>
                     <p class="quote">"TechCrunch reporter needs fintech experts (48-hour deadline)"</p>
+                    <p class="solution-intro">We found the right contact and created the right pitch.</p>
                 </div>
 
                 <div class="solution-steps">
@@ -87,6 +89,7 @@ const SolutionRenderers = {
                 <div class="gap-description">
                     <p class="label">The gap you clicked:</p>
                     <p class="quote">"Missing llms.txt file (AI engines can't index properly)"</p>
+                    <p class="solution-intro">We found the right contact and created the right pitch.</p>
                 </div>
 
                 <div class="solution-steps">
@@ -125,6 +128,7 @@ const SolutionRenderers = {
                 <div class="gap-description">
                     <p class="label">The gap you clicked:</p>
                     <p class="quote">"Finder Investment Awards 2026 (your competitors won in 2025)"</p>
+                    <p class="solution-intro">We found the right contact and created the right pitch.</p>
                 </div>
 
                 <div class="solution-steps">
