@@ -70,7 +70,7 @@ const SolutionRenderers = {
                     </div>
                     <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
                         <div style="font-family: 'DM Sans', sans-serif; font-size: 12px; padding: 4px 8px; border-radius: 6px; background: rgba(74, 192, 255, 0.12); color: #4AC0FF; border: 1px solid rgba(74, 192, 255, 0.2);">
-                            ${Math.round(primaryContact.confidence * 100)}%
+                            ${Math.round(primaryContact.confidence)}%
                         </div>
                     </div>
                 </div>
@@ -171,7 +171,7 @@ const SolutionRenderers = {
                         </div>
                         <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
                             <div style="font-family: 'DM Sans', sans-serif; font-size: 12px; padding: 4px 8px; border-radius: 6px; background: rgba(74, 192, 255, 0.12); color: #4AC0FF; border: 1px solid rgba(74, 192, 255, 0.2);">
-                                ${Math.round(primaryContact.confidence * 100)}%
+                                ${Math.round(primaryContact.confidence)}%
                             </div>
                         </div>
                     </div>
