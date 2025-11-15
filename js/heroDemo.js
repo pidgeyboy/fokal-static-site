@@ -88,6 +88,16 @@ function renderFilterPills() {
 
         container.appendChild(pill);
     });
+
+    // Add "+ 4 more" button
+    const moreBtn = document.createElement('button');
+    moreBtn.className = 'filter-pill more-gaps-btn';
+    moreBtn.textContent = '+ 4 more';
+    moreBtn.addEventListener('click', function() {
+        openMoreGapsModal();
+        trackEvent('more_gaps_click', {});
+    });
+    container.appendChild(moreBtn);
 }
 
 function renderShowcaseGapCard() {
@@ -211,6 +221,50 @@ function trackCardImpression(cardElement, gap) {
         observer.observe(cardElement);
     }
 }
+
+function openMoreGapsModal() {
+    const moreGaps = [
+        { name: 'Content Gaps', description: 'Competitors have SEO-winning content formats you\'re missing completely' },
+        { name: 'Citation Gaps', description: 'Trusted sources reference everyone in your space except you' },
+        { name: 'Comparison Gaps', description: 'Missing from "vs" pages, alternatives sites, and buyer guides' },
+        { name: 'Backlink Gaps', description: 'Competitors getting linked where you should be mentioned' }
+    ];
+
+    const modalHTML = `
+        <div class="more-gaps-modal-overlay" onclick="closeMoreGapsModal()">
+            <div class="more-gaps-modal" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                    <h3 style="font-size: 20px; font-weight: 600; color: var(--text-primary); margin: 0;">Other Gap Types We Detect</h3>
+                    <button class="close-modal" onclick="closeMoreGapsModal()" aria-label="Close">&times;</button>
+                </div>
+                <div class="more-gaps-list">
+                    ${moreGaps.map(gap => `
+                        <div class="more-gap-item">
+                            <h4 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">${gap.name}</h4>
+                            <p style="font-size: 14px; color: var(--text-muted); line-height: 1.5; margin: 0;">${gap.description}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    setTimeout(() => {
+        document.querySelector('.more-gaps-modal-overlay').classList.add('active');
+    }, 10);
+}
+
+function closeMoreGapsModal() {
+    const overlay = document.querySelector('.more-gaps-modal-overlay');
+    if (overlay) {
+        overlay.classList.remove('active');
+        setTimeout(() => overlay.remove(), 300);
+    }
+}
+
+// Make closeMoreGapsModal available globally
+window.closeMoreGapsModal = closeMoreGapsModal;
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
