@@ -1548,11 +1548,6 @@
         padding: 20px !important;
     }
 
-    /* Dashboard preview - ensure proper mobile layout */
-    .dashboard-preview {
-        padding: 0 20px;
-    }
-
     /* Filter pills - smaller on mobile */
     .filter-pill {
         padding: 10px 16px;
@@ -1600,10 +1595,6 @@
     /* Extra small screens - even more compact */
     .dashboard-mockup {
         padding: 16px !important;
-    }
-
-    .dashboard-preview {
-        padding: 0 16px;
     }
 
     .filter-pill {
