@@ -1795,7 +1795,9 @@
                 --bg-dark: #1C1D20 !important;      /* 2x brighter - strong contrast */
                 --bg-panel: #2A2B2F !important;     /* 2x brighter - clear separation */
                 --text-primary: #FFFFFF !important; /* Pure white for max contrast */
-                --text-secondary: #E8EAED !important; /* Brighter body text */
+                --text-secondary: #FFFFFF !important; /* Pure white - max readability */
+                --text-muted: #FFFFFF !important;   /* Pure white - max readability */
+                --text-subtle: #FFFFFF !important;  /* Pure white - max readability */
             }
 
             /* Lighten darkest sections */
@@ -1893,8 +1895,8 @@
                 background: linear-gradient(180deg, rgba(32, 33, 37, 0.95) 0%, rgba(35, 36, 40, 0.98) 100%) !important;
             }
 
-            /* 4. Ensure all headers are pure white */
-            h1, h2, h3, h4, h5, h6 {
+            /* 4. Ensure all text is pure white for max readability */
+            h1, h2, h3, h4, h5, h6, p, li, a, span, div {
                 color: #FFFFFF !important;
             }
 
