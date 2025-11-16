@@ -1352,7 +1352,7 @@
     }
 
     .demo-content h2 {
-        font-size: 18px !important;
+        font-size: 20px !important;
         margin-bottom: 12px !important;
     }
 
@@ -1361,17 +1361,17 @@
     }
 
     .gap-description .label {
-        font-size: 12px !important;
+        font-size: 13px !important;
         margin-bottom: 6px !important;
     }
 
     .gap-description .quote {
-        font-size: 14px !important;
-        line-height: 1.4 !important;
+        font-size: 15px !important;
+        line-height: 1.5 !important;
     }
 
     .gap-description .solution-intro {
-        font-size: 14px !important;
+        font-size: 15px !important;
         margin-top: 12px !important;
     }
 
@@ -1380,7 +1380,7 @@
     }
 
     .solution-steps h3 {
-        font-size: 13px !important;
+        font-size: 14px !important;
         margin-bottom: 12px !important;
     }
 
@@ -1390,28 +1390,28 @@
     }
 
     .step-number {
-        font-size: 14px !important;
+        font-size: 15px !important;
     }
 
     .step-title {
-        font-size: 14px !important;
+        font-size: 15px !important;
         margin-bottom: 2px !important;
     }
 
     .step-description {
-        font-size: 13px !important;
-        line-height: 1.4 !important;
+        font-size: 14px !important;
+        line-height: 1.5 !important;
     }
 
     .cta-primary {
-        padding: 12px 24px !important;
-        font-size: 15px !important;
+        padding: 14px 28px !important;
+        font-size: 16px !important;
         margin-bottom: 12px !important;
     }
 
     .footer-note {
-        font-size: 12px !important;
-        line-height: 1.4 !important;
+        font-size: 13px !important;
+        line-height: 1.5 !important;
     }
 
     .solution-container h3 {

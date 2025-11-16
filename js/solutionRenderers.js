@@ -42,7 +42,7 @@ const SolutionRenderers = {
                     </div>
                 </div>
 
-                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Start Free - Find Your Gaps →</button>
+                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Find Your Gaps →</button>
 
                 <p class="footer-note">This is an example. Get real solutions for YOUR brand.</p>
             </div>
@@ -89,7 +89,7 @@ const SolutionRenderers = {
                     </div>
                 </div>
 
-                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Start Free - Find Your Gaps →</button>
+                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Find Your Gaps →</button>
 
                 <p class="footer-note">This is an example. Get real solutions for YOUR brand.</p>
             </div>
@@ -136,7 +136,7 @@ const SolutionRenderers = {
                     </div>
                 </div>
 
-                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Start Free - Find Your Gaps →</button>
+                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Find Your Gaps →</button>
 
                 <p class="footer-note">This is an example. Get real solutions for YOUR brand.</p>
             </div>
@@ -183,7 +183,7 @@ const SolutionRenderers = {
                     </div>
                 </div>
 
-                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Start Free - Find Your Gaps →</button>
+                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Find Your Gaps →</button>
 
                 <p class="footer-note">This is an example. Get real solutions for YOUR brand.</p>
             </div>
