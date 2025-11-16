@@ -1788,6 +1788,17 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            /* Mobile background contrast boost - make sections distinguishable */
+            :root {
+                --bg-panel: #1E1F22;  /* Lighten from #161618 for visibility */
+                --bg-dark: #121214;   /* Slightly lighten from #0E0E10 */
+            }
+
+            /* Lighten darkest sections for mobile visibility */
+            section[style*="#0A0B0D"] {
+                background-color: #15161A !important;
+            }
+
             .hero {
                 padding: 140px 0 80px; /* Remove horizontal padding to allow dashboard full width */
             }
