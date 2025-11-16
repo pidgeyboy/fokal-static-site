@@ -352,24 +352,66 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            /* COMPREHENSIVE MOBILE CONTRAST FIX */
+
+            /* 1. Match hero darkness for consistent black */
+            :root {
+                --bg-dark: #0F1012 !important;      /* Match hero darkness */
+                --bg-panel: #14151A !important;     /* Match hero gradient end */
+                --text-primary: #FFFFFF !important; /* Pure white for max contrast */
+                --text-secondary: #FFFFFF !important; /* Pure white - max readability */
+                --text-muted: #FFFFFF !important;   /* Pure white - max readability */
+                --text-subtle: #FFFFFF !important;  /* Pure white - max readability */
+            }
+
+            /* Lighten darkest sections */
+            section[style*="#0A0B0D"] {
+                background-color: #22232A !important;  /* 3x brighter */
+            }
+
+            .page-hero {
+                padding: 140px 0 80px;
+                background: var(--bg-dark) !important;
+            }
+
             .page-hero h1 {
-                font-size: 36px;
+                font-size: 32px;
+                color: #FFFFFF !important;
+                text-shadow: none;
             }
 
             .page-hero p {
                 font-size: 18px;
+                color: #FFFFFF !important;
+            }
+
+            /* 3. Strong card contrast with deep shadows */
+            .feature-item {
+                background: rgba(48, 50, 54, 0.95) !important;
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+                padding: 32px;
+            }
+
+            /* 4. Ensure all text is pure white for max readability */
+            h1, h2, h3, h4, h5, h6, p, li, a, span, div {
+                color: #FFFFFF !important;
+            }
+
+            .section-header h2 {
+                font-size: 29px !important;
+            }
+
+            .features-cta h2 {
+                font-size: 29px !important;
+            }
+
+            .headline-large {
+                font-size: 29px !important;
             }
 
             .features-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .feature-item {
-                padding: 32px;
-            }
-
-            .features-cta h2 {
-                font-size: 28px;
             }
 
             .nav-menu {
