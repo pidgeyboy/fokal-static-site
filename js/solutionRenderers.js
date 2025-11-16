@@ -6,11 +6,11 @@ const SolutionRenderers = {
         return `
             <div class="demo-content">
                 <button class="close-modal" aria-label="Close">&times;</button>
-                <h2>Get mentioned in ${sol.domain}</h2>
+                <h2>How we'd fix this gap</h2>
 
                 <div class="gap-description">
-                    <p class="problem-statement"><strong>${sol.citationCount}+ AI citations</strong> — zero mention you</p>
-                    <p class="solution-intro">Here's the complete fix (ready now):</p>
+                    <p class="problem-statement"><strong>${sol.citationCount}+ AI citations</strong> — zero mention your brand</p>
+                    <p class="solution-intro">What you'd get (ready to use):</p>
                 </div>
 
                 <div class="solution-steps">
@@ -18,7 +18,7 @@ const SolutionRenderers = {
                         <div class="step-number">✓</div>
                         <div class="step-content">
                             <div class="step-title">Verified editor contact</div>
-                            <div class="step-description">Sarah Mitchell, Sr. Editor at ${sol.domain}</div>
+                            <div class="step-description">Real email + LinkedIn for the decision-maker</div>
                         </div>
                     </div>
 
@@ -26,7 +26,7 @@ const SolutionRenderers = {
                         <div class="step-number">✓</div>
                         <div class="step-content">
                             <div class="step-title">Pre-written pitch email</div>
-                            <div class="step-description">Custom template positioning Stake vs competitors</div>
+                            <div class="step-description">Custom template for your brand + this specific editor</div>
                         </div>
                     </div>
 
@@ -39,9 +39,9 @@ const SolutionRenderers = {
                     </div>
                 </div>
 
-                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Get Your Complete Gap Report →</button>
+                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Find Your Gaps →</button>
 
-                <p class="footer-note">This is 1 of 8 fixable gaps we found for Stake</p>
+                <p class="footer-note">Real example. Real fix. See what gaps we find for YOUR brand.</p>
             </div>
         `;
     },

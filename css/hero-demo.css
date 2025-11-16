@@ -828,7 +828,7 @@
 .step-number {
     font-size: 18px;
     font-weight: 700;
-    color: #28CA42;
+    color: #FFFFFF;
     flex-shrink: 0;
     line-height: 1.4;
 }
@@ -1428,7 +1428,7 @@
 
     .step-number {
         font-size: 16px !important;
-        color: #28CA42 !important;
+        color: #FFFFFF !important;
     }
 
     .step-title {
