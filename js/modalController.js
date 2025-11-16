@@ -28,6 +28,12 @@ function openModal(gapId) {
 
     content.innerHTML = renderer(gap);
 
+    // Reset scroll position to top
+    const modalContainer = modal.querySelector('.modal-container');
+    if (modalContainer) {
+        modalContainer.scrollTop = 0;
+    }
+
     // Show modal with animation
     modal.style.display = 'flex';
     setTimeout(() => {

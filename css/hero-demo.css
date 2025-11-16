@@ -521,7 +521,10 @@
     .modal-container {
         border-radius: 18px 18px 0 0;
         max-height: 90vh;
+        height: 90vh;
         transform: translateY(100%);
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
     }
 
     .modal-overlay.active .modal-container {
@@ -1343,6 +1346,74 @@
         padding: 24px;
     }
 
+    .demo-content {
+        padding: 20px 16px !important;
+        max-width: 100% !important;
+    }
+
+    .demo-content h2 {
+        font-size: 18px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .gap-description {
+        margin-bottom: 16px !important;
+    }
+
+    .gap-description .label {
+        font-size: 12px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .gap-description .quote {
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+    }
+
+    .gap-description .solution-intro {
+        font-size: 14px !important;
+        margin-top: 12px !important;
+    }
+
+    .solution-steps {
+        margin-bottom: 16px !important;
+    }
+
+    .solution-steps h3 {
+        font-size: 13px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .step {
+        margin-bottom: 12px !important;
+        gap: 10px !important;
+    }
+
+    .step-number {
+        font-size: 14px !important;
+    }
+
+    .step-title {
+        font-size: 14px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .step-description {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+    }
+
+    .cta-primary {
+        padding: 12px 24px !important;
+        font-size: 15px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .footer-note {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+    }
+
     .solution-container h3 {
         font-size: 24px;
     }
@@ -1379,6 +1450,69 @@
 
     .card-footer {
         padding: 16px 20px;
+    }
+
+    .demo-content {
+        padding: 16px 14px !important;
+    }
+
+    .demo-content h2 {
+        font-size: 17px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .gap-description {
+        margin-bottom: 14px !important;
+    }
+
+    .gap-description .label {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .gap-description .quote {
+        font-size: 13px !important;
+    }
+
+    .gap-description .solution-intro {
+        font-size: 13px !important;
+        margin-top: 10px !important;
+    }
+
+    .solution-steps {
+        margin-bottom: 14px !important;
+    }
+
+    .solution-steps h3 {
+        font-size: 12px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .step {
+        margin-bottom: 10px !important;
+        gap: 8px !important;
+    }
+
+    .step-number {
+        font-size: 13px !important;
+    }
+
+    .step-title {
+        font-size: 13px !important;
+    }
+
+    .step-description {
+        font-size: 12px !important;
+    }
+
+    .cta-primary {
+        padding: 11px 20px !important;
+        font-size: 14px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .footer-note {
+        font-size: 11px !important;
     }
 }
 
