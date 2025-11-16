@@ -81,6 +81,11 @@
             padding: 0 24px;
         }
 
+        /* Mobile line breaks - hidden by default, shown on mobile */
+        .mobile-br {
+            display: none;
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -786,6 +791,11 @@
             .carousel-container {
                 max-width: 600px;
                 padding: 0 60px;
+            }
+
+            /* Show mobile line breaks on mobile only */
+            .mobile-br {
+                display: block;
             }
         }
 
@@ -2220,7 +2230,7 @@
                                 <img src="search-gaps.png" alt="Search gaps">
                             </div>
                             <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
-                                <h3>Search gaps</h3>
+                                <h3>Search<br class="mobile-br">gaps</h3>
                                 <div class="expand-button">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -2243,7 +2253,7 @@
                                 <img src="media-gaps.png" alt="Media coverage gaps">
                             </div>
                             <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
-                                <h3>Media gaps</h3>
+                                <h3>Media<br class="mobile-br">gaps</h3>
                                 <div class="expand-button">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -2266,7 +2276,7 @@
                                 <img src="content-gaps.png" alt="Content gaps">
                             </div>
                             <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
-                                <h3>Content gaps</h3>
+                                <h3>Content<br class="mobile-br">gaps</h3>
                                 <div class="expand-button">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -2289,7 +2299,7 @@
                                 <img src="citation-gaps.png" alt="Citation gaps">
                             </div>
                             <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
-                                <h3>Citation gaps</h3>
+                                <h3>Citation<br class="mobile-br">gaps</h3>
                                 <div class="expand-button">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -2312,7 +2322,7 @@
                                 <img src="technical-seo.png" alt="Technical SEO issues">
                             </div>
                             <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
-                                <h3>Technical issues</h3>
+                                <h3>Technical<br class="mobile-br">issues</h3>
                                 <div class="expand-button">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -2335,7 +2345,7 @@
                                 <img src="comparison-gap.png" alt="Comparison gaps">
                             </div>
                             <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
-                                <h3>Comparison gaps</h3>
+                                <h3>Comparison<br class="mobile-br">gaps</h3>
                                 <div class="expand-button">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -2358,7 +2368,7 @@
                                 <img src="backlink-gaps.png" alt="Backlink gaps">
                             </div>
                             <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
-                                <h3>Backlink gaps</h3>
+                                <h3>Backlink<br class="mobile-br">gaps</h3>
                                 <div class="expand-button">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -2381,7 +2391,7 @@
                                 <img src="wikipedia=presence.png" alt="Wikipedia gaps">
                             </div>
                             <div class="problem-card-footer" onclick="toggleCard(event, this.parentElement)">
-                                <h3>Wikipedia gaps</h3>
+                                <h3>Wikipedia<br class="mobile-br">gaps</h3>
                                 <div class="expand-button">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <line x1="12" y1="5" x2="12" y2="19"></line>
