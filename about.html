@@ -865,6 +865,38 @@
                 gap: 32px;
             }
         }
+
+        /* Mobile Contrast Fixes - Match Homepage */
+        @media (max-width: 768px) {
+            /* Match hero darkness for consistent black */
+            :root {
+                --bg-dark: #0F1012 !important;      /* Match hero darkness */
+                --bg-panel: #14151A !important;     /* Match hero gradient end */
+                --text-primary: #FFFFFF !important; /* Pure white for max contrast */
+                --text-secondary: #FFFFFF !important;
+                --text-muted: #FFFFFF !important;
+                --text-subtle: #FFFFFF !important;
+            }
+
+            /* Section headings - match homepage */
+            .section-header h2 {
+                font-size: 29px !important;
+            }
+
+            /* Ensure all text is pure white for max readability */
+            h1, h2, h3, h4, h5, h6, p, li, a, span, div {
+                color: #FFFFFF !important;
+            }
+
+            /* Strong card contrast */
+            .team-card,
+            .value-card,
+            .stat-card {
+                background: rgba(48, 50, 54, 0.95) !important;
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+            }
+        }
     </style>
 </head>
 <body>
