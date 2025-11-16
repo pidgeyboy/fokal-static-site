@@ -3842,6 +3842,18 @@
             return match ? match[1] : '';
         }
 
+        // Initialize CSRF token on page load
+        async function initCsrfToken() {
+            try {
+                await fetch('https://backend.fokal.com/api/csrf-token', {
+                    credentials: 'include'
+                });
+                console.log('CSRF token initialized');
+            } catch (error) {
+                console.error('Failed to initialize CSRF token:', error);
+            }
+        }
+
         // Handle Google OAuth callback
         async function handleGoogleCallback(response) {
             console.log('Google sign-in successful');
@@ -3949,6 +3961,9 @@
 
         // Show auth modal on page load if requested
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize CSRF token
+            initCsrfToken();
+
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('showAuth') === 'true') {
                 showAuthModal();
