@@ -1,6 +1,7 @@
 // Modal Controller - Handle modal open/close and solution display
 
 let currentGapType = null;
+let savedScrollPosition = 0;
 
 function openModal(gapId) {
     const gap = gaps.find(g => g.id === gapId);
@@ -28,11 +29,20 @@ function openModal(gapId) {
 
     content.innerHTML = renderer(gap);
 
+    // Attach close button listener (must happen after content is rendered)
+    const closeButton = modal.querySelector('.close-modal');
+    if (closeButton) {
+        closeButton.addEventListener('click', closeModal);
+    }
+
     // Reset scroll position to top
     const modalContainer = modal.querySelector('.modal-container');
     if (modalContainer) {
         modalContainer.scrollTop = 0;
     }
+
+    // Save current scroll position before opening modal
+    savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
     // Show modal with animation
     modal.style.display = 'flex';
@@ -42,6 +52,9 @@ function openModal(gapId) {
 
     // Prevent body scroll
     document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollPosition}px`;
+    document.body.style.width = '100%';
 
     // Attach event listeners for copy buttons and CTAs
     attachCopyListeners();
@@ -58,10 +71,18 @@ function closeModal() {
     // Animate out
     modal.classList.remove('active');
 
-    // Hide after animation
+    // Hide after animation and restore scroll
     setTimeout(() => {
         modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+
+        // Restore body scroll and position
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+
+        // Restore scroll position
+        window.scrollTo(0, savedScrollPosition);
     }, 300);
 
     // Track modal close event
