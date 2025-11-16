@@ -29,6 +29,13 @@
     <!-- Google Sign-In SDK -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
+    <!-- Mixpanel Analytics -->
+    <script type="text/javascript">
+        (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+        for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+        MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -3813,6 +3820,12 @@
 
         // Auth Modal Functions
         function showAuthModal() {
+            // Track CTA click
+            trackEvent('CTA Clicked', {
+                cta_type: 'auth_modal',
+                location: window.location.pathname
+            });
+
             document.getElementById('authModal').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -3859,6 +3872,71 @@
             }
         }
 
+        // Initialize Mixpanel analytics
+        function initMixpanel() {
+            try {
+                mixpanel.init('2f758f6e4c1f3912f7953dd44464bd91', {
+                    debug: false,
+                    track_pageview: false,
+                    persistence: 'localStorage'
+                });
+                console.log('Mixpanel initialized');
+
+                // Track page view
+                mixpanel.track('Page Viewed', {
+                    page: 'landing',
+                    url: window.location.href,
+                    referrer: document.referrer,
+                    timestamp: new Date().toISOString()
+                });
+            } catch (error) {
+                console.error('Failed to initialize Mixpanel:', error);
+            }
+        }
+
+        // Capture GCLID for Google Ads conversion tracking
+        function captureGCLID() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const gclid = urlParams.get('gclid');
+
+                if (gclid) {
+                    // Store GCLID in localStorage with timestamp
+                    localStorage.setItem('gclid', gclid);
+                    localStorage.setItem('gclid_timestamp', Date.now().toString());
+
+                    // Track ad click in Mixpanel
+                    if (window.mixpanel) {
+                        mixpanel.track('Ad Click Landed', {
+                            gclid: gclid,
+                            landing_url: window.location.href,
+                            referrer: document.referrer,
+                            timestamp: new Date().toISOString()
+                        });
+                    }
+
+                    console.log('GCLID captured:', gclid);
+                }
+            } catch (error) {
+                console.error('Failed to capture GCLID:', error);
+            }
+        }
+
+        // Utility function to track events
+        function trackEvent(eventName, properties = {}) {
+            try {
+                if (window.mixpanel) {
+                    mixpanel.track(eventName, {
+                        ...properties,
+                        timestamp: new Date().toISOString(),
+                        source: 'static_site'
+                    });
+                }
+            } catch (error) {
+                console.error('Failed to track event:', error);
+            }
+        }
+
         // Handle Google OAuth callback
         async function handleGoogleCallback(response) {
             console.log('Google sign-in successful');
@@ -3880,6 +3958,13 @@
                 const data = await res.json();
 
                 if (res.ok && data.user) {
+                    // Track successful sign-in
+                    trackEvent('Sign In Successful', {
+                        method: 'google',
+                        has_brand: !!data.user.brandId,
+                        next_step: data.user.brandId ? 'dashboard' : 'onboarding'
+                    });
+
                     // Redirect to dashboard or onboarding
                     if (data.user.brandId) {
                         window.location.href = `https://app.fokal.com/brand/${data.user.brandId}`;
@@ -3887,15 +3972,33 @@
                         window.location.href = 'https://app.fokal.com/onboarding';
                     }
                 } else {
+                    // Track sign-in failure
+                    trackEvent('Sign In Failed', {
+                        method: 'google',
+                        error: data.error || 'unknown'
+                    });
+
                     alert('Sign in failed. Please try again.');
                 }
             } catch (error) {
+                // Track sign-in error
+                trackEvent('Sign In Error', {
+                    method: 'google',
+                    error: error.message
+                });
+
                 console.error('Error during Google sign-in:', error);
                 alert('Sign in failed. Please try again.');
             }
         }
 
         function signInWithGoogle() {
+            // Track Google sign-in click
+            trackEvent('Auth Button Clicked', {
+                method: 'google',
+                location: 'modal'
+            });
+
             // Trigger Google One Tap or redirect
             if (window.google && window.google.accounts && window.google.accounts.id) {
                 window.google.accounts.id.prompt();
@@ -3912,6 +4015,12 @@
         }
 
         function showEmailForm() {
+            // Track email form view
+            trackEvent('Auth Button Clicked', {
+                method: 'email',
+                location: 'modal'
+            });
+
             document.getElementById('authButtons').style.display = 'none';
             document.getElementById('emailForm').style.display = 'block';
         }
@@ -3933,6 +4042,11 @@
                 return;
             }
 
+            // Track magic link request
+            trackEvent('Magic Link Requested', {
+                email_domain: email.split('@')[1]
+            });
+
             submitBtn.disabled = true;
             btnText.textContent = 'Sending...';
 
@@ -3950,13 +4064,29 @@
                 });
 
                 if (response.ok) {
+                    // Track successful send
+                    trackEvent('Magic Link Sent', {
+                        email_domain: email.split('@')[1]
+                    });
+
                     document.getElementById('emailForm').style.display = 'none';
                     document.getElementById('successMessage').style.display = 'block';
                     document.getElementById('userEmail').textContent = email;
                 } else {
+                    // Track failure
+                    trackEvent('Magic Link Failed', {
+                        email_domain: email.split('@')[1],
+                        status: response.status
+                    });
+
                     alert('Failed to send magic link. Please try again.');
                 }
             } catch (error) {
+                // Track error
+                trackEvent('Magic Link Error', {
+                    error: error.message
+                });
+
                 alert('Network error. Please try again.');
             } finally {
                 submitBtn.disabled = false;
@@ -3968,6 +4098,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize CSRF token
             initCsrfToken();
+
+            // Initialize Mixpanel analytics
+            initMixpanel();
+
+            // Capture GCLID for Google Ads tracking
+            captureGCLID();
 
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('showAuth') === 'true') {
