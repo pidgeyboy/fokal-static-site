@@ -204,7 +204,7 @@
             transform: translateX(-50%);
             width: 1000px;
             height: 1000px;
-            background: radial-gradient(circle, rgba(74, 192, 255, 0.2) 0%, rgba(74, 192, 255, 0.05) 40%, transparent 70%);
+            background: radial-gradient(circle, rgba(74, 192, 255, 0.25) 0%, rgba(74, 192, 255, 0.08) 40%, transparent 70%);
             pointer-events: none;
             animation: gradientPulse 8s ease-in-out infinite;
         }
@@ -226,8 +226,8 @@
             position: absolute;
             inset: 0;
             background-image:
-                linear-gradient(rgba(74, 192, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(74, 192, 255, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(74, 192, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74, 192, 255, 0.05) 1px, transparent 1px);
             background-size: 50px 50px;
             mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
             animation: gridFloat 20s linear infinite;
@@ -251,8 +251,8 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(74, 192, 255, 0.1);
-            border: 1px solid rgba(74, 192, 255, 0.3);
+            background: rgba(74, 192, 255, 0.12);
+            border: 1px solid rgba(74, 192, 255, 0.35);
             border-radius: 100px;
             padding: 8px 20px;
             margin-bottom: 24px;
@@ -291,7 +291,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: fadeInUp 0.8s ease-out 0.2s both;
-            text-shadow: 0 0 80px rgba(74, 192, 255, 0.3);
+            text-shadow: 0 0 80px rgba(74, 192, 255, 0.35);
         }
 
         .hero-subtitle {
@@ -1796,8 +1796,25 @@
                 padding: 0 24px; /* Add padding back for text content only */
             }
 
+            /* Mobile color contrast boost - make blue accents actually visible */
+            .hero::before {
+                background: radial-gradient(circle, rgba(74, 192, 255, 0.4) 0%, rgba(74, 192, 255, 0.18) 40%, transparent 70%);
+            }
+
+            .hero::after {
+                background-image:
+                    linear-gradient(rgba(74, 192, 255, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(74, 192, 255, 0.1) 1px, transparent 1px);
+            }
+
+            .hero-badge {
+                background: rgba(74, 192, 255, 0.2);
+                border: 1px solid rgba(74, 192, 255, 0.5);
+            }
+
             .hero h1 {
                 font-size: 32px;
+                text-shadow: 0 0 50px rgba(74, 192, 255, 0.6);
             }
 
             .hero-subtitle {
