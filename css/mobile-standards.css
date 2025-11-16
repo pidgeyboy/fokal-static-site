@@ -1,0 +1,208 @@
+/**
+ * Fokal Mobile Design Standards
+ * Consistent colors, backgrounds, and component styles across all pages
+ * Mobile-first approach with desktop overrides where needed
+ */
+
+/* ============================================
+   CSS Variables - Fokal Design System
+   ============================================ */
+:root {
+    /* Backgrounds */
+    --bg-dark: #0E0E10;
+    --bg-panel: #161618;
+    --bg-gradient: linear-gradient(180deg, #0E0E10 0%, #0A0B0D 100%);
+
+    /* Cards & Surfaces */
+    --card-bg: rgba(17, 24, 32, 0.8);
+    --card-bg-hover: rgba(17, 24, 32, 0.95);
+    --card-border: rgba(255, 255, 255, 0.06);
+    --card-border-hover: rgba(255, 255, 255, 0.12);
+
+    /* Text Colors */
+    --text-primary: #E5E9F0;
+    --text-secondary: #C6CDD8;
+    --text-muted: #9DA6B5;
+    --text-subtle: #8A93A1;
+
+    /* Brand Colors */
+    --accent-blue: #4AC0FF;
+    --accent-green: #00E676;
+    --accent-amber: #FFA726;
+
+    /* Borders & Dividers */
+    --border-color: #1A2230;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================
+   Global Styles
+   ============================================ */
+body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* ============================================
+   Cards & Containers
+   ============================================ */
+.card,
+.problem-card-visual,
+.feature-card,
+.pricing-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.card:hover,
+.problem-card-visual:hover,
+.feature-card:hover {
+    background: var(--card-bg-hover);
+    border-color: var(--card-border-hover);
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, #7FBFF2 100%);
+    color: #FFFFFF;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    box-shadow: 0 4px 16px rgba(74, 192, 255, 0.35);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(74, 192, 255, 0.45);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 500;
+    border: 1px solid var(--card-border);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--card-border-hover);
+}
+
+/* ============================================
+   Mobile Optimizations
+   ============================================ */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Prevent iOS zoom on input focus */
+    }
+
+    /* Ensure consistent padding on mobile */
+    .container,
+    .container-wide {
+        padding: 0 20px;
+    }
+
+    /* Cards have more breathing room on mobile */
+    .card,
+    .problem-card-visual,
+    .feature-card {
+        border-radius: 20px;
+        padding: 24px;
+    }
+
+    /* Buttons are touch-friendly */
+    .btn-primary,
+    .btn-secondary {
+        min-height: 48px;
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+
+    /* Text stays readable */
+    h1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+    h3 {
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--text-secondary);
+    }
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-accent { color: var(--accent-blue); }
+
+.bg-dark { background: var(--bg-dark); }
+.bg-panel { background: var(--bg-panel); }
+.bg-gradient { background: var(--bg-gradient); }
+
+.border-subtle { border-color: var(--border-subtle); }
+
+/* Mobile line breaks */
+.mobile-br {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-br {
+        display: block;
+    }
+}
