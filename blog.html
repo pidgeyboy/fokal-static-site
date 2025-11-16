@@ -43,6 +43,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Google Sign-In SDK -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
     {
@@ -781,6 +784,9 @@
             }
         }
     </style>
+
+    <!-- Auth Modal Styles -->
+    <link rel="stylesheet" href="/auth/auth-modal.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -1112,10 +1118,13 @@
             });
         });
 
-        // Redirect to app subdomain for authentication
-        function signInWithGoogle() {
-            window.location.href = 'https://app.fokal.com?source=static_blog';
-        }
     </script>
+
+    <!-- Auth Modal Container -->
+    <div id="auth-modal-container"></div>
+
+    <!-- Auth Modal Scripts -->
+    <script>window.AUTH_SOURCE = 'static_blog';</script>
+    <script src="/auth/auth-modal.js"></script>
 </body>
 </html>

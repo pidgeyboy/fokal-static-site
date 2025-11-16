@@ -16,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Google Sign-In SDK -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
     <style>
         * {
             margin: 0;
@@ -752,6 +755,9 @@
             }
         }
     </style>
+
+    <!-- Auth Modal Styles -->
+    <link rel="stylesheet" href="/auth/auth-modal.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -980,10 +986,13 @@
             });
         }
 
-        // Redirect to app subdomain for authentication
-        function signInWithGoogle() {
-            window.location.href = 'https://app.fokal.com?source=static_pricing';
-        }
     </script>
+
+    <!-- Auth Modal Container -->
+    <div id="auth-modal-container"></div>
+
+    <!-- Auth Modal Scripts -->
+    <script>window.AUTH_SOURCE = 'static_pricing';</script>
+    <script src="/auth/auth-modal.js"></script>
 </body>
 </html>
