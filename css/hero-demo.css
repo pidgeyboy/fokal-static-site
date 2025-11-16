@@ -780,12 +780,25 @@
     margin: 0;
 }
 
+.gap-description .problem-statement {
+    font-size: 15px;
+    color: #E5E9F0;
+    line-height: 1.5;
+    margin: 0 0 12px 0;
+    text-align: left;
+}
+
+.gap-description .problem-statement strong {
+    color: #4AC0FF;
+    font-weight: 600;
+}
+
 .gap-description .solution-intro {
     font-size: 15px;
     color: #E5E9F0;
     font-weight: 500;
     line-height: 1.5;
-    margin: 16px 0 0 0;
+    margin: 0;
 }
 
 /* Solution Steps */
@@ -813,9 +826,9 @@
 }
 
 .step-number {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
-    color: #4AC0FF;
+    color: #28CA42;
     flex-shrink: 0;
     line-height: 1.4;
 }
@@ -1362,6 +1375,7 @@
 
     .demo-content .label,
     .demo-content .quote,
+    .demo-content .problem-statement,
     .demo-content .solution-intro,
     .demo-content .step-title,
     .demo-content .step-description,
@@ -1378,6 +1392,16 @@
         margin-bottom: 6px !important;
     }
 
+    .gap-description .problem-statement {
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .gap-description .problem-statement strong {
+        color: #4AC0FF !important;
+    }
+
     .gap-description .quote {
         font-size: 15px !important;
         line-height: 1.5 !important;
@@ -1385,7 +1409,7 @@
 
     .gap-description .solution-intro {
         font-size: 15px !important;
-        margin-top: 12px !important;
+        margin-top: 0 !important;
     }
 
     .solution-steps {
@@ -1403,7 +1427,8 @@
     }
 
     .step-number {
-        font-size: 15px !important;
+        font-size: 16px !important;
+        color: #28CA42 !important;
     }
 
     .step-title {

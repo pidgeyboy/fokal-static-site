@@ -6,45 +6,42 @@ const SolutionRenderers = {
         return `
             <div class="demo-content">
                 <button class="close-modal" aria-label="Close">&times;</button>
-                <h2>Visibility Gap Solution</h2>
+                <h2>Get mentioned in ${sol.domain}</h2>
 
                 <div class="gap-description">
-                    <p class="label">The gap you clicked:</p>
-                    <p class="quote">"Stake missing from ${sol.domain} (${sol.citationCount}+ AI citations)"</p>
-                    <p class="solution-intro">We found the right contact and created the right pitch.</p>
+                    <p class="problem-statement"><strong>${sol.citationCount}+ AI citations</strong> — zero mention you</p>
+                    <p class="solution-intro">Here's the complete fix (ready now):</p>
                 </div>
 
                 <div class="solution-steps">
-                    <h3>What you'd get:</h3>
-
                     <div class="step">
-                        <div class="step-number">1.</div>
+                        <div class="step-number">✓</div>
                         <div class="step-content">
-                            <div class="step-title">Who to email</div>
-                            <div class="step-description">Verified editor email + LinkedIn (in this case: ${sol.domain})</div>
+                            <div class="step-title">Verified editor contact</div>
+                            <div class="step-description">Sarah Mitchell, Sr. Editor at ${sol.domain}</div>
                         </div>
                     </div>
 
                     <div class="step">
-                        <div class="step-number">2.</div>
+                        <div class="step-number">✓</div>
                         <div class="step-content">
-                            <div class="step-title">What to send</div>
-                            <div class="step-description">Pre-written outreach email (customized for your brand and recipient)</div>
+                            <div class="step-title">Pre-written pitch email</div>
+                            <div class="step-description">Custom template positioning Stake vs competitors</div>
                         </div>
                     </div>
 
                     <div class="step">
-                        <div class="step-number">3.</div>
+                        <div class="step-number">✓</div>
                         <div class="step-content">
-                            <div class="step-title">The tracking</div>
-                            <div class="step-description">Alert when you get mentioned in the article</div>
+                            <div class="step-title">Citation tracking alert</div>
+                            <div class="step-description">Get notified when you're mentioned</div>
                         </div>
                     </div>
                 </div>
 
-                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Find Your Gaps →</button>
+                <button class="cta-primary" onclick="window.location.href='/?showAuth=true'">Get Your Complete Gap Report →</button>
 
-                <p class="footer-note">This is an example. Get real solutions for YOUR brand.</p>
+                <p class="footer-note">This is 1 of 8 fixable gaps we found for Stake</p>
             </div>
         `;
     },
