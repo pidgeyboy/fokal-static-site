@@ -3838,15 +3838,34 @@
             document.getElementById('successMessage').style.display = 'none';
         }
 
+        // Store OAuth2 client for popup flow
+        let googleOAuth2Client = null;
+
         // Initialize Google Sign-In
         function initializeGoogleSignIn() {
             if (window.google && window.google.accounts && window.google.accounts.id) {
+                // Initialize Google Identity Services (for One Tap)
                 window.google.accounts.id.initialize({
                     client_id: '1054697872150-e2fkcro4f3og26go8pu2fsctq3vvhoud.apps.googleusercontent.com',
                     callback: handleGoogleCallback,
                     auto_select: false,
                     cancel_on_tap_outside: true
                 });
+
+                // Initialize OAuth2 client (for popup fallback)
+                if (window.google.accounts.oauth2) {
+                    googleOAuth2Client = window.google.accounts.oauth2.initCodeClient({
+                        client_id: '1054697872150-e2fkcro4f3og26go8pu2fsctq3vvhoud.apps.googleusercontent.com',
+                        scope: 'email profile openid',
+                        ux_mode: 'popup',
+                        callback: async (response) => {
+                            if (response.code) {
+                                await handleOAuth2Callback(response.code);
+                            }
+                        },
+                    });
+                }
+
                 console.log('Google Sign-In initialized');
             } else {
                 // Retry if SDK not loaded yet
@@ -3937,9 +3956,9 @@
             }
         }
 
-        // Handle Google OAuth callback
+        // Handle Google OAuth callback (for One Tap flow)
         async function handleGoogleCallback(response) {
-            console.log('Google sign-in successful');
+            console.log('Google sign-in successful (One Tap)');
 
             try {
                 const csrfToken = getCsrfToken();
@@ -3961,13 +3980,14 @@
                     // Track successful sign-in
                     trackEvent('Sign In Successful', {
                         method: 'google',
+                        flow: 'one_tap',
                         has_brand: !!data.user.brandId,
                         next_step: data.user.brandId ? 'dashboard' : 'onboarding'
                     });
 
                     // Redirect to dashboard or onboarding
                     if (data.user.brandId) {
-                        window.location.href = `https://app.fokal.com/brand/${data.user.brandId}`;
+                        window.location.href = `https://app.fokal.com/brand/${data.user.brandId}/greatness`;
                     } else {
                         window.location.href = 'https://app.fokal.com/onboarding';
                     }
@@ -3975,6 +3995,7 @@
                     // Track sign-in failure
                     trackEvent('Sign In Failed', {
                         method: 'google',
+                        flow: 'one_tap',
                         error: data.error || 'unknown'
                     });
 
@@ -3984,10 +4005,69 @@
                 // Track sign-in error
                 trackEvent('Sign In Error', {
                     method: 'google',
+                    flow: 'one_tap',
                     error: error.message
                 });
 
                 console.error('Error during Google sign-in:', error);
+                alert('Sign in failed. Please try again.');
+            }
+        }
+
+        // Handle OAuth2 callback (for popup flow)
+        async function handleOAuth2Callback(code) {
+            console.log('Google sign-in successful (OAuth2 popup)');
+
+            try {
+                const csrfToken = getCsrfToken();
+
+                // Send authorization code to backend
+                const res = await fetch('https://backend.fokal.com/api/auth/google/code', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': csrfToken
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({ code: code })
+                });
+
+                const data = await res.json();
+
+                if (res.ok && data.user) {
+                    // Track successful sign-in
+                    trackEvent('Sign In Successful', {
+                        method: 'google',
+                        flow: 'oauth2_popup',
+                        has_brand: !!data.user.brandId,
+                        next_step: data.user.brandId ? 'dashboard' : 'onboarding'
+                    });
+
+                    // Redirect to dashboard or onboarding
+                    if (data.user.brandId) {
+                        window.location.href = `https://app.fokal.com/brand/${data.user.brandId}/greatness`;
+                    } else {
+                        window.location.href = 'https://app.fokal.com/onboarding';
+                    }
+                } else {
+                    // Track sign-in failure
+                    trackEvent('Sign In Failed', {
+                        method: 'google',
+                        flow: 'oauth2_popup',
+                        error: data.error || 'unknown'
+                    });
+
+                    alert('Sign in failed. Please try again.');
+                }
+            } catch (error) {
+                // Track sign-in error
+                trackEvent('Sign In Error', {
+                    method: 'google',
+                    flow: 'oauth2_popup',
+                    error: error.message
+                });
+
+                console.error('Error during Google OAuth2 sign-in:', error);
                 alert('Sign in failed. Please try again.');
             }
         }
@@ -3999,10 +4079,29 @@
                 location: 'modal'
             });
 
-            // Trigger Google One Tap or redirect
-            if (window.google && window.google.accounts && window.google.accounts.id) {
-                window.google.accounts.id.prompt();
+            console.log('signInWithGoogle called');
+
+            // Try OAuth2 popup flow (more reliable)
+            if (googleOAuth2Client) {
+                console.log('Using OAuth2 popup flow');
+                googleOAuth2Client.requestCode();
+            }
+            // Fallback to One Tap if OAuth2 not available
+            else if (window.google && window.google.accounts && window.google.accounts.id) {
+                console.log('Using One Tap flow');
+                window.google.accounts.id.prompt((notification) => {
+                    console.log('One Tap notification:', notification);
+                    if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+                        console.log('One Tap not displayed, reason:', notification.getNotDisplayedReason() || notification.getSkippedReason());
+                        // If One Tap fails and we have OAuth2 client, try that
+                        if (googleOAuth2Client) {
+                            console.log('One Tap failed, falling back to OAuth2 popup');
+                            googleOAuth2Client.requestCode();
+                        }
+                    }
+                });
             } else {
+                console.error('Google Sign-In not properly initialized');
                 alert('Google Sign-In is still loading. Please try again in a moment.');
             }
         }
