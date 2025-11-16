@@ -3078,27 +3078,6 @@
     <div id="auth-modal-container"></div>
 
     <script>
-        // Toggle mobile menu
-        // Mobile menu toggle
-        const burgerMenu = document.getElementById('burgerMenu');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        if (burgerMenu && mobileMenu) {
-            burgerMenu.addEventListener('click', () => {
-                burgerMenu.classList.toggle('active');
-                mobileMenu.classList.toggle('active');
-            });
-
-            // Close mobile menu when clicking a link
-            const mobileLinks = mobileMenu.querySelectorAll('a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    burgerMenu.classList.remove('active');
-                    mobileMenu.classList.remove('active');
-                });
-            });
-        }
-
         // Toggle card expansion
         function toggleCard(event, card) {
             event.stopPropagation();
@@ -3187,22 +3166,6 @@
                 currentIndex = Math.min(currentIndex, getMaxIndex());
                 updateCarousel();
             }, 250);
-        });
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-
-            lastScroll = currentScroll;
         });
 
         // Intersection Observer for scroll animations
