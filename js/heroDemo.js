@@ -1,12 +1,6 @@
 // Hero Demo - Main Controller
 // Initializes and controls the interactive gap cards demo
 
-// Static query example
-const queryExample = {
-    query: "Best investment platforms for new investors in Australia?",
-    competitors: "CommSec, Sharesies, Superhero (+5 more)"
-};
-
 let selectedGapType = 'visibility_gap'; // Default to visibility gap
 
 // Gap type display names
@@ -18,9 +12,6 @@ const gapTypeNames = {
 };
 
 function initHeroDemo() {
-    // Render query carousel
-    renderQueryCarousel();
-
     // Render filter pills
     renderFilterPills();
 
@@ -36,19 +27,6 @@ function initHeroDemo() {
     });
 
     console.log('Hero demo initialized with', gaps.length, 'gaps');
-}
-
-function renderQueryCarousel() {
-    const queryTextEl = document.getElementById('current-query');
-    const competitorsEl = document.getElementById('competitors-list');
-
-    if (!queryTextEl || !competitorsEl) {
-        console.error('Query carousel elements not found');
-        return;
-    }
-
-    queryTextEl.textContent = `"${queryExample.query}"`;
-    competitorsEl.textContent = queryExample.competitors;
 }
 
 function renderFilterPills() {
@@ -278,7 +256,6 @@ if (document.readyState === 'loading') {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         initHeroDemo,
-        renderQueryCarousel,
         renderFilterPills,
         renderShowcaseGapCard,
         createGapCard
