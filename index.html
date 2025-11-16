@@ -2228,6 +2228,33 @@
                 padding: 32px 24px;
             }
         }
+
+        /* Mobile Dashboard Width Fix - Override base max-width constraint */
+        @media (max-width: 768px) {
+            .dashboard-preview {
+                max-width: none !important;
+                width: 100% !important;
+                margin: 0 !important;
+            }
+
+            .dashboard-frame {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dashboard-preview {
+                max-width: none !important;
+                width: 100% !important;
+                margin: 0 !important;
+            }
+
+            .dashboard-frame {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+        }
     </style>
 
     <!-- Hero Demo Styles -->
