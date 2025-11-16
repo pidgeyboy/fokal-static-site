@@ -3859,11 +3859,16 @@
                         scope: 'email profile openid',
                         ux_mode: 'popup',
                         callback: async (response) => {
+                            console.log('OAuth2 callback received:', response);
                             if (response.code) {
                                 await handleOAuth2Callback(response.code);
+                            } else if (response.error) {
+                                console.error('OAuth2 error:', response.error);
+                                alert('Google sign-in failed. Please try again.');
                             }
                         },
                     });
+                    console.log('OAuth2 client initialized');
                 }
 
                 console.log('Google Sign-In initialized');
