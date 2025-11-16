@@ -1543,6 +1543,16 @@
 
 /* Mobile Responsive Styles for Hero Demo */
 @media (max-width: 768px) {
+    /* Dashboard frame - full width on mobile to match feature cards */
+    .dashboard-preview {
+        max-width: none;
+        margin: 0;
+    }
+
+    .dashboard-frame {
+        width: 100%;
+    }
+
     /* Dashboard mockup - reduce padding on mobile to match button width */
     .dashboard-mockup {
         padding: 12px !important;
