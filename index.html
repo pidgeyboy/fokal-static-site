@@ -2229,30 +2229,34 @@
             }
         }
 
-        /* Mobile Dashboard Width Fix - Override base max-width constraint */
+        /* Mobile Dashboard Width Fix - Negative margins to break out of hero padding */
         @media (max-width: 768px) {
             .dashboard-preview {
                 max-width: none !important;
-                width: 100% !important;
-                margin: 0 !important;
+                margin-left: -24px !important;
+                margin-right: -24px !important;
+                width: calc(100% + 48px) !important;
             }
 
             .dashboard-frame {
                 width: 100% !important;
                 margin: 0 !important;
+                border-radius: 0 !important;
             }
         }
 
         @media (max-width: 480px) {
             .dashboard-preview {
                 max-width: none !important;
-                width: 100% !important;
-                margin: 0 !important;
+                margin-left: -24px !important;
+                margin-right: -24px !important;
+                width: calc(100% + 48px) !important;
             }
 
             .dashboard-frame {
                 width: 100% !important;
                 margin: 0 !important;
+                border-radius: 0 !important;
             }
         }
     </style>
