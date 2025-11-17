@@ -197,13 +197,7 @@ a:hover {
 
 .border-subtle { border-color: var(--border-subtle); }
 
-/* Mobile line breaks */
+/* Mobile line breaks - shown on all screen sizes */
 .mobile-br {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .mobile-br {
-        display: block;
-    }
+    display: block;
 }
