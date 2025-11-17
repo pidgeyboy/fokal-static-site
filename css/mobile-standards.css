@@ -75,7 +75,6 @@ a:hover {
    Cards & Containers
    ============================================ */
 .card,
-.problem-card-visual,
 .feature-card,
 .pricing-card {
     background: var(--card-bg);
@@ -85,11 +84,12 @@ a:hover {
 }
 
 .card:hover,
-.problem-card-visual:hover,
 .feature-card:hover {
     background: var(--card-bg-hover);
     border-color: var(--card-border-hover);
 }
+
+/* Note: .problem-card-visual has its own specific styles in index.html - don't override */
 
 /* ============================================
    Buttons
@@ -145,11 +145,12 @@ a:hover {
 
     /* Cards have more breathing room on mobile */
     .card,
-    .problem-card-visual,
     .feature-card {
         border-radius: 20px;
         padding: 24px;
     }
+
+    /* Note: .problem-card-visual excluded - has its own layout without padding */
 
     /* Buttons are touch-friendly */
     .btn-primary,
