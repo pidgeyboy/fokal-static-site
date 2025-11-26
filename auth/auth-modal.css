@@ -213,6 +213,7 @@
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -229,7 +230,7 @@
     flex-shrink: 0;
 }
 
-.btn-primary {
+.auth-modal .btn-primary {
     background: linear-gradient(135deg, var(--accent-blue), #3AA0D9);
     color: #FFFFFF;
     border: none;
@@ -241,11 +242,12 @@
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
+.auth-modal .btn-primary:hover {
     background: linear-gradient(135deg, #3AA0D9, var(--accent-blue));
     transform: translateY(-2px);
     box-shadow: 0 6px 24px rgba(74, 192, 255, 0.4);
