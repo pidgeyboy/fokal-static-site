@@ -126,6 +126,7 @@ nav.scrolled {
     border: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 14px;
     font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
