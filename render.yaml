@@ -54,3 +54,6 @@ services:
       - type: rewrite
         source: /contact
         destination: /contact.html
+      - type: rewrite
+        source: /ai-search-roundtable
+        destination: /ai-search-roundtable.html
