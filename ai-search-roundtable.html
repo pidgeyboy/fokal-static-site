@@ -66,6 +66,7 @@
             --bg-panel: #161618;
             --card-bg: rgba(17, 24, 32, 0.8);
             --card-border: rgba(255, 255, 255, 0.06);
+            --card-border-hover: rgba(255, 255, 255, 0.12);
             --text-primary: #E5E9F0;
             --text-secondary: #C6CDD8;
             --text-muted: #9DA6B5;
@@ -124,14 +125,6 @@
             transform: translateY(-2px);
         }
 
-        .nav-logo img {
-            transition: transform 0.3s ease;
-        }
-
-        .nav-logo:hover img {
-            transform: scale(1.02);
-        }
-
         .nav-menu {
             display: flex;
             gap: 32px;
@@ -164,14 +157,6 @@
 
         .nav-menu a:hover {
             color: var(--text-primary);
-        }
-
-        .nav-menu a.active {
-            color: var(--text-primary);
-        }
-
-        .nav-menu a.active::after {
-            width: 100%;
         }
 
         .nav-cta-google {
@@ -271,10 +256,192 @@
             color: var(--accent-blue);
         }
 
+        /* Hero Section with Effects */
+        .hero {
+            min-height: 80vh;
+            padding: 160px 24px 80px;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, #0A0B0D 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Animated gradient glow */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(74, 192, 255, 0.2) 0%, rgba(74, 192, 255, 0.05) 40%, transparent 70%);
+            pointer-events: none;
+            animation: gradientPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientPulse {
+            0%, 100% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                opacity: 0.6;
+                transform: translateX(-50%) scale(1.15);
+            }
+        }
+
+        /* Animated grid background */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(74, 192, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74, 192, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+            animation: gridFloat 25s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes gridFloat {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(60px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .event-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(74, 192, 255, 0.12);
+            border: 1px solid rgba(74, 192, 255, 0.35);
+            padding: 10px 22px;
+            border-radius: 100px;
+            font-size: 14px;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 28px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .event-badge::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(74, 192, 255, 0.25) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        .event-badge svg {
+            width: 18px;
+            height: 18px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .event-badge span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+            background: linear-gradient(180deg, #FFFFFF 0%, #C6CDD8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+            text-shadow: 0 0 80px rgba(74, 192, 255, 0.3);
+        }
+
+        .hero p {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #3AA0D9 100%);
+            color: #FFFFFF;
+            padding: 18px 44px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(74, 192, 255, 0.35);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .hero-cta:hover::before {
+            left: 100%;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(74, 192, 255, 0.45);
+        }
+
         /* Main Content */
         main {
-            padding-top: 100px;
-            min-height: calc(100vh - 400px);
+            position: relative;
+            z-index: 1;
         }
 
         .container {
@@ -283,79 +450,30 @@
             padding: 0 24px;
         }
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 60px 0 40px;
-        }
-
-        .event-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(74, 192, 255, 0.1);
-            border: 1px solid rgba(74, 192, 255, 0.2);
-            padding: 8px 16px;
-            border-radius: 24px;
-            font-size: 14px;
-            color: var(--accent-blue);
-            font-weight: 500;
-            margin-bottom: 24px;
-        }
-
-        .event-badge svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-blue) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: var(--text-secondary);
-            max-width: 650px;
-            margin: 0 auto 32px;
-        }
-
-        .hero-cta {
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #7FBFF2 100%);
-            color: var(--bg-dark);
-            padding: 16px 40px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 18px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(74, 192, 255, 0.35);
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .hero-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 28px rgba(74, 192, 255, 0.45);
-        }
-
         /* Content Sections */
         .content-section {
-            padding: 48px 0;
+            padding: 64px 0;
+            position: relative;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(74, 192, 255, 0.04) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .section-title {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
             margin-bottom: 24px;
             color: var(--text-primary);
+            position: relative;
         }
 
         .section-text {
@@ -365,24 +483,44 @@
             margin-bottom: 24px;
         }
 
-        /* Cards */
+        /* Info Cards with glow effect */
         .info-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 32px;
-            backdrop-filter: blur(10px);
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 36px;
+            backdrop-filter: blur(20px);
             margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(74, 192, 255, 0.3), transparent);
+        }
+
+        .info-card:hover {
+            border-color: rgba(74, 192, 255, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 40px rgba(74, 192, 255, 0.08);
         }
 
         .info-card h3 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             color: var(--text-primary);
         }
 
-        /* Lists */
+        /* Check List */
         .check-list {
             list-style: none;
             padding: 0;
@@ -392,14 +530,20 @@
         .check-list li {
             font-size: 16px;
             color: var(--text-secondary);
-            padding: 12px 0;
-            padding-left: 32px;
+            padding: 16px 0;
+            padding-left: 40px;
             position: relative;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
         }
 
         .check-list li:last-child {
             border-bottom: none;
+        }
+
+        .check-list li:hover {
+            color: var(--text-primary);
+            padding-left: 44px;
         }
 
         .check-list li::before {
@@ -408,22 +552,28 @@
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             background: rgba(0, 230, 118, 0.15);
             border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .check-list li:hover::before {
+            background: rgba(0, 230, 118, 0.25);
+            box-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
         }
 
         .check-list li::after {
             content: '';
             position: absolute;
-            left: 6px;
+            left: 7px;
             top: 50%;
             transform: translateY(-50%) rotate(45deg);
-            width: 5px;
-            height: 10px;
+            width: 6px;
+            height: 12px;
             border: solid var(--accent-green);
-            border-width: 0 2px 2px 0;
+            border-width: 0 2.5px 2.5px 0;
         }
 
         /* Audience Grid */
@@ -434,35 +584,43 @@
         }
 
         .audience-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 20px 24px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
             transition: all 0.3s ease;
         }
 
         .audience-item:hover {
-            background: rgba(74, 192, 255, 0.05);
-            border-color: rgba(74, 192, 255, 0.2);
+            background: rgba(74, 192, 255, 0.06);
+            border-color: rgba(74, 192, 255, 0.25);
+            transform: translateY(-2px);
         }
 
         .audience-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(74, 192, 255, 0.1);
-            border-radius: 10px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(74, 192, 255, 0.15) 0%, rgba(74, 192, 255, 0.05) 100%);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--accent-blue);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .audience-item:hover .audience-icon {
+            background: linear-gradient(135deg, rgba(74, 192, 255, 0.25) 0%, rgba(74, 192, 255, 0.1) 100%);
+            box-shadow: 0 0 20px rgba(74, 192, 255, 0.2);
         }
 
         .audience-icon svg {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
         }
 
         .audience-item span {
@@ -471,48 +629,66 @@
             font-weight: 500;
         }
 
+        .no-tech-note {
+            margin-top: 28px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 15px;
+            font-style: italic;
+        }
+
         /* Agenda Timeline */
         .agenda-timeline {
             position: relative;
-            padding-left: 32px;
+            padding-left: 40px;
         }
 
         .agenda-timeline::before {
             content: '';
             position: absolute;
-            left: 6px;
+            left: 8px;
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(to bottom, var(--accent-blue), rgba(74, 192, 255, 0.2));
+            background: linear-gradient(to bottom, var(--accent-blue), rgba(74, 192, 255, 0.1));
+            border-radius: 2px;
         }
 
         .agenda-item {
             position: relative;
-            padding: 16px 0 24px;
+            padding: 20px 0 28px;
         }
 
         .agenda-item::before {
             content: '';
             position: absolute;
-            left: -26px;
-            top: 20px;
-            width: 12px;
-            height: 12px;
+            left: -32px;
+            top: 24px;
+            width: 16px;
+            height: 16px;
             background: var(--bg-dark);
-            border: 2px solid var(--accent-blue);
+            border: 3px solid var(--accent-blue);
             border-radius: 50%;
+            box-shadow: 0 0 15px rgba(74, 192, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .agenda-item:hover::before {
+            background: var(--accent-blue);
+            box-shadow: 0 0 25px rgba(74, 192, 255, 0.6);
         }
 
         .agenda-time {
             font-size: 13px;
             color: var(--accent-blue);
-            font-weight: 600;
-            margin-bottom: 4px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .agenda-title {
-            font-size: 16px;
+            font-size: 17px;
             color: var(--text-primary);
             font-weight: 600;
         }
@@ -521,25 +697,26 @@
         .host-section {
             display: flex;
             align-items: flex-start;
-            gap: 24px;
+            gap: 28px;
         }
 
         .host-avatar {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #7FBFF2 100%);
-            border-radius: 16px;
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #3AA0D9 100%);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--bg-dark);
+            font-size: 36px;
+            font-weight: 800;
+            color: #FFFFFF;
             flex-shrink: 0;
+            box-shadow: 0 8px 32px rgba(74, 192, 255, 0.3);
         }
 
         .host-info h4 {
-            font-size: 18px;
+            font-size: 20px;
             color: var(--text-primary);
             margin-bottom: 4px;
         }
@@ -547,7 +724,8 @@
         .host-title {
             font-size: 14px;
             color: var(--accent-blue);
-            margin-bottom: 12px;
+            font-weight: 600;
+            margin-bottom: 14px;
         }
 
         .host-info p {
@@ -556,34 +734,82 @@
             line-height: 1.7;
         }
 
-        /* Registration Form */
+        /* Registration Section */
+        .registration-section {
+            padding: 80px 0 100px;
+            background: linear-gradient(180deg, transparent 0%, rgba(74, 192, 255, 0.03) 50%, transparent 100%);
+            position: relative;
+        }
+
+        .registration-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 500px;
+            background: radial-gradient(ellipse, rgba(74, 192, 255, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
         .registration-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 48px;
-            backdrop-filter: blur(10px);
-            margin: 48px 0;
+            background: rgba(17, 24, 32, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 56px;
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .registration-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(74, 192, 255, 0.5), transparent);
+        }
+
+        .registration-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(74, 192, 255, 0.08) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .registration-card h2 {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             text-align: center;
             color: var(--text-primary);
+            position: relative;
+            z-index: 1;
         }
 
         .registration-card > p {
             text-align: center;
             color: var(--text-muted);
-            margin-bottom: 32px;
+            margin-bottom: 40px;
+            font-size: 17px;
+            position: relative;
+            z-index: 1;
         }
 
         .registration-form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 24px;
+            position: relative;
+            z-index: 1;
         }
 
         .form-row {
@@ -595,7 +821,7 @@
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
         .form-group label {
@@ -610,10 +836,10 @@
 
         .form-group input,
         .form-group select {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
-            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 14px 18px;
             color: var(--text-primary);
             font-family: inherit;
             font-size: 15px;
@@ -624,7 +850,8 @@
         .form-group select:focus {
             outline: none;
             border-color: var(--accent-blue);
-            background: rgba(74, 192, 255, 0.05);
+            background: rgba(74, 192, 255, 0.06);
+            box-shadow: 0 0 20px rgba(74, 192, 255, 0.15);
         }
 
         .form-group input::placeholder {
@@ -641,30 +868,43 @@
         }
 
         .form-submit {
-            background: linear-gradient(135deg, var(--accent-blue) 0%, #7FBFF2 100%);
-            color: var(--bg-dark);
-            padding: 16px 32px;
-            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #3AA0D9 100%);
+            color: #FFFFFF;
+            padding: 18px 36px;
+            border-radius: 14px;
             font-weight: 700;
             font-size: 18px;
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 16px rgba(74, 192, 255, 0.2);
-            margin-top: 8px;
+            box-shadow: 0 4px 24px rgba(74, 192, 255, 0.3);
+            margin-top: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .form-submit:hover::before {
+            left: 100%;
         }
 
         .form-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(74, 192, 255, 0.3);
-        }
-
-        .form-submit:active {
-            transform: translateY(0);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 36px rgba(74, 192, 255, 0.4);
         }
 
         .form-submit:disabled {
-            opacity: 0.7;
+            opacity: 0.6;
             cursor: not-allowed;
             transform: none;
         }
@@ -673,7 +913,7 @@
             text-align: center;
             font-size: 13px;
             color: var(--text-subtle);
-            margin-top: 16px;
+            margin-top: 20px;
         }
 
         .form-note a {
@@ -689,7 +929,9 @@
         .success-message {
             display: none;
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .success-message.show {
@@ -697,42 +939,50 @@
         }
 
         .success-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(0, 230, 118, 0.1);
+            width: 90px;
+            height: 90px;
+            background: rgba(0, 230, 118, 0.12);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 24px;
+            margin: 0 auto 28px;
+            animation: successPop 0.5s ease-out;
+            box-shadow: 0 0 40px rgba(0, 230, 118, 0.2);
+        }
+
+        @keyframes successPop {
+            0% { transform: scale(0); opacity: 0; }
+            60% { transform: scale(1.15); }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         .success-icon svg {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             color: var(--accent-green);
         }
 
         .success-message h3 {
-            font-size: 24px;
+            font-size: 28px;
             color: var(--text-primary);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .success-message p {
             color: var(--text-secondary);
-            font-size: 16px;
+            font-size: 17px;
         }
 
         /* Error message */
         .error-message {
-            background: rgba(255, 82, 82, 0.1);
-            border: 1px solid rgba(255, 82, 82, 0.3);
-            border-radius: 8px;
-            padding: 12px 16px;
-            color: #ff5252;
+            background: rgba(255, 82, 82, 0.12);
+            border: 1px solid rgba(255, 82, 82, 0.35);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: #ff6b6b;
             font-size: 14px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             display: none;
         }
 
@@ -779,24 +1029,24 @@
         }
 
         .footer-brand-social a {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
             color: var(--text-muted);
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .footer-brand-social a:hover {
-            background: rgba(74, 192, 255, 0.1);
+            background: rgba(74, 192, 255, 0.12);
             border-color: var(--accent-blue);
             color: var(--accent-blue);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         .footer-brand-social svg {
@@ -808,7 +1058,7 @@
             font-size: 14px;
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -857,6 +1107,11 @@
                 display: block;
             }
 
+            .hero {
+                min-height: auto;
+                padding: 140px 24px 60px;
+            }
+
             .hero h1 {
                 font-size: 36px;
             }
@@ -874,12 +1129,18 @@
             }
 
             .registration-card {
-                padding: 32px 24px;
+                padding: 40px 28px;
             }
 
             .footer-content {
                 grid-template-columns: 1fr 1fr;
                 gap: 32px;
+            }
+
+            .host-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
             }
         }
 
@@ -893,24 +1154,15 @@
             }
 
             .section-title {
-                font-size: 24px;
+                font-size: 26px;
             }
 
             .registration-card {
-                padding: 24px 20px;
+                padding: 32px 20px;
             }
 
             .registration-card h2 {
-                font-size: 24px;
-            }
-
-            .host-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .host-avatar {
-                margin: 0 auto;
+                font-size: 28px;
             }
 
             .footer-content {
@@ -981,24 +1233,26 @@
         </div>
     </div>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="event-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span>Free Online Event</span>
+            </div>
+            <h1>Online Visibility in the Age of AI Search</h1>
+            <p>Understand how AI tools describe your business and learn simple steps to improve accuracy. Free online event hosted by Fokal.</p>
+            <a href="#register" class="hero-cta">Register for the Event</a>
+        </div>
+    </section>
+
     <!-- Main Content -->
     <main>
         <div class="container">
-            <!-- Hero Section -->
-            <div class="hero">
-                <div class="event-badge">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                    Free Online Event
-                </div>
-                <h1>Online Visibility in the Age of AI Search</h1>
-                <p>Understand how AI tools describe your business and learn simple steps to improve accuracy. Free online event hosted by Fokal.</p>
-                <a href="#register" class="hero-cta">Register for the Event</a>
-            </div>
-
             <!-- About the Event -->
-            <div class="content-section">
+            <section class="content-section">
                 <h2 class="section-title">About the Event</h2>
                 <p class="section-text">
                     AI search engines like ChatGPT and Perplexity now influence how customers find businesses. Many businesses still rely only on traditional SEO. As a result, AI tools often show missing or incorrect information.
@@ -1020,10 +1274,10 @@
                 <p class="section-text">
                     The session includes real examples and practical advice you can use right away.
                 </p>
-            </div>
+            </section>
 
             <!-- Who Should Attend -->
-            <div class="content-section">
+            <section class="content-section">
                 <h2 class="section-title">Who Should Attend</h2>
                 <div class="audience-grid">
                     <div class="audience-item">
@@ -1067,13 +1321,11 @@
                         <span>Business owners and decision makers</span>
                     </div>
                 </div>
-                <p class="section-text" style="margin-top: 24px; text-align: center; color: var(--text-muted);">
-                    No technical background is required.
-                </p>
-            </div>
+                <p class="no-tech-note">No technical background is required.</p>
+            </section>
 
             <!-- What You Will Learn -->
-            <div class="content-section">
+            <section class="content-section">
                 <h2 class="section-title">What You Will Take Away</h2>
                 <div class="info-card">
                     <ul class="check-list">
@@ -1084,10 +1336,10 @@
                         <li>Receive a short checklist to apply to your own site</li>
                     </ul>
                 </div>
-            </div>
+            </section>
 
             <!-- Agenda -->
-            <div class="content-section">
+            <section class="content-section">
                 <h2 class="section-title">Agenda (60 minutes)</h2>
                 <div class="info-card">
                     <div class="agenda-timeline">
@@ -1117,10 +1369,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- About the Host -->
-            <div class="content-section">
+            <section class="content-section">
                 <h2 class="section-title">About the Host</h2>
                 <div class="info-card">
                     <div class="host-section">
@@ -1132,79 +1384,83 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+        </div>
 
-            <!-- Registration Form -->
-            <div class="registration-card" id="register">
-                <div id="registration-form-container">
-                    <h2>Reserve Your Free Spot</h2>
-                    <p>Register now to secure your place at this free online event.</p>
+        <!-- Registration Section -->
+        <section class="registration-section" id="register">
+            <div class="container">
+                <div class="registration-card">
+                    <div id="registration-form-container">
+                        <h2>Reserve Your Free Spot</h2>
+                        <p>Register now to secure your place at this free online event.</p>
 
-                    <div class="error-message" id="form-error"></div>
+                        <div class="error-message" id="form-error"></div>
 
-                    <form class="registration-form" id="event-registration-form" onsubmit="handleEventRegistration(event)">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="first_name">First name <span class="required">*</span></label>
-                                <input type="text" id="first_name" name="first_name" required placeholder="John">
+                        <form class="registration-form" id="event-registration-form" onsubmit="handleEventRegistration(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first_name">First name <span class="required">*</span></label>
+                                    <input type="text" id="first_name" name="first_name" required placeholder="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name">Last name <span class="required">*</span></label>
+                                    <input type="text" id="last_name" name="last_name" required placeholder="Smith">
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="last_name">Last name <span class="required">*</span></label>
-                                <input type="text" id="last_name" name="last_name" required placeholder="Smith">
+                                <label for="email">Email address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="john@company.com">
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email address <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required placeholder="john@company.com">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="company">Company name</label>
-                                <input type="text" id="company" name="company" placeholder="Your company (optional)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="company">Company name</label>
+                                    <input type="text" id="company" name="company" placeholder="Your company (optional)">
+                                </div>
+                                <div class="form-group">
+                                    <label for="role">Your role</label>
+                                    <select id="role" name="role">
+                                        <option value="">Select your role (optional)</option>
+                                        <option value="founder">Founder / CEO</option>
+                                        <option value="marketing">Marketing</option>
+                                        <option value="sales">Sales</option>
+                                        <option value="product">Product</option>
+                                        <option value="digital">Digital / SEO</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="role">Your role</label>
-                                <select id="role" name="role">
-                                    <option value="">Select your role (optional)</option>
-                                    <option value="founder">Founder / CEO</option>
-                                    <option value="marketing">Marketing</option>
-                                    <option value="sales">Sales</option>
-                                    <option value="product">Product</option>
-                                    <option value="digital">Digital / SEO</option>
-                                    <option value="other">Other</option>
+                                <label for="interest">What interests you most about this event?</label>
+                                <select id="interest" name="interest">
+                                    <option value="">Select an option (optional)</option>
+                                    <option value="understanding-ai">Understanding how AI sees my business</option>
+                                    <option value="fixing-errors">Fixing errors in AI descriptions</option>
+                                    <option value="competitive">Staying ahead of competitors</option>
+                                    <option value="general">General curiosity about AI search</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="interest">What interests you most about this event?</label>
-                            <select id="interest" name="interest">
-                                <option value="">Select an option (optional)</option>
-                                <option value="understanding-ai">Understanding how AI sees my business</option>
-                                <option value="fixing-errors">Fixing errors in AI descriptions</option>
-                                <option value="competitive">Staying ahead of competitors</option>
-                                <option value="general">General curiosity about AI search</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="form-submit" id="submit-btn">Register for the Event</button>
-                    </form>
+                            <button type="submit" class="form-submit" id="submit-btn">Register for the Event</button>
+                        </form>
 
-                    <p class="form-note">
-                        By registering, you agree to our <a href="/privacy-policy">Privacy Policy</a>. We'll send you the event details via email.
-                    </p>
-                </div>
-
-                <!-- Success Message -->
-                <div class="success-message" id="success-message">
-                    <div class="success-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
+                        <p class="form-note">
+                            By registering, you agree to our <a href="/privacy-policy">Privacy Policy</a>. We'll send you the event details via email.
+                        </p>
                     </div>
-                    <h3>Thank You for Registering!</h3>
-                    <p>We will send the event link and details to your email shortly. Please check your inbox.</p>
+
+                    <!-- Success Message -->
+                    <div class="success-message" id="success-message">
+                        <div class="success-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3>Thank You for Registering!</h3>
+                        <p>We will send the event link and details to your email shortly. Please check your inbox.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- Footer -->
