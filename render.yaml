@@ -60,3 +60,6 @@ services:
       - type: rewrite
         source: /resources/australian-ai-geo-tactic
         destination: /resources/australian-ai-geo-tactic.html
+      - type: rewrite
+        source: /visibility-gaps
+        destination: /visibility-gaps.html

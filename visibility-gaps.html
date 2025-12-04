@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We're preparing your visibility gaps analysis. Check your inbox soon.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Your Visibility Gaps | Fokal</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/fokal-favicon.png">
+
+    <!-- Google Fonts - DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Header/Footer Styles -->
+    <link rel="stylesheet" href="/components/header.css">
+    <link rel="stylesheet" href="/components/footer.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0E0E10;
+            --bg-panel: #161618;
+            --card-bg: rgba(17, 24, 32, 0.8);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --text-primary: #E5E9F0;
+            --text-secondary: #C6CDD8;
+            --text-muted: #9DA6B5;
+            --accent-blue: #4AC0FF;
+            --accent-green: #00E676;
+            --accent-purple: #B388FF;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        main::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(179, 136, 255, 0.12) 0%, rgba(74, 192, 255, 0.06) 40%, transparent 70%);
+            pointer-events: none;
+            animation: gradientPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientPulse {
+            0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
+            50% { opacity: 0.6; transform: translateX(-50%) scale(1.15); }
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 60px 50px;
+            max-width: 560px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+        }
+
+        .icon-container {
+            width: 100px;
+            height: 100px;
+            background: rgba(179, 136, 255, 0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(179, 136, 255, 0.3); }
+            50% { box-shadow: 0 0 0 20px rgba(179, 136, 255, 0); }
+        }
+
+        .icon-container svg {
+            width: 50px;
+            height: 50px;
+            color: var(--accent-purple);
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 230, 118, 0.1);
+            border: 1px solid rgba(0, 230, 118, 0.2);
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            color: var(--accent-green);
+            font-weight: 500;
+        }
+
+        .highlight svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+
+        .fokal-link {
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .fokal-link a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .fokal-link a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            .content-card {
+                padding: 40px 24px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .subtitle {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-container"></div>
+    <script src="/components/header.js"></script>
+
+    <main>
+        <div class="content-card">
+            <div class="icon-container">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                </svg>
+            </div>
+
+            <h1>We're preparing 3 visibility gaps for you</h1>
+
+            <p class="subtitle">The places where your brand is invisible to AI search and potential customers.</p>
+
+            <div class="highlight">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                Check your inbox soon
+            </div>
+
+            <div class="fokal-link">
+                <a href="https://www.fokal.com">
+                    Learn more about Fokal
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+    <script src="/components/footer.js"></script>
+
+    <script>
+        // Track page visit for Slack notification
+        (function() {
+            const API_BASE_URL = 'https://snoops-ai-backend.onrender.com';
+
+            fetch(`${API_BASE_URL}/api/leads/page-visit`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    page: 'visibility-gaps',
+                    referrer: document.referrer || null
+                })
+            }).catch(err => console.log('Page visit tracking failed:', err));
+        })();
+    </script>
+</body>
+</html>
