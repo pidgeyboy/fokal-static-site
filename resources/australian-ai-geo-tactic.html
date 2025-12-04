@@ -614,55 +614,6 @@
             display: block;
         }
 
-        /* Footer */
-        footer {
-            background: rgba(10, 11, 13, 0.95);
-            border-top: 1px solid var(--border-color);
-            padding: 48px 0 32px;
-        }
-
-        .footer-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 24px;
-            text-align: center;
-        }
-
-        .footer-brand img {
-            height: 28px;
-            width: auto;
-            margin-bottom: 16px;
-        }
-
-        .footer-brand p {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 24px;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-blue);
-        }
-
-        .footer-bottom p {
-            font-size: 13px;
-            color: var(--text-subtle);
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
@@ -701,17 +652,14 @@
         }
     </style>
     <link rel="stylesheet" href="/css/mobile-standards.css">
+
+    <!-- Header Component Styles -->
+    <link rel="stylesheet" href="/components/header.css">
 </head>
 <body>
-    <!-- Simple Header -->
-    <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 24px; background: rgba(14, 14, 16, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.06);">
-        <div style="max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-            <a href="https://www.fokal.com" style="text-decoration: none;">
-                <img src="/fokal-wordmark-icon.svg" alt="Fokal" style="height: 28px;">
-            </a>
-            <a href="https://www.fokal.com" style="color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500;">Back to Fokal</a>
-        </div>
-    </header>
+    <!-- Header Component -->
+    <div id="header-container"></div>
+    <script src="/components/header.js"></script>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -888,24 +836,9 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <img src="/fokal-wordmark-icon.svg" alt="Fokal">
-                <p>AI visibility intelligence for modern brands.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.fokal.com">Home</a>
-                <a href="https://www.fokal.com/features">Features</a>
-                <a href="https://www.fokal.com/pricing">Pricing</a>
-                <a href="https://www.fokal.com/privacy-policy">Privacy</a>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Fokal. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+    <script src="/components/footer.js"></script>
 
     <script>
         // API Configuration
