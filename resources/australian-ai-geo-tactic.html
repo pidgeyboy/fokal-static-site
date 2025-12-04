@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple GEO/SEO tactic for Australian AI startups that takes 2 minutes to implement. Get high trust signals, AI-category relevance, and faster domain authority.">
+    <meta name="keywords" content="GEO, SEO, AI startup, Australian AI, domain authority, trust signals, AI visibility">
+    <meta property="og:title" content="The GEO/SEO Tactic Every Australian AI Startup Should Know | Fokal">
+    <meta property="og:description" content="A simple move that takes 2 minutes and gives your AI company legitimacy that normally takes months to build.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fokal.com/resources/australian-ai-geo-tactic">
+    <meta property="og:image" content="https://www.fokal.com/fokal-og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The GEO/SEO Tactic Every Australian AI Startup Should Know">
+    <meta name="twitter:description" content="A simple move that takes 2 minutes and gives your AI company legitimacy that normally takes months to build.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>The GEO/SEO Tactic Every Australian AI Startup Should Know | Fokal</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/fokal-favicon.png">
+
+    <!-- Google Fonts - DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0E0E10;
+            --bg-panel: #161618;
+            --card-bg: rgba(17, 24, 32, 0.8);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --card-border-hover: rgba(255, 255, 255, 0.12);
+            --text-primary: #E5E9F0;
+            --text-secondary: #C6CDD8;
+            --text-muted: #9DA6B5;
+            --text-subtle: #8A93A1;
+            --accent-blue: #4AC0FF;
+            --accent-green: #00E676;
+            --accent-amber: #FFA726;
+            --accent-purple: #B388FF;
+            --border-color: #1A2230;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 70vh;
+            padding: 120px 24px 60px;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, #0A0B0D 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(179, 136, 255, 0.15) 0%, rgba(74, 192, 255, 0.08) 40%, transparent 70%);
+            pointer-events: none;
+            animation: gradientPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientPulse {
+            0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
+            50% { opacity: 0.6; transform: translateX(-50%) scale(1.15); }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(179, 136, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(179, 136, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .exclusive-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(179, 136, 255, 0.12);
+            border: 1px solid rgba(179, 136, 255, 0.35);
+            padding: 10px 22px;
+            border-radius: 100px;
+            font-size: 14px;
+            color: var(--accent-purple);
+            font-weight: 600;
+            margin-bottom: 28px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .exclusive-badge svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+            background: linear-gradient(180deg, #FFFFFF 0%, #C6CDD8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero p {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-purple) 0%, #9575CD 100%);
+            color: #FFFFFF;
+            padding: 18px 44px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(179, 136, 255, 0.35);
+            text-decoration: none;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(179, 136, 255, 0.45);
+        }
+
+        /* Main Content */
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 64px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        /* Benefits Card */
+        .benefits-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 36px;
+            backdrop-filter: blur(20px);
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .benefits-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(179, 136, 255, 0.3), transparent);
+        }
+
+        .benefits-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .check-list li {
+            font-size: 16px;
+            color: var(--text-secondary);
+            padding: 14px 0;
+            padding-left: 40px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .check-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            background: rgba(0, 230, 118, 0.15);
+            border-radius: 50%;
+        }
+
+        .check-list li::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            width: 6px;
+            height: 12px;
+            border: solid var(--accent-green);
+            border-width: 0 2.5px 2.5px 0;
+        }
+
+        /* Time highlight */
+        .time-highlight {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            background: rgba(255, 167, 38, 0.1);
+            border: 1px solid rgba(255, 167, 38, 0.25);
+            border-radius: 14px;
+            padding: 20px 32px;
+            margin: 32px 0;
+        }
+
+        .time-highlight svg {
+            width: 32px;
+            height: 32px;
+            color: var(--accent-amber);
+        }
+
+        .time-highlight span {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent-amber);
+        }
+
+        /* Who This Is For */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .audience-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .audience-item:hover {
+            background: rgba(179, 136, 255, 0.06);
+            border-color: rgba(179, 136, 255, 0.25);
+        }
+
+        .audience-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(179, 136, 255, 0.15) 0%, rgba(179, 136, 255, 0.05) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-purple);
+            flex-shrink: 0;
+        }
+
+        .audience-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .audience-item span {
+            font-size: 15px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Not For Section */
+        .not-for-note {
+            margin-top: 28px;
+            padding: 20px 24px;
+            background: rgba(255, 82, 82, 0.08);
+            border: 1px solid rgba(255, 82, 82, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .not-for-note svg {
+            width: 24px;
+            height: 24px;
+            color: #ff6b6b;
+            flex-shrink: 0;
+        }
+
+        .not-for-note span {
+            font-size: 14px;
+            color: #ff8a8a;
+        }
+
+        /* Registration Section */
+        .registration-section {
+            padding: 80px 0 100px;
+            background: linear-gradient(180deg, transparent 0%, rgba(179, 136, 255, 0.03) 50%, transparent 100%);
+            position: relative;
+        }
+
+        .registration-card {
+            background: rgba(17, 24, 32, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 56px;
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .registration-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(179, 136, 255, 0.5), transparent);
+        }
+
+        .registration-card h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .registration-card > p {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .registration-form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .form-group label .required {
+            color: var(--accent-amber);
+        }
+
+        .form-group input,
+        .form-group select {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-purple);
+            background: rgba(179, 136, 255, 0.06);
+            box-shadow: 0 0 20px rgba(179, 136, 255, 0.15);
+        }
+
+        .form-group input::placeholder {
+            color: var(--text-subtle);
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: var(--bg-panel);
+            color: var(--text-primary);
+        }
+
+        /* Checkbox styling */
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox-group:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            margin: 0;
+            accent-color: var(--accent-green);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .checkbox-group label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            line-height: 1.5;
+        }
+
+        .form-submit {
+            background: linear-gradient(135deg, var(--accent-purple) 0%, #9575CD 100%);
+            color: #FFFFFF;
+            padding: 18px 36px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(179, 136, 255, 0.3);
+            margin-top: 12px;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 36px rgba(179, 136, 255, 0.4);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-subtle);
+            margin-top: 20px;
+        }
+
+        .form-note a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            width: 90px;
+            height: 90px;
+            background: rgba(0, 230, 118, 0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            animation: successPop 0.5s ease-out;
+            box-shadow: 0 0 40px rgba(0, 230, 118, 0.2);
+        }
+
+        @keyframes successPop {
+            0% { transform: scale(0); opacity: 0; }
+            60% { transform: scale(1.15); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .success-icon svg {
+            width: 45px;
+            height: 45px;
+            color: var(--accent-green);
+        }
+
+        .success-message h3 {
+            font-size: 28px;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+        }
+
+        .success-message p {
+            color: var(--text-secondary);
+            font-size: 17px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Error message */
+        .error-message {
+            background: rgba(255, 82, 82, 0.12);
+            border: 1px solid rgba(255, 82, 82, 0.35);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: #ff6b6b;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 11, 13, 0.95);
+            border-top: 1px solid var(--border-color);
+            padding: 48px 0 32px;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+            text-align: center;
+        }
+
+        .footer-brand img {
+            height: 28px;
+            width: auto;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: var(--text-subtle);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 100px 24px 50px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .audience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .registration-card {
+                padding: 32px 20px;
+            }
+
+            .registration-card h2 {
+                font-size: 26px;
+            }
+
+            .time-highlight {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="/css/mobile-standards.css">
+</head>
+<body>
+    <!-- Simple Header -->
+    <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 24px; background: rgba(14, 14, 16, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <div style="max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="https://www.fokal.com" style="text-decoration: none;">
+                <img src="/fokal-wordmark-icon.svg" alt="Fokal" style="height: 28px;">
+            </a>
+            <a href="https://www.fokal.com" style="color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500;">Back to Fokal</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="exclusive-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                </svg>
+                <span>Exclusive Resource</span>
+            </div>
+            <h1>The GEO/SEO Tactic Every Australian AI Startup Should Know</h1>
+            <p>A simple move that takes 2 minutes and gives your company legitimacy that normally takes months to build.</p>
+            <a href="#get-access" class="hero-cta">Get the Walkthrough</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Benefits Section -->
+            <section class="content-section">
+                <h2 class="section-title">What You'll Get</h2>
+                <div class="benefits-card">
+                    <h3>This tactic gives you:</h3>
+                    <ul class="check-list">
+                        <li>A high trust signal for your website</li>
+                        <li>AI-category relevance in search</li>
+                        <li>Australian GEO/SEO authority</li>
+                        <li>Stronger ranking for AI searches in Australia</li>
+                        <li>Faster trust signals for new domains</li>
+                    </ul>
+                </div>
+
+                <div class="time-highlight">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                    </svg>
+                    <span>Takes just 2 minutes to implement</span>
+                </div>
+            </section>
+
+            <!-- Who This Is For -->
+            <section class="content-section">
+                <h2 class="section-title">Who This Is For</h2>
+                <div class="audience-grid">
+                    <div class="audience-item">
+                        <div class="audience-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            </svg>
+                        </div>
+                        <span>Australian AI startups & scale-ups</span>
+                    </div>
+                    <div class="audience-item">
+                        <div class="audience-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                            </svg>
+                        </div>
+                        <span>Companies building AI products</span>
+                    </div>
+                    <div class="audience-item">
+                        <div class="audience-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                            </svg>
+                        </div>
+                        <span>AI service providers & advisors</span>
+                    </div>
+                    <div class="audience-item">
+                        <div class="audience-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+                            </svg>
+                        </div>
+                        <span>Founders wanting faster credibility</span>
+                    </div>
+                </div>
+
+                <div class="not-for-note">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <span>Not for SEO/GEO agencies - we're keeping this tactic exclusive to businesses who will use it for themselves.</span>
+                </div>
+            </section>
+        </div>
+
+        <!-- Registration Section -->
+        <section class="registration-section" id="get-access">
+            <div class="container">
+                <div class="registration-card">
+                    <div id="registration-form-container">
+                        <h2>Get the Walkthrough</h2>
+                        <p>Enter your details below and we'll show you the step-by-step process.</p>
+
+                        <div class="error-message" id="form-error"></div>
+
+                        <form class="registration-form" id="lead-capture-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first_name">First name <span class="required">*</span></label>
+                                    <input type="text" id="first_name" name="first_name" required placeholder="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name">Last name</label>
+                                    <input type="text" id="last_name" name="last_name" placeholder="Smith">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Work email <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="john@company.com">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="company">Company name <span class="required">*</span></label>
+                                    <input type="text" id="company" name="company" required placeholder="Your company">
+                                </div>
+                                <div class="form-group">
+                                    <label for="domain">Website domain <span class="required">*</span></label>
+                                    <input type="text" id="domain" name="domain" required placeholder="yourcompany.com.au">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone (optional)</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+61 4XX XXX XXX">
+                                </div>
+                                <div class="form-group">
+                                    <label for="role">Your role</label>
+                                    <select id="role" name="role">
+                                        <option value="">Select your role (optional)</option>
+                                        <option value="founder">Founder / CEO</option>
+                                        <option value="growth">Growth / Marketing</option>
+                                        <option value="product">Product</option>
+                                        <option value="technical">Technical / Engineering</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="not_agency" name="not_agency" required>
+                                <label for="not_agency">I confirm I'm not an SEO/GEO agency. I want this tactic for my own business.</label>
+                            </div>
+
+                            <button type="submit" class="form-submit" id="submit-btn">Show Me the Tactic</button>
+                        </form>
+
+                        <p class="form-note">
+                            By submitting, you agree to our <a href="/privacy-policy">Privacy Policy</a>.
+                        </p>
+                    </div>
+
+                    <!-- Success Message with Tactic Reveal -->
+                    <div class="success-message" id="success-message">
+                        <div class="success-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3>You're In!</h3>
+                        <p style="margin-bottom: 30px;">Thanks for your interest. We'll be in touch shortly with the walkthrough.</p>
+                        <div style="text-align: left; background: rgba(255,255,255,0.03); border-radius: 16px; padding: 32px; margin-top: 20px;">
+                            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">In the meantime, you might find these useful:</p>
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <a href="https://www.fokal.com" style="color: var(--accent-blue); text-decoration: none; font-weight: 500;">Learn more about Fokal &rarr;</a>
+                                <a href="https://app.fokal.com" style="color: var(--accent-blue); text-decoration: none; font-weight: 500;">Try Fokal free &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="/fokal-wordmark-icon.svg" alt="Fokal">
+                <p>AI visibility intelligence for modern brands.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.fokal.com">Home</a>
+                <a href="https://www.fokal.com/features">Features</a>
+                <a href="https://www.fokal.com/pricing">Pricing</a>
+                <a href="https://www.fokal.com/privacy-policy">Privacy</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fokal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // API Configuration
+        const API_BASE_URL = 'https://snoops-ai-backend.onrender.com';
+        const CAMPAIGN_SLUG = 'australian-ai-geo-tactic';
+
+        // Get UTM parameters from URL
+        function getUTMParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                utm_source: params.get('utm_source'),
+                utm_medium: params.get('utm_medium'),
+                utm_campaign: params.get('utm_campaign')
+            };
+        }
+
+        // Show error message
+        function showError(message) {
+            const errorEl = document.getElementById('form-error');
+            errorEl.textContent = message;
+            errorEl.classList.add('show');
+        }
+
+        // Hide error message
+        function hideError() {
+            const errorEl = document.getElementById('form-error');
+            errorEl.classList.remove('show');
+        }
+
+        // Form submission
+        document.getElementById('lead-capture-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            hideError();
+
+            const submitBtn = document.getElementById('submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(this);
+            const utmParams = getUTMParams();
+
+            const data = {
+                campaign_slug: CAMPAIGN_SLUG,
+                first_name: formData.get('first_name'),
+                last_name: formData.get('last_name') || null,
+                email: formData.get('email'),
+                phone: formData.get('phone') || null,
+                company: formData.get('company'),
+                domain: formData.get('domain'),
+                role: formData.get('role') || null,
+                is_agency: false, // They confirmed they're not an agency
+                source: 'website',
+                utm_source: utmParams.utm_source,
+                utm_medium: utmParams.utm_medium,
+                utm_campaign: utmParams.utm_campaign
+            };
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/leads/capture`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({}));
+                    throw new Error(errorData.message || 'Submission failed. Please try again.');
+                }
+
+                // Show success message
+                document.getElementById('registration-form-container').style.display = 'none';
+                document.getElementById('success-message').classList.add('show');
+
+                // Scroll to success message
+                document.getElementById('success-message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            } catch (error) {
+                console.error('Submission error:', error);
+                showError(error.message || 'Something went wrong. Please try again or email hello@fokal.com');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

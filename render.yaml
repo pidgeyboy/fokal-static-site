@@ -57,3 +57,6 @@ services:
       - type: rewrite
         source: /events/ai-search-roundtable
         destination: /events/ai-search-roundtable.html
+      - type: rewrite
+        source: /resources/australian-ai-geo-tactic
+        destination: /resources/australian-ai-geo-tactic.html
