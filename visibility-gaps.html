@@ -254,6 +254,7 @@
         // Track page visit for Slack notification
         (function() {
             const API_BASE_URL = 'https://snoops-ai-backend.onrender.com';
+            const params = new URLSearchParams(window.location.search);
 
             fetch(`${API_BASE_URL}/api/leads/page-visit`, {
                 method: 'POST',
@@ -262,7 +263,10 @@
                 },
                 body: JSON.stringify({
                     page: 'visibility-gaps',
-                    referrer: document.referrer || null
+                    referrer: document.referrer || null,
+                    utm_source: params.get('utm_source'),
+                    utm_campaign: params.get('utm_campaign'),
+                    utm_content: params.get('utm_content')
                 })
             }).catch(err => console.log('Page visit tracking failed:', err));
         })();
