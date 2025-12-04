@@ -1937,6 +1937,100 @@
                 margin: 0 !important;
             }
         }
+
+        /* Success Toast Notification */
+        .success-toast {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            background: rgba(17, 24, 32, 0.95);
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            border-radius: 16px;
+            padding: 20px 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 230, 118, 0.15);
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            max-width: 500px;
+        }
+
+        .success-toast.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .success-toast-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 230, 118, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .success-toast-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--accent-green);
+        }
+
+        .success-toast-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .success-toast-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .success-toast-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+        }
+
+        .success-toast-close:hover {
+            color: var(--text-primary);
+        }
+
+        .success-toast-close svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        @media (max-width: 640px) {
+            .success-toast {
+                left: 16px;
+                right: 16px;
+                transform: translateX(0) translateY(-20px);
+                max-width: none;
+            }
+
+            .success-toast.show {
+                transform: translateX(0) translateY(0);
+            }
+        }
     </style>
 
     <!-- Hero Demo Styles -->
@@ -3091,5 +3185,57 @@
     <script src="js/copyToClipboard.js"></script>
     <script src="js/modalController.js"></script>
     <script src="js/heroDemo.js"></script>
+
+    <!-- Success Toast for Lead Captures -->
+    <div class="success-toast" id="success-toast">
+        <button class="success-toast-close" onclick="closeSuccessToast()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+        <div class="success-toast-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+        </div>
+        <div class="success-toast-content">
+            <h4>You're on the list!</h4>
+            <p>We'll be in touch shortly with the walkthrough.</p>
+        </div>
+    </div>
+
+    <script>
+        // Check for lead_success parameter and show toast
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const leadSuccess = params.get('lead_success');
+
+            if (leadSuccess) {
+                // Show toast after a short delay
+                setTimeout(() => {
+                    const toast = document.getElementById('success-toast');
+                    if (toast) {
+                        toast.classList.add('show');
+
+                        // Auto-hide after 8 seconds
+                        setTimeout(() => {
+                            toast.classList.remove('show');
+                        }, 8000);
+                    }
+                }, 500);
+
+                // Clean up URL (remove the parameter)
+                const newUrl = window.location.pathname;
+                window.history.replaceState({}, document.title, newUrl);
+            }
+        })();
+
+        function closeSuccessToast() {
+            const toast = document.getElementById('success-toast');
+            if (toast) {
+                toast.classList.remove('show');
+            }
+        }
+    </script>
 </body>
 </html>
