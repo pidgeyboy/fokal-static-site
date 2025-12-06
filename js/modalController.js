@@ -136,25 +136,35 @@ function attachCTAListeners() {
     });
 }
 
-function handleCTAClick(gapType) {
+async function handleCTAClick(gapType) {
     // Track conversion
     trackEvent('cta_click', {
         gap_type: gapType,
         source: 'hero_demo'
     });
 
-    // Check if user is authenticated (optional)
-    const isAuthenticated = document.cookie.includes('session_token') ||
-                           document.cookie.includes('auth_token');
+    // Verify authentication with server-side check
+    try {
+        const response = await fetch('https://snoops-ai-backend.onrender.com/api/auth/check-health', {
+            method: 'GET',
+            credentials: 'include'
+        });
 
-    // Redirect based on authentication status
-    if (isAuthenticated) {
-        // Authenticated users go to dashboard
-        window.location.href = '/brand/1/greatness';
-    } else {
-        // Anonymous users go to sign-up with tracking
-        window.location.href = `/signup?ref=hero-demo&gap=${gapType}`;
+        if (response.ok) {
+            const data = await response.json();
+            if (data.authenticated && data.brandId) {
+                // Authenticated users go to their brand dashboard
+                window.location.href = `https://app.fokal.com/brand/${data.brandId}/greatness`;
+                return;
+            }
+        }
+    } catch (error) {
+        // Silently fail - redirect to signup
+        console.error('Auth check failed:', error);
     }
+
+    // Not authenticated - redirect to sign-up with tracking
+    window.location.href = `https://app.fokal.com/signup?ref=hero-demo&gap=${encodeURIComponent(gapType)}`;
 }
 
 function trackEvent(eventName, eventData) {

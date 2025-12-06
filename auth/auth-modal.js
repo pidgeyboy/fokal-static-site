@@ -101,6 +101,19 @@ async function initCsrfToken() {
     }
 }
 
+// Sanitize URL to remove sensitive query parameters
+function sanitizeUrl(url) {
+    try {
+        const parsed = new URL(url);
+        // Remove sensitive parameters
+        const sensitiveParams = ['token', 'auth', 'session', 'key', 'secret', 'password', 'credential'];
+        sensitiveParams.forEach(param => parsed.searchParams.delete(param));
+        return parsed.pathname + (parsed.search || '');
+    } catch {
+        return url.split('?')[0]; // Fallback: just return path
+    }
+}
+
 // Initialize Mixpanel analytics
 function initMixpanel() {
     try {
@@ -112,11 +125,11 @@ function initMixpanel() {
             });
             console.log('Mixpanel initialized');
 
-            // Track page view
+            // Track page view (sanitized - no sensitive query params)
             mixpanel.track('Page Viewed', {
                 page: AUTH_SOURCE,
-                url: window.location.href,
-                referrer: document.referrer,
+                path: window.location.pathname,
+                referrer_path: sanitizeUrl(document.referrer),
                 timestamp: new Date().toISOString()
             });
         }
@@ -136,17 +149,17 @@ function captureGCLID() {
             localStorage.setItem('gclid', gclid);
             localStorage.setItem('gclid_timestamp', Date.now().toString());
 
-            // Track ad click in Mixpanel
+            // Track ad click in Mixpanel (sanitized - no full URLs)
             if (window.mixpanel) {
                 mixpanel.track('Ad Click Landed', {
                     gclid: gclid,
-                    landing_url: window.location.href,
-                    referrer: document.referrer,
+                    landing_path: window.location.pathname,
+                    referrer_domain: document.referrer ? new URL(document.referrer).hostname : null,
                     timestamp: new Date().toISOString()
                 });
             }
 
-            console.log('GCLID captured:', gclid);
+            console.log('GCLID captured');
         }
     } catch (error) {
         console.error('Failed to capture GCLID:', error);
