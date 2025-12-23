@@ -42,9 +42,19 @@ services:
       - type: rewrite
         source: /pricing
         destination: /pricing.html
-      # NOTE: /blog/* and topic hub routes (/:hub and /:hub/*) are configured as
-      # proxy rules in Render Dashboard, pointing to backend.fokal.com/render/*
-      # Topic hubs: ai-search, geo, brand-visibility, seo
+      # NOTE: Topic hub routes are configured as proxy rules in Render Dashboard,
+      # pointing to backend.fokal.com/render/*
+      #
+      # Required proxy rules:
+      #   /resources   → backend.fokal.com/render/resources
+      #   /ai-search   → backend.fokal.com/render/ai-search
+      #   /ai-search/* → backend.fokal.com/render/ai-search/*
+      #   /geo         → backend.fokal.com/render/geo
+      #   /geo/*       → backend.fokal.com/render/geo/*
+      #   /brand-visibility   → backend.fokal.com/render/brand-visibility
+      #   /brand-visibility/* → backend.fokal.com/render/brand-visibility/*
+      #   /seo         → backend.fokal.com/render/seo
+      #   /seo/*       → backend.fokal.com/render/seo/*
       - type: rewrite
         source: /privacy-policy
         destination: /privacy-policy.html

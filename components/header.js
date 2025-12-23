@@ -34,6 +34,22 @@ function initializeBurgerMenu() {
             });
         });
     }
+
+    // Initialize mobile dropdown
+    initializeMobileDropdown();
+}
+
+// Initialize mobile dropdown toggle
+function initializeMobileDropdown() {
+    const mobileResourcesToggle = document.getElementById('mobileResourcesToggle');
+    const mobileDropdown = mobileResourcesToggle?.closest('.mobile-dropdown');
+
+    if (mobileResourcesToggle && mobileDropdown) {
+        mobileResourcesToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            mobileDropdown.classList.toggle('active');
+        });
+    }
 }
 
 // Initialize scroll effect for navbar

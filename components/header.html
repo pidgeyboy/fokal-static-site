@@ -9,7 +9,51 @@
             <a href="/about.html">About</a>
             <a href="/features.html">Features</a>
             <a href="/pricing.html">Pricing</a>
-            <a href="/blog.html">Blog</a>
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-trigger">
+                    Resources
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="dropdown-arrow">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+                <div class="nav-dropdown-menu">
+                    <a href="/ai-search" class="dropdown-item">
+                        <span class="dropdown-item-icon">🔍</span>
+                        <div>
+                            <span class="dropdown-item-title">AI Search Visibility</span>
+                            <span class="dropdown-item-desc">Get discovered in ChatGPT, Perplexity & more</span>
+                        </div>
+                    </a>
+                    <a href="/geo" class="dropdown-item">
+                        <span class="dropdown-item-icon">⚡</span>
+                        <div>
+                            <span class="dropdown-item-title">Generative Engine Optimization</span>
+                            <span class="dropdown-item-desc">Optimize for AI-powered search engines</span>
+                        </div>
+                    </a>
+                    <a href="/brand-visibility" class="dropdown-item">
+                        <span class="dropdown-item-icon">📊</span>
+                        <div>
+                            <span class="dropdown-item-title">Brand Visibility</span>
+                            <span class="dropdown-item-desc">Track and improve brand discoverability</span>
+                        </div>
+                    </a>
+                    <a href="/seo" class="dropdown-item">
+                        <span class="dropdown-item-icon">🎯</span>
+                        <div>
+                            <span class="dropdown-item-title">SEO for AI</span>
+                            <span class="dropdown-item-desc">Traditional SEO meets AI search</span>
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="/resources" class="dropdown-item dropdown-view-all">
+                        <span>View All Resources</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
             <div class="nav-menu-buttons">
                 <button class="nav-cta-google" onclick="signInWithGoogle()">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +80,21 @@
         <a href="/about.html">About</a>
         <a href="/features.html">Features</a>
         <a href="/pricing.html">Pricing</a>
-        <a href="/blog.html">Blog</a>
+        <div class="mobile-dropdown">
+            <button class="mobile-dropdown-trigger" id="mobileResourcesToggle">
+                Resources
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="dropdown-arrow">
+                    <path d="M6 9l6 6 6-6"/>
+                </svg>
+            </button>
+            <div class="mobile-dropdown-menu" id="mobileResourcesMenu">
+                <a href="/ai-search">AI Search Visibility</a>
+                <a href="/geo">Generative Engine Optimization</a>
+                <a href="/brand-visibility">Brand Visibility</a>
+                <a href="/seo">SEO for AI</a>
+                <a href="/resources" class="view-all">View All Resources →</a>
+            </div>
+        </div>
         <button class="nav-cta-google" onclick="signInWithGoogle()">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
