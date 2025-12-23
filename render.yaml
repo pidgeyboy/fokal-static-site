@@ -42,9 +42,9 @@ services:
       - type: rewrite
         source: /pricing
         destination: /pricing.html
-      - type: rewrite
-        source: /blog
-        destination: /blog.html
+      # NOTE: /blog/* and topic hub routes (/:hub and /:hub/*) are configured as
+      # proxy rules in Render Dashboard, pointing to backend.fokal.com/render/*
+      # Topic hubs: ai-search, geo, brand-visibility, seo
       - type: rewrite
         source: /privacy-policy
         destination: /privacy-policy.html
