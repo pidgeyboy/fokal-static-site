@@ -145,7 +145,7 @@ async function handleCTAClick(gapType) {
 
     // Verify authentication with server-side check
     try {
-        const response = await fetch('https://snoops-ai-backend.onrender.com/api/auth/check-health', {
+        const response = await fetch('https://backend.fokal.com/api/auth/check-health', {
             method: 'GET',
             credentials: 'include'
         });
