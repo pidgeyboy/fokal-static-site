@@ -33,7 +33,7 @@
     gap: 8px;
     font-size: 14px;
     color: var(--text-muted);
-    padding: 100px 24px 16px; /* top padding clears fixed navbar */
+    padding: 120px 24px 16px; /* top padding clears fixed navbar */
     max-width: var(--blog-wide-width);
     margin: 0 auto;
 }
