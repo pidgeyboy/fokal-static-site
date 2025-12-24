@@ -17,6 +17,10 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
+    <!-- Shared Stylesheets -->
+    <link rel="stylesheet" href="/components/header.css">
+    <link rel="stylesheet" href="/css/blog.css">
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -91,14 +95,17 @@
     <div id="header-container"></div>
     <script src="/components/header.js"></script>
 
-    <section class="article-hero">
-        <div class="container">
-            <nav class="breadcrumb">
-                <a href="/">Home</a><span>></span>
-                <a href="/insights">Insights</a><span>></span>
-                <span>Google vs OpenAI</span>
-            </nav>
+    <!-- Breadcrumb (uses blog.css for navbar clearance) -->
+    <nav class="blog-breadcrumbs">
+        <a href="/">Home</a>
+        <span class="separator">›</span>
+        <a href="/insights">Insights</a>
+        <span class="separator">›</span>
+        <span class="current">Google vs OpenAI</span>
+    </nav>
 
+    <section class="article-hero" style="padding-top: 24px;">
+        <div class="container">
             <span class="research-badge">Fokal Research</span>
             <h1 class="article-title">Google vs OpenAI: The AI Search Infrastructure Race</h1>
             <p class="article-subtitle">Two approaches to AI search dominance—and what it means for content creators</p>

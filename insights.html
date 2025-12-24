@@ -22,6 +22,10 @@
     <!-- Google Identity Services -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
+    <!-- Shared Stylesheets -->
+    <link rel="stylesheet" href="/components/header.css">
+    <link rel="stylesheet" href="/css/blog.css">
+
     <style>
         * {
             margin: 0;
@@ -550,15 +554,16 @@
     <div id="header-container"></div>
     <script src="/components/header.js"></script>
 
-    <!-- Hero Section -->
-    <section style="padding: 140px 24px 80px; background: linear-gradient(180deg, rgba(74, 192, 255, 0.05) 0%, var(--bg-dark) 100%);">
-        <div class="container" style="max-width: 900px;">
-            <nav class="breadcrumb">
-                <a href="/">Home</a>
-                <span>></span>
-                <span>Insights</span>
-            </nav>
+    <!-- Breadcrumb (uses blog.css for navbar clearance) -->
+    <nav class="blog-breadcrumbs">
+        <a href="/">Home</a>
+        <span class="separator">›</span>
+        <span class="current">Insights</span>
+    </nav>
 
+    <!-- Hero Section -->
+    <section style="padding: 40px 24px 80px; background: linear-gradient(180deg, rgba(74, 192, 255, 0.05) 0%, var(--bg-dark) 100%);">
+        <div class="container" style="max-width: 900px;">
             <h1 style="font-size: 52px; font-weight: 700; margin-bottom: 24px; line-height: 1.1; letter-spacing: -0.02em;">AI Search Research & Insights</h1>
 
             <p style="font-size: 20px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px;">

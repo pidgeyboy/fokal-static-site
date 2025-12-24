@@ -22,6 +22,10 @@
     <!-- Google Identity Services -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
+    <!-- Shared Stylesheets -->
+    <link rel="stylesheet" href="/components/header.css">
+    <link rel="stylesheet" href="/css/blog.css">
+
     <style>
         * {
             margin: 0;
@@ -430,17 +434,18 @@
     <div id="header-container"></div>
     <script src="/components/header.js"></script>
 
-    <!-- Article Hero -->
-    <section class="article-hero">
-        <div class="container">
-            <nav class="breadcrumb">
-                <a href="/">Home</a>
-                <span>></span>
-                <a href="/insights">Insights</a>
-                <span>></span>
-                <span>Consensus</span>
-            </nav>
+    <!-- Breadcrumb (uses blog.css for navbar clearance) -->
+    <nav class="blog-breadcrumbs">
+        <a href="/">Home</a>
+        <span class="separator">›</span>
+        <a href="/insights">Insights</a>
+        <span class="separator">›</span>
+        <span class="current">Consensus</span>
+    </nav>
 
+    <!-- Article Hero -->
+    <section class="article-hero" style="padding-top: 24px;">
+        <div class="container">
             <span class="research-badge">Fokal Research</span>
 
             <h1 class="article-title">What Google & Bing Agree On</h1>
