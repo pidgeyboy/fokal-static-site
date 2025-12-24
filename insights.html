@@ -22,9 +22,12 @@
     <!-- Google Identity Services -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-    <!-- Shared Stylesheets -->
+    <!-- Stylesheets (correct order) -->
+    <link rel="stylesheet" href="/css/mobile-standards.css">
     <link rel="stylesheet" href="/components/header.css">
+    <link rel="stylesheet" href="/components/footer.css">
     <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/auth/auth-modal.css">
 
     <style>
         * {
@@ -538,16 +541,6 @@
             }
         }
     </style>
-
-    <!-- Auth Modal Styles -->
-    <link rel="stylesheet" href="/auth/auth-modal.css">
-
-    <!-- Header Component Styles -->
-    <link rel="stylesheet" href="/components/header.css">
-    <link rel="stylesheet" href="/css/mobile-standards.css">
-
-    <!-- Footer Component Styles -->
-    <link rel="stylesheet" href="/components/footer.css">
 </head>
 <body>
     <!-- Header Component -->

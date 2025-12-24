@@ -22,30 +22,27 @@
     <!-- Google Identity Services -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-    <!-- Shared Stylesheets -->
+    <!-- Stylesheets (correct order) -->
+    <link rel="stylesheet" href="/css/mobile-standards.css">
     <link rel="stylesheet" href="/components/header.css">
+    <link rel="stylesheet" href="/components/footer.css">
     <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/auth/auth-modal.css">
 
+    <!-- Minimal custom styles -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --bg-dark: #0E0E10;
             --bg-panel: #161618;
-            --card-bg: rgba(17, 24, 32, 0.8);
-            --card-border: rgba(255, 255, 255, 0.06);
             --text-primary: #E5E9F0;
             --text-secondary: #C6CDD8;
             --text-muted: #9DA6B5;
             --text-subtle: #8A93A1;
             --accent-blue: #4AC0FF;
             --accent-green: #00E676;
-            --accent-amber: #FFA726;
-            --border-color: #1A2230;
+            --accent-purple: #B388FF;
         }
 
         body {
@@ -56,152 +53,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Breadcrumb */
-        .breadcrumb {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        .breadcrumb a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .breadcrumb a:hover {
-            color: var(--accent-blue);
-        }
-
-        .breadcrumb span {
-            margin: 0 8px;
-        }
-
-        /* Research Badge */
-        .research-badge {
-            display: inline-block;
-            padding: 6px 14px;
-            background: rgba(74, 192, 255, 0.15);
-            border: 1px solid rgba(74, 192, 255, 0.3);
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--accent-blue);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 20px;
-        }
-
-        /* Article */
-        .article-hero {
-            padding: 24px 24px 60px;
-            background: linear-gradient(180deg, rgba(74, 192, 255, 0.05) 0%, var(--bg-dark) 100%);
-        }
-
-        .article-title {
-            font-size: 44px;
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-        }
-
-        .article-subtitle {
-            font-size: 20px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 32px;
-        }
-
-        .article-meta {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-            padding: 20px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        .article-meta-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .article-meta-item svg {
-            width: 16px;
-            height: 16px;
-            fill: var(--accent-blue);
-        }
-
-        /* Article Body */
-        .article-body {
-            padding: 60px 24px 100px;
-        }
-
-        .article-body h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin: 56px 0 20px;
-            line-height: 1.3;
-        }
-
-        .article-body h3 {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin: 40px 0 16px;
-        }
-
-        .article-body p {
-            font-size: 17px;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .article-body strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        /* Blockquote */
-        blockquote {
-            background: rgba(74, 192, 255, 0.05);
-            border-left: 3px solid var(--accent-blue);
-            padding: 20px 24px;
-            margin: 24px 0;
-            border-radius: 0 12px 12px 0;
-        }
-
-        blockquote p {
-            font-size: 17px;
-            font-style: italic;
-            color: var(--text-primary);
-            margin: 0;
-        }
-
-        blockquote cite {
-            display: block;
-            margin-top: 12px;
-            font-size: 14px;
-            font-style: normal;
-            color: var(--text-muted);
-        }
-
-        /* Consensus Box */
+        /* Research-specific styles not in blog.css */
         .consensus-box {
             background: rgba(17, 24, 32, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.06);
@@ -231,6 +83,7 @@
             font-size: 14px;
             font-weight: 700;
             color: var(--accent-blue);
+            flex-shrink: 0;
         }
 
         .consensus-box p {
@@ -253,7 +106,7 @@
             color: var(--text-primary);
         }
 
-        /* Sources Section */
+        /* Sources section */
         .sources-section {
             background: rgba(17, 24, 32, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.06);
@@ -265,6 +118,7 @@
         .sources-section h2 {
             font-size: 22px;
             margin: 0 0 20px;
+            color: var(--text-primary);
         }
 
         .sources-section h3 {
@@ -290,7 +144,7 @@
             border-bottom: none;
         }
 
-        /* Related Section */
+        /* Related section */
         .related-section {
             margin: 64px 0;
         }
@@ -298,6 +152,7 @@
         .related-section h2 {
             font-size: 24px;
             margin-bottom: 24px;
+            color: var(--text-primary);
         }
 
         .related-grid {
@@ -347,6 +202,7 @@
         .cta-section h2 {
             font-size: 28px;
             margin: 0 0 16px;
+            color: var(--text-primary);
         }
 
         .cta-section p {
@@ -355,7 +211,6 @@
             margin-bottom: 24px;
         }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             padding: 14px 28px;
@@ -390,21 +245,7 @@
             transform: translateY(-2px);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .article-title {
-                font-size: 32px;
-            }
-
-            .article-subtitle {
-                font-size: 18px;
-            }
-
-            .article-meta {
-                flex-direction: column;
-                gap: 12px;
-            }
-
             .related-grid {
                 grid-template-columns: 1fr;
             }
@@ -418,16 +259,6 @@
             }
         }
     </style>
-
-    <!-- Auth Modal Styles -->
-    <link rel="stylesheet" href="/auth/auth-modal.css">
-
-    <!-- Header Component Styles -->
-    <link rel="stylesheet" href="/components/header.css">
-    <link rel="stylesheet" href="/css/mobile-standards.css">
-
-    <!-- Footer Component Styles -->
-    <link rel="stylesheet" href="/components/footer.css">
 </head>
 <body>
     <!-- Header Component -->
@@ -435,7 +266,7 @@
     <script src="/components/header.js"></script>
 
     <!-- Breadcrumb (uses blog.css for navbar clearance) -->
-    <div class="blog-breadcrumbs">
+    <div class="blog-breadcrumbs" role="navigation" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span class="separator">›</span>
         <a href="/insights">Insights</a>
@@ -443,238 +274,232 @@
         <span class="current">Consensus</span>
     </div>
 
-    <!-- Article Hero -->
-    <section class="article-hero">
-        <div class="container">
-            <span class="research-badge">Fokal Research</span>
+    <!-- Blog Header (uses blog.css) -->
+    <header class="blog-header">
+        <span class="blog-category">Fokal Research</span>
+        <h1>What Google & Bing Agree On</h1>
+        <p class="blog-excerpt">8 points of consensus on AI search optimization from official sources</p>
+        <div class="blog-meta">
+            <span class="blog-meta-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+                1 podcast, 9 blog posts
+            </span>
+            <span class="separator"></span>
+            <span class="blog-meta-item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z"/></svg>
+                Publishers: Google, Microsoft
+            </span>
+        </div>
+    </header>
 
-            <h1 class="article-title">What Google & Bing Agree On</h1>
+    <!-- Blog Content (uses blog.css) -->
+    <article class="blog-content">
+        <h2>Executive Summary</h2>
+        <p>
+            After analyzing official guidance from Google Search Liaison Danny Sullivan, Google Search Advocate John Mueller, and Microsoft's Bing team, we identified 8 points of complete consensus on AI search optimization. The core message: there's no special trick. Quality content, technical fundamentals, and genuine expertise matter more than ever.
+        </p>
 
-            <p class="article-subtitle">8 points of consensus on AI search optimization from official sources</p>
+        <h2>The 8 Consensus Points</h2>
 
-            <div class="article-meta">
-                <div class="article-meta-item">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
-                    1 podcast, 9 blog posts
-                </div>
-                <div class="article-meta-item">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z"/></svg>
-                    Publishers: Google, Microsoft
-                </div>
+        <div class="consensus-box">
+            <h3><span class="consensus-number">1</span> No Special AI Optimization Required</h3>
+
+            <blockquote>
+                <p>"There's not a lot you actually really need to be worrying about" regarding new AI optimization tactics.</p>
+                <cite>— Danny Sullivan, Google Search Liaison, Search Off the Record podcast</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"The more you're trying to optimize or GEO or whatever you think it is for a specific kind of system, the more you're potentially going to get away from the main goal."</p>
+                <cite>— Danny Sullivan</cite>
+            </blockquote>
+
+            <p class="takeaway"><strong>Takeaway:</strong> Stop chasing "AEO" or "GEO" tactics. Focus on creating genuinely helpful content.</p>
+        </div>
+
+        <div class="consensus-box">
+            <h3><span class="consensus-number">2</span> E-E-A-T Signals Matter More</h3>
+
+            <blockquote>
+                <p>"E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) remains crucial for AI-driven search."</p>
+                <cite>— Google Search Central Blog, May 2025</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"Produce authoritative, well-researched material demonstrating genuine expertise."</p>
+                <cite>— Google Search Central Blog</cite>
+            </blockquote>
+
+            <p class="takeaway"><strong>Takeaway:</strong> Authority signals are amplified in AI search. Demonstrate genuine expertise through content quality, not keyword tricks.</p>
+        </div>
+
+        <div class="consensus-box">
+            <h3><span class="consensus-number">3</span> Structured Data Helps But Isn't Magic</h3>
+
+            <blockquote>
+                <p>"Structured data could be helpful for AI formats but is not a secret weapon—it wasn't your secret. Aha, structured data now I have it."</p>
+                <cite>— Danny Sullivan</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"Implement proper schema markup/structured data to help AI systems understand content."</p>
+                <cite>— Google Search Central Blog</cite>
+            </blockquote>
+
+            <p class="takeaway"><strong>Takeaway:</strong> Structured data helps systems understand your content, but it won't compensate for thin or low-quality content.</p>
+        </div>
+
+        <div class="consensus-box">
+            <h3><span class="consensus-number">4</span> Multimodal Content Creates Opportunities</h3>
+
+            <blockquote>
+                <p>"If you have been more textual in nature and you haven't been doing images or video, then by making sure you have more content-rich original content, you potentially are going to have opportunities."</p>
+                <cite>— Danny Sullivan</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"Multimodal means searching one way and getting information back another (e.g., video query → text response)."</p>
+                <cite>— Danny Sullivan</cite>
+            </blockquote>
+
+            <p class="takeaway"><strong>Takeaway:</strong> Diversify beyond text. Images, video, and audio content will have more opportunities in AI search.</p>
+        </div>
+
+        <div class="consensus-box">
+            <h3><span class="consensus-number">5</span> Conversion Quality > Traffic Quantity</h3>
+
+            <blockquote>
+                <p>"The path to conversion no longer starts with a click."</p>
+                <cite>— Bing Webmaster Blog, November 2025</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"Citations and placement in AI answers are becoming the visibility signals that decide who enters the final click."</p>
+                <cite>— Bing Webmaster Blog</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"AI formats put people into a better state of contextual awareness—users understand better what they're getting into."</p>
+                <cite>— Danny Sullivan</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"People arriving from AI formats seem to be more engaged when they get there."</p>
+                <cite>— Danny Sullivan</cite>
+            </blockquote>
+
+            <p class="takeaway"><strong>Takeaway:</strong> Measure quality of conversions, not just traffic volume. AI visitors have higher intent clarity.</p>
+        </div>
+
+        <div class="consensus-box">
+            <h3><span class="consensus-number">6</span> Technical Fundamentals Still Matter</h3>
+
+            <blockquote>
+                <p>"The lastmod field in your sitemap remains a key signal, helping Bing prioritize URLs for recrawling and reindexing."</p>
+                <cite>— Bing Webmaster Blog, July 2025</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"If you're using a popular CMS like WordPress or Wix, you don't have to worry about any of those technical details."</p>
+                <cite>— John Mueller, Google</cite>
+            </blockquote>
+
+            <p class="takeaway"><strong>Takeaway:</strong> Sitemaps, canonical tags, crawlability—the fundamentals persist. Get them right once, then focus on content.</p>
+        </div>
+
+        <div class="consensus-box">
+            <h3><span class="consensus-number">7</span> Duplicate Content Hurts AI Visibility</h3>
+
+            <blockquote>
+                <p>"Duplicate content doesn't trigger search penalties on its own, but reduces visibility by diluting authority, confusing intent, and slowing updates."</p>
+                <cite>— Bing Webmaster Blog, December 2025</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"LLMs cluster near-duplicate URLs and select one to represent the set—potentially an outdated version."</p>
+                <cite>— Bing Webmaster Blog</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"Less is more. Clean, consolidated signals help search engines understand intent."</p>
+                <cite>— Bing Webmaster Blog</cite>
+            </blockquote>
+
+            <p class="takeaway"><strong>Takeaway:</strong> Consolidate similar content. Use canonical tags. Don't create pages for every keyword variation.</p>
+        </div>
+
+        <div class="consensus-box">
+            <h3><span class="consensus-number">8</span> Citations Are the New Visibility Metric</h3>
+
+            <blockquote>
+                <p>"Citations and placement in AI answers are becoming the visibility signals that decide who enters the final click."</p>
+                <cite>— Bing Webmaster Blog, November 2025</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"Prominently cites sources so users know exactly where the information came from."</p>
+                <cite>— Bing, Copilot Search announcement, April 2025</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"Inline links embed citations throughout responses."</p>
+                <cite>— Bing</cite>
+            </blockquote>
+
+            <p class="takeaway"><strong>Takeaway:</strong> Being cited in AI answers matters as much as ranking in traditional search. Track citations, not just rankings.</p>
+        </div>
+
+        <!-- Sources -->
+        <div class="sources-section">
+            <h2>Sources</h2>
+
+            <h3>Google Sources</h3>
+            <ul>
+                <li>Search Off the Record Podcast: "Thoughts on SEO & SEO for AI, Part 1" - Danny Sullivan, John Mueller</li>
+                <li>Search Central Blog: "Top ways to ensure your content performs well in Google's AI experiences on Search" (May 2025)</li>
+                <li>Search Central Blog: "Streamline your Search Console analysis with the new AI-powered configuration" (December 2025)</li>
+            </ul>
+
+            <h3>Microsoft/Bing Sources</h3>
+            <ul>
+                <li>Bing Webmaster Blog: "Does Duplicate Content Hurt SEO and AI Search Visibility?" (December 19, 2025)</li>
+                <li>Bing Webmaster Blog: "How AI Search Is Changing the Way Conversions are Measured" (November 20, 2025)</li>
+                <li>Bing Webmaster Blog: "Keeping Content Discoverable with Sitemaps in AI Powered Search" (July 31, 2025)</li>
+                <li>Bing Search Blog: "Introducing Copilot Search in Bing" (April 4, 2025)</li>
+                <li>Bing Webmaster Blog: "AI Revolutionizes Search: Key Insights from Microsoft Accelerate" (April 2, 2025)</li>
+            </ul>
+        </div>
+
+        <!-- Related Research -->
+        <div class="related-section">
+            <h2>Related Research</h2>
+            <div class="related-grid">
+                <a href="/ai-search-patents" class="related-card">
+                    <h3>AI Search Patents Analysis</h3>
+                    <p>What 13 patents reveal about how AI search works</p>
+                </a>
+                <a href="/llm-citation-selection" class="related-card">
+                    <h3>How LLMs Select Citations</h3>
+                    <p>The mechanics of AI citation selection</p>
+                </a>
+                <a href="/ai-search-conversions" class="related-card">
+                    <h3>AI Search Conversion Metrics</h3>
+                    <p>Measuring success beyond clicks</p>
+                </a>
+                <a href="/insights" class="related-card">
+                    <h3>All Research Briefs</h3>
+                    <p>View all Fokal Insights research</p>
+                </a>
             </div>
         </div>
-    </section>
 
-    <!-- Article Body -->
-    <article class="article-body">
-        <div class="container">
-            <h2>Executive Summary</h2>
-            <p>
-                After analyzing official guidance from Google Search Liaison Danny Sullivan, Google Search Advocate John Mueller, and Microsoft's Bing team, we identified 8 points of complete consensus on AI search optimization. The core message: there's no special trick. Quality content, technical fundamentals, and genuine expertise matter more than ever.
-            </p>
-
-            <h2>The 8 Consensus Points</h2>
-
-            <div class="consensus-box">
-                <h3><span class="consensus-number">1</span> No Special AI Optimization Required</h3>
-
-                <blockquote>
-                    <p>"There's not a lot you actually really need to be worrying about" regarding new AI optimization tactics.</p>
-                    <cite>— Danny Sullivan, Google Search Liaison, Search Off the Record podcast</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"The more you're trying to optimize or GEO or whatever you think it is for a specific kind of system, the more you're potentially going to get away from the main goal."</p>
-                    <cite>— Danny Sullivan</cite>
-                </blockquote>
-
-                <p class="takeaway"><strong>Takeaway:</strong> Stop chasing "AEO" or "GEO" tactics. Focus on creating genuinely helpful content.</p>
-            </div>
-
-            <div class="consensus-box">
-                <h3><span class="consensus-number">2</span> E-E-A-T Signals Matter More</h3>
-
-                <blockquote>
-                    <p>"E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) remains crucial for AI-driven search."</p>
-                    <cite>— Google Search Central Blog, May 2025</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"Produce authoritative, well-researched material demonstrating genuine expertise."</p>
-                    <cite>— Google Search Central Blog</cite>
-                </blockquote>
-
-                <p class="takeaway"><strong>Takeaway:</strong> Authority signals are amplified in AI search. Demonstrate genuine expertise through content quality, not keyword tricks.</p>
-            </div>
-
-            <div class="consensus-box">
-                <h3><span class="consensus-number">3</span> Structured Data Helps But Isn't Magic</h3>
-
-                <blockquote>
-                    <p>"Structured data could be helpful for AI formats but is not a secret weapon—it wasn't your secret. Aha, structured data now I have it."</p>
-                    <cite>— Danny Sullivan</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"Implement proper schema markup/structured data to help AI systems understand content."</p>
-                    <cite>— Google Search Central Blog</cite>
-                </blockquote>
-
-                <p class="takeaway"><strong>Takeaway:</strong> Structured data helps systems understand your content, but it won't compensate for thin or low-quality content.</p>
-            </div>
-
-            <div class="consensus-box">
-                <h3><span class="consensus-number">4</span> Multimodal Content Creates Opportunities</h3>
-
-                <blockquote>
-                    <p>"If you have been more textual in nature and you haven't been doing images or video, then by making sure you have more content-rich original content, you potentially are going to have opportunities."</p>
-                    <cite>— Danny Sullivan</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"Multimodal means searching one way and getting information back another (e.g., video query → text response)."</p>
-                    <cite>— Danny Sullivan</cite>
-                </blockquote>
-
-                <p class="takeaway"><strong>Takeaway:</strong> Diversify beyond text. Images, video, and audio content will have more opportunities in AI search.</p>
-            </div>
-
-            <div class="consensus-box">
-                <h3><span class="consensus-number">5</span> Conversion Quality > Traffic Quantity</h3>
-
-                <blockquote>
-                    <p>"The path to conversion no longer starts with a click."</p>
-                    <cite>— Bing Webmaster Blog, November 2025</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"Citations and placement in AI answers are becoming the visibility signals that decide who enters the final click."</p>
-                    <cite>— Bing Webmaster Blog</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"AI formats put people into a better state of contextual awareness—users understand better what they're getting into."</p>
-                    <cite>— Danny Sullivan</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"People arriving from AI formats seem to be more engaged when they get there."</p>
-                    <cite>— Danny Sullivan</cite>
-                </blockquote>
-
-                <p class="takeaway"><strong>Takeaway:</strong> Measure quality of conversions, not just traffic volume. AI visitors have higher intent clarity.</p>
-            </div>
-
-            <div class="consensus-box">
-                <h3><span class="consensus-number">6</span> Technical Fundamentals Still Matter</h3>
-
-                <blockquote>
-                    <p>"The lastmod field in your sitemap remains a key signal, helping Bing prioritize URLs for recrawling and reindexing."</p>
-                    <cite>— Bing Webmaster Blog, July 2025</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"If you're using a popular CMS like WordPress or Wix, you don't have to worry about any of those technical details."</p>
-                    <cite>— John Mueller, Google</cite>
-                </blockquote>
-
-                <p class="takeaway"><strong>Takeaway:</strong> Sitemaps, canonical tags, crawlability—the fundamentals persist. Get them right once, then focus on content.</p>
-            </div>
-
-            <div class="consensus-box">
-                <h3><span class="consensus-number">7</span> Duplicate Content Hurts AI Visibility</h3>
-
-                <blockquote>
-                    <p>"Duplicate content doesn't trigger search penalties on its own, but reduces visibility by diluting authority, confusing intent, and slowing updates."</p>
-                    <cite>— Bing Webmaster Blog, December 2025</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"LLMs cluster near-duplicate URLs and select one to represent the set—potentially an outdated version."</p>
-                    <cite>— Bing Webmaster Blog</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"Less is more. Clean, consolidated signals help search engines understand intent."</p>
-                    <cite>— Bing Webmaster Blog</cite>
-                </blockquote>
-
-                <p class="takeaway"><strong>Takeaway:</strong> Consolidate similar content. Use canonical tags. Don't create pages for every keyword variation.</p>
-            </div>
-
-            <div class="consensus-box">
-                <h3><span class="consensus-number">8</span> Citations Are the New Visibility Metric</h3>
-
-                <blockquote>
-                    <p>"Citations and placement in AI answers are becoming the visibility signals that decide who enters the final click."</p>
-                    <cite>— Bing Webmaster Blog, November 2025</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"Prominently cites sources so users know exactly where the information came from."</p>
-                    <cite>— Bing, Copilot Search announcement, April 2025</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"Inline links embed citations throughout responses."</p>
-                    <cite>— Bing</cite>
-                </blockquote>
-
-                <p class="takeaway"><strong>Takeaway:</strong> Being cited in AI answers matters as much as ranking in traditional search. Track citations, not just rankings.</p>
-            </div>
-
-            <!-- Sources -->
-            <div class="sources-section">
-                <h2>Sources</h2>
-
-                <h3>Google Sources</h3>
-                <ul>
-                    <li>Search Off the Record Podcast: "Thoughts on SEO & SEO for AI, Part 1" - Danny Sullivan, John Mueller</li>
-                    <li>Search Central Blog: "Top ways to ensure your content performs well in Google's AI experiences on Search" (May 2025)</li>
-                    <li>Search Central Blog: "Streamline your Search Console analysis with the new AI-powered configuration" (December 2025)</li>
-                </ul>
-
-                <h3>Microsoft/Bing Sources</h3>
-                <ul>
-                    <li>Bing Webmaster Blog: "Does Duplicate Content Hurt SEO and AI Search Visibility?" (December 19, 2025)</li>
-                    <li>Bing Webmaster Blog: "How AI Search Is Changing the Way Conversions are Measured" (November 20, 2025)</li>
-                    <li>Bing Webmaster Blog: "Keeping Content Discoverable with Sitemaps in AI Powered Search" (July 31, 2025)</li>
-                    <li>Bing Search Blog: "Introducing Copilot Search in Bing" (April 4, 2025)</li>
-                    <li>Bing Webmaster Blog: "AI Revolutionizes Search: Key Insights from Microsoft Accelerate" (April 2, 2025)</li>
-                </ul>
-            </div>
-
-            <!-- Related Research -->
-            <div class="related-section">
-                <h2>Related Research</h2>
-                <div class="related-grid">
-                    <a href="/ai-search-patents" class="related-card">
-                        <h3>AI Search Patents Analysis</h3>
-                        <p>What 13 patents reveal about how AI search works</p>
-                    </a>
-                    <a href="/llm-citation-selection" class="related-card">
-                        <h3>How LLMs Select Citations</h3>
-                        <p>The mechanics of AI citation selection</p>
-                    </a>
-                    <a href="/ai-search-conversions" class="related-card">
-                        <h3>AI Search Conversion Metrics</h3>
-                        <p>Measuring success beyond clicks</p>
-                    </a>
-                    <a href="/insights" class="related-card">
-                        <h3>All Research Briefs</h3>
-                        <p>View all Fokal Insights research</p>
-                    </a>
-                </div>
-            </div>
-
-            <!-- CTA -->
-            <div class="cta-section">
-                <h2>Track Your AI Search Visibility</h2>
-                <p>See where your brand appears across ChatGPT, Perplexity, and Google AI Overviews.</p>
-                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                    <button class="btn btn-primary" onclick="signInWithGoogle()">Get Started Free</button>
-                    <a href="/insights" class="btn btn-secondary">Back to Insights</a>
-                </div>
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Track Your AI Search Visibility</h2>
+            <p>See where your brand appears across ChatGPT, Perplexity, and Google AI Overviews.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-primary" onclick="signInWithGoogle()">Get Started Free</button>
+                <a href="/insights" class="btn btn-secondary">Back to Insights</a>
             </div>
         </div>
     </article>
@@ -684,17 +509,6 @@
 
     <!-- Auth Modal Container -->
     <div id="auth-modal-container"></div>
-
-    <script>
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (nav && window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else if (nav) {
-                nav.classList.remove('scrolled');
-            }
-        });
-    </script>
 
     <!-- Auth Modal Scripts -->
     <script>window.AUTH_SOURCE = 'static_research_consensus';</script>

@@ -17,9 +17,12 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-    <!-- Shared Stylesheets -->
+    <!-- Stylesheets (correct order) -->
+    <link rel="stylesheet" href="/css/mobile-standards.css">
     <link rel="stylesheet" href="/components/header.css">
+    <link rel="stylesheet" href="/components/footer.css">
     <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/auth/auth-modal.css">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -88,10 +91,6 @@
         }
     </style>
 
-    <link rel="stylesheet" href="/auth/auth-modal.css">
-    <link rel="stylesheet" href="/components/header.css">
-    <link rel="stylesheet" href="/css/mobile-standards.css">
-    <link rel="stylesheet" href="/components/footer.css">
 </head>
 <body>
     <div id="header-container"></div>
