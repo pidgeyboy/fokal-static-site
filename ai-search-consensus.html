@@ -150,77 +150,52 @@
            ======================================== */
 
         .key-takeaways-box {
-            background: rgba(17, 24, 32, 0.8);
-            border: 1px solid rgba(74, 192, 255, 0.15);
-            border-left: 4px solid var(--accent-blue);
+            background: rgba(74, 192, 255, 0.08);
+            border: 1px solid rgba(74, 192, 255, 0.2);
             border-radius: 12px;
-            padding: 28px 32px;
+            padding: 24px 28px;
             margin-bottom: 40px;
         }
 
-        .key-takeaways-box .key-takeaways-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            padding: 0;
-            border: none;
-        }
-
-        .key-takeaways-box .key-takeaways-icon {
-            width: 24px;
-            height: 24px;
-            min-width: 24px;
-            fill: var(--accent-blue);
-        }
-
-        .key-takeaways-box h2 {
-            font-size: 18px;
+        .key-takeaways-box .takeaways-title {
+            font-size: 16px;
             font-weight: 700;
             color: var(--accent-blue);
-            margin: 0;
+            margin: 0 0 16px 0;
             padding: 0;
             border: none;
         }
 
         .key-takeaways-box .takeaways-list {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
+            list-style: none;
             margin: 0;
             padding: 0;
         }
 
-        .key-takeaways-box .takeaway-item {
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-        }
-
-        .key-takeaways-box .takeaway-icon {
-            width: 20px;
-            height: 20px;
-            min-width: 20px;
-            fill: var(--accent-green);
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .key-takeaways-box .takeaway-item p {
+        .key-takeaways-box .takeaways-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
             font-size: 15px;
+            line-height: 1.6;
             color: var(--text-secondary);
-            line-height: 1.5;
-            margin: 0;
-            flex: 1;
         }
 
-        .key-takeaways-box .takeaway-item p strong {
+        .key-takeaways-box .takeaways-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .key-takeaways-box .takeaways-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        .key-takeaways-box .takeaways-list li strong {
             color: var(--text-primary);
             font-weight: 600;
-        }
-
-        .takeaway-item strong {
-            color: var(--text-primary);
         }
 
         /* ========================================
@@ -774,28 +749,13 @@
                 <article class="article-content">
                     <!-- Key Takeaways -->
                     <div class="key-takeaways-box">
-                        <div class="key-takeaways-header">
-                            <svg class="key-takeaways-icon" viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/></svg>
-                            <h2>Key Takeaways</h2>
-                        </div>
-                        <div class="takeaways-list">
-                            <div class="takeaway-item">
-                                <svg class="takeaway-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <p><strong>No special "AI SEO" needed</strong> — Focus on quality content, not new optimization tricks</p>
-                            </div>
-                            <div class="takeaway-item">
-                                <svg class="takeaway-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <p><strong>E-E-A-T matters more than ever</strong> — Authority signals are amplified in AI results</p>
-                            </div>
-                            <div class="takeaway-item">
-                                <svg class="takeaway-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <p><strong>Citations replace rankings</strong> — Being cited in AI answers is the new visibility metric</p>
-                            </div>
-                            <div class="takeaway-item">
-                                <svg class="takeaway-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <p><strong>Quality beats quantity</strong> — AI visitors convert better with higher intent clarity</p>
-                            </div>
-                        </div>
+                        <h3 class="takeaways-title">💡 Key Takeaways</h3>
+                        <ul class="takeaways-list">
+                            <li><strong>No special "AI SEO" needed</strong> — Focus on quality content, not new optimization tricks</li>
+                            <li><strong>E-E-A-T matters more than ever</strong> — Authority signals are amplified in AI results</li>
+                            <li><strong>Citations replace rankings</strong> — Being cited in AI answers is the new visibility metric</li>
+                            <li><strong>Quality beats quantity</strong> — AI visitors convert better with higher intent clarity</li>
+                        </ul>
                     </div>
 
                     <h2 id="summary">Executive Summary</h2>
