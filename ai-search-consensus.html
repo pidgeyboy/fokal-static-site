@@ -158,16 +158,19 @@
             margin-bottom: 40px;
         }
 
-        .key-takeaways-header {
+        .key-takeaways-box .key-takeaways-header {
             display: flex;
             align-items: center;
             gap: 10px;
             margin-bottom: 20px;
+            padding: 0;
+            border: none;
         }
 
-        .key-takeaways-icon {
+        .key-takeaways-box .key-takeaways-icon {
             width: 24px;
             height: 24px;
+            min-width: 24px;
             fill: var(--accent-blue);
         }
 
@@ -176,33 +179,44 @@
             font-weight: 700;
             color: var(--accent-blue);
             margin: 0;
+            padding: 0;
+            border: none;
         }
 
-        .takeaways-list {
+        .key-takeaways-box .takeaways-list {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
+            margin: 0;
+            padding: 0;
         }
 
-        .takeaway-item {
+        .key-takeaways-box .takeaway-item {
             display: flex;
             gap: 12px;
             align-items: flex-start;
         }
 
-        .takeaway-icon {
+        .key-takeaways-box .takeaway-icon {
             width: 20px;
             height: 20px;
+            min-width: 20px;
             fill: var(--accent-green);
             flex-shrink: 0;
-            margin-top: 3px;
+            margin-top: 2px;
         }
 
-        .takeaway-item p {
-            font-size: 16px;
+        .key-takeaways-box .takeaway-item p {
+            font-size: 15px;
             color: var(--text-secondary);
             line-height: 1.5;
             margin: 0;
+            flex: 1;
+        }
+
+        .key-takeaways-box .takeaway-item p strong {
+            color: var(--text-primary);
+            font-weight: 600;
         }
 
         .takeaway-item strong {
