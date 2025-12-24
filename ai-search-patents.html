@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analysis of 13 patents from Google and OpenAI on AI search, embeddings, and agent coordination. What patents reveal about how AI search actually works.">
+    <meta name="keywords" content="AI search patents, Google patents, OpenAI patents, embeddings, agent coordination, USPTO">
+    <meta property="og:title" content="What AI Search Patents Reveal | Fokal Research">
+    <meta property="og:description" content="Analysis of 13 patents from Google and OpenAI on AI search infrastructure.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.fokal.com/ai-search-patents">
+    <title>What AI Search Patents Reveal | Fokal Research</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/fokal-favicon.png">
+
+    <!-- Google Fonts - DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-dark: #0E0E10;
+            --card-border: rgba(255, 255, 255, 0.06);
+            --text-primary: #E5E9F0;
+            --text-secondary: #C6CDD8;
+            --text-muted: #9DA6B5;
+            --accent-blue: #4AC0FF;
+            --accent-green: #00E676;
+        }
+        body { font-family: 'DM Sans', -apple-system, sans-serif; background-color: var(--bg-dark); color: var(--text-primary); line-height: 1.6; }
+        html { scroll-behavior: smooth; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent-blue); }
+        .breadcrumb span { margin: 0 8px; }
+        .research-badge { display: inline-block; padding: 6px 14px; background: rgba(74, 192, 255, 0.15); border: 1px solid rgba(74, 192, 255, 0.3); border-radius: 20px; font-size: 12px; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; }
+        .article-hero { padding: 140px 24px 60px; background: linear-gradient(180deg, rgba(74, 192, 255, 0.05) 0%, var(--bg-dark) 100%); }
+        .article-title { font-size: 44px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.02em; }
+        .article-subtitle { font-size: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px; }
+        .article-meta { display: flex; gap: 24px; flex-wrap: wrap; padding: 20px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 14px; color: var(--text-muted); }
+        .article-meta-item { display: flex; align-items: center; gap: 8px; }
+        .article-meta-item svg { width: 16px; height: 16px; fill: var(--accent-blue); }
+        .article-body { padding: 60px 24px 100px; }
+        .article-body h2 { font-size: 28px; font-weight: 700; color: var(--text-primary); margin: 56px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-size: 22px; font-weight: 600; color: var(--text-primary); margin: 40px 0 16px; }
+        .article-body p { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; }
+        .article-body strong { color: var(--text-primary); font-weight: 600; }
+        blockquote { background: rgba(74, 192, 255, 0.05); border-left: 3px solid var(--accent-blue); padding: 20px 24px; margin: 24px 0; border-radius: 0 12px 12px 0; }
+        blockquote p { font-size: 17px; font-style: italic; color: var(--text-primary); margin: 0; }
+        .patent-card { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 32px; margin: 32px 0; }
+        .patent-card h4 { font-size: 18px; font-weight: 700; color: var(--text-primary); margin: 0 0 8px; }
+        .patent-id { font-size: 13px; color: var(--accent-blue); font-family: monospace; margin-bottom: 16px; }
+        .patent-card p { font-size: 15px; margin-bottom: 12px; }
+        .implication { background: rgba(0, 230, 118, 0.1); border-left: 3px solid var(--accent-green); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 14px; color: var(--text-primary); margin-top: 16px; }
+        .stats-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .stats-table th, .stats-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .stats-table th { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .stats-table td { font-size: 16px; color: var(--text-secondary); }
+        .company-section { margin-top: 48px; padding-top: 48px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+        .company-badge { display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 16px; }
+        .google-badge { background: rgba(66, 133, 244, 0.15); color: #4285F4; }
+        .openai-badge { background: rgba(0, 166, 126, 0.15); color: #00A67E; }
+        .sources-section { background: rgba(17, 24, 32, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 32px; margin: 48px 0; }
+        .sources-section h2 { font-size: 22px; margin: 0 0 20px; }
+        .related-section { margin: 64px 0; }
+        .related-section h2 { font-size: 24px; margin-bottom: 24px; }
+        .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .related-card { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 24px; text-decoration: none; transition: all 0.3s ease; }
+        .related-card:hover { border-color: rgba(74, 192, 255, 0.3); transform: translateY(-2px); }
+        .related-card h3 { font-size: 17px; font-weight: 600; color: var(--text-primary); margin: 0 0 8px; }
+        .related-card p { font-size: 14px; color: var(--text-muted); margin: 0; }
+        .cta-section { background: linear-gradient(135deg, rgba(74, 192, 255, 0.1) 0%, rgba(17, 24, 32, 0.8) 100%); border: 1px solid rgba(74, 192, 255, 0.2); border-radius: 24px; padding: 48px; text-align: center; margin: 64px 0; }
+        .cta-section h2 { font-size: 28px; margin: 0 0 16px; }
+        .cta-section p { font-size: 16px; color: var(--text-secondary); margin-bottom: 24px; }
+        .btn { display: inline-block; padding: 14px 28px; border-radius: 12px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-blue), #3AA0D9); color: #FFFFFF; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(74, 192, 255, 0.4); }
+        .btn-secondary { background: rgba(255, 255, 255, 0.05); color: var(--text-primary); border: 1px solid rgba(255, 255, 255, 0.15); }
+        @media (max-width: 768px) {
+            .article-title { font-size: 32px; }
+            .related-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <link rel="stylesheet" href="/auth/auth-modal.css">
+    <link rel="stylesheet" href="/components/header.css">
+    <link rel="stylesheet" href="/css/mobile-standards.css">
+    <link rel="stylesheet" href="/components/footer.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <script src="/components/header.js"></script>
+
+    <section class="article-hero">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a><span>></span>
+                <a href="/insights">Insights</a><span>></span>
+                <span>Patents</span>
+            </nav>
+
+            <span class="research-badge">Fokal Research</span>
+            <h1 class="article-title">What AI Search Patents Reveal</h1>
+            <p class="article-subtitle">Analysis of 13 patents from Google and OpenAI on AI search, embeddings, and agent coordination</p>
+
+            <div class="article-meta">
+                <div class="article-meta-item">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6z"/></svg>
+                    Method: USPTO API fetch
+                </div>
+                <div class="article-meta-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                    6 Google + 7 OpenAI patents
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <article class="article-body">
+        <div class="container">
+            <h2>Executive Summary</h2>
+            <p>Patents reveal what companies are building, not just what they're saying. We analyzed 13 recently published patents from Google and OpenAI to understand the technical infrastructure behind AI search. Key findings: Google is focused on efficiency and multi-modal understanding; OpenAI is building agent coordination systems.</p>
+
+            <h2>Key Statistics</h2>
+            <table class="stats-table">
+                <tr><th>Metric</th><th>Value</th></tr>
+                <tr><td>Total patents analyzed</td><td>13</td></tr>
+                <tr><td>Google patents</td><td>6</td></tr>
+                <tr><td>OpenAI patents</td><td>7</td></tr>
+                <tr><td>Google total USPTO patents</td><td>46,384</td></tr>
+                <tr><td>OpenAI total USPTO patents</td><td>71</td></tr>
+            </table>
+
+            <div class="company-section">
+                <span class="company-badge google-badge">Google Patents</span>
+
+                <div class="patent-card">
+                    <h4>Privacy Controls for Embeddings</h4>
+                    <p class="patent-id">US-20250384079-A1</p>
+                    <blockquote><p>"Embeddings can be shared with others via digital keys, allowing limited access to search for that person in media collections without exposing the actual embedding data."</p></blockquote>
+                    <p><strong>Key mechanism:</strong> Revocable key-based access to embeddings. Users can share access to their data without exposing the underlying vectors.</p>
+                    <div class="implication"><strong>Implication:</strong> Privacy-first search architecture. Google is building systems where personalization doesn't require exposing user data.</div>
+                </div>
+
+                <div class="patent-card">
+                    <h4>Multi-User LLM Conversations</h4>
+                    <p class="patent-id">US-20250384215-A1</p>
+                    <blockquote><p>"A two-stage ML model approach where a first model evaluates whether user input targets another participant or the assistant, then a second model generates contextual responses only when appropriate."</p></blockquote>
+                    <p><strong>Key mechanism:</strong> AI that knows when to respond in group conversations vs. when to stay silent.</p>
+                    <div class="implication"><strong>Implication:</strong> AI assistants will increasingly participate in group contexts—not just one-on-one chat.</div>
+                </div>
+
+                <div class="patent-card">
+                    <h4>Matryoshka Embeddings (Reduced Dimensionality)</h4>
+                    <p class="patent-id">US-20250384346-A1</p>
+                    <blockquote><p>"Matryoshka embeddings—nested representations where progressively lower-dimensional versions are extracted from a single source. Enabling efficient retrieval at various computational budget levels."</p></blockquote>
+                    <p><strong>Key mechanism:</strong> Variable-quality search based on computational budget. One model produces multiple quality levels (512-, 256-, or 128-dimensional from 1024-dimensional source).</p>
+                    <div class="implication"><strong>Implication:</strong> Faster, cheaper search at scale. Google can serve billions of queries by dynamically choosing embedding quality.</div>
+                </div>
+
+                <div class="patent-card">
+                    <h4>Query Routing from Multiple Sources</h4>
+                    <p class="patent-id">US-20250370993-A1</p>
+                    <blockquote><p>"The system uses a trained model to assess sampling ratios and information loss to determine which source will produce superior accuracy within acceptable latency constraints."</p></blockquote>
+                    <p><strong>Key mechanism:</strong> Dynamic source selection per query, balancing speed vs. accuracy.</p>
+                    <div class="implication"><strong>Implication:</strong> AI search isn't one system—it's many systems, intelligently routed per query.</div>
+                </div>
+
+                <div class="patent-card">
+                    <h4>Open-Vocabulary Object Detection</h4>
+                    <p class="patent-id">US-20250384650-A1</p>
+                    <blockquote><p>"Approximately 200x computational savings versus competing methods. Enables direct transfer between datasets by swapping vocabulary without fine-tuning."</p></blockquote>
+                    <div class="implication"><strong>Implication:</strong> Multimodal search will scale. Recognizing objects in images becomes 200x cheaper.</div>
+                </div>
+
+                <div class="patent-card">
+                    <h4>In-Context Example Selection</h4>
+                    <p class="patent-id">US-20250384666-A1</p>
+                    <blockquote><p>"Strategically repeats difficult demonstration examples within the context input. Simply adding more demonstration examples doesn't guarantee improved performance."</p></blockquote>
+                    <div class="implication"><strong>Implication:</strong> Prompt engineering matters. The examples you show AI determine output quality.</div>
+                </div>
+            </div>
+
+            <div class="company-section">
+                <span class="company-badge openai-badge">OpenAI Patents</span>
+
+                <div class="patent-card">
+                    <h4>Multi-Agent Shared Workspace</h4>
+                    <p class="patent-id">US-20250377934-A1</p>
+                    <blockquote><p>"Agents have access to a common workspace and can view the state of a workspace. Agents autonomously decide whether to 'yield' (defer to others) or 'act' (respond) to workspace updates."</p></blockquote>
+                    <div class="implication"><strong>Implication:</strong> The future isn't single-agent AI—it's teams of specialized agents working together.</div>
+                </div>
+
+                <div class="patent-card">
+                    <h4>Agent-to-Agent Interactions</h4>
+                    <p class="patent-id">US-20250373574-A1</p>
+                    <blockquote><p>"AI agent instances interacting with each other on behalf of different user accounts. Recipient users can block unwanted agent communications through blocklists."</p></blockquote>
+                    <p>Described as a "'have your people call my people' workflow."</p>
+                    <div class="implication"><strong>Implication:</strong> AI agents will negotiate and transact on your behalf—with consent frameworks.</div>
+                </div>
+
+                <div class="patent-card">
+                    <h4>Long Running Tasks</h4>
+                    <p class="patent-id">US-20250378278-A1</p>
+                    <blockquote><p>"Users can submit follow-up prompts to modify, clarify, or add to the original request without waiting for completion. Particularly useful for multi-hour or multi-day computational tasks."</p></blockquote>
+                    <div class="implication"><strong>Implication:</strong> AI won't just answer questions—it will execute multi-day projects you can adjust along the way.</div>
+                </div>
+
+                <div class="patent-card">
+                    <h4>Schema-Based API Integration</h4>
+                    <p class="patent-id">US-20250110811-A1</p>
+                    <blockquote><p>"Publishers can host a manifest file and specification document at their own domains. The system automatically discovers and integrates these APIs, enabling it to intelligently call external endpoints without requiring retraining."</p></blockquote>
+                    <div class="implication"><strong>Implication:</strong> Your website can become AI-callable. Publish a manifest, and AI agents can use your service.</div>
+                </div>
+
+                <div class="patent-card">
+                    <h4>Selective Learning/Personalization</h4>
+                    <p class="patent-id">US-20250200361-A1</p>
+                    <blockquote><p>"Learn such facts, preferences, or contexts from conversational prompts." Stored in a "personalization notepad" for "generating tailored responses across sessions." "Users can request deletion of learned information."</p></blockquote>
+                    <div class="implication"><strong>Implication:</strong> AI personalization will be implicit and continuous—but with user control.</div>
+                </div>
+
+                <div class="patent-card">
+                    <h4>Contrastive Embeddings</h4>
+                    <p class="patent-id">US-20240370779-A1</p>
+                    <blockquote><p>"Leverages naturally-occurring pairs from unlabeled data (adjacent text, docstrings paired with code implementations). Initializes with pre-trained generative models before fine-tuning."</p></blockquote>
+                    <div class="implication"><strong>Implication:</strong> Better search through understanding relationships, not just keywords.</div>
+                </div>
+
+                <div class="patent-card">
+                    <h4>Custom Model Instructions</h4>
+                    <p class="patent-id">US-20250384222-A1</p>
+                    <blockquote><p>"Structured storage of user preferences in session-specific caches. Dynamic integration of instructions into system prompts based on trigger events."</p></blockquote>
+                    <div class="implication"><strong>Implication:</strong> AI that knows when to apply your preferences and when to ignore them.</div>
+                </div>
+            </div>
+
+            <h2>The Big Picture</h2>
+
+            <h3>What Google is Building</h3>
+            <p><strong>Efficiency:</strong> Matryoshka embeddings, query routing, computational savings</p>
+            <p><strong>Privacy:</strong> Key-based access to embeddings, user-controlled sharing</p>
+            <p><strong>Multimodal:</strong> Visual search, open-vocabulary detection</p>
+
+            <h3>What OpenAI is Building</h3>
+            <p><strong>Agent systems:</strong> Multi-agent workspaces, agent-to-agent communication</p>
+            <p><strong>Long-running tasks:</strong> Async execution, mid-flight modification</p>
+            <p><strong>Personalization:</strong> Implicit learning, preference storage</p>
+
+            <h3>What This Means for Content Creators</h3>
+            <p><strong>Your content trains these systems</strong> - High-quality content becomes training data for better AI</p>
+            <p><strong>APIs matter</strong> - Consider how AI agents might interact with your services</p>
+            <p><strong>Multimodal is coming</strong> - Invest in images, video, structured data</p>
+            <p><strong>Privacy controls exist</strong> - Users will control how their data is used</p>
+
+            <div class="sources-section">
+                <h2>Sources</h2>
+                <p>All patents fetched via USPTO API, December 2025. Full patent documents available at patents.google.com.</p>
+            </div>
+
+            <div class="related-section">
+                <h2>Related Research</h2>
+                <div class="related-grid">
+                    <a href="/ai-search-consensus" class="related-card">
+                        <h3>What Google & Bing Agree On</h3>
+                        <p>Official guidance from search engines</p>
+                    </a>
+                    <a href="/google-vs-openai-search" class="related-card">
+                        <h3>Google vs OpenAI: Infrastructure Race</h3>
+                        <p>Hiring signals and investment patterns</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Track Your AI Search Visibility</h2>
+                <p>See where your brand appears across ChatGPT, Perplexity, and Google AI Overviews.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="signInWithGoogle()">Get Started Free</button>
+                    <a href="/insights" class="btn btn-secondary">Back to Insights</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <div id="footer-container"></div>
+    <div id="auth-modal-container"></div>
+
+    <script>window.AUTH_SOURCE = 'static_research_patents';</script>
+    <script src="/auth/auth-modal.js"></script>
+    <script src="/components/footer.js"></script>
+</body>
+</html>

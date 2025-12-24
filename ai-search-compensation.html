@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What hiring signals tell us about AI search investment priorities. OpenAI offers $405K for Search EM roles - the highest in our dataset.">
+    <meta name="keywords" content="AI search jobs, OpenAI compensation, Google hiring, AI engineer salary, search infrastructure">
+    <meta property="og:title" content="The $400K AI Search Talent War | Fokal Research">
+    <meta property="og:description" content="What hiring signals tell us about AI search investment priorities.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.fokal.com/ai-search-compensation">
+    <title>The $400K AI Search Talent War | Fokal Research</title>
+
+    <link rel="icon" type="image/png" href="/fokal-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-dark: #0E0E10;
+            --card-border: rgba(255, 255, 255, 0.06);
+            --text-primary: #E5E9F0;
+            --text-secondary: #C6CDD8;
+            --text-muted: #9DA6B5;
+            --accent-blue: #4AC0FF;
+            --accent-green: #00E676;
+        }
+        body { font-family: 'DM Sans', -apple-system, sans-serif; background-color: var(--bg-dark); color: var(--text-primary); line-height: 1.6; }
+        html { scroll-behavior: smooth; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent-blue); }
+        .breadcrumb span { margin: 0 8px; }
+        .research-badge { display: inline-block; padding: 6px 14px; background: rgba(74, 192, 255, 0.15); border: 1px solid rgba(74, 192, 255, 0.3); border-radius: 20px; font-size: 12px; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; }
+        .article-hero { padding: 140px 24px 60px; background: linear-gradient(180deg, rgba(74, 192, 255, 0.05) 0%, var(--bg-dark) 100%); }
+        .article-title { font-size: 44px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.02em; }
+        .article-subtitle { font-size: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px; }
+        .article-meta { display: flex; gap: 24px; flex-wrap: wrap; padding: 20px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 14px; color: var(--text-muted); }
+        .article-body { padding: 60px 24px 100px; }
+        .article-body h2 { font-size: 28px; font-weight: 700; color: var(--text-primary); margin: 56px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-size: 22px; font-weight: 600; color: var(--text-primary); margin: 40px 0 16px; }
+        .article-body p { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; }
+        blockquote { background: rgba(74, 192, 255, 0.05); border-left: 3px solid var(--accent-blue); padding: 20px 24px; margin: 24px 0; border-radius: 0 12px 12px 0; }
+        blockquote p { font-size: 17px; font-style: italic; color: var(--text-primary); margin: 0; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .data-table th, .data-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .data-table th { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; background: rgba(17, 24, 32, 0.4); }
+        .data-table td { font-size: 15px; color: var(--text-secondary); }
+        .data-table tr:hover td { background: rgba(74, 192, 255, 0.03); }
+        .highlight-row td { color: var(--text-primary); font-weight: 600; background: rgba(74, 192, 255, 0.08) !important; }
+        .insight-box { background: rgba(0, 230, 118, 0.1); border-left: 3px solid var(--accent-green); padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 24px 0; }
+        .insight-box p { margin: 0; font-size: 15px; }
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0; }
+        .comparison-card { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 24px; }
+        .comparison-card h4 { font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; }
+        .comparison-card ul { list-style: none; padding: 0; }
+        .comparison-card li { font-size: 14px; color: var(--text-secondary); padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
+        .comparison-card li:last-child { border-bottom: none; }
+        .sources-section { background: rgba(17, 24, 32, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 32px; margin: 48px 0; }
+        .sources-section h2 { font-size: 22px; margin: 0 0 20px; }
+        .sources-section ul { list-style: none; padding: 0; }
+        .sources-section li { font-size: 14px; color: var(--text-muted); padding: 6px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
+        .related-section { margin: 64px 0; }
+        .related-section h2 { font-size: 24px; margin-bottom: 24px; }
+        .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .related-card { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 24px; text-decoration: none; transition: all 0.3s ease; }
+        .related-card:hover { border-color: rgba(74, 192, 255, 0.3); transform: translateY(-2px); }
+        .related-card h3 { font-size: 17px; font-weight: 600; color: var(--text-primary); margin: 0 0 8px; }
+        .related-card p { font-size: 14px; color: var(--text-muted); margin: 0; }
+        .cta-section { background: linear-gradient(135deg, rgba(74, 192, 255, 0.1) 0%, rgba(17, 24, 32, 0.8) 100%); border: 1px solid rgba(74, 192, 255, 0.2); border-radius: 24px; padding: 48px; text-align: center; margin: 64px 0; }
+        .cta-section h2 { font-size: 28px; margin: 0 0 16px; }
+        .cta-section p { font-size: 16px; color: var(--text-secondary); margin-bottom: 24px; }
+        .btn { display: inline-block; padding: 14px 28px; border-radius: 12px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-blue), #3AA0D9); color: #FFFFFF; }
+        .btn-secondary { background: rgba(255, 255, 255, 0.05); color: var(--text-primary); border: 1px solid rgba(255, 255, 255, 0.15); }
+        @media (max-width: 768px) {
+            .article-title { font-size: 32px; }
+            .comparison-grid, .related-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 13px; }
+        }
+    </style>
+
+    <link rel="stylesheet" href="/auth/auth-modal.css">
+    <link rel="stylesheet" href="/components/header.css">
+    <link rel="stylesheet" href="/css/mobile-standards.css">
+    <link rel="stylesheet" href="/components/footer.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <script src="/components/header.js"></script>
+
+    <section class="article-hero">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a><span>></span>
+                <a href="/insights">Insights</a><span>></span>
+                <span>Compensation</span>
+            </nav>
+
+            <span class="research-badge">Fokal Research</span>
+            <h1 class="article-title">The $400K AI Search Talent War</h1>
+            <p class="article-subtitle">What hiring signals tell us about AI search investment priorities</p>
+
+            <div class="article-meta">
+                <span>Sources: 8 job postings from Google and OpenAI</span>
+            </div>
+        </div>
+    </section>
+
+    <article class="article-body">
+        <div class="container">
+            <h2>Executive Summary</h2>
+            <p>Compensation reveals priority. When OpenAI offers $405K base salary for a Search Engineering Manager—the highest in our dataset—it signals that search infrastructure is existential to their business. We analyzed 8 AI search job postings from Google and OpenAI to understand where the investment is flowing.</p>
+
+            <h2>Compensation Data</h2>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Company</th><th>Role</th><th>Base Salary</th><th>Level</th></tr>
+                </thead>
+                <tbody>
+                    <tr class="highlight-row"><td><strong>OpenAI</strong></td><td><strong>EM, Search Infrastructure</strong></td><td><strong>$325K-$405K + equity</strong></td><td>Manager</td></tr>
+                    <tr><td>Google</td><td>Staff Data Scientist, AI Mode</td><td>$248K-$349K + bonus</td><td>Staff (10+ yrs)</td></tr>
+                    <tr><td>OpenAI</td><td>Senior Engineer, Search Infra</td><td>$210K-$255K + equity</td><td>Senior</td></tr>
+                    <tr><td>Google</td><td>Senior Engineer, AI Answers</td><td>$166K-$244K + bonus</td><td>Senior (5+ yrs)</td></tr>
+                    <tr><td>Google</td><td>Software Engineer, Search AI</td><td>$141K-$202K + bonus</td><td>Mid (2+ yrs)</td></tr>
+                    <tr><td>Google</td><td>PhD, AI/ML (2026 Start)</td><td>$141K-$202K + bonus</td><td>Early Career</td></tr>
+                </tbody>
+            </table>
+
+            <div class="insight-box">
+                <p><strong>Key insight:</strong> OpenAI's $405K ceiling is 16% higher than Google's highest base. Search is OpenAI's #1 hiring priority.</p>
+            </div>
+
+            <h2>What OpenAI is Building</h2>
+            <p>From the Search Infrastructure job posting:</p>
+
+            <blockquote>
+                <p>"The OpenAI Search team is reimagining the search experience for the AI era. Working across research, engineering, product, and design, we're bringing real-time information seamlessly into ChatGPT and our API."</p>
+            </blockquote>
+
+            <blockquote>
+                <p>"Building a next-gen information retrieval stack optimized for an LLM to use."</p>
+            </blockquote>
+
+            <blockquote>
+                <p>"Search infrastructure is being reimagined from the ground up for the AI era."</p>
+            </blockquote>
+
+            <h3>OpenAI's Approach</h3>
+            <ul style="list-style: none; padding: 0; margin: 24px 0;">
+                <li style="padding: 8px 0; padding-left: 20px; border-left: 2px solid var(--accent-blue);">Ground-up rebuild: Not adapting existing search infrastructure</li>
+                <li style="padding: 8px 0; padding-left: 20px; border-left: 2px solid var(--accent-blue);">LLM-native: Retrieval system designed for AI consumption</li>
+                <li style="padding: 8px 0; padding-left: 20px; border-left: 2px solid var(--accent-blue);">Real-time focus: Fresh information into ChatGPT</li>
+                <li style="padding: 8px 0; padding-left: 20px; border-left: 2px solid var(--accent-blue);">Small teams: "Small, senior team" language suggests elite hiring</li>
+            </ul>
+
+            <h2>What Google is Building</h2>
+            <p>From the Search AI job posting:</p>
+
+            <blockquote>
+                <p>"Join a transformative project to overhaul the Google Search stack, ensuring Large Language Models (LLMs) and machine learning are core components."</p>
+            </blockquote>
+
+            <blockquote>
+                <p>"We're reimagining what it means to search for information – any way and anywhere."</p>
+            </blockquote>
+
+            <h3>Google's Approach</h3>
+            <ul style="list-style: none; padding: 0; margin: 24px 0;">
+                <li style="padding: 8px 0; padding-left: 20px; border-left: 2px solid #4285F4;">Stack overhaul: Modernizing existing infrastructure</li>
+                <li style="padding: 8px 0; padding-left: 20px; border-left: 2px solid #4285F4;">ML core: LLMs becoming central, not peripheral</li>
+                <li style="padding: 8px 0; padding-left: 20px; border-left: 2px solid #4285F4;">Scale advantage: Existing systems serve billions</li>
+                <li style="padding: 8px 0; padding-left: 20px; border-left: 2px solid #4285F4;">Cross-team: Touches every part of the org</li>
+            </ul>
+
+            <h2>Strategic Comparison</h2>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Dimension</th><th>OpenAI</th><th>Google</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Approach</strong></td><td>Building from ground up</td><td>Overhauling existing stack</td></tr>
+                    <tr><td><strong>Top Comp</strong></td><td>$325K-$405K</td><td>$248K-$349K</td></tr>
+                    <tr><td><strong>Focus</strong></td><td>"Optimized for LLM to use"</td><td>"LLMs as core components"</td></tr>
+                    <tr><td><strong>Scale</strong></td><td>Building new systems</td><td>Modifying billion-user systems</td></tr>
+                    <tr><td><strong>Team Size</strong></td><td>Small, senior team</td><td>Large cross-functional teams</td></tr>
+                    <tr><td><strong>Mission</strong></td><td>"Delightful, reliable, blazing fast"</td><td>"Reimagining what it means to search"</td></tr>
+                </tbody>
+            </table>
+
+            <h2>What the Job Requirements Reveal</h2>
+
+            <h3>Skills Both Companies Want</h3>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Skill</th><th>What It Signals</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>NLP/Transformers</td><td>Natural language understanding is table stakes</td></tr>
+                    <tr><td>Large-scale distributed systems</td><td>AI search requires massive infrastructure</td></tr>
+                    <tr><td>JAX/TensorFlow/PyTorch</td><td>Deep learning frameworks power search</td></tr>
+                    <tr><td>RLHF experience</td><td>Human feedback is built into quality</td></tr>
+                    <tr><td>RAG (Retrieval-Augmented Generation)</td><td>Real-time retrieval + generation is the architecture</td></tr>
+                </tbody>
+            </table>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>Google's Unique Requirements</h4>
+                    <ul>
+                        <li><strong>Autoraters:</strong> Automated quality evaluation systems</li>
+                        <li><strong>Signal creation:</strong> New ranking signals beyond links</li>
+                        <li><strong>Agentic workflows:</strong> AI agents in the search stack</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4>OpenAI's Unique Requirements</h4>
+                    <ul>
+                        <li><strong>From scratch:</strong> Building new retrieval systems</li>
+                        <li><strong>Performance obsession:</strong> "Blazing fast" emphasized</li>
+                        <li><strong>Full-stack ownership:</strong> Research to production</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Implications for Content Creators</h2>
+
+            <h3>1. AI Search is Real Infrastructure Investment</h3>
+            <p>Not a feature layer—both companies are rebuilding core systems.</p>
+
+            <h3>2. LLMs Need Purpose-Built Retrieval</h3>
+            <p>"Optimized for an LLM to use" means AI search works differently than traditional search.</p>
+
+            <h3>3. Quality Focus is Intensifying</h3>
+            <p>Google's "autoraters" and quality focus means automated evaluation of content quality.</p>
+
+            <h3>4. Scale and Speed Matter</h3>
+            <p>Both companies emphasize performance, scalability, reliability.</p>
+
+            <h3>5. The Talent War is Real</h3>
+            <p>$400K+ for search engineering signals existential priority.</p>
+
+            <div class="sources-section">
+                <h2>Sources</h2>
+                <p>All compensation data from official job postings, December 2025:</p>
+                <ul>
+                    <li>OpenAI Careers: Software Engineer, Search Infrastructure</li>
+                    <li>OpenAI Careers: Engineering Manager, Search Product Infra</li>
+                    <li>Google Careers: Software Engineer, Search AI, Search Quality</li>
+                    <li>Google Careers: Senior Research Staff Data Scientist, AI Mode</li>
+                    <li>Google Careers: Senior Software Engineer, AI Answers Quality</li>
+                    <li>Google Careers: Software Engineer, Search, AI Answers</li>
+                    <li>Google Careers: Software Engineer, PhD, AI/ML (2026 Start)</li>
+                    <li>Google Careers: Technical Program Manager III, ML Search</li>
+                </ul>
+            </div>
+
+            <div class="related-section">
+                <h2>Related Research</h2>
+                <div class="related-grid">
+                    <a href="/ai-search-patents" class="related-card">
+                        <h3>AI Search Patents Analysis</h3>
+                        <p>What patents reveal about the technology</p>
+                    </a>
+                    <a href="/google-vs-openai-search" class="related-card">
+                        <h3>Google vs OpenAI: Infrastructure Race</h3>
+                        <p>Detailed strategic comparison</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Track Your AI Search Visibility</h2>
+                <p>See where your brand appears across ChatGPT, Perplexity, and Google AI Overviews.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="signInWithGoogle()">Get Started Free</button>
+                    <a href="/insights" class="btn btn-secondary">Back to Insights</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <div id="footer-container"></div>
+    <div id="auth-modal-container"></div>
+
+    <script>window.AUTH_SOURCE = 'static_research_compensation';</script>
+    <script src="/auth/auth-modal.js"></script>
+    <script src="/components/footer.js"></script>
+</body>
+</html>

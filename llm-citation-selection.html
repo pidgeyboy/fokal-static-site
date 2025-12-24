@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How LLMs select citations: duplicate content, crawl signals, and URL clustering. The mechanics of AI citation selection for content creators.">
+    <meta name="keywords" content="LLM citations, AI search citations, duplicate content SEO, canonical tags, sitemap optimization">
+    <meta property="og:title" content="How LLMs Select Citations | Fokal Research">
+    <meta property="og:description" content="The mechanics of AI citation selection—duplicate content, crawl signals, and URL clustering.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.fokal.com/llm-citation-selection">
+    <title>How LLMs Select Citations | Fokal Research</title>
+
+    <link rel="icon" type="image/png" href="/fokal-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-dark: #0E0E10;
+            --card-border: rgba(255, 255, 255, 0.06);
+            --text-primary: #E5E9F0;
+            --text-secondary: #C6CDD8;
+            --text-muted: #9DA6B5;
+            --accent-blue: #4AC0FF;
+            --accent-green: #00E676;
+            --accent-amber: #FFA726;
+        }
+        body { font-family: 'DM Sans', -apple-system, sans-serif; background-color: var(--bg-dark); color: var(--text-primary); line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent-blue); }
+        .breadcrumb span { margin: 0 8px; }
+        .research-badge { display: inline-block; padding: 6px 14px; background: rgba(74, 192, 255, 0.15); border: 1px solid rgba(74, 192, 255, 0.3); border-radius: 20px; font-size: 12px; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; margin-bottom: 20px; }
+        .article-hero { padding: 140px 24px 60px; background: linear-gradient(180deg, rgba(74, 192, 255, 0.05) 0%, var(--bg-dark) 100%); }
+        .article-title { font-size: 44px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.02em; }
+        .article-subtitle { font-size: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px; }
+        .article-meta { display: flex; gap: 24px; flex-wrap: wrap; padding: 20px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 14px; color: var(--text-muted); }
+        .article-body { padding: 60px 24px 100px; }
+        .article-body h2 { font-size: 28px; font-weight: 700; color: var(--text-primary); margin: 56px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-size: 22px; font-weight: 600; color: var(--text-primary); margin: 40px 0 16px; }
+        .article-body p { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; }
+        blockquote { background: rgba(74, 192, 255, 0.05); border-left: 3px solid var(--accent-blue); padding: 20px 24px; margin: 24px 0; border-radius: 0 12px 12px 0; }
+        blockquote p { font-size: 17px; font-style: italic; color: var(--text-primary); margin: 0; }
+        blockquote cite { display: block; margin-top: 12px; font-size: 14px; font-style: normal; color: var(--text-muted); }
+        .key-finding { background: rgba(255, 167, 38, 0.1); border: 1px solid rgba(255, 167, 38, 0.3); border-radius: 16px; padding: 24px; margin: 32px 0; }
+        .key-finding h3 { color: var(--accent-amber); margin-top: 0; }
+        .mechanism-box { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 24px; margin: 24px 0; }
+        .mechanism-box h4 { font-size: 16px; font-weight: 700; color: var(--text-primary); margin: 0 0 12px; }
+        .mechanism-box ol { padding-left: 20px; margin: 0; }
+        .mechanism-box li { font-size: 15px; color: var(--text-secondary); padding: 6px 0; }
+        .solution-box { background: rgba(0, 230, 118, 0.1); border-left: 3px solid var(--accent-green); padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 24px 0; }
+        .solution-box p { margin: 0; font-size: 15px; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .data-table th, .data-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .data-table th { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; background: rgba(17, 24, 32, 0.4); }
+        .data-table td { font-size: 15px; color: var(--text-secondary); }
+        .process-list { list-style: none; padding: 0; margin: 24px 0; counter-reset: process; }
+        .process-list li { padding: 16px 0 16px 48px; position: relative; border-bottom: 1px solid rgba(255, 255, 255, 0.04); font-size: 16px; color: var(--text-secondary); }
+        .process-list li::before { counter-increment: process; content: counter(process); position: absolute; left: 0; top: 16px; width: 32px; height: 32px; background: rgba(74, 192, 255, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--accent-blue); }
+        .sources-section { background: rgba(17, 24, 32, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 32px; margin: 48px 0; }
+        .sources-section h2 { font-size: 22px; margin: 0 0 20px; }
+        .sources-section ul { list-style: none; padding: 0; }
+        .sources-section li { font-size: 14px; color: var(--text-muted); padding: 6px 0; }
+        .related-section { margin: 64px 0; }
+        .related-section h2 { font-size: 24px; margin-bottom: 24px; }
+        .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .related-card { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 24px; text-decoration: none; transition: all 0.3s ease; }
+        .related-card:hover { border-color: rgba(74, 192, 255, 0.3); transform: translateY(-2px); }
+        .related-card h3 { font-size: 17px; font-weight: 600; color: var(--text-primary); margin: 0 0 8px; }
+        .related-card p { font-size: 14px; color: var(--text-muted); margin: 0; }
+        .cta-section { background: linear-gradient(135deg, rgba(74, 192, 255, 0.1) 0%, rgba(17, 24, 32, 0.8) 100%); border: 1px solid rgba(74, 192, 255, 0.2); border-radius: 24px; padding: 48px; text-align: center; margin: 64px 0; }
+        .cta-section h2 { font-size: 28px; margin: 0 0 16px; }
+        .cta-section p { font-size: 16px; color: var(--text-secondary); margin-bottom: 24px; }
+        .btn { display: inline-block; padding: 14px 28px; border-radius: 12px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-blue), #3AA0D9); color: #FFFFFF; }
+        .btn-secondary { background: rgba(255, 255, 255, 0.05); color: var(--text-primary); border: 1px solid rgba(255, 255, 255, 0.15); }
+        @media (max-width: 768px) {
+            .article-title { font-size: 32px; }
+            .related-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <link rel="stylesheet" href="/auth/auth-modal.css">
+    <link rel="stylesheet" href="/components/header.css">
+    <link rel="stylesheet" href="/css/mobile-standards.css">
+    <link rel="stylesheet" href="/components/footer.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <script src="/components/header.js"></script>
+
+    <section class="article-hero">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a><span>></span>
+                <a href="/insights">Insights</a><span>></span>
+                <span>LLM Citations</span>
+            </nav>
+
+            <span class="research-badge">Fokal Research</span>
+            <h1 class="article-title">How LLMs Select Citations</h1>
+            <p class="article-subtitle">The mechanics of AI citation selection—duplicate content, crawl signals, and URL clustering</p>
+
+            <div class="article-meta">
+                <span>Sources: Bing Webmaster Blog, Google Search Central, USPTO patents</span>
+            </div>
+        </div>
+    </section>
+
+    <article class="article-body">
+        <div class="container">
+            <h2>Executive Summary</h2>
+            <p>When an AI generates a response, it must decide which sources to cite. This process is fundamentally different from traditional ranking. LLMs cluster similar content, select representative sources, and make decisions about freshness and authority. Understanding this process is essential for AI search visibility.</p>
+
+            <div class="key-finding">
+                <h3>Key Finding: Duplicate Content Actively Hurts AI Visibility</h3>
+                <p>Bing Webmaster Blog (December 2025) provided unprecedented clarity on how duplicate content affects AI search:</p>
+
+                <blockquote>
+                    <p>"LLMs cluster near-duplicate URLs and select one to represent the set—potentially an outdated version."</p>
+                </blockquote>
+
+                <blockquote>
+                    <p>"Intent signals become harder to interpret when multiple pages repeat information."</p>
+                </blockquote>
+
+                <blockquote>
+                    <p>"Similar pages reduce signals for matching each page to unique user needs."</p>
+                </blockquote>
+
+                <blockquote>
+                    <p>"Updates take longer reaching AI-generated results when crawlers prioritize duplicate URLs."</p>
+                </blockquote>
+            </div>
+
+            <div class="mechanism-box">
+                <h4>The Mechanism</h4>
+                <ol>
+                    <li>AI systems identify similar content across URLs</li>
+                    <li>They cluster these URLs together</li>
+                    <li>They select ONE to represent the entire cluster</li>
+                    <li>The selection may favor an outdated version</li>
+                    <li>Your latest updates may be ignored</li>
+                </ol>
+            </div>
+
+            <div class="solution-box">
+                <p><strong>The Solution:</strong> "Less is more. Clean, consolidated signals help search engines understand intent."</p>
+            </div>
+
+            <h2>How Crawl Signals Affect Citation Selection</h2>
+
+            <h3>Lastmod Timestamps</h3>
+            <blockquote>
+                <p>"The lastmod field in your sitemap remains a key signal, helping Bing prioritize URLs for recrawling and reindexing."</p>
+                <cite>— Bing Webmaster Blog, July 2025</cite>
+            </blockquote>
+
+            <p><strong>Best practices:</strong></p>
+            <ul style="list-style: none; padding: 0; margin: 16px 0;">
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Use ISO 8601 formatting (date and time)</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Set lastmod to actual content modification date</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Don't set lastmod to sitemap generation time</li>
+            </ul>
+
+            <h3>Sitemap Structure</h3>
+            <blockquote>
+                <p>"XML is the preferred sitemap format because it supports structured metadata like lastmod."</p>
+            </blockquote>
+
+            <p><strong>Specifications:</strong></p>
+            <ul style="list-style: none; padding: 0; margin: 16px 0;">
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Individual sitemaps: up to 50,000 URLs</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Sitemap index: up to 50,000 child sitemaps</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Theoretical maximum: 2.5 billion URLs per index</li>
+            </ul>
+
+            <h3>IndexNow</h3>
+            <blockquote>
+                <p>"Sitemaps + IndexNow together provide the structure and speed search engines need to keep your content visible."</p>
+            </blockquote>
+            <p>IndexNow notifies search engines immediately when content changes.</p>
+
+            <h2>Authority Signal Dilution</h2>
+
+            <p>When duplicate content exists:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr><th>Signal Type</th><th>What Happens</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Clicks</td><td>Split across multiple URLs</td></tr>
+                    <tr><td>Links</td><td>Distributed across duplicates</td></tr>
+                    <tr><td>Impressions</td><td>Fragmented</td></tr>
+                    <tr><td>Intent signals</td><td>Become ambiguous</td></tr>
+                    <tr><td>Freshness</td><td>Becomes unclear</td></tr>
+                    <tr><td>Authority</td><td>Becomes distributed</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>Result:</strong> The AI may cite a competitor with consolidated signals over your diluted content.</p>
+
+            <h2>Practical Recommendations</h2>
+
+            <h3>Consolidation Strategy</h3>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Situation</th><th>Solution</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Syndicated content</td><td>Canonical tag pointing to original</td></tr>
+                    <tr><td>Multiple campaign pages</td><td>One primary page + canonicals on variations</td></tr>
+                    <tr><td>Similar pages for different keywords</td><td>Merge into single comprehensive page</td></tr>
+                    <tr><td>Localized versions</td><td>Meaningful localization + hreflang tags</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Technical Implementation</h3>
+            <p><strong>1. Canonical Tags</strong> — Point all variations to the authoritative version.</p>
+            <p><strong>2. Content Consolidation</strong> — Only maintain separate pages when intent clearly differs.</p>
+            <p><strong>3. Localization</strong> — "Localize with meaningful changes (terminology, regulations, product details)." Don't just translate—adapt for local context.</p>
+            <p><strong>4. Update Notification</strong> — Use IndexNow to notify search engines of changes immediately.</p>
+
+            <h2>The Query Fan-Out Model</h2>
+
+            <blockquote>
+                <p>"Query fan out: AI search performs multiple incremental searches for you and synthesizes results."</p>
+                <cite>— John Mueller, Google</cite>
+            </blockquote>
+
+            <h3>Implications</h3>
+            <ul style="list-style: none; padding: 0; margin: 16px 0;">
+                <li style="padding: 12px 0 12px 16px; border-left: 2px solid var(--accent-blue);">AI doesn't just match your page to a query</li>
+                <li style="padding: 12px 0 12px 16px; border-left: 2px solid var(--accent-blue);">It runs multiple related searches</li>
+                <li style="padding: 12px 0 12px 16px; border-left: 2px solid var(--accent-blue);">It synthesizes information from multiple sources</li>
+                <li style="padding: 12px 0 12px 16px; border-left: 2px solid var(--accent-blue);">Your content competes at the synthesis level, not the keyword level</li>
+            </ul>
+
+            <h2>The Citation Selection Process</h2>
+
+            <p>Based on our analysis, here's how LLMs likely select citations:</p>
+
+            <ol class="process-list">
+                <li><strong>Query understanding:</strong> Parse user intent</li>
+                <li><strong>Retrieval:</strong> Fetch candidate sources via RAG</li>
+                <li><strong>Clustering:</strong> Group similar/duplicate content</li>
+                <li><strong>Selection:</strong> Choose representative sources per cluster</li>
+                <li><strong>Authority scoring:</strong> Weight by E-E-A-T signals</li>
+                <li><strong>Freshness weighting:</strong> Consider lastmod and update frequency</li>
+                <li><strong>Synthesis:</strong> Generate response using selected sources</li>
+                <li><strong>Citation insertion:</strong> Attribute claims to sources</li>
+            </ol>
+
+            <h3>Where You Can Win</h3>
+            <ul style="list-style: none; padding: 0; margin: 16px 0;">
+                <li style="padding: 12px 0 12px 16px; border-left: 2px solid var(--accent-green);">Be the authoritative source in your cluster</li>
+                <li style="padding: 12px 0 12px 16px; border-left: 2px solid var(--accent-green);">Have the freshest, most accurate content</li>
+                <li style="padding: 12px 0 12px 16px; border-left: 2px solid var(--accent-green);">Consolidate signals on canonical URLs</li>
+                <li style="padding: 12px 0 12px 16px; border-left: 2px solid var(--accent-green);">Update frequently and notify via IndexNow</li>
+            </ul>
+
+            <div class="sources-section">
+                <h2>Sources</h2>
+                <ul>
+                    <li>Bing Webmaster Blog: "Does Duplicate Content Hurt SEO and AI Search Visibility?" (December 2025)</li>
+                    <li>Bing Webmaster Blog: "Keeping Content Discoverable with Sitemaps in AI Powered Search" (July 2025)</li>
+                    <li>Google Search Off the Record Podcast: Danny Sullivan, John Mueller</li>
+                    <li>USPTO Patent: US-20250370993-A1 (Query Routing)</li>
+                </ul>
+            </div>
+
+            <div class="related-section">
+                <h2>Related Research</h2>
+                <div class="related-grid">
+                    <a href="/ai-search-consensus" class="related-card">
+                        <h3>What Google & Bing Agree On</h3>
+                        <p>The 8 consensus points</p>
+                    </a>
+                    <a href="/ai-search-patents" class="related-card">
+                        <h3>AI Search Patents</h3>
+                        <p>Technical mechanisms from patent filings</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Track Your AI Search Visibility</h2>
+                <p>See where your brand appears across ChatGPT, Perplexity, and Google AI Overviews.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="signInWithGoogle()">Get Started Free</button>
+                    <a href="/insights" class="btn btn-secondary">Back to Insights</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <div id="footer-container"></div>
+    <div id="auth-modal-container"></div>
+
+    <script>window.AUTH_SOURCE = 'static_research_llm_citations';</script>
+    <script src="/auth/auth-modal.js"></script>
+    <script src="/components/footer.js"></script>
+</body>
+</html>

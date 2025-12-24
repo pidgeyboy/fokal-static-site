@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The path to conversion no longer starts with a click. New frameworks for measuring AI search success—citations, engagement quality, and conversion metrics.">
+    <meta name="keywords" content="AI search conversions, citation metrics, AI search analytics, conversion tracking, AI visibility">
+    <meta property="og:title" content="AI Search Conversion Metrics | Fokal Research">
+    <meta property="og:description" content="New frameworks for measuring AI search success beyond clicks.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.fokal.com/ai-search-conversions">
+    <title>AI Search Conversion Metrics | Fokal Research</title>
+
+    <link rel="icon" type="image/png" href="/fokal-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-dark: #0E0E10;
+            --card-border: rgba(255, 255, 255, 0.06);
+            --text-primary: #E5E9F0;
+            --text-secondary: #C6CDD8;
+            --text-muted: #9DA6B5;
+            --accent-blue: #4AC0FF;
+            --accent-green: #00E676;
+        }
+        body { font-family: 'DM Sans', -apple-system, sans-serif; background-color: var(--bg-dark); color: var(--text-primary); line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--accent-blue); }
+        .breadcrumb span { margin: 0 8px; }
+        .research-badge { display: inline-block; padding: 6px 14px; background: rgba(74, 192, 255, 0.15); border: 1px solid rgba(74, 192, 255, 0.3); border-radius: 20px; font-size: 12px; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; margin-bottom: 20px; }
+        .article-hero { padding: 140px 24px 60px; background: linear-gradient(180deg, rgba(74, 192, 255, 0.05) 0%, var(--bg-dark) 100%); }
+        .article-title { font-size: 44px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.02em; }
+        .article-subtitle { font-size: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px; }
+        .article-meta { display: flex; gap: 24px; flex-wrap: wrap; padding: 20px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 14px; color: var(--text-muted); }
+        .article-body { padding: 60px 24px 100px; }
+        .article-body h2 { font-size: 28px; font-weight: 700; color: var(--text-primary); margin: 56px 0 20px; line-height: 1.3; }
+        .article-body h3 { font-size: 22px; font-weight: 600; color: var(--text-primary); margin: 40px 0 16px; }
+        .article-body p { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; }
+        blockquote { background: rgba(74, 192, 255, 0.05); border-left: 3px solid var(--accent-blue); padding: 20px 24px; margin: 24px 0; border-radius: 0 12px 12px 0; }
+        blockquote p { font-size: 17px; font-style: italic; color: var(--text-primary); margin: 0; }
+        blockquote cite { display: block; margin-top: 12px; font-size: 14px; font-style: normal; color: var(--text-muted); }
+        .paradigm-box { background: rgba(74, 192, 255, 0.08); border: 1px solid rgba(74, 192, 255, 0.2); border-radius: 16px; padding: 24px; margin: 32px 0; }
+        .paradigm-box h3 { color: var(--accent-blue); margin-top: 0; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .data-table th, .data-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+        .data-table th { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; background: rgba(17, 24, 32, 0.4); }
+        .data-table td { font-size: 15px; color: var(--text-secondary); }
+        .metric-card { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 24px; margin: 24px 0; }
+        .metric-card h4 { font-size: 18px; font-weight: 700; color: var(--text-primary); margin: 0 0 16px; }
+        .step-list { list-style: none; padding: 0; margin: 24px 0; counter-reset: step; }
+        .step-list li { padding: 16px 0 16px 48px; position: relative; border-bottom: 1px solid rgba(255, 255, 255, 0.04); font-size: 16px; color: var(--text-secondary); }
+        .step-list li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 16px; width: 32px; height: 32px; background: rgba(74, 192, 255, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--accent-blue); }
+        .case-study { background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.2); border-radius: 16px; padding: 24px; margin: 32px 0; }
+        .case-study h3 { color: var(--accent-green); margin-top: 0; }
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+        .comparison-card { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 20px; }
+        .comparison-card h4 { font-size: 16px; font-weight: 600; margin: 0 0 12px; }
+        .comparison-card ul { list-style: none; padding: 0; margin: 0; }
+        .comparison-card li { font-size: 14px; color: var(--text-muted); padding: 6px 0; }
+        .sources-section { background: rgba(17, 24, 32, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 32px; margin: 48px 0; }
+        .sources-section h2 { font-size: 22px; margin: 0 0 20px; }
+        .sources-section ul { list-style: none; padding: 0; }
+        .sources-section li { font-size: 14px; color: var(--text-muted); padding: 6px 0; }
+        .related-section { margin: 64px 0; }
+        .related-section h2 { font-size: 24px; margin-bottom: 24px; }
+        .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .related-card { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 24px; text-decoration: none; transition: all 0.3s ease; }
+        .related-card:hover { border-color: rgba(74, 192, 255, 0.3); transform: translateY(-2px); }
+        .related-card h3 { font-size: 17px; font-weight: 600; color: var(--text-primary); margin: 0 0 8px; }
+        .related-card p { font-size: 14px; color: var(--text-muted); margin: 0; }
+        .cta-section { background: linear-gradient(135deg, rgba(74, 192, 255, 0.1) 0%, rgba(17, 24, 32, 0.8) 100%); border: 1px solid rgba(74, 192, 255, 0.2); border-radius: 24px; padding: 48px; text-align: center; margin: 64px 0; }
+        .cta-section h2 { font-size: 28px; margin: 0 0 16px; }
+        .cta-section p { font-size: 16px; color: var(--text-secondary); margin-bottom: 24px; }
+        .btn { display: inline-block; padding: 14px 28px; border-radius: 12px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-blue), #3AA0D9); color: #FFFFFF; }
+        .btn-secondary { background: rgba(255, 255, 255, 0.05); color: var(--text-primary); border: 1px solid rgba(255, 255, 255, 0.15); }
+        @media (max-width: 768px) {
+            .article-title { font-size: 32px; }
+            .comparison-grid, .related-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <link rel="stylesheet" href="/auth/auth-modal.css">
+    <link rel="stylesheet" href="/components/header.css">
+    <link rel="stylesheet" href="/css/mobile-standards.css">
+    <link rel="stylesheet" href="/components/footer.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <script src="/components/header.js"></script>
+
+    <section class="article-hero">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a><span>></span>
+                <a href="/insights">Insights</a><span>></span>
+                <span>Conversions</span>
+            </nav>
+
+            <span class="research-badge">Fokal Research</span>
+            <h1 class="article-title">AI Search Conversion Metrics</h1>
+            <p class="article-subtitle">The path to conversion no longer starts with a click</p>
+
+            <div class="article-meta">
+                <span>Sources: Bing Webmaster Blog, Google Search Liaison Danny Sullivan</span>
+            </div>
+        </div>
+    </section>
+
+    <article class="article-body">
+        <div class="container">
+            <h2>Executive Summary</h2>
+            <p>Traditional search metrics—impressions, clicks, rankings—are becoming less relevant in AI search. Users get information directly from AI responses, often without clicking through. This brief examines how to measure success when "the path to conversion no longer starts with a click."</p>
+
+            <div class="paradigm-box">
+                <h3>The Paradigm Shift</h3>
+
+                <blockquote>
+                    <p>"The path to conversion no longer starts with a click."</p>
+                    <cite>— Bing Webmaster Blog, November 2025</cite>
+                </blockquote>
+
+                <blockquote>
+                    <p>"Citations and placement in AI answers are becoming the visibility signals that decide who enters the final click."</p>
+                    <cite>— Bing Webmaster Blog</cite>
+                </blockquote>
+
+                <blockquote>
+                    <p>"Publishers, SEOs, and content owners need to understand shifting user behavior inside AI experiences."</p>
+                    <cite>— Bing Webmaster Blog</cite>
+                </blockquote>
+            </div>
+
+            <h2>What Changed</h2>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Old Model</th><th>New Model</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>User searches → Clicks result → Converts</td><td>User searches → Reads AI answer → Maybe clicks → Converts</td></tr>
+                    <tr><td>Impressions measure visibility</td><td>Citations measure visibility</td></tr>
+                    <tr><td>CTR is primary metric</td><td>Citation rate is primary metric</td></tr>
+                    <tr><td>Traffic volume matters</td><td>Traffic quality matters more</td></tr>
+                </tbody>
+            </table>
+
+            <h2>The Quality Trade-Off</h2>
+
+            <blockquote>
+                <p>"AI formats put people into a better state of contextual awareness—users understand better what they're getting into."</p>
+                <cite>— Danny Sullivan, Google Search Off the Record</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"People arriving from AI formats seem to be more engaged when they get there."</p>
+                <cite>— Danny Sullivan</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"AI formats speed up that process of users refining queries to find what they actually need."</p>
+                <cite>— Danny Sullivan</cite>
+            </blockquote>
+
+            <h3>The Engagement Evidence</h3>
+            <ul style="list-style: none; padding: 0; margin: 16px 0;">
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">Users from AI search have higher intent clarity</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">They spend more time on site after clicking</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">They're more likely to complete tasks</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">They're pre-qualified by AI's synthesis</li>
+            </ul>
+
+            <h3>The Volume Trade-Off</h3>
+            <ul style="list-style: none; padding: 0; margin: 16px 0;">
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Fewer total clicks from AI search</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">But higher conversion rate per click</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Quality over quantity</li>
+            </ul>
+
+            <h2>New Metrics Framework</h2>
+
+            <div class="metric-card">
+                <h4>Visibility Metrics (Pre-Click)</h4>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Metric</th><th>Description</th><th>How to Track</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Citation Rate</td><td>% of queries where you're cited</td><td>AI visibility monitoring tools</td></tr>
+                        <tr><td>Citation Position</td><td>Where in the response you appear</td><td>Manual review or monitoring</td></tr>
+                        <tr><td>Citation Context</td><td>How you're described when cited</td><td>Semantic analysis of citations</td></tr>
+                        <tr><td>Competitor Citation</td><td>Who else is cited alongside you</td><td>Competitive monitoring</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="metric-card">
+                <h4>Engagement Metrics (Post-Click)</h4>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Metric</th><th>Description</th><th>Why It Matters</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Time on Site</td><td>Duration of visit</td><td>AI visitors should engage longer</td></tr>
+                        <tr><td>Pages per Session</td><td>Depth of engagement</td><td>Quality traffic goes deeper</td></tr>
+                        <tr><td>Bounce Rate</td><td>Single-page exits</td><td>AI traffic should bounce less</td></tr>
+                        <tr><td>Task Completion</td><td>Goal achievement rate</td><td>The ultimate success metric</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="metric-card">
+                <h4>Conversion Metrics</h4>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Metric</th><th>Description</th><th>AI-Era Consideration</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Conversion Rate</td><td>Actions / Visits</td><td>Should improve with AI traffic</td></tr>
+                        <tr><td>Revenue per Visit</td><td>Revenue / Visits</td><td>Quality traffic = higher RPV</td></tr>
+                        <tr><td>Assisted Conversions</td><td>AI as part of path</td><td>Track AI in multi-touch attribution</td></tr>
+                        <tr><td>Customer Quality</td><td>LTV of acquired customers</td><td>AI traffic may have higher LTV</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Practical Implementation</h2>
+
+            <ol class="step-list">
+                <li><strong>Track AI Traffic Sources</strong> — Identify visits from AI search via referrer analysis (chatgpt.com, perplexity.ai, etc.), Google AI Overview click patterns, and UTM parameters</li>
+                <li><strong>Segment Analytics</strong> — Compare AI traffic vs. traditional: engagement metrics, conversion rates, revenue by source</li>
+                <li><strong>Monitor Citations</strong> — Use AI visibility tools to track which queries cite your brand, citation position and context, competitive citation landscape</li>
+                <li><strong>Adjust Attribution</strong> — Update attribution models to include AI as a touchpoint, weight by engagement quality, consider assisted conversions</li>
+            </ol>
+
+            <h2>The Citation Economy</h2>
+
+            <blockquote>
+                <p>"Prominently cites sources so users know exactly where the information came from."</p>
+                <cite>— Bing, Copilot Search announcement, April 2025</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"Inline links embed citations throughout responses."</p>
+                <cite>— Bing</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>"One-click access to all source links used in generation."</p>
+                <cite>— Bing</cite>
+            </blockquote>
+
+            <h3>What This Means</h3>
+            <ul style="list-style: none; padding: 0; margin: 16px 0;">
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Being cited IS visibility</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Citation placement affects click-through</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Context of citation affects perception</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Earning citations = earning attention</li>
+            </ul>
+
+            <div class="case-study">
+                <h3>Rethinking Success</h3>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h4 style="color: var(--text-muted);">Old Metrics</h4>
+                        <ul>
+                            <li>"We ranked #1 for 500 keywords"</li>
+                            <li>"We got 100,000 clicks from search"</li>
+                            <li>"Our CTR improved 15%"</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card">
+                        <h4 style="color: var(--accent-green);">New Metrics</h4>
+                        <ul>
+                            <li>"We're cited in AI responses for 500 queries"</li>
+                            <li>"AI traffic converts at 3x our average rate"</li>
+                            <li>"AI-sourced customers have 40% higher LTV"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Recommendations</h2>
+
+            <h3>For Measurement</h3>
+            <ul style="list-style: none; padding: 0; margin: 16px 0;">
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Add AI traffic segmentation to analytics</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Implement AI citation monitoring</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Track task completion, not just pageviews</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Update attribution for AI touchpoints</li>
+            </ul>
+
+            <h3>For Optimization</h3>
+            <ul style="list-style: none; padding: 0; margin: 16px 0;">
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">Optimize for citation-worthiness (factual, clear, authoritative)</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">Improve post-click experience for high-intent visitors</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">Design conversion paths for informed, ready-to-act users</li>
+                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">Build for engagement depth, not just traffic volume</li>
+            </ul>
+
+            <div class="sources-section">
+                <h2>Sources</h2>
+                <ul>
+                    <li>Bing Webmaster Blog: "How AI Search Is Changing the Way Conversions are Measured" (November 2025)</li>
+                    <li>Bing Search Blog: "Introducing Copilot Search in Bing" (April 2025)</li>
+                    <li>Google Search Off the Record Podcast: Danny Sullivan on engagement and conversion</li>
+                </ul>
+            </div>
+
+            <div class="related-section">
+                <h2>Related Research</h2>
+                <div class="related-grid">
+                    <a href="/ai-search-consensus" class="related-card">
+                        <h3>What Google & Bing Agree On</h3>
+                        <p>Consensus on quality metrics</p>
+                    </a>
+                    <a href="/llm-citation-selection" class="related-card">
+                        <h3>How LLMs Select Citations</h3>
+                        <p>The mechanics of earning citations</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Track Your AI Search Visibility</h2>
+                <p>See where your brand appears across ChatGPT, Perplexity, and Google AI Overviews.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="signInWithGoogle()">Get Started Free</button>
+                    <a href="/insights" class="btn btn-secondary">Back to Insights</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <div id="footer-container"></div>
+    <div id="auth-modal-container"></div>
+
+    <script>window.AUTH_SOURCE = 'static_research_conversions';</script>
+    <script src="/auth/auth-modal.js"></script>
+    <script src="/components/footer.js"></script>
+</body>
+</html>
