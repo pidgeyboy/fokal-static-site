@@ -143,6 +143,24 @@
             object-fit: cover;
         }
 
+        .fact-checked-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(74, 192, 255, 0.12);
+            color: var(--accent-blue);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .fact-checked-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
         .updated-badge {
             background: rgba(0, 230, 118, 0.12);
             color: var(--accent-green);
@@ -745,9 +763,9 @@
                 <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
                 8 min read
             </span>
-            <span class="meta-item">
-                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
-                10 official sources
+            <span class="fact-checked-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                Fact checked
             </span>
             <span class="updated-badge">Updated Dec 25, 2025</span>
         </div>
