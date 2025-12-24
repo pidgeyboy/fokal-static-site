@@ -146,66 +146,56 @@
         }
 
         /* ========================================
-           KEY TAKEAWAYS - FULL WIDTH
+           KEY TAKEAWAYS - INLINE BOX
            ======================================== */
 
-        .key-takeaways-wrapper {
-            background: linear-gradient(180deg, rgba(74, 192, 255, 0.06) 0%, transparent 100%);
-            padding: 48px 0;
-            margin-bottom: 32px;
-        }
-
-        .key-takeaways {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        .key-takeaways-inner {
+        .key-takeaways-box {
             background: rgba(17, 24, 32, 0.8);
             border: 1px solid rgba(74, 192, 255, 0.15);
-            border-radius: 20px;
-            padding: 40px 48px;
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 40px;
         }
 
         .key-takeaways-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 24px;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
         .key-takeaways-icon {
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             fill: var(--accent-blue);
         }
 
-        .key-takeaways h2 {
-            font-size: 20px;
+        .key-takeaways-box h2 {
+            font-size: 18px;
             font-weight: 700;
             color: var(--accent-blue);
             margin: 0;
         }
 
-        .takeaways-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px 40px;
+        .takeaways-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
         .takeaway-item {
             display: flex;
-            gap: 14px;
+            gap: 12px;
             align-items: flex-start;
         }
 
         .takeaway-icon {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             fill: var(--accent-green);
             flex-shrink: 0;
-            margin-top: 2px;
+            margin-top: 3px;
         }
 
         .takeaway-item p {
@@ -762,42 +752,38 @@
         </div>
     </header>
 
-    <!-- Key Takeaways - Full Width -->
-    <div class="key-takeaways-wrapper">
-        <div class="key-takeaways">
-            <div class="key-takeaways-inner">
-                <div class="key-takeaways-header">
-                    <svg class="key-takeaways-icon" viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/></svg>
-                    <h2>Key Takeaways</h2>
-                </div>
-                <div class="takeaways-grid">
-                    <div class="takeaway-item">
-                        <svg class="takeaway-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                        <p><strong>No special "AI SEO" needed</strong> — Focus on quality content, not new optimization tricks</p>
-                    </div>
-                    <div class="takeaway-item">
-                        <svg class="takeaway-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                        <p><strong>E-E-A-T matters more than ever</strong> — Authority signals are amplified in AI results</p>
-                    </div>
-                    <div class="takeaway-item">
-                        <svg class="takeaway-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                        <p><strong>Citations replace rankings</strong> — Being cited in AI answers is the new visibility metric</p>
-                    </div>
-                    <div class="takeaway-item">
-                        <svg class="takeaway-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                        <p><strong>Quality beats quantity</strong> — AI visitors convert better with higher intent clarity</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Content Area -->
     <div class="page-container">
         <div class="article-layout">
             <!-- Main Article -->
             <main class="article-main">
                 <article class="article-content">
+                    <!-- Key Takeaways -->
+                    <div class="key-takeaways-box">
+                        <div class="key-takeaways-header">
+                            <svg class="key-takeaways-icon" viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/></svg>
+                            <h2>Key Takeaways</h2>
+                        </div>
+                        <div class="takeaways-list">
+                            <div class="takeaway-item">
+                                <svg class="takeaway-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                <p><strong>No special "AI SEO" needed</strong> — Focus on quality content, not new optimization tricks</p>
+                            </div>
+                            <div class="takeaway-item">
+                                <svg class="takeaway-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                <p><strong>E-E-A-T matters more than ever</strong> — Authority signals are amplified in AI results</p>
+                            </div>
+                            <div class="takeaway-item">
+                                <svg class="takeaway-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                <p><strong>Citations replace rankings</strong> — Being cited in AI answers is the new visibility metric</p>
+                            </div>
+                            <div class="takeaway-item">
+                                <svg class="takeaway-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                <p><strong>Quality beats quantity</strong> — AI visitors convert better with higher intent clarity</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <h2 id="summary">Executive Summary</h2>
                     <p>
                         After analyzing official guidance from Google Search Liaison Danny Sullivan, Google Search Advocate John Mueller, and Microsoft's Bing team, we identified 8 points of complete consensus on AI search optimization.
