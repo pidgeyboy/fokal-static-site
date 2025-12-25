@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The path to conversion no longer starts with a click. New frameworks for measuring AI search success—citations, engagement quality, and conversion metrics.">
     <meta name="keywords" content="AI search conversions, citation metrics, AI search analytics, conversion tracking, AI visibility">
-    <meta property="og:title" content="AI Search Conversion Metrics | Fokal Research">
+    <meta property="og:title" content="AI Search Conversion Metrics | Fokal">
     <meta property="og:description" content="New frameworks for measuring AI search success beyond clicks.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.fokal.com/ai-search-conversions">
-    <title>AI Search Conversion Metrics | Fokal Research</title>
+    <meta property="article:published_time" content="2025-11-20">
+    <meta property="article:modified_time" content="2025-12-26">
+    <meta property="article:author" content="Patrick Gallagher">
+    <title>AI Search Conversion Metrics | Fokal</title>
 
     <link rel="icon" type="image/png" href="/fokal-favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +20,6 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-    <!-- Stylesheets (correct order) -->
     <link rel="stylesheet" href="/css/mobile-standards.css">
     <link rel="stylesheet" href="/components/header.css">
     <link rel="stylesheet" href="/components/footer.css">
@@ -26,324 +28,1234 @@
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
             --bg-dark: #0E0E10;
-            --card-border: rgba(255, 255, 255, 0.06);
+            --bg-panel: #161618;
             --text-primary: #E5E9F0;
             --text-secondary: #C6CDD8;
             --text-muted: #9DA6B5;
             --accent-blue: #4AC0FF;
             --accent-green: #00E676;
+            --accent-purple: #B388FF;
         }
-        body { font-family: 'DM Sans', -apple-system, sans-serif; background-color: var(--bg-dark); color: var(--text-primary); line-height: 1.6; }
-        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--accent-blue); }
-        .breadcrumb span { margin: 0 8px; }
-        .research-badge { display: inline-block; padding: 6px 14px; background: rgba(74, 192, 255, 0.15); border: 1px solid rgba(74, 192, 255, 0.3); border-radius: 20px; font-size: 12px; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; margin-bottom: 20px; }
-        .article-hero { padding: 24px 24px 60px; background: linear-gradient(180deg, rgba(74, 192, 255, 0.05) 0%, var(--bg-dark) 100%); }
-        .article-title { font-size: 44px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.02em; }
-        .article-subtitle { font-size: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px; }
-        .article-meta { display: flex; gap: 24px; flex-wrap: wrap; padding: 20px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 14px; color: var(--text-muted); }
-        .article-body { padding: 60px 24px 100px; }
-        .article-body h2 { font-size: 28px; font-weight: 700; color: var(--text-primary); margin: 56px 0 20px; line-height: 1.3; }
-        .article-body h3 { font-size: 22px; font-weight: 600; color: var(--text-primary); margin: 40px 0 16px; }
-        .article-body p { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; }
-        blockquote { background: rgba(74, 192, 255, 0.05); border-left: 3px solid var(--accent-blue); padding: 20px 24px; margin: 24px 0; border-radius: 0 12px 12px 0; }
-        blockquote p { font-size: 17px; font-style: italic; color: var(--text-primary); margin: 0; }
-        blockquote cite { display: block; margin-top: 12px; font-size: 14px; font-style: normal; color: var(--text-muted); }
-        .paradigm-box { background: rgba(74, 192, 255, 0.08); border: 1px solid rgba(74, 192, 255, 0.2); border-radius: 16px; padding: 24px; margin: 32px 0; }
-        .paradigm-box h3 { color: var(--accent-blue); margin-top: 0; }
-        .data-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
-        .data-table th, .data-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
-        .data-table th { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; background: rgba(17, 24, 32, 0.4); }
-        .data-table td { font-size: 15px; color: var(--text-secondary); }
-        .metric-card { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 24px; margin: 24px 0; }
-        .metric-card h4 { font-size: 18px; font-weight: 700; color: var(--text-primary); margin: 0 0 16px; }
-        .step-list { list-style: none; padding: 0; margin: 24px 0; counter-reset: step; }
-        .step-list li { padding: 16px 0 16px 48px; position: relative; border-bottom: 1px solid rgba(255, 255, 255, 0.04); font-size: 16px; color: var(--text-secondary); }
-        .step-list li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 16px; width: 32px; height: 32px; background: rgba(74, 192, 255, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--accent-blue); }
-        .case-study { background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.2); border-radius: 16px; padding: 24px; margin: 32px 0; }
-        .case-study h3 { color: var(--accent-green); margin-top: 0; }
-        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
-        .comparison-card { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 20px; }
-        .comparison-card h4 { font-size: 16px; font-weight: 600; margin: 0 0 12px; }
-        .comparison-card ul { list-style: none; padding: 0; margin: 0; }
-        .comparison-card li { font-size: 14px; color: var(--text-muted); padding: 6px 0; }
-        .sources-section { background: rgba(17, 24, 32, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 32px; margin: 48px 0; }
-        .sources-section h2 { font-size: 22px; margin: 0 0 20px; }
-        .sources-section ul { list-style: none; padding: 0; }
-        .sources-section li { font-size: 14px; color: var(--text-muted); padding: 6px 0; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           WIDER LAYOUT OVERRIDES
+           ======================================== */
+
+        .blog-breadcrumbs {
+            max-width: 1400px;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+
+        .page-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .article-layout {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 48px;
+            margin-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 40px;
+        }
+
+        .article-main {
+            min-width: 0;
+        }
+
+        /* ========================================
+           HEADER SECTION
+           ======================================== */
+
+        .article-header {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 48px 32px;
+            text-align: left;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: rgba(74, 192, 255, 0.12);
+            color: var(--accent-blue);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+
+        .article-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #C6CDD8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .article-subtitle {
+            font-size: 22px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+
+        .article-meta-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 24px;
+        }
+
+        .author-thumb-large {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .article-meta-content {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .article-meta-bar {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .article-updated-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .updated-badge {
+            background: rgba(0, 230, 118, 0.12);
+            color: var(--accent-green);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .fact-checked-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(74, 192, 255, 0.12);
+            color: var(--accent-blue);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .fact-checked-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* ========================================
+           AUTHOR HOVER CARD
+           ======================================== */
+
+        .author-hover-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .author-name-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            cursor: pointer;
+            border-bottom: 1px dotted var(--text-muted);
+            transition: color 0.2s ease;
+        }
+
+        .author-name-link:hover {
+            color: var(--accent-blue);
+            border-bottom-color: var(--accent-blue);
+        }
+
+        .author-hover-card {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 0;
+            width: 340px;
+            background: var(--bg-panel);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+
+        .author-hover-wrapper:hover .author-hover-card {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .author-card-header {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .author-card-photo {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .author-card-info { flex: 1; }
+        .author-card-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+        .author-card-name { font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
+        .author-card-title { font-size: 14px; color: var(--accent-blue); }
+        .author-card-bio { font-size: 14px; line-height: 1.6; color: var(--text-secondary); margin-bottom: 14px; }
+        .author-card-expertise { margin-bottom: 14px; }
+        .author-card-expertise-label { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
+        .author-card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .author-card-tag { background: rgba(74, 192, 255, 0.1); color: var(--accent-blue); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+        .author-card-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--accent-blue); text-decoration: none; }
+        .author-card-link:hover { text-decoration: underline; }
+        .author-card-link svg { width: 14px; height: 14px; fill: currentColor; }
+
+        /* ========================================
+           KEY TAKEAWAYS BOX
+           ======================================== */
+
+        .key-takeaways-box {
+            background: rgba(74, 192, 255, 0.08);
+            border: 1px solid rgba(74, 192, 255, 0.2);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 40px;
+        }
+
+        .key-takeaways-box .takeaways-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin: 0 0 16px 0;
+        }
+
+        .key-takeaways-box .takeaways-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .key-takeaways-box .takeaways-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .key-takeaways-box .takeaways-list li:last-child { margin-bottom: 0; }
+
+        .key-takeaways-box .takeaways-list li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        .key-takeaways-box .takeaways-list li strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* ========================================
+           STICKY TOC SIDEBAR
+           ======================================== */
+
+        .toc-sidebar {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .toc-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .toc-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li { margin-bottom: 4px; }
+
+        .toc-list a {
+            display: block;
+            padding: 10px 14px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .toc-list a:hover,
+        .toc-list a.active {
+            background: rgba(74, 192, 255, 0.08);
+            color: var(--accent-blue);
+        }
+
+        /* ========================================
+           ARTICLE CONTENT
+           ======================================== */
+
+        .article-content {
+            font-size: 18px;
+            line-height: 1.75;
+            color: var(--text-secondary);
+        }
+
+        .article-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 56px 0 24px;
+            scroll-margin-top: 100px;
+        }
+
+        .article-content h2:first-child { margin-top: 0; }
+
+        .article-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 40px 0 16px;
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content a {
+            color: var(--accent-blue);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .article-content a.related-card,
+        .article-content a.btn,
+        .article-content .related-card h3,
+        .article-content .related-card p {
+            text-decoration: none;
+        }
+
+        .article-content a.related-card { color: inherit; }
+
+        /* ========================================
+           INSIGHT QUOTE BOXES
+           ======================================== */
+
+        .insight-quote {
+            position: relative;
+            background: linear-gradient(135deg, rgba(74, 192, 255, 0.06) 0%, rgba(179, 136, 255, 0.04) 100%);
+            border: 1px solid rgba(74, 192, 255, 0.15);
+            border-radius: 12px;
+            padding: 28px 28px 24px 28px;
+            margin: 24px 0;
+        }
+
+        .insight-quote::before {
+            content: '"';
+            position: absolute;
+            top: 12px;
+            left: 20px;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            opacity: 0.4;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .insight-quote p {
+            font-size: 18px;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            padding-left: 32px;
+            line-height: 1.6;
+        }
+
+        .insight-quote cite {
+            display: block;
+            font-size: 14px;
+            font-style: normal;
+            color: var(--accent-blue);
+            padding-left: 32px;
+        }
+
+        /* ========================================
+           PARADIGM BOX
+           ======================================== */
+
+        .paradigm-box {
+            background: rgba(74, 192, 255, 0.08);
+            border: 1px solid rgba(74, 192, 255, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 32px 0;
+        }
+
+        .paradigm-box h3 {
+            color: var(--accent-blue);
+            margin: 0 0 20px;
+            font-size: 20px;
+        }
+
+        /* ========================================
+           DATA TABLES
+           ======================================== */
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 15px;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .data-table th {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            background: rgba(17, 24, 32, 0.4);
+        }
+
+        .data-table td {
+            color: var(--text-secondary);
+        }
+
+        /* ========================================
+           METRIC CARDS
+           ======================================== */
+
+        .metric-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 24px 0;
+        }
+
+        .metric-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 20px;
+        }
+
+        .metric-card .data-table {
+            margin: 0;
+        }
+
+        /* ========================================
+           STEP LIST
+           ======================================== */
+
+        .step-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+            counter-reset: step;
+        }
+
+        .step-list li {
+            padding: 16px 0 16px 48px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .step-list li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 32px;
+            height: 32px;
+            background: rgba(74, 192, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        /* ========================================
+           CASE STUDY & COMPARISON
+           ======================================== */
+
+        .case-study {
+            background: rgba(0, 230, 118, 0.08);
+            border: 1px solid rgba(0, 230, 118, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 32px 0;
+        }
+
+        .case-study h3 {
+            color: var(--accent-green);
+            margin: 0 0 20px;
+            font-size: 20px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .comparison-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .comparison-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 12px;
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .comparison-card li {
+            font-size: 14px;
+            color: var(--text-muted);
+            padding: 6px 0;
+        }
+
+        /* ========================================
+           LISTS
+           ======================================== */
+
+        .article-content ul.evidence-list,
+        .article-content ul.action-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 24px;
+        }
+
+        .article-content ul.evidence-list li {
+            padding: 8px 0 8px 16px;
+            border-left: 2px solid var(--accent-green);
+            margin-bottom: 4px;
+        }
+
+        .article-content ul.action-list li {
+            padding: 8px 0 8px 16px;
+            border-left: 2px solid var(--accent-blue);
+            margin-bottom: 4px;
+        }
+
+        /* ========================================
+           SOURCES SECTION
+           ======================================== */
+
+        .sources-section {
+            background: rgba(17, 24, 32, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 56px 0;
+        }
+
+        .sources-section h2 {
+            font-size: 24px;
+            margin: 0 0 12px;
+            color: var(--text-primary);
+        }
+
+        .sources-intro {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+        }
+
+        .sources-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sources-section li {
+            font-size: 14px;
+            color: var(--text-muted);
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            line-height: 1.5;
+        }
+
+        .sources-section li:last-child { border-bottom: none; }
+
+        /* ========================================
+           AUTHOR BIO
+           ======================================== */
+
+        .author-section {
+            background: linear-gradient(135deg, rgba(179, 136, 255, 0.08) 0%, rgba(74, 192, 255, 0.05) 100%);
+            border: 1px solid rgba(179, 136, 255, 0.15);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 56px 0;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .author-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(179, 136, 255, 0.3);
+        }
+
+        .author-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .author-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 4px;
+        }
+
+        .author-title {
+            font-size: 14px;
+            color: var(--accent-purple);
+            margin-bottom: 12px;
+        }
+
+        .author-bio {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .author-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .author-links a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .author-links a:hover { color: var(--accent-blue); }
+
+        .author-links svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* ========================================
+           RELATED & CTA
+           ======================================== */
+
         .related-section { margin: 64px 0; }
-        .related-section h2 { font-size: 24px; margin-bottom: 24px; }
-        .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .related-card { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 24px; text-decoration: none; transition: all 0.3s ease; }
-        .related-card:hover { border-color: rgba(74, 192, 255, 0.3); transform: translateY(-2px); }
-        .related-card h3 { font-size: 17px; font-weight: 600; color: var(--text-primary); margin: 0 0 8px; }
-        .related-card p { font-size: 14px; color: var(--text-muted); margin: 0; }
-        .cta-section { background: linear-gradient(135deg, rgba(74, 192, 255, 0.1) 0%, rgba(17, 24, 32, 0.8) 100%); border: 1px solid rgba(74, 192, 255, 0.2); border-radius: 24px; padding: 48px; text-align: center; margin: 64px 0; }
-        .cta-section h2 { font-size: 28px; margin: 0 0 16px; }
-        .cta-section p { font-size: 16px; color: var(--text-secondary); margin-bottom: 24px; }
-        .btn { display: inline-block; padding: 14px 28px; border-radius: 12px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; }
-        .btn-primary { background: linear-gradient(135deg, var(--accent-blue), #3AA0D9); color: #FFFFFF; }
-        .btn-secondary { background: rgba(255, 255, 255, 0.05); color: var(--text-primary); border: 1px solid rgba(255, 255, 255, 0.15); }
+
+        .related-section h2 {
+            font-size: 28px;
+            margin-bottom: 28px;
+            color: var(--text-primary);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .related-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 24px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .related-card:hover {
+            border-color: rgba(74, 192, 255, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .related-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 8px;
+            line-height: 1.4;
+        }
+
+        .related-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(74, 192, 255, 0.12) 0%, rgba(17, 24, 32, 0.9) 100%);
+            border: 1px solid rgba(74, 192, 255, 0.2);
+            border-radius: 24px;
+            padding: 56px;
+            text-align: center;
+            margin: 64px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            margin: 0 0 16px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), #3AA0D9);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(74, 192, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+
+        @media (max-width: 1024px) {
+            .article-layout { grid-template-columns: 1fr; }
+            .toc-sidebar { display: none; }
+            .related-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
         @media (max-width: 768px) {
-            .article-title { font-size: 32px; }
-            .comparison-grid, .related-grid { grid-template-columns: 1fr; }
+            .blog-breadcrumbs { padding-left: 16px; padding-right: 16px; }
+            .page-container { padding: 0 16px; }
+            .article-header { padding: 32px 16px; }
+            .article-header h1 { font-size: 32px; }
+            .article-subtitle { font-size: 17px; }
+
+            .insight-quote { padding: 20px 16px; }
+            .insight-quote p { padding-left: 24px; font-size: 16px; }
+            .insight-quote cite { padding-left: 24px; }
+            .insight-quote::before { font-size: 36px; left: 12px; }
+
+            .paradigm-box { padding: 20px; }
+            .metric-card { padding: 20px; }
+            .comparison-grid { grid-template-columns: 1fr; }
+
+            .data-table { font-size: 14px; }
+            .data-table th, .data-table td { padding: 10px 12px; }
+
+            .author-section { grid-template-columns: 1fr; text-align: center; }
+            .author-photo { margin: 0 auto; }
+            .author-links { justify-content: center; }
+            .related-grid { grid-template-columns: 1fr; }
+            .cta-section { padding: 40px 24px; }
+            .cta-buttons { flex-direction: column; }
         }
     </style>
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI Search Conversion Metrics",
+        "description": "The path to conversion no longer starts with a click. New frameworks for measuring AI search success.",
+        "author": {
+            "@type": "Person",
+            "name": "Patrick Gallagher",
+            "url": "https://www.linkedin.com/in/patrickgourley/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Fokal",
+            "url": "https://www.fokal.com"
+        },
+        "datePublished": "2025-11-20",
+        "dateModified": "2025-12-26"
+    }
+    </script>
 </head>
 <body>
     <div id="header-container"></div>
     <script src="/components/header.js"></script>
 
-    <!-- Breadcrumb (uses blog.css for navbar clearance) -->
+    <!-- Breadcrumb -->
     <div class="blog-breadcrumbs">
         <a href="/">Home</a>
         <span class="separator">›</span>
         <a href="/insights">Insights</a>
         <span class="separator">›</span>
-        <span class="current">Conversions</span>
+        <span class="current">Conversion Metrics</span>
     </div>
 
-    <section class="article-hero">
-        <div class="container">
-            <span class="research-badge">Fokal Research</span>
-            <h1 class="article-title">AI Search Conversion Metrics</h1>
-            <p class="article-subtitle">The path to conversion no longer starts with a click</p>
+    <!-- Article Header -->
+    <header class="article-header">
+        <span class="article-category">Fokal Research</span>
+        <h1>AI Search Conversion Metrics</h1>
+        <p class="article-subtitle">The path to conversion no longer starts with a click. Here's how to measure what actually matters.</p>
 
-            <div class="article-meta">
-                <span>Sources: Bing Webmaster Blog, Google Search Liaison Danny Sullivan</span>
-            </div>
-        </div>
-    </section>
-
-    <article class="article-body">
-        <div class="container">
-            <h2>Executive Summary</h2>
-            <p>Traditional search metrics—impressions, clicks, rankings—are becoming less relevant in AI search. Users get information directly from AI responses, often without clicking through. This brief examines how to measure success when "the path to conversion no longer starts with a click."</p>
-
-            <div class="paradigm-box">
-                <h3>The Paradigm Shift</h3>
-
-                <blockquote>
-                    <p>"The path to conversion no longer starts with a click."</p>
-                    <cite>— Bing Webmaster Blog, November 2025</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"Citations and placement in AI answers are becoming the visibility signals that decide who enters the final click."</p>
-                    <cite>— Bing Webmaster Blog</cite>
-                </blockquote>
-
-                <blockquote>
-                    <p>"Publishers, SEOs, and content owners need to understand shifting user behavior inside AI experiences."</p>
-                    <cite>— Bing Webmaster Blog</cite>
-                </blockquote>
-            </div>
-
-            <h2>What Changed</h2>
-            <table class="data-table">
-                <thead>
-                    <tr><th>Old Model</th><th>New Model</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>User searches → Clicks result → Converts</td><td>User searches → Reads AI answer → Maybe clicks → Converts</td></tr>
-                    <tr><td>Impressions measure visibility</td><td>Citations measure visibility</td></tr>
-                    <tr><td>CTR is primary metric</td><td>Citation rate is primary metric</td></tr>
-                    <tr><td>Traffic volume matters</td><td>Traffic quality matters more</td></tr>
-                </tbody>
-            </table>
-
-            <h2>The Quality Trade-Off</h2>
-
-            <blockquote>
-                <p>"AI formats put people into a better state of contextual awareness—users understand better what they're getting into."</p>
-                <cite>— Danny Sullivan, Google Search Off the Record</cite>
-            </blockquote>
-
-            <blockquote>
-                <p>"People arriving from AI formats seem to be more engaged when they get there."</p>
-                <cite>— Danny Sullivan</cite>
-            </blockquote>
-
-            <blockquote>
-                <p>"AI formats speed up that process of users refining queries to find what they actually need."</p>
-                <cite>— Danny Sullivan</cite>
-            </blockquote>
-
-            <h3>The Engagement Evidence</h3>
-            <ul style="list-style: none; padding: 0; margin: 16px 0;">
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">Users from AI search have higher intent clarity</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">They spend more time on site after clicking</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">They're more likely to complete tasks</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">They're pre-qualified by AI's synthesis</li>
-            </ul>
-
-            <h3>The Volume Trade-Off</h3>
-            <ul style="list-style: none; padding: 0; margin: 16px 0;">
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Fewer total clicks from AI search</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">But higher conversion rate per click</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Quality over quantity</li>
-            </ul>
-
-            <h2>New Metrics Framework</h2>
-
-            <div class="metric-card">
-                <h4>Visibility Metrics (Pre-Click)</h4>
-                <table class="data-table">
-                    <thead>
-                        <tr><th>Metric</th><th>Description</th><th>How to Track</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Citation Rate</td><td>% of queries where you're cited</td><td>AI visibility monitoring tools</td></tr>
-                        <tr><td>Citation Position</td><td>Where in the response you appear</td><td>Manual review or monitoring</td></tr>
-                        <tr><td>Citation Context</td><td>How you're described when cited</td><td>Semantic analysis of citations</td></tr>
-                        <tr><td>Competitor Citation</td><td>Who else is cited alongside you</td><td>Competitive monitoring</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="metric-card">
-                <h4>Engagement Metrics (Post-Click)</h4>
-                <table class="data-table">
-                    <thead>
-                        <tr><th>Metric</th><th>Description</th><th>Why It Matters</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Time on Site</td><td>Duration of visit</td><td>AI visitors should engage longer</td></tr>
-                        <tr><td>Pages per Session</td><td>Depth of engagement</td><td>Quality traffic goes deeper</td></tr>
-                        <tr><td>Bounce Rate</td><td>Single-page exits</td><td>AI traffic should bounce less</td></tr>
-                        <tr><td>Task Completion</td><td>Goal achievement rate</td><td>The ultimate success metric</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="metric-card">
-                <h4>Conversion Metrics</h4>
-                <table class="data-table">
-                    <thead>
-                        <tr><th>Metric</th><th>Description</th><th>AI-Era Consideration</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Conversion Rate</td><td>Actions / Visits</td><td>Should improve with AI traffic</td></tr>
-                        <tr><td>Revenue per Visit</td><td>Revenue / Visits</td><td>Quality traffic = higher RPV</td></tr>
-                        <tr><td>Assisted Conversions</td><td>AI as part of path</td><td>Track AI in multi-touch attribution</td></tr>
-                        <tr><td>Customer Quality</td><td>LTV of acquired customers</td><td>AI traffic may have higher LTV</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h2>Practical Implementation</h2>
-
-            <ol class="step-list">
-                <li><strong>Track AI Traffic Sources</strong> — Identify visits from AI search via referrer analysis (chatgpt.com, perplexity.ai, etc.), Google AI Overview click patterns, and UTM parameters</li>
-                <li><strong>Segment Analytics</strong> — Compare AI traffic vs. traditional: engagement metrics, conversion rates, revenue by source</li>
-                <li><strong>Monitor Citations</strong> — Use AI visibility tools to track which queries cite your brand, citation position and context, competitive citation landscape</li>
-                <li><strong>Adjust Attribution</strong> — Update attribution models to include AI as a touchpoint, weight by engagement quality, consider assisted conversions</li>
-            </ol>
-
-            <h2>The Citation Economy</h2>
-
-            <blockquote>
-                <p>"Prominently cites sources so users know exactly where the information came from."</p>
-                <cite>— Bing, Copilot Search announcement, April 2025</cite>
-            </blockquote>
-
-            <blockquote>
-                <p>"Inline links embed citations throughout responses."</p>
-                <cite>— Bing</cite>
-            </blockquote>
-
-            <blockquote>
-                <p>"One-click access to all source links used in generation."</p>
-                <cite>— Bing</cite>
-            </blockquote>
-
-            <h3>What This Means</h3>
-            <ul style="list-style: none; padding: 0; margin: 16px 0;">
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Being cited IS visibility</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Citation placement affects click-through</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Context of citation affects perception</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Earning citations = earning attention</li>
-            </ul>
-
-            <div class="case-study">
-                <h3>Rethinking Success</h3>
-
-                <div class="comparison-grid">
-                    <div class="comparison-card">
-                        <h4 style="color: var(--text-muted);">Old Metrics</h4>
-                        <ul>
-                            <li>"We ranked #1 for 500 keywords"</li>
-                            <li>"We got 100,000 clicks from search"</li>
-                            <li>"Our CTR improved 15%"</li>
-                        </ul>
-                    </div>
-                    <div class="comparison-card">
-                        <h4 style="color: var(--accent-green);">New Metrics</h4>
-                        <ul>
-                            <li>"We're cited in AI responses for 500 queries"</li>
-                            <li>"AI traffic converts at 3x our average rate"</li>
-                            <li>"AI-sourced customers have 40% higher LTV"</li>
-                        </ul>
-                    </div>
+        <div class="article-meta-wrapper">
+            <img src="/patrick-photo.jpg" alt="Patrick Gallagher" class="author-thumb-large">
+            <div class="article-meta-content">
+                <div class="article-meta-bar">
+                    <span class="meta-item">Written by
+                        <span class="author-hover-wrapper">
+                            <a class="author-name-link">Patrick Gallagher</a>
+                            <div class="author-hover-card">
+                                <div class="author-card-header">
+                                    <img src="/patrick-photo.jpg" alt="Patrick Gallagher" class="author-card-photo">
+                                    <div class="author-card-info">
+                                        <div class="author-card-label">Written by</div>
+                                        <div class="author-card-name">Patrick Gallagher</div>
+                                        <div class="author-card-title">Founder & CEO, Fokal</div>
+                                    </div>
+                                </div>
+                                <p class="author-card-bio">Patrick is the founder of Fokal, helping brands understand and improve their visibility in AI-powered search. With a background in high-growth fintechs, he spends all waking hours understanding the future of search.</p>
+                                <div class="author-card-expertise">
+                                    <div class="author-card-expertise-label">Patrick's expertise:</div>
+                                    <div class="author-card-tags">
+                                        <span class="author-card-tag">AI Search</span>
+                                        <span class="author-card-tag">SEO Strategy</span>
+                                        <span class="author-card-tag">Brand Visibility</span>
+                                        <span class="author-card-tag">E-E-A-T</span>
+                                    </div>
+                                </div>
+                                <a href="/about" class="author-card-link">
+                                    Read full profile
+                                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                                </a>
+                            </div>
+                        </span>
+                    </span>
                 </div>
-            </div>
-
-            <h2>Recommendations</h2>
-
-            <h3>For Measurement</h3>
-            <ul style="list-style: none; padding: 0; margin: 16px 0;">
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Add AI traffic segmentation to analytics</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Implement AI citation monitoring</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Track task completion, not just pageviews</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-blue);">Update attribution for AI touchpoints</li>
-            </ul>
-
-            <h3>For Optimization</h3>
-            <ul style="list-style: none; padding: 0; margin: 16px 0;">
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">Optimize for citation-worthiness (factual, clear, authoritative)</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">Improve post-click experience for high-intent visitors</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">Design conversion paths for informed, ready-to-act users</li>
-                <li style="padding: 8px 0 8px 16px; border-left: 2px solid var(--accent-green);">Build for engagement depth, not just traffic volume</li>
-            </ul>
-
-            <div class="sources-section">
-                <h2>Sources</h2>
-                <ul>
-                    <li>Bing Webmaster Blog: "How AI Search Is Changing the Way Conversions are Measured" (November 2025)</li>
-                    <li>Bing Search Blog: "Introducing Copilot Search in Bing" (April 2025)</li>
-                    <li>Google Search Off the Record Podcast: Danny Sullivan on engagement and conversion</li>
-                </ul>
-            </div>
-
-            <div class="related-section">
-                <h2>Related Research</h2>
-                <div class="related-grid">
-                    <a href="/ai-search-consensus" class="related-card">
-                        <h3>What Google & Bing Agree On</h3>
-                        <p>Consensus on quality metrics</p>
-                    </a>
-                    <a href="/llm-citation-selection" class="related-card">
-                        <h3>How LLMs Select Citations</h3>
-                        <p>The mechanics of earning citations</p>
-                    </a>
-                </div>
-            </div>
-
-            <div class="cta-section">
-                <h2>Track Your AI Search Visibility</h2>
-                <p>See where your brand appears across ChatGPT, Perplexity, and Google AI Overviews.</p>
-                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                    <button class="btn btn-primary" onclick="signInWithGoogle()">Get Started Free</button>
-                    <a href="/insights" class="btn btn-secondary">Back to Insights</a>
+                <div class="article-updated-row">
+                    <span class="updated-badge">Updated Dec 26, 2025</span>
+                    <span class="fact-checked-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        Official Sources Only
+                    </span>
                 </div>
             </div>
         </div>
-    </article>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="page-container">
+        <div class="article-layout">
+            <!-- Main Article -->
+            <main class="article-main">
+                <article class="article-content">
+                    <!-- Key Takeaways -->
+                    <div class="key-takeaways-box">
+                        <h3 class="takeaways-title">The Bottom Line</h3>
+                        <ul class="takeaways-list">
+                            <li><strong>Clicks are no longer the starting point.</strong> Users get answers from AI—the click comes after they're already informed.</li>
+                            <li><strong>Citations are the new impressions.</strong> Being mentioned in AI answers is now the visibility metric that matters.</li>
+                            <li><strong>Quality over quantity.</strong> AI traffic converts better—fewer clicks, higher engagement.</li>
+                            <li><strong>Update your attribution.</strong> Include AI as a touchpoint in your conversion models.</li>
+                        </ul>
+                    </div>
+
+                    <h2 id="paradigm-shift">The Paradigm Shift</h2>
+                    <p>
+                        Traditional search metrics—impressions, clicks, rankings—are becoming less relevant in AI search. Users get information directly from AI responses, often without clicking through.
+                    </p>
+
+                    <div class="paradigm-box">
+                        <h3>What Changed</h3>
+                        <div class="insight-quote">
+                            <p>"The path to conversion no longer starts with a click."</p>
+                            <cite>— Bing Webmaster Blog, November 2025</cite>
+                        </div>
+                        <div class="insight-quote">
+                            <p>"Citations and placement in AI answers are becoming the visibility signals that decide who enters the final click."</p>
+                            <cite>— Bing Webmaster Blog</cite>
+                        </div>
+                        <div class="insight-quote">
+                            <p>"Publishers, SEOs, and content owners need to understand shifting user behavior inside AI experiences."</p>
+                            <cite>— Bing Webmaster Blog</cite>
+                        </div>
+                    </div>
+
+                    <h2 id="what-changed">Old Model vs. New Model</h2>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Old Model</th><th>New Model</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>User searches → Clicks result → Converts</td><td>User searches → Reads AI answer → Maybe clicks → Converts</td></tr>
+                            <tr><td>Impressions measure visibility</td><td>Citations measure visibility</td></tr>
+                            <tr><td>CTR is primary metric</td><td>Citation rate is primary metric</td></tr>
+                            <tr><td>Traffic volume matters</td><td>Traffic quality matters more</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="quality-tradeoff">The Quality Trade-Off</h2>
+
+                    <div class="insight-quote">
+                        <p>"AI formats put people into a better state of contextual awareness—users understand better what they're getting into."</p>
+                        <cite>— Danny Sullivan, Google Search Off the Record</cite>
+                    </div>
+
+                    <div class="insight-quote">
+                        <p>"People arriving from AI formats seem to be more engaged when they get there."</p>
+                        <cite>— Danny Sullivan</cite>
+                    </div>
+
+                    <div class="insight-quote">
+                        <p>"AI formats speed up that process of users refining queries to find what they actually need."</p>
+                        <cite>— Danny Sullivan</cite>
+                    </div>
+
+                    <h3>The Engagement Evidence</h3>
+                    <ul class="evidence-list">
+                        <li>Users from AI search have higher intent clarity</li>
+                        <li>They spend more time on site after clicking</li>
+                        <li>They're more likely to complete tasks</li>
+                        <li>They're pre-qualified by AI's synthesis</li>
+                    </ul>
+
+                    <h3>The Volume Trade-Off</h3>
+                    <ul class="action-list">
+                        <li>Fewer total clicks from AI search</li>
+                        <li>But higher conversion rate per click</li>
+                        <li>Quality over quantity</li>
+                    </ul>
+
+                    <h2 id="new-metrics">New Metrics Framework</h2>
+
+                    <div class="metric-card">
+                        <h4>Visibility Metrics (Pre-Click)</h4>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Metric</th><th>Description</th><th>How to Track</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Citation Rate</td><td>% of queries where you're cited</td><td>AI visibility monitoring tools</td></tr>
+                                <tr><td>Citation Position</td><td>Where in the response you appear</td><td>Manual review or monitoring</td></tr>
+                                <tr><td>Citation Context</td><td>How you're described when cited</td><td>Semantic analysis of citations</td></tr>
+                                <tr><td>Competitor Citation</td><td>Who else is cited alongside you</td><td>Competitive monitoring</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="metric-card">
+                        <h4>Engagement Metrics (Post-Click)</h4>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Metric</th><th>Description</th><th>Why It Matters</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Time on Site</td><td>Duration of visit</td><td>AI visitors should engage longer</td></tr>
+                                <tr><td>Pages per Session</td><td>Depth of engagement</td><td>Quality traffic goes deeper</td></tr>
+                                <tr><td>Bounce Rate</td><td>Single-page exits</td><td>AI traffic should bounce less</td></tr>
+                                <tr><td>Task Completion</td><td>Goal achievement rate</td><td>The ultimate success metric</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="metric-card">
+                        <h4>Conversion Metrics</h4>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Metric</th><th>Description</th><th>AI-Era Consideration</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Conversion Rate</td><td>Actions / Visits</td><td>Should improve with AI traffic</td></tr>
+                                <tr><td>Revenue per Visit</td><td>Revenue / Visits</td><td>Quality traffic = higher RPV</td></tr>
+                                <tr><td>Assisted Conversions</td><td>AI as part of path</td><td>Track AI in multi-touch attribution</td></tr>
+                                <tr><td>Customer Quality</td><td>LTV of acquired customers</td><td>AI traffic may have higher LTV</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 id="implementation">Practical Implementation</h2>
+
+                    <ol class="step-list">
+                        <li><strong>Track AI Traffic Sources</strong> — Identify visits from AI search via referrer analysis (chatgpt.com, perplexity.ai, etc.), Google AI Overview click patterns, and UTM parameters</li>
+                        <li><strong>Segment Analytics</strong> — Compare AI traffic vs. traditional: engagement metrics, conversion rates, revenue by source</li>
+                        <li><strong>Monitor Citations</strong> — Use AI visibility tools to track which queries cite your brand, citation position and context, competitive citation landscape</li>
+                        <li><strong>Adjust Attribution</strong> — Update attribution models to include AI as a touchpoint, weight by engagement quality, consider assisted conversions</li>
+                    </ol>
+
+                    <h2 id="citation-economy">The Citation Economy</h2>
+
+                    <div class="insight-quote">
+                        <p>"Prominently cites sources so users know exactly where the information came from."</p>
+                        <cite>— Bing, Copilot Search announcement, April 2025</cite>
+                    </div>
+
+                    <div class="insight-quote">
+                        <p>"Inline links embed citations throughout responses."</p>
+                        <cite>— Bing</cite>
+                    </div>
+
+                    <div class="insight-quote">
+                        <p>"One-click access to all source links used in generation."</p>
+                        <cite>— Bing</cite>
+                    </div>
+
+                    <h3>What This Means</h3>
+                    <ul class="action-list">
+                        <li>Being cited IS visibility</li>
+                        <li>Citation placement affects click-through</li>
+                        <li>Context of citation affects perception</li>
+                        <li>Earning citations = earning attention</li>
+                    </ul>
+
+                    <div class="case-study" id="rethinking">
+                        <h3>Rethinking Success</h3>
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4 style="color: var(--text-muted);">Old Metrics</h4>
+                                <ul>
+                                    <li>"We ranked #1 for 500 keywords"</li>
+                                    <li>"We got 100,000 clicks from search"</li>
+                                    <li>"Our CTR improved 15%"</li>
+                                </ul>
+                            </div>
+                            <div class="comparison-card">
+                                <h4 style="color: var(--accent-green);">New Metrics</h4>
+                                <ul>
+                                    <li>"We're cited in AI responses for 500 queries"</li>
+                                    <li>"AI traffic converts at 3x our average rate"</li>
+                                    <li>"AI-sourced customers have 40% higher LTV"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 id="recommendations">Recommendations</h2>
+
+                    <h3>For Measurement</h3>
+                    <ul class="action-list">
+                        <li>Add AI traffic segmentation to analytics</li>
+                        <li>Implement AI citation monitoring</li>
+                        <li>Track task completion, not just pageviews</li>
+                        <li>Update attribution for AI touchpoints</li>
+                    </ul>
+
+                    <h3>For Optimization</h3>
+                    <ul class="evidence-list">
+                        <li>Optimize for citation-worthiness (factual, clear, authoritative)</li>
+                        <li>Improve post-click experience for high-intent visitors</li>
+                        <li>Design conversion paths for informed, ready-to-act users</li>
+                        <li>Build for engagement depth, not just traffic volume</li>
+                    </ul>
+
+                    <!-- Sources -->
+                    <div class="sources-section" id="sources">
+                        <h2>Sources & Methodology</h2>
+                        <p class="sources-intro">We only used official sources from the companies building these systems. No speculation or third-party analysis.</p>
+                        <ul>
+                            <li>Bing Webmaster Blog: "How AI Search Is Changing the Way Conversions are Measured" (November 2025)</li>
+                            <li>Bing Search Blog: "Introducing Copilot Search in Bing" (April 2025)</li>
+                            <li>Google Search Off the Record Podcast: Danny Sullivan on engagement and conversion</li>
+                        </ul>
+                    </div>
+
+                    <!-- Author -->
+                    <div class="author-section" id="author">
+                        <img src="/patrick-photo.jpg" alt="Patrick Gallagher" class="author-photo">
+                        <div class="author-content">
+                            <span class="author-label">Written by</span>
+                            <h3>Patrick Gallagher</h3>
+                            <p class="author-title">Founder, Fokal</p>
+                            <p class="author-bio">
+                                Patrick researches how AI systems discover, evaluate, and cite brands. He founded Fokal to help brands understand and optimize their visibility in AI search.
+                            </p>
+                            <div class="author-links">
+                                <a href="https://www.linkedin.com/in/patrick-g-96791070/" target="_blank">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <a href="https://x.com/llmvibes" target="_blank">
+                                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                    X
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related -->
+                    <div class="related-section">
+                        <h2>Related Research</h2>
+                        <div class="related-grid">
+                            <a href="/ai-search-consensus" class="related-card">
+                                <h3>What Google & Bing Agree On</h3>
+                                <p>The 8 points both companies confirm</p>
+                            </a>
+                            <a href="/llm-citation-selection" class="related-card">
+                                <h3>How LLMs Cite</h3>
+                                <p>The mechanics of AI citation selection</p>
+                            </a>
+                            <a href="/ai-search-patents" class="related-card">
+                                <h3>AI Search Patents</h3>
+                                <p>What 13 patents reveal about AI search</p>
+                            </a>
+                            <a href="/insights" class="related-card">
+                                <h3>All Research</h3>
+                                <p>View all Fokal Insights</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="cta-section">
+                        <h2>Track Your AI Search Visibility</h2>
+                        <p>See where your brand appears across ChatGPT, Perplexity, and Google AI Overviews.</p>
+                        <div class="cta-buttons">
+                            <button class="btn btn-primary" onclick="signInWithGoogle()">Get Started Free</button>
+                            <a href="/insights" class="btn btn-secondary">Back to Insights</a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+            <!-- Sticky TOC Sidebar -->
+            <aside class="toc-sidebar">
+                <div class="toc-card">
+                    <div class="toc-title">On This Page</div>
+                    <ul class="toc-list">
+                        <li><a href="#paradigm-shift">The Paradigm Shift</a></li>
+                        <li><a href="#what-changed">Old vs. New Model</a></li>
+                        <li><a href="#quality-tradeoff">Quality Trade-Off</a></li>
+                        <li><a href="#new-metrics">New Metrics</a></li>
+                        <li><a href="#implementation">Implementation</a></li>
+                        <li><a href="#citation-economy">Citation Economy</a></li>
+                        <li><a href="#recommendations">Recommendations</a></li>
+                        <li><a href="#sources">Sources</a></li>
+                        <li><a href="#author">About the Author</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
 
     <div id="footer-container"></div>
     <div id="auth-modal-container"></div>
@@ -351,5 +1263,28 @@
     <script>window.AUTH_SOURCE = 'static_research_conversions';</script>
     <script src="/auth/auth-modal.js"></script>
     <script src="/components/footer.js"></script>
+
+    <!-- Active TOC link highlighting -->
+    <script>
+        document.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('h2[id]');
+            const tocLinks = document.querySelectorAll('.toc-list a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

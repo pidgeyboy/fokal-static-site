@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Analysis of 13 patents from Google and OpenAI on AI search, embeddings, and agent coordination. What patents reveal about how AI search actually works.">
+    <meta name="description" content="Analysis of 13 patents from Google and OpenAI reveals the technical infrastructure behind AI search. What companies are building, not just what they're saying.">
     <meta name="keywords" content="AI search patents, Google patents, OpenAI patents, embeddings, agent coordination, USPTO">
-    <meta property="og:title" content="What AI Search Patents Reveal | Fokal Research">
+    <meta property="og:title" content="What AI Search Patents Reveal | Fokal">
     <meta property="og:description" content="Analysis of 13 patents from Google and OpenAI on AI search infrastructure.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.fokal.com/ai-search-patents">
-    <title>What AI Search Patents Reveal | Fokal Research</title>
+    <meta property="article:published_time" content="2025-12-20">
+    <meta property="article:modified_time" content="2025-12-26">
+    <meta property="article:author" content="Patrick Gallagher">
+    <title>What AI Search Patents Reveal | Fokal</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/fokal-favicon.png">
-
-    <!-- Google Fonts - DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-    <!-- Stylesheets (correct order) -->
     <link rel="stylesheet" href="/css/mobile-standards.css">
     <link rel="stylesheet" href="/components/header.css">
     <link rel="stylesheet" href="/components/footer.css">
@@ -30,270 +28,1126 @@
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
             --bg-dark: #0E0E10;
-            --card-border: rgba(255, 255, 255, 0.06);
+            --bg-panel: #161618;
             --text-primary: #E5E9F0;
             --text-secondary: #C6CDD8;
             --text-muted: #9DA6B5;
             --accent-blue: #4AC0FF;
             --accent-green: #00E676;
+            --accent-purple: #B388FF;
         }
-        body { font-family: 'DM Sans', -apple-system, sans-serif; background-color: var(--bg-dark); color: var(--text-primary); line-height: 1.6; }
-        html { scroll-behavior: smooth; }
-        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--accent-blue); }
-        .breadcrumb span { margin: 0 8px; }
-        .research-badge { display: inline-block; padding: 6px 14px; background: rgba(74, 192, 255, 0.15); border: 1px solid rgba(74, 192, 255, 0.3); border-radius: 20px; font-size: 12px; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; }
-        .article-hero { padding: 24px 24px 60px; background: linear-gradient(180deg, rgba(74, 192, 255, 0.05) 0%, var(--bg-dark) 100%); }
-        .article-title { font-size: 44px; font-weight: 700; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.02em; }
-        .article-subtitle { font-size: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px; }
-        .article-meta { display: flex; gap: 24px; flex-wrap: wrap; padding: 20px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 14px; color: var(--text-muted); }
-        .article-meta-item { display: flex; align-items: center; gap: 8px; }
-        .article-meta-item svg { width: 16px; height: 16px; fill: var(--accent-blue); }
-        .article-body { padding: 60px 24px 100px; }
-        .article-body h2 { font-size: 28px; font-weight: 700; color: var(--text-primary); margin: 56px 0 20px; line-height: 1.3; }
-        .article-body h3 { font-size: 22px; font-weight: 600; color: var(--text-primary); margin: 40px 0 16px; }
-        .article-body p { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; }
-        .article-body strong { color: var(--text-primary); font-weight: 600; }
-        blockquote { background: rgba(74, 192, 255, 0.05); border-left: 3px solid var(--accent-blue); padding: 20px 24px; margin: 24px 0; border-radius: 0 12px 12px 0; }
-        blockquote p { font-size: 17px; font-style: italic; color: var(--text-primary); margin: 0; }
-        .patent-card { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 32px; margin: 32px 0; }
-        .patent-card h4 { font-size: 18px; font-weight: 700; color: var(--text-primary); margin: 0 0 8px; }
-        .patent-id { font-size: 13px; color: var(--accent-blue); font-family: monospace; margin-bottom: 16px; }
-        .patent-card p { font-size: 15px; margin-bottom: 12px; }
-        .implication { background: rgba(0, 230, 118, 0.1); border-left: 3px solid var(--accent-green); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 14px; color: var(--text-primary); margin-top: 16px; }
-        .stats-table { width: 100%; border-collapse: collapse; margin: 24px 0; }
-        .stats-table th, .stats-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
-        .stats-table th { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
-        .stats-table td { font-size: 16px; color: var(--text-secondary); }
-        .company-section { margin-top: 48px; padding-top: 48px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
-        .company-badge { display: inline-block; padding: 4px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 16px; }
-        .google-badge { background: rgba(66, 133, 244, 0.15); color: #4285F4; }
-        .openai-badge { background: rgba(0, 166, 126, 0.15); color: #00A67E; }
-        .sources-section { background: rgba(17, 24, 32, 0.4); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 32px; margin: 48px 0; }
-        .sources-section h2 { font-size: 22px; margin: 0 0 20px; }
-        .related-section { margin: 64px 0; }
-        .related-section h2 { font-size: 24px; margin-bottom: 24px; }
-        .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .related-card { background: rgba(17, 24, 32, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 24px; text-decoration: none; transition: all 0.3s ease; }
-        .related-card:hover { border-color: rgba(74, 192, 255, 0.3); transform: translateY(-2px); }
-        .related-card h3 { font-size: 17px; font-weight: 600; color: var(--text-primary); margin: 0 0 8px; }
-        .related-card p { font-size: 14px; color: var(--text-muted); margin: 0; }
-        .cta-section { background: linear-gradient(135deg, rgba(74, 192, 255, 0.1) 0%, rgba(17, 24, 32, 0.8) 100%); border: 1px solid rgba(74, 192, 255, 0.2); border-radius: 24px; padding: 48px; text-align: center; margin: 64px 0; }
-        .cta-section h2 { font-size: 28px; margin: 0 0 16px; }
-        .cta-section p { font-size: 16px; color: var(--text-secondary); margin-bottom: 24px; }
-        .btn { display: inline-block; padding: 14px 28px; border-radius: 12px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; }
-        .btn-primary { background: linear-gradient(135deg, var(--accent-blue), #3AA0D9); color: #FFFFFF; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(74, 192, 255, 0.4); }
-        .btn-secondary { background: rgba(255, 255, 255, 0.05); color: var(--text-primary); border: 1px solid rgba(255, 255, 255, 0.15); }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           WIDER LAYOUT OVERRIDES
+           ======================================== */
+
+        .blog-breadcrumbs {
+            max-width: 1400px;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+
+        .page-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Two-column layout */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 48px;
+            margin-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 40px;
+        }
+
+        .article-main {
+            min-width: 0;
+        }
+
+        /* ========================================
+           HEADER SECTION
+           ======================================== */
+
+        .article-header {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 48px 32px;
+            text-align: left;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: rgba(74, 192, 255, 0.12);
+            color: var(--accent-blue);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+
+        .article-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #C6CDD8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .article-subtitle {
+            font-size: 22px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+
+        .article-meta-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 24px;
+        }
+
+        .author-thumb-large {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .article-meta-content {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .article-meta-bar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .fact-checked-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(74, 192, 255, 0.12);
+            color: var(--accent-blue);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .fact-checked-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .article-updated-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .updated-badge {
+            background: rgba(0, 230, 118, 0.12);
+            color: var(--accent-green);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* ========================================
+           AUTHOR HOVER CARD
+           ======================================== */
+
+        .author-hover-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .author-name-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            cursor: pointer;
+            border-bottom: 1px dotted var(--text-muted);
+            transition: color 0.2s ease;
+        }
+
+        .author-name-link:hover {
+            color: var(--accent-blue);
+            border-bottom-color: var(--accent-blue);
+        }
+
+        .author-hover-card {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 0;
+            width: 340px;
+            background: var(--bg-panel);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+
+        .author-hover-wrapper:hover .author-hover-card {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .author-card-header {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .author-card-photo {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .author-card-info { flex: 1; }
+
+        .author-card-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .author-card-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .author-card-title {
+            font-size: 14px;
+            color: var(--accent-blue);
+        }
+
+        .author-card-bio {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+
+        .author-card-expertise { margin-bottom: 14px; }
+
+        .author-card-expertise-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .author-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .author-card-tag {
+            background: rgba(74, 192, 255, 0.1);
+            color: var(--accent-blue);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .author-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .author-card-link:hover { text-decoration: underline; }
+
+        .author-card-link svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        /* ========================================
+           KEY TAKEAWAYS - INLINE BOX
+           ======================================== */
+
+        .key-takeaways-box {
+            background: rgba(74, 192, 255, 0.08);
+            border: 1px solid rgba(74, 192, 255, 0.2);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 40px;
+        }
+
+        .key-takeaways-box .takeaways-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin: 0 0 16px 0;
+            padding: 0;
+            border: none;
+        }
+
+        .key-takeaways-box .takeaways-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .key-takeaways-box .takeaways-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .key-takeaways-box .takeaways-list li:last-child { margin-bottom: 0; }
+
+        .key-takeaways-box .takeaways-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        .key-takeaways-box .takeaways-list li strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* ========================================
+           STICKY TOC SIDEBAR
+           ======================================== */
+
+        .toc-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .toc-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .toc-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: 12px;
+        }
+
+        .toc-list a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: block;
+            padding: 4px 0;
+        }
+
+        .toc-list a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* ========================================
+           ARTICLE CONTENT
+           ======================================== */
+
+        .article-content {
+            font-size: 18px;
+            line-height: 1.75;
+            color: var(--text-secondary);
+        }
+
+        .article-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 56px 0 24px;
+            scroll-margin-top: 100px;
+        }
+
+        .article-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .article-content h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 40px 0 16px;
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .article-content a {
+            color: var(--accent-blue);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .article-content a.related-card,
+        .article-content a.btn,
+        .article-content .related-card h3,
+        .article-content .related-card p {
+            text-decoration: none;
+        }
+
+        .article-content a.related-card {
+            color: inherit;
+        }
+
+        /* ========================================
+           PATENT CARDS
+           ======================================== */
+
+        .patent-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 28px 0;
+        }
+
+        .patent-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 8px;
+        }
+
+        .patent-id {
+            font-size: 13px;
+            color: var(--accent-blue);
+            font-family: monospace;
+            margin-bottom: 16px;
+        }
+
+        .patent-card p {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .implication {
+            background: rgba(0, 230, 118, 0.1);
+            border-left: 3px solid var(--accent-green);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 15px;
+            color: var(--text-primary);
+            margin-top: 16px;
+        }
+
+        .implication strong {
+            color: var(--accent-green);
+        }
+
+        /* ========================================
+           QUOTE BOXES
+           ======================================== */
+
+        .insight-quote {
+            position: relative;
+            background: linear-gradient(135deg, rgba(74, 192, 255, 0.06) 0%, rgba(179, 136, 255, 0.04) 100%);
+            border: 1px solid rgba(74, 192, 255, 0.15);
+            border-radius: 12px;
+            padding: 28px 28px 24px 28px;
+            margin: 24px 0;
+        }
+
+        .insight-quote::before {
+            content: '"';
+            position: absolute;
+            top: 12px;
+            left: 20px;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            opacity: 0.4;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .insight-quote p {
+            font-size: 18px;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            padding-left: 32px;
+            line-height: 1.6;
+        }
+
+        .insight-quote cite {
+            display: block;
+            font-size: 14px;
+            font-style: normal;
+            color: var(--accent-blue);
+            padding-left: 32px;
+        }
+
+        /* ========================================
+           COMPANY BADGES
+           ======================================== */
+
+        .company-section {
+            margin-top: 48px;
+            padding-top: 48px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .company-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .google-badge {
+            background: rgba(66, 133, 244, 0.15);
+            color: #4285F4;
+        }
+
+        .openai-badge {
+            background: rgba(0, 166, 126, 0.15);
+            color: #00A67E;
+        }
+
+        /* ========================================
+           STATS TABLE
+           ======================================== */
+
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+
+        .stats-table th,
+        .stats-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .stats-table th {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(17, 24, 32, 0.4);
+        }
+
+        .stats-table td {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        /* ========================================
+           SOURCES SECTION
+           ======================================== */
+
+        .sources-section {
+            background: rgba(17, 24, 32, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 32px;
+            margin: 48px 0;
+        }
+
+        .sources-section h2 {
+            font-size: 22px;
+            margin: 0 0 20px;
+            color: var(--text-primary);
+        }
+
+        .sources-section p {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* ========================================
+           RELATED SECTION
+           ======================================== */
+
+        .related-section {
+            margin: 64px 0;
+        }
+
+        .related-section h2 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .related-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 24px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .related-card:hover {
+            border-color: rgba(74, 192, 255, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .related-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 8px;
+            line-height: 1.4;
+        }
+
+        .related-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(74, 192, 255, 0.12) 0%, rgba(17, 24, 32, 0.9) 100%);
+            border: 1px solid rgba(74, 192, 255, 0.2);
+            border-radius: 24px;
+            padding: 56px;
+            text-align: center;
+            margin: 64px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 28px;
+            margin: 0 0 16px;
+        }
+
+        .cta-section p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), #3AA0D9);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(74, 192, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+
+        @media (max-width: 1024px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .toc-sidebar {
+                display: none;
+            }
+
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
-            .article-title { font-size: 32px; }
-            .related-grid { grid-template-columns: 1fr; }
+            .blog-breadcrumbs {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .page-container {
+                padding: 0 16px;
+            }
+
+            .article-header {
+                padding: 32px 16px;
+            }
+
+            .article-header h1 {
+                font-size: 32px;
+            }
+
+            .article-subtitle {
+                font-size: 17px;
+            }
+
+            .patent-card {
+                padding: 20px;
+            }
+
+            .insight-quote {
+                padding: 20px 16px;
+            }
+
+            .insight-quote p {
+                padding-left: 24px;
+                font-size: 16px;
+            }
+
+            .insight-quote cite {
+                padding-left: 24px;
+            }
+
+            .insight-quote::before {
+                font-size: 36px;
+                left: 12px;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 40px 24px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
         }
     </style>
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "What AI Search Patents Reveal",
+        "description": "Analysis of 13 patents from Google and OpenAI reveals the technical infrastructure behind AI search.",
+        "author": {
+            "@type": "Person",
+            "name": "Patrick Gallagher"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Fokal",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.fokal.com/fokal-wordmark-icon.svg"
+            }
+        },
+        "datePublished": "2025-12-20",
+        "dateModified": "2025-12-26"
+    }
+    </script>
 </head>
 <body>
     <div id="header-container"></div>
     <script src="/components/header.js"></script>
 
-    <!-- Breadcrumb (uses blog.css for navbar clearance) -->
+    <!-- Breadcrumb -->
     <div class="blog-breadcrumbs">
         <a href="/">Home</a>
         <span class="separator">›</span>
         <a href="/insights">Insights</a>
         <span class="separator">›</span>
-        <span class="current">Patents</span>
+        <span class="current">AI Search Patents</span>
     </div>
 
-    <section class="article-hero">
-        <div class="container">
-            <span class="research-badge">Fokal Research</span>
-            <h1 class="article-title">What AI Search Patents Reveal</h1>
-            <p class="article-subtitle">Analysis of 13 patents from Google and OpenAI on AI search, embeddings, and agent coordination</p>
+    <!-- Article Header -->
+    <header class="article-header">
+        <span class="article-category">Fokal Research</span>
+        <h1>What AI Search Patents Reveal</h1>
+        <p class="article-subtitle">Patents reveal what companies are building, not just what they're saying. We analyzed 13 recently published patents from Google and OpenAI to understand the technical infrastructure behind AI search.</p>
 
-            <div class="article-meta">
-                <div class="article-meta-item">
-                    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6z"/></svg>
-                    Method: USPTO API fetch
+        <div class="article-meta-wrapper">
+            <img src="/patrick-photo.jpg" alt="Patrick Gallagher" class="author-thumb-large">
+            <div class="article-meta-content">
+                <div class="article-meta-bar">
+                    <span class="meta-item">Written by
+                        <span class="author-hover-wrapper">
+                            <a class="author-name-link">Patrick Gallagher</a>
+                            <div class="author-hover-card">
+                                <div class="author-card-header">
+                                    <img src="/patrick-photo.jpg" alt="Patrick Gallagher" class="author-card-photo">
+                                    <div class="author-card-info">
+                                        <div class="author-card-label">Written by</div>
+                                        <div class="author-card-name">Patrick Gallagher</div>
+                                        <div class="author-card-title">Founder & CEO, Fokal</div>
+                                    </div>
+                                </div>
+                                <p class="author-card-bio">Patrick is the founder of Fokal, helping brands understand and improve their visibility in AI-powered search. With a background in high-growth fintechs, he spends all waking hours understanding the future of search.</p>
+                                <div class="author-card-expertise">
+                                    <div class="author-card-expertise-label">Patrick's expertise:</div>
+                                    <div class="author-card-tags">
+                                        <span class="author-card-tag">AI Search</span>
+                                        <span class="author-card-tag">SEO Strategy</span>
+                                        <span class="author-card-tag">Brand Visibility</span>
+                                        <span class="author-card-tag">E-E-A-T</span>
+                                    </div>
+                                </div>
+                                <a href="/about" class="author-card-link">
+                                    Read full profile
+                                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                                </a>
+                            </div>
+                        </span>
+                    </span>
                 </div>
-                <div class="article-meta-item">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                    6 Google + 7 OpenAI patents
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <article class="article-body">
-        <div class="container">
-            <h2>Executive Summary</h2>
-            <p>Patents reveal what companies are building, not just what they're saying. We analyzed 13 recently published patents from Google and OpenAI to understand the technical infrastructure behind AI search. Key findings: Google is focused on efficiency and multi-modal understanding; OpenAI is building agent coordination systems.</p>
-
-            <h2>Key Statistics</h2>
-            <table class="stats-table">
-                <tr><th>Metric</th><th>Value</th></tr>
-                <tr><td>Total patents analyzed</td><td>13</td></tr>
-                <tr><td>Google patents</td><td>6</td></tr>
-                <tr><td>OpenAI patents</td><td>7</td></tr>
-                <tr><td>Google total USPTO patents</td><td>46,384</td></tr>
-                <tr><td>OpenAI total USPTO patents</td><td>71</td></tr>
-            </table>
-
-            <div class="company-section">
-                <span class="company-badge google-badge">Google Patents</span>
-
-                <div class="patent-card">
-                    <h4>Privacy Controls for Embeddings</h4>
-                    <p class="patent-id">US-20250384079-A1</p>
-                    <blockquote><p>"Embeddings can be shared with others via digital keys, allowing limited access to search for that person in media collections without exposing the actual embedding data."</p></blockquote>
-                    <p><strong>Key mechanism:</strong> Revocable key-based access to embeddings. Users can share access to their data without exposing the underlying vectors.</p>
-                    <div class="implication"><strong>Implication:</strong> Privacy-first search architecture. Google is building systems where personalization doesn't require exposing user data.</div>
-                </div>
-
-                <div class="patent-card">
-                    <h4>Multi-User LLM Conversations</h4>
-                    <p class="patent-id">US-20250384215-A1</p>
-                    <blockquote><p>"A two-stage ML model approach where a first model evaluates whether user input targets another participant or the assistant, then a second model generates contextual responses only when appropriate."</p></blockquote>
-                    <p><strong>Key mechanism:</strong> AI that knows when to respond in group conversations vs. when to stay silent.</p>
-                    <div class="implication"><strong>Implication:</strong> AI assistants will increasingly participate in group contexts—not just one-on-one chat.</div>
-                </div>
-
-                <div class="patent-card">
-                    <h4>Matryoshka Embeddings (Reduced Dimensionality)</h4>
-                    <p class="patent-id">US-20250384346-A1</p>
-                    <blockquote><p>"Matryoshka embeddings—nested representations where progressively lower-dimensional versions are extracted from a single source. Enabling efficient retrieval at various computational budget levels."</p></blockquote>
-                    <p><strong>Key mechanism:</strong> Variable-quality search based on computational budget. One model produces multiple quality levels (512-, 256-, or 128-dimensional from 1024-dimensional source).</p>
-                    <div class="implication"><strong>Implication:</strong> Faster, cheaper search at scale. Google can serve billions of queries by dynamically choosing embedding quality.</div>
-                </div>
-
-                <div class="patent-card">
-                    <h4>Query Routing from Multiple Sources</h4>
-                    <p class="patent-id">US-20250370993-A1</p>
-                    <blockquote><p>"The system uses a trained model to assess sampling ratios and information loss to determine which source will produce superior accuracy within acceptable latency constraints."</p></blockquote>
-                    <p><strong>Key mechanism:</strong> Dynamic source selection per query, balancing speed vs. accuracy.</p>
-                    <div class="implication"><strong>Implication:</strong> AI search isn't one system—it's many systems, intelligently routed per query.</div>
-                </div>
-
-                <div class="patent-card">
-                    <h4>Open-Vocabulary Object Detection</h4>
-                    <p class="patent-id">US-20250384650-A1</p>
-                    <blockquote><p>"Approximately 200x computational savings versus competing methods. Enables direct transfer between datasets by swapping vocabulary without fine-tuning."</p></blockquote>
-                    <div class="implication"><strong>Implication:</strong> Multimodal search will scale. Recognizing objects in images becomes 200x cheaper.</div>
-                </div>
-
-                <div class="patent-card">
-                    <h4>In-Context Example Selection</h4>
-                    <p class="patent-id">US-20250384666-A1</p>
-                    <blockquote><p>"Strategically repeats difficult demonstration examples within the context input. Simply adding more demonstration examples doesn't guarantee improved performance."</p></blockquote>
-                    <div class="implication"><strong>Implication:</strong> Prompt engineering matters. The examples you show AI determine output quality.</div>
-                </div>
-            </div>
-
-            <div class="company-section">
-                <span class="company-badge openai-badge">OpenAI Patents</span>
-
-                <div class="patent-card">
-                    <h4>Multi-Agent Shared Workspace</h4>
-                    <p class="patent-id">US-20250377934-A1</p>
-                    <blockquote><p>"Agents have access to a common workspace and can view the state of a workspace. Agents autonomously decide whether to 'yield' (defer to others) or 'act' (respond) to workspace updates."</p></blockquote>
-                    <div class="implication"><strong>Implication:</strong> The future isn't single-agent AI—it's teams of specialized agents working together.</div>
-                </div>
-
-                <div class="patent-card">
-                    <h4>Agent-to-Agent Interactions</h4>
-                    <p class="patent-id">US-20250373574-A1</p>
-                    <blockquote><p>"AI agent instances interacting with each other on behalf of different user accounts. Recipient users can block unwanted agent communications through blocklists."</p></blockquote>
-                    <p>Described as a "'have your people call my people' workflow."</p>
-                    <div class="implication"><strong>Implication:</strong> AI agents will negotiate and transact on your behalf—with consent frameworks.</div>
-                </div>
-
-                <div class="patent-card">
-                    <h4>Long Running Tasks</h4>
-                    <p class="patent-id">US-20250378278-A1</p>
-                    <blockquote><p>"Users can submit follow-up prompts to modify, clarify, or add to the original request without waiting for completion. Particularly useful for multi-hour or multi-day computational tasks."</p></blockquote>
-                    <div class="implication"><strong>Implication:</strong> AI won't just answer questions—it will execute multi-day projects you can adjust along the way.</div>
-                </div>
-
-                <div class="patent-card">
-                    <h4>Schema-Based API Integration</h4>
-                    <p class="patent-id">US-20250110811-A1</p>
-                    <blockquote><p>"Publishers can host a manifest file and specification document at their own domains. The system automatically discovers and integrates these APIs, enabling it to intelligently call external endpoints without requiring retraining."</p></blockquote>
-                    <div class="implication"><strong>Implication:</strong> Your website can become AI-callable. Publish a manifest, and AI agents can use your service.</div>
-                </div>
-
-                <div class="patent-card">
-                    <h4>Selective Learning/Personalization</h4>
-                    <p class="patent-id">US-20250200361-A1</p>
-                    <blockquote><p>"Learn such facts, preferences, or contexts from conversational prompts." Stored in a "personalization notepad" for "generating tailored responses across sessions." "Users can request deletion of learned information."</p></blockquote>
-                    <div class="implication"><strong>Implication:</strong> AI personalization will be implicit and continuous—but with user control.</div>
-                </div>
-
-                <div class="patent-card">
-                    <h4>Contrastive Embeddings</h4>
-                    <p class="patent-id">US-20240370779-A1</p>
-                    <blockquote><p>"Leverages naturally-occurring pairs from unlabeled data (adjacent text, docstrings paired with code implementations). Initializes with pre-trained generative models before fine-tuning."</p></blockquote>
-                    <div class="implication"><strong>Implication:</strong> Better search through understanding relationships, not just keywords.</div>
-                </div>
-
-                <div class="patent-card">
-                    <h4>Custom Model Instructions</h4>
-                    <p class="patent-id">US-20250384222-A1</p>
-                    <blockquote><p>"Structured storage of user preferences in session-specific caches. Dynamic integration of instructions into system prompts based on trigger events."</p></blockquote>
-                    <div class="implication"><strong>Implication:</strong> AI that knows when to apply your preferences and when to ignore them.</div>
-                </div>
-            </div>
-
-            <h2>The Big Picture</h2>
-
-            <h3>What Google is Building</h3>
-            <p><strong>Efficiency:</strong> Matryoshka embeddings, query routing, computational savings</p>
-            <p><strong>Privacy:</strong> Key-based access to embeddings, user-controlled sharing</p>
-            <p><strong>Multimodal:</strong> Visual search, open-vocabulary detection</p>
-
-            <h3>What OpenAI is Building</h3>
-            <p><strong>Agent systems:</strong> Multi-agent workspaces, agent-to-agent communication</p>
-            <p><strong>Long-running tasks:</strong> Async execution, mid-flight modification</p>
-            <p><strong>Personalization:</strong> Implicit learning, preference storage</p>
-
-            <h3>What This Means for Content Creators</h3>
-            <p><strong>Your content trains these systems</strong> - High-quality content becomes training data for better AI</p>
-            <p><strong>APIs matter</strong> - Consider how AI agents might interact with your services</p>
-            <p><strong>Multimodal is coming</strong> - Invest in images, video, structured data</p>
-            <p><strong>Privacy controls exist</strong> - Users will control how their data is used</p>
-
-            <div class="sources-section">
-                <h2>Sources</h2>
-                <p>All patents fetched via USPTO API, December 2025. Full patent documents available at patents.google.com.</p>
-            </div>
-
-            <div class="related-section">
-                <h2>Related Research</h2>
-                <div class="related-grid">
-                    <a href="/ai-search-consensus" class="related-card">
-                        <h3>What Google & Bing Agree On</h3>
-                        <p>Official guidance from search engines</p>
-                    </a>
-                    <a href="/google-vs-openai-search" class="related-card">
-                        <h3>Google vs OpenAI: Infrastructure Race</h3>
-                        <p>Hiring signals and investment patterns</p>
-                    </a>
-                </div>
-            </div>
-
-            <div class="cta-section">
-                <h2>Track Your AI Search Visibility</h2>
-                <p>See where your brand appears across ChatGPT, Perplexity, and Google AI Overviews.</p>
-                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                    <button class="btn btn-primary" onclick="signInWithGoogle()">Get Started Free</button>
-                    <a href="/insights" class="btn btn-secondary">Back to Insights</a>
+                <div class="article-updated-row">
+                    <span class="updated-badge">Updated Dec 26, 2025</span>
+                    <span class="fact-checked-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        USPTO Patent Data
+                    </span>
                 </div>
             </div>
         </div>
-    </article>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="page-container">
+        <div class="article-layout">
+            <!-- Main Article -->
+            <main class="article-main">
+                <article class="article-content">
+                    <!-- Key Takeaways -->
+                    <div class="key-takeaways-box">
+                        <h3 class="takeaways-title">The Bottom Line</h3>
+                        <ul class="takeaways-list">
+                            <li><strong>Google is focused on efficiency.</strong> Matryoshka embeddings, query routing, 200x computational savings.</li>
+                            <li><strong>OpenAI is building agent systems.</strong> Multi-agent workspaces, agent-to-agent communication, long-running tasks.</li>
+                            <li><strong>Privacy controls are coming.</strong> Key-based access to embeddings, user-controlled personalization.</li>
+                            <li><strong>Your website can become AI-callable.</strong> Schema-based API integration means AI agents can use your service directly.</li>
+                        </ul>
+                    </div>
+
+                    <h2 id="overview">Why Patents Matter</h2>
+                    <p>
+                        Everyone reads the blog posts. Few people read the patents. But patents reveal what companies are actually building—not just what they're saying at conferences. We analyzed 13 recently published patents from Google and OpenAI to understand the technical infrastructure behind AI search.
+                    </p>
+
+                    <h2 id="statistics">Key Statistics</h2>
+                    <table class="stats-table">
+                        <tr><th>Metric</th><th>Value</th></tr>
+                        <tr><td>Total patents analyzed</td><td>13</td></tr>
+                        <tr><td>Google patents</td><td>6</td></tr>
+                        <tr><td>OpenAI patents</td><td>7</td></tr>
+                        <tr><td>Google total USPTO patents</td><td>46,384</td></tr>
+                        <tr><td>OpenAI total USPTO patents</td><td>71</td></tr>
+                    </table>
+
+                    <div class="company-section">
+                        <span class="company-badge google-badge">Google Patents</span>
+
+                        <div class="patent-card">
+                            <h4>Privacy Controls for Embeddings</h4>
+                            <p class="patent-id">US-20250384079-A1</p>
+                            <div class="insight-quote">
+                                <p>"Embeddings can be shared with others via digital keys, allowing limited access to search for that person in media collections without exposing the actual embedding data."</p>
+                            </div>
+                            <p><strong>Key mechanism:</strong> Revocable key-based access to embeddings. Users can share access to their data without exposing the underlying vectors.</p>
+                            <div class="implication"><strong>Implication:</strong> Privacy-first search architecture. Google is building systems where personalization doesn't require exposing user data.</div>
+                        </div>
+
+                        <div class="patent-card">
+                            <h4>Multi-User LLM Conversations</h4>
+                            <p class="patent-id">US-20250384215-A1</p>
+                            <div class="insight-quote">
+                                <p>"A two-stage ML model approach where a first model evaluates whether user input targets another participant or the assistant, then a second model generates contextual responses only when appropriate."</p>
+                            </div>
+                            <p><strong>Key mechanism:</strong> AI that knows when to respond in group conversations vs. when to stay silent.</p>
+                            <div class="implication"><strong>Implication:</strong> AI assistants will increasingly participate in group contexts—not just one-on-one chat.</div>
+                        </div>
+
+                        <div class="patent-card">
+                            <h4>Matryoshka Embeddings (Reduced Dimensionality)</h4>
+                            <p class="patent-id">US-20250384346-A1</p>
+                            <div class="insight-quote">
+                                <p>"Matryoshka embeddings—nested representations where progressively lower-dimensional versions are extracted from a single source. Enabling efficient retrieval at various computational budget levels."</p>
+                            </div>
+                            <p><strong>Key mechanism:</strong> Variable-quality search based on computational budget. One model produces multiple quality levels (512-, 256-, or 128-dimensional from 1024-dimensional source).</p>
+                            <div class="implication"><strong>Implication:</strong> Faster, cheaper search at scale. Google can serve billions of queries by dynamically choosing embedding quality.</div>
+                        </div>
+
+                        <div class="patent-card">
+                            <h4>Query Routing from Multiple Sources</h4>
+                            <p class="patent-id">US-20250370993-A1</p>
+                            <div class="insight-quote">
+                                <p>"The system uses a trained model to assess sampling ratios and information loss to determine which source will produce superior accuracy within acceptable latency constraints."</p>
+                            </div>
+                            <p><strong>Key mechanism:</strong> Dynamic source selection per query, balancing speed vs. accuracy.</p>
+                            <div class="implication"><strong>Implication:</strong> AI search isn't one system—it's many systems, intelligently routed per query.</div>
+                        </div>
+
+                        <div class="patent-card">
+                            <h4>Open-Vocabulary Object Detection</h4>
+                            <p class="patent-id">US-20250384650-A1</p>
+                            <div class="insight-quote">
+                                <p>"Approximately 200x computational savings versus competing methods. Enables direct transfer between datasets by swapping vocabulary without fine-tuning."</p>
+                            </div>
+                            <div class="implication"><strong>Implication:</strong> Multimodal search will scale. Recognizing objects in images becomes 200x cheaper.</div>
+                        </div>
+
+                        <div class="patent-card">
+                            <h4>In-Context Example Selection</h4>
+                            <p class="patent-id">US-20250384666-A1</p>
+                            <div class="insight-quote">
+                                <p>"Strategically repeats difficult demonstration examples within the context input. Simply adding more demonstration examples doesn't guarantee improved performance."</p>
+                            </div>
+                            <div class="implication"><strong>Implication:</strong> Prompt engineering matters. The examples you show AI determine output quality.</div>
+                        </div>
+                    </div>
+
+                    <div class="company-section">
+                        <span class="company-badge openai-badge">OpenAI Patents</span>
+
+                        <div class="patent-card">
+                            <h4>Multi-Agent Shared Workspace</h4>
+                            <p class="patent-id">US-20250377934-A1</p>
+                            <div class="insight-quote">
+                                <p>"Agents have access to a common workspace and can view the state of a workspace. Agents autonomously decide whether to 'yield' (defer to others) or 'act' (respond) to workspace updates."</p>
+                            </div>
+                            <div class="implication"><strong>Implication:</strong> The future isn't single-agent AI—it's teams of specialized agents working together.</div>
+                        </div>
+
+                        <div class="patent-card">
+                            <h4>Agent-to-Agent Interactions</h4>
+                            <p class="patent-id">US-20250373574-A1</p>
+                            <div class="insight-quote">
+                                <p>"AI agent instances interacting with each other on behalf of different user accounts. Recipient users can block unwanted agent communications through blocklists."</p>
+                            </div>
+                            <p>Described as a "'have your people call my people' workflow."</p>
+                            <div class="implication"><strong>Implication:</strong> AI agents will negotiate and transact on your behalf—with consent frameworks.</div>
+                        </div>
+
+                        <div class="patent-card">
+                            <h4>Long Running Tasks</h4>
+                            <p class="patent-id">US-20250378278-A1</p>
+                            <div class="insight-quote">
+                                <p>"Users can submit follow-up prompts to modify, clarify, or add to the original request without waiting for completion. Particularly useful for multi-hour or multi-day computational tasks."</p>
+                            </div>
+                            <div class="implication"><strong>Implication:</strong> AI won't just answer questions—it will execute multi-day projects you can adjust along the way.</div>
+                        </div>
+
+                        <div class="patent-card">
+                            <h4>Schema-Based API Integration</h4>
+                            <p class="patent-id">US-20250110811-A1</p>
+                            <div class="insight-quote">
+                                <p>"Publishers can host a manifest file and specification document at their own domains. The system automatically discovers and integrates these APIs, enabling it to intelligently call external endpoints without requiring retraining."</p>
+                            </div>
+                            <div class="implication"><strong>Implication:</strong> Your website can become AI-callable. Publish a manifest, and AI agents can use your service.</div>
+                        </div>
+
+                        <div class="patent-card">
+                            <h4>Selective Learning/Personalization</h4>
+                            <p class="patent-id">US-20250200361-A1</p>
+                            <div class="insight-quote">
+                                <p>"Learn such facts, preferences, or contexts from conversational prompts." Stored in a "personalization notepad" for "generating tailored responses across sessions." "Users can request deletion of learned information."</p>
+                            </div>
+                            <div class="implication"><strong>Implication:</strong> AI personalization will be implicit and continuous—but with user control.</div>
+                        </div>
+
+                        <div class="patent-card">
+                            <h4>Contrastive Embeddings</h4>
+                            <p class="patent-id">US-20240370779-A1</p>
+                            <div class="insight-quote">
+                                <p>"Leverages naturally-occurring pairs from unlabeled data (adjacent text, docstrings paired with code implementations). Initializes with pre-trained generative models before fine-tuning."</p>
+                            </div>
+                            <div class="implication"><strong>Implication:</strong> Better search through understanding relationships, not just keywords.</div>
+                        </div>
+
+                        <div class="patent-card">
+                            <h4>Custom Model Instructions</h4>
+                            <p class="patent-id">US-20250384222-A1</p>
+                            <div class="insight-quote">
+                                <p>"Structured storage of user preferences in session-specific caches. Dynamic integration of instructions into system prompts based on trigger events."</p>
+                            </div>
+                            <div class="implication"><strong>Implication:</strong> AI that knows when to apply your preferences and when to ignore them.</div>
+                        </div>
+                    </div>
+
+                    <h2 id="big-picture">The Big Picture</h2>
+
+                    <h3>What Google is Building</h3>
+                    <p><strong>Efficiency:</strong> Matryoshka embeddings, query routing, computational savings. Google is optimizing for billions of queries at scale.</p>
+                    <p><strong>Privacy:</strong> Key-based access to embeddings, user-controlled sharing. Personalization without exposure.</p>
+                    <p><strong>Multimodal:</strong> Visual search, open-vocabulary detection. 200x cheaper object recognition.</p>
+
+                    <h3>What OpenAI is Building</h3>
+                    <p><strong>Agent systems:</strong> Multi-agent workspaces, agent-to-agent communication. Teams of AI working together.</p>
+                    <p><strong>Long-running tasks:</strong> Async execution, mid-flight modification. AI that works on multi-day projects.</p>
+                    <p><strong>Personalization:</strong> Implicit learning, preference storage. AI that remembers you—with your consent.</p>
+
+                    <h3 id="content-creators">What This Means for Content Creators</h3>
+                    <p><strong>Your content trains these systems.</strong> High-quality content becomes training data for better AI.</p>
+                    <p><strong>APIs matter.</strong> Consider how AI agents might interact with your services.</p>
+                    <p><strong>Multimodal is coming.</strong> Invest in images, video, structured data.</p>
+                    <p><strong>Privacy controls exist.</strong> Users will control how their data is used.</p>
+
+                    <!-- Sources -->
+                    <div class="sources-section">
+                        <h2>Sources</h2>
+                        <p>All patents fetched via USPTO API, December 2025. Full patent documents available at patents.google.com.</p>
+                    </div>
+
+                    <!-- Related -->
+                    <div class="related-section">
+                        <h2>Related Research</h2>
+                        <div class="related-grid">
+                            <a href="/ai-search-consensus" class="related-card">
+                                <h3>What Google & Bing Agree On</h3>
+                                <p>Official guidance from search engines</p>
+                            </a>
+                            <a href="/llm-citation-selection" class="related-card">
+                                <h3>How LLMs Cite</h3>
+                                <p>The mechanics of AI citation selection</p>
+                            </a>
+                            <a href="/google-vs-openai-search" class="related-card">
+                                <h3>Google vs OpenAI</h3>
+                                <p>Hiring signals and investment patterns</p>
+                            </a>
+                            <a href="/insights" class="related-card">
+                                <h3>All Research</h3>
+                                <p>View all Fokal Insights</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="cta-section">
+                        <h2>Track Your AI Search Visibility</h2>
+                        <p>See where your brand appears across ChatGPT, Perplexity, and Google AI Overviews.</p>
+                        <div class="cta-buttons">
+                            <button class="btn btn-primary" onclick="signInWithGoogle()">Get Started Free</button>
+                            <a href="/insights" class="btn btn-secondary">Back to Insights</a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+            <!-- Sticky TOC Sidebar -->
+            <aside class="toc-sidebar">
+                <div class="toc-card">
+                    <div class="toc-title">On This Page</div>
+                    <ul class="toc-list">
+                        <li><a href="#overview">Why Patents Matter</a></li>
+                        <li><a href="#statistics">Key Statistics</a></li>
+                        <li><a href="#big-picture">The Big Picture</a></li>
+                        <li><a href="#content-creators">For Content Creators</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
 
     <div id="footer-container"></div>
     <div id="auth-modal-container"></div>
