@@ -204,6 +204,140 @@
         }
 
         /* ========================================
+           AUTHOR HOVER CARD
+           ======================================== */
+
+        .author-hover-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .author-name-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            cursor: pointer;
+            border-bottom: 1px dotted var(--text-muted);
+            transition: color 0.2s ease;
+        }
+
+        .author-name-link:hover {
+            color: var(--accent-blue);
+            border-bottom-color: var(--accent-blue);
+        }
+
+        .author-hover-card {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 0;
+            width: 340px;
+            background: var(--bg-panel);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+
+        .author-hover-wrapper:hover .author-hover-card {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .author-card-header {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .author-card-photo {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .author-card-info {
+            flex: 1;
+        }
+
+        .author-card-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .author-card-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .author-card-title {
+            font-size: 14px;
+            color: var(--accent-blue);
+        }
+
+        .author-card-bio {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+
+        .author-card-expertise {
+            margin-bottom: 14px;
+        }
+
+        .author-card-expertise-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .author-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .author-card-tag {
+            background: rgba(74, 192, 255, 0.1);
+            color: var(--accent-blue);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .author-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .author-card-link:hover {
+            text-decoration: underline;
+        }
+
+        .author-card-link svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        /* ========================================
            KEY TAKEAWAYS - INLINE BOX
            ======================================== */
 
@@ -791,7 +925,35 @@
             <img src="/patrick-photo.jpg" alt="Patrick Gallagher" class="author-thumb-large">
             <div class="article-meta-content">
                 <div class="article-meta-bar">
-                    <span class="meta-item">Written by Patrick Gallagher</span>
+                    <span class="meta-item">Written by
+                        <span class="author-hover-wrapper">
+                            <a class="author-name-link">Patrick Gallagher</a>
+                            <div class="author-hover-card">
+                                <div class="author-card-header">
+                                    <img src="/patrick-photo.jpg" alt="Patrick Gallagher" class="author-card-photo">
+                                    <div class="author-card-info">
+                                        <div class="author-card-label">Written by</div>
+                                        <div class="author-card-name">Patrick Gallagher</div>
+                                        <div class="author-card-title">Founder & CEO, Fokal</div>
+                                    </div>
+                                </div>
+                                <p class="author-card-bio">Patrick is the founder of Fokal, helping brands understand and improve their visibility in AI-powered search. With a background in SEO and digital marketing, he's spent years studying how search engines evaluate and surface content.</p>
+                                <div class="author-card-expertise">
+                                    <div class="author-card-expertise-label">Patrick's expertise:</div>
+                                    <div class="author-card-tags">
+                                        <span class="author-card-tag">AI Search</span>
+                                        <span class="author-card-tag">SEO Strategy</span>
+                                        <span class="author-card-tag">Brand Visibility</span>
+                                        <span class="author-card-tag">E-E-A-T</span>
+                                    </div>
+                                </div>
+                                <a href="/about" class="author-card-link">
+                                    Read full profile
+                                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                                </a>
+                            </div>
+                        </span>
+                    </span>
                 </div>
                 <div class="article-updated-row">
                     <span class="updated-badge">Updated Dec 25, 2025</span>
