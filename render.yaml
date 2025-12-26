@@ -82,25 +82,54 @@ services:
       - type: rewrite
         source: /visibility-gaps
         destination: /visibility-gaps.html
-      # Insights hub and research briefs
-      - type: rewrite
+      # 301 Redirects: Old research URLs to new /ai-seo-research/ structure
+      - type: redirect
         source: /insights
-        destination: /insights.html
-      - type: rewrite
-        source: /ai-search-patents
-        destination: /ai-search-patents.html
-      - type: rewrite
-        source: /ai-search-consensus
-        destination: /ai-search-consensus.html
-      - type: rewrite
-        source: /google-vs-openai-search
-        destination: /google-vs-openai-search.html
-      - type: rewrite
-        source: /ai-search-conversions
-        destination: /ai-search-conversions.html
-      - type: rewrite
-        source: /llm-citation-selection
-        destination: /llm-citation-selection.html
-      - type: rewrite
+        destination: /ai-seo-research
+        status: 301
+      - type: redirect
         source: /ai-search-compensation
-        destination: /ai-search-compensation.html
+        destination: /ai-seo-research/openai-salary
+        status: 301
+      - type: redirect
+        source: /ai-search-conversions
+        destination: /ai-seo-research/zero-click-search
+        status: 301
+      - type: redirect
+        source: /google-vs-openai-search
+        destination: /ai-seo-research/chatgpt-vs-google
+        status: 301
+      - type: redirect
+        source: /ai-search-patents
+        destination: /ai-seo-research/ai-search-patents
+        status: 301
+      - type: redirect
+        source: /ai-search-consensus
+        destination: /ai-seo-research/ai-search-consensus
+        status: 301
+      - type: redirect
+        source: /llm-citation-selection
+        destination: /ai-seo-research/ai-citations
+        status: 301
+      # AI SEO Research hub and articles (new structure)
+      - type: rewrite
+        source: /ai-seo-research
+        destination: /ai-seo-research.html
+      - type: rewrite
+        source: /ai-seo-research/openai-salary
+        destination: /ai-seo-research/openai-salary.html
+      - type: rewrite
+        source: /ai-seo-research/zero-click-search
+        destination: /ai-seo-research/zero-click-search.html
+      - type: rewrite
+        source: /ai-seo-research/chatgpt-vs-google
+        destination: /ai-seo-research/chatgpt-vs-google.html
+      - type: rewrite
+        source: /ai-seo-research/ai-search-patents
+        destination: /ai-seo-research/ai-search-patents.html
+      - type: rewrite
+        source: /ai-seo-research/ai-search-consensus
+        destination: /ai-seo-research/ai-search-consensus.html
+      - type: rewrite
+        source: /ai-seo-research/ai-citations
+        destination: /ai-seo-research/ai-citations.html

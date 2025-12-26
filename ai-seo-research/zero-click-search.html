@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI doesn't rank your pages. It clusters them and picks ONE to cite—possibly an outdated version. Here's the weird citation behavior you need to understand.">
-    <meta name="keywords" content="LLM citations, AI search citations, duplicate content SEO, canonical tags, sitemap optimization, IndexNow">
-    <meta property="og:title" content="Why AI Might Be Citing Your Outdated Content | Fokal">
-    <meta property="og:description" content="AI clusters your pages and picks ONE to cite. If it chooses wrong, your best content is invisible.">
+    <meta name="description" content="Your traffic is down. Your conversions are up. If that's happening, you're seeing AI search work. Here's why clicks stopped being the metric that matters.">
+    <meta name="keywords" content="zero click searches, AI search conversions, zero-click search, citation metrics, AI search analytics, conversion tracking">
+    <meta property="og:title" content="Your Traffic Is Down. Your Conversions Are Up. That's AI Search. | Fokal">
+    <meta property="og:description" content="Clicks are down. Conversions are up. Welcome to the new math of AI search.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.fokal.com/llm-citation-selection">
-    <meta property="article:published_time" content="2025-12-15">
+    <meta property="og:url" content="https://www.fokal.com/ai-seo-research/zero-click-search">
+    <meta property="article:published_time" content="2025-11-20">
     <meta property="article:modified_time" content="2025-12-26">
     <meta property="article:author" content="Patrick Gallagher">
-    <title>Why AI Might Be Citing Your Outdated Content | Fokal</title>
+    <title>Your Traffic Is Down. Your Conversions Are Up. That's AI Search. | Fokal</title>
 
     <link rel="icon" type="image/png" href="/fokal-favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,6 @@
             --accent-blue: #4AC0FF;
             --accent-green: #00E676;
             --accent-purple: #B388FF;
-            --accent-amber: #FFA726;
         }
 
         body {
@@ -64,7 +63,6 @@
             padding: 0 32px;
         }
 
-        /* Two-column layout */
         .article-layout {
             display: grid;
             grid-template-columns: 1fr 260px;
@@ -143,7 +141,6 @@
         .article-meta-bar {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
             gap: 20px;
             flex-wrap: wrap;
         }
@@ -249,80 +246,18 @@
             flex-shrink: 0;
         }
 
-        .author-card-info {
-            flex: 1;
-        }
-
-        .author-card-label {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 4px;
-        }
-
-        .author-card-name {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 2px;
-        }
-
-        .author-card-title {
-            font-size: 14px;
-            color: var(--accent-blue);
-        }
-
-        .author-card-bio {
-            font-size: 14px;
-            line-height: 1.6;
-            color: var(--text-secondary);
-            margin-bottom: 14px;
-        }
-
-        .author-card-expertise {
-            margin-bottom: 14px;
-        }
-
-        .author-card-expertise-label {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-        }
-
-        .author-card-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .author-card-tag {
-            background: rgba(74, 192, 255, 0.1);
-            color: var(--accent-blue);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .author-card-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--accent-blue);
-            text-decoration: none;
-        }
-
-        .author-card-link:hover {
-            text-decoration: underline;
-        }
-
-        .author-card-link svg {
-            width: 14px;
-            height: 14px;
-            fill: currentColor;
-        }
+        .author-card-info { flex: 1; }
+        .author-card-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+        .author-card-name { font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
+        .author-card-title { font-size: 14px; color: var(--accent-blue); }
+        .author-card-bio { font-size: 14px; line-height: 1.6; color: var(--text-secondary); margin-bottom: 14px; }
+        .author-card-expertise { margin-bottom: 14px; }
+        .author-card-expertise-label { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
+        .author-card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .author-card-tag { background: rgba(74, 192, 255, 0.1); color: var(--accent-blue); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+        .author-card-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--accent-blue); text-decoration: none; }
+        .author-card-link:hover { text-decoration: underline; }
+        .author-card-link svg { width: 14px; height: 14px; fill: currentColor; }
 
         /* ========================================
            KEY TAKEAWAYS BOX
@@ -341,8 +276,6 @@
             font-weight: 700;
             color: var(--accent-blue);
             margin: 0 0 16px 0;
-            padding: 0;
-            border: none;
         }
 
         .key-takeaways-box .takeaways-list {
@@ -360,9 +293,7 @@
             color: var(--text-secondary);
         }
 
-        .key-takeaways-box .takeaways-list li:last-child {
-            margin-bottom: 0;
-        }
+        .key-takeaways-box .takeaways-list li:last-child { margin-bottom: 0; }
 
         .key-takeaways-box .takeaways-list li::before {
             content: "\2713";
@@ -409,9 +340,7 @@
             margin: 0;
         }
 
-        .toc-list li {
-            margin-bottom: 4px;
-        }
+        .toc-list li { margin-bottom: 4px; }
 
         .toc-list a {
             display: block;
@@ -447,9 +376,7 @@
             scroll-margin-top: 100px;
         }
 
-        .article-content h2:first-child {
-            margin-top: 0;
-        }
+        .article-content h2:first-child { margin-top: 0; }
 
         .article-content h3 {
             font-size: 22px;
@@ -458,9 +385,7 @@
             margin: 40px 0 16px;
         }
 
-        .article-content p {
-            margin-bottom: 24px;
-        }
+        .article-content p { margin-bottom: 24px; }
 
         .article-content a {
             color: var(--accent-blue);
@@ -475,21 +400,7 @@
             text-decoration: none;
         }
 
-        .article-content a.related-card {
-            color: inherit;
-        }
-
-        .article-content ul {
-            list-style: none;
-            padding: 0;
-            margin: 16px 0 24px;
-        }
-
-        .article-content ul li {
-            padding: 8px 0 8px 16px;
-            border-left: 2px solid var(--accent-blue);
-            margin-bottom: 4px;
-        }
+        .article-content a.related-card { color: inherit; }
 
         /* ========================================
            INSIGHT QUOTE BOXES
@@ -535,98 +446,21 @@
         }
 
         /* ========================================
-           KEY FINDING BOX
+           PARADIGM BOX
            ======================================== */
 
-        .key-finding {
-            background: rgba(255, 167, 38, 0.1);
-            border: 1px solid rgba(255, 167, 38, 0.3);
+        .paradigm-box {
+            background: rgba(74, 192, 255, 0.08);
+            border: 1px solid rgba(74, 192, 255, 0.2);
             border-radius: 16px;
             padding: 28px;
             margin: 32px 0;
         }
 
-        .key-finding h3 {
-            color: var(--accent-amber);
-            margin: 0 0 16px;
-            font-size: 20px;
-        }
-
-        .key-finding p {
-            margin-bottom: 16px;
-        }
-
-        .key-finding p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* ========================================
-           MECHANISM & SOLUTION BOXES
-           ======================================== */
-
-        .mechanism-box {
-            background: rgba(17, 24, 32, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 16px;
-            padding: 24px;
-            margin: 24px 0;
-        }
-
-        .mechanism-box h4 {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin: 0 0 16px;
-        }
-
-        .mechanism-box ol {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            counter-reset: mechanism;
-        }
-
-        .mechanism-box ol li {
-            counter-increment: mechanism;
-            padding: 10px 0 10px 40px;
-            position: relative;
-            font-size: 15px;
-            color: var(--text-secondary);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        .mechanism-box ol li:last-child {
-            border-bottom: none;
-        }
-
-        .mechanism-box ol li::before {
-            content: counter(mechanism);
-            position: absolute;
-            left: 0;
-            top: 10px;
-            width: 28px;
-            height: 28px;
-            background: rgba(74, 192, 255, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            font-weight: 700;
+        .paradigm-box h3 {
             color: var(--accent-blue);
-        }
-
-        .solution-box {
-            background: rgba(0, 230, 118, 0.1);
-            border-left: 3px solid var(--accent-green);
-            padding: 20px 24px;
-            border-radius: 0 12px 12px 0;
-            margin: 24px 0;
-        }
-
-        .solution-box p {
-            margin: 0;
-            font-size: 16px;
+            margin: 0 0 20px;
+            font-size: 20px;
         }
 
         /* ========================================
@@ -660,17 +494,40 @@
         }
 
         /* ========================================
-           PROCESS LIST
+           METRIC CARDS
            ======================================== */
 
-        .process-list {
+        .metric-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 24px 0;
+        }
+
+        .metric-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 20px;
+        }
+
+        .metric-card .data-table {
+            margin: 0;
+        }
+
+        /* ========================================
+           STEP LIST
+           ======================================== */
+
+        .step-list {
             list-style: none;
             padding: 0;
             margin: 24px 0;
-            counter-reset: process;
+            counter-reset: step;
         }
 
-        .process-list li {
+        .step-list li {
             padding: 16px 0 16px 48px;
             position: relative;
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
@@ -678,9 +535,9 @@
             color: var(--text-secondary);
         }
 
-        .process-list li::before {
-            counter-increment: process;
-            content: counter(process);
+        .step-list li::before {
+            counter-increment: step;
+            content: counter(step);
             position: absolute;
             left: 0;
             top: 16px;
@@ -696,16 +553,76 @@
             color: var(--accent-blue);
         }
 
-        .win-list {
-            list-style: none;
-            padding: 0;
-            margin: 16px 0;
+        /* ========================================
+           CASE STUDY & COMPARISON
+           ======================================== */
+
+        .case-study {
+            background: rgba(0, 230, 118, 0.08);
+            border: 1px solid rgba(0, 230, 118, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 32px 0;
         }
 
-        .win-list li {
-            padding: 12px 0 12px 16px;
+        .case-study h3 {
+            color: var(--accent-green);
+            margin: 0 0 20px;
+            font-size: 20px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .comparison-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .comparison-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 12px;
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .comparison-card li {
+            font-size: 14px;
+            color: var(--text-muted);
+            padding: 6px 0;
+        }
+
+        /* ========================================
+           LISTS
+           ======================================== */
+
+        .article-content ul.evidence-list,
+        .article-content ul.action-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 24px;
+        }
+
+        .article-content ul.evidence-list li {
+            padding: 8px 0 8px 16px;
             border-left: 2px solid var(--accent-green);
-            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .article-content ul.action-list li {
+            padding: 8px 0 8px 16px;
+            border-left: 2px solid var(--accent-blue);
+            margin-bottom: 4px;
         }
 
         /* ========================================
@@ -746,9 +663,7 @@
             line-height: 1.5;
         }
 
-        .sources-section li:last-child {
-            border-bottom: none;
-        }
+        .sources-section li:last-child { border-bottom: none; }
 
         /* ========================================
            AUTHOR BIO
@@ -818,9 +733,7 @@
             text-decoration: none;
         }
 
-        .author-links a:hover {
-            color: var(--accent-blue);
-        }
+        .author-links a:hover { color: var(--accent-blue); }
 
         .author-links svg {
             width: 18px;
@@ -832,9 +745,7 @@
            RELATED & CTA
            ======================================== */
 
-        .related-section {
-            margin: 64px 0;
-        }
+        .related-section { margin: 64px 0; }
 
         .related-section h2 {
             font-size: 28px;
@@ -934,100 +845,36 @@
            ======================================== */
 
         @media (max-width: 1024px) {
-            .article-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .toc-sidebar {
-                display: none;
-            }
-
-            .related-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .article-layout { grid-template-columns: 1fr; }
+            .toc-sidebar { display: none; }
+            .related-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            .blog-breadcrumbs {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
+            .blog-breadcrumbs { padding-left: 16px; padding-right: 16px; }
+            .page-container { padding: 0 16px; }
+            .article-header { padding: 32px 16px; }
+            .article-header h1 { font-size: 32px; }
+            .article-subtitle { font-size: 17px; }
 
-            .page-container {
-                padding: 0 16px;
-            }
+            .insight-quote { padding: 20px 16px; }
+            .insight-quote p { padding-left: 24px; font-size: 16px; }
+            .insight-quote cite { padding-left: 24px; }
+            .insight-quote::before { font-size: 36px; left: 12px; }
 
-            .article-header {
-                padding: 32px 16px;
-            }
+            .paradigm-box { padding: 20px; }
+            .metric-card { padding: 20px; }
+            .comparison-grid { grid-template-columns: 1fr; }
 
-            .article-header h1 {
-                font-size: 32px;
-            }
+            .data-table { font-size: 14px; }
+            .data-table th, .data-table td { padding: 10px 12px; }
 
-            .article-subtitle {
-                font-size: 17px;
-            }
-
-            .insight-quote {
-                padding: 20px 16px;
-            }
-
-            .insight-quote p {
-                padding-left: 24px;
-                font-size: 16px;
-            }
-
-            .insight-quote cite {
-                padding-left: 24px;
-            }
-
-            .insight-quote::before {
-                font-size: 36px;
-                left: 12px;
-            }
-
-            .mechanism-box {
-                padding: 20px;
-            }
-
-            .key-finding {
-                padding: 20px;
-            }
-
-            .data-table {
-                font-size: 14px;
-            }
-
-            .data-table th,
-            .data-table td {
-                padding: 10px 12px;
-            }
-
-            .author-section {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .author-photo {
-                margin: 0 auto;
-            }
-
-            .author-links {
-                justify-content: center;
-            }
-
-            .related-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-section {
-                padding: 40px 24px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
+            .author-section { grid-template-columns: 1fr; text-align: center; }
+            .author-photo { margin: 0 auto; }
+            .author-links { justify-content: center; }
+            .related-grid { grid-template-columns: 1fr; }
+            .cta-section { padding: 40px 24px; }
+            .cta-buttons { flex-direction: column; }
         }
     </style>
 
@@ -1035,8 +882,8 @@
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Why AI Might Be Citing Your Outdated Content",
-        "description": "AI doesn't rank your pages. It clusters them and picks ONE to cite—possibly an outdated version.",
+        "headline": "Your Traffic Is Down. Your Conversions Are Up. That's AI Search.",
+        "description": "Clicks are down. Conversions are up. Welcome to the new math of AI search.",
         "author": {
             "@type": "Person",
             "name": "Patrick Gallagher",
@@ -1047,7 +894,7 @@
             "name": "Fokal",
             "url": "https://www.fokal.com"
         },
-        "datePublished": "2025-12-15",
+        "datePublished": "2025-11-20",
         "dateModified": "2025-12-26"
     }
     </script>
@@ -1060,16 +907,16 @@
     <div class="blog-breadcrumbs">
         <a href="/">Home</a>
         <span class="separator">›</span>
-        <a href="/insights">Insights</a>
+        <a href="/ai-seo-research">AI SEO Research</a>
         <span class="separator">›</span>
-        <span class="current">LLM Citations</span>
+        <span class="current">Conversion Metrics</span>
     </div>
 
     <!-- Article Header -->
     <header class="article-header">
         <span class="article-category">Fokal Research</span>
-        <h1>Why AI Might Be Citing Your Outdated Content</h1>
-        <p class="article-subtitle">AI doesn't rank your pages like Google does. It clusters them, picks ONE to represent the group, and moves on. If it picks wrong, your best content is invisible.</p>
+        <h1>Your Traffic Is Down. Your Conversions Are Up. That's AI Search.</h1>
+        <p class="article-subtitle">The old metrics said you were failing. The new metrics say you're winning. Here's how to tell the difference.</p>
 
         <div class="article-meta-wrapper">
             <img src="/patrick-photo.jpg" alt="Patrick Gallagher" class="author-thumb-large">
@@ -1126,186 +973,203 @@
                     <div class="key-takeaways-box">
                         <h3 class="takeaways-title">The Bottom Line</h3>
                         <ul class="takeaways-list">
-                            <li><strong>AI clusters your pages.</strong> Similar content gets grouped together—then AI picks ONE page to cite. Possibly the wrong one.</li>
-                            <li><strong>Your updates might be invisible.</strong> If AI already picked an old page to represent your cluster, your new content gets ignored.</li>
-                            <li><strong>Fewer pages wins.</strong> Stop creating 47 variations. Consolidate into authoritative pages that can't be clustered away.</li>
-                            <li><strong>Lastmod timestamps matter.</strong> They're how AI knows which version is current. Get them right.</li>
+                            <li><strong>Clicks are a lagging indicator now.</strong> Users get answers from AI first. The click comes after they're already sold.</li>
+                            <li><strong>Citations are the new impressions.</strong> If you're not being cited, you're invisible—regardless of your rankings.</li>
+                            <li><strong>Fewer clicks, better buyers.</strong> AI traffic converts at higher rates. Quality is replacing quantity.</li>
+                            <li><strong>Your dashboard is lying to you.</strong> If you're only measuring clicks, you're measuring the wrong thing.</li>
                         </ul>
                     </div>
 
-                    <h2 id="overview">The Clustering Problem</h2>
+                    <h2 id="paradigm-shift">The Confusing Report</h2>
                     <p>
-                        Here's something that will ruin your day if you've been creating lots of "keyword-targeted" pages: AI search doesn't rank them. It clusters them.
+                        You're looking at your analytics. Traffic from search is down 15%. In the old world, this means you're losing. Time to panic. Time to call an SEO agency.
                     </p>
                     <p>
-                        Traditional SEO told you to create separate pages for "best running shoes," "top running shoes," and "running shoe reviews." Three pages, three keyword targets. Google would rank each one. You'd capture more traffic.
+                        But then you check conversions. They're up. Revenue per visitor is up. Customer acquisition cost is down. What the hell is going on?
                     </p>
                     <p>
-                        AI doesn't work that way. It looks at those three pages and thinks: "These are basically the same thing." It groups them into a cluster. Then it picks <strong>one</strong> page to represent the entire cluster. The other two become invisible.
-                    </p>
-                    <p>
-                        Worse: the page it picks might be an old one. Your freshly updated content with current information? Clustered away. Your outdated page from 2023? That's the one AI is citing.
-                    </p>
-
-                    <h2 id="duplicate-content">What Bing Actually Said</h2>
-                    <p>
-                        In December 2025, Bing's Webmaster Blog published something remarkable: actual documentation of how AI search handles duplicate content. Not vague guidance—specific mechanisms.
+                        What's going on is AI search. And if you're measuring the old way, your dashboard is lying to you.
                     </p>
 
                     <div class="insight-quote">
-                        <p>"LLMs cluster near-duplicate URLs and select one to represent the set—potentially an outdated version."</p>
-                        <cite>— Bing Webmaster Blog</cite>
+                        <p>"The path to conversion no longer starts with a click."</p>
+                        <cite>— Bing Webmaster Blog, November 2025</cite>
                     </div>
 
                     <p>
-                        Read that again. "Potentially an outdated version." Your 2023 blog post might be the one AI is citing, while your comprehensive 2025 update sits invisible in the same cluster.
-                    </p>
-                    <p>
-                        But it gets worse:
+                        That quote from Bing should change how you think about everything. The path to conversion <em>no longer starts with a click</em>. It starts with a citation in an AI response. The click—if it happens at all—comes later, after the user is already informed, already interested, already halfway to buying.
                     </p>
 
-                    <div class="insight-quote">
-                        <p>"Intent signals become harder to interpret when multiple pages repeat information."</p>
-                        <cite>— Bing Webmaster Blog</cite>
-                    </div>
+                    <h2 id="what-changed">The Old Funnel Is Dead</h2>
 
                     <p>
-                        You thought you were targeting multiple intents with multiple pages. AI thinks you're just repeating yourself. It can't tell which page matches which intent—so it guesses. And when it guesses wrong, your perfectly-targeted content gets matched to the wrong queries.
-                    </p>
-
-                    <div class="insight-quote">
-                        <p>"Updates take longer reaching AI-generated results when crawlers prioritize duplicate URLs."</p>
-                        <cite>— Bing Webmaster Blog</cite>
-                    </div>
-
-                    <p>
-                        Here's the kicker: every duplicate page you create makes the problem worse. Crawlers have limited budgets. If they're wasting time on your 47 keyword variations, they're not finding your actual updates. Your fresh content takes longer to appear in AI results—because your old content is hogging the crawler's attention.
-                    </p>
-
-                    <div class="solution-box">
-                        <p><strong>Bing's advice:</strong> "Less is more. Clean, consolidated signals help search engines understand intent."</p>
-                    </div>
-
-                    <h2 id="crawl-signals">How to Tell AI Which Version Is Current</h2>
-                    <p>
-                        If AI is picking the wrong page from your cluster, it's probably because you're not giving it clear signals about which version is current. Here's what actually matters:
-                    </p>
-
-                    <h3>Lastmod Timestamps</h3>
-                    <p>
-                        This is boring but important. The lastmod field in your sitemap tells crawlers when your content actually changed.
-                    </p>
-                    <div class="insight-quote">
-                        <p>"The lastmod field in your sitemap remains a key signal, helping Bing prioritize URLs for recrawling and reindexing."</p>
-                        <cite>— Bing Webmaster Blog, July 2025</cite>
-                    </div>
-                    <p>
-                        Most sites get this wrong. They set lastmod to when the sitemap was generated, not when the content changed. AI sees every page as "updated today" and has no idea which content is actually fresh.
-                    </p>
-                    <p><strong>Do this:</strong> Set lastmod to the actual date your content changed. Use ISO 8601 format. Be honest—if you just fixed a typo, don't pretend you rewrote the article.</p>
-
-                    <h3>IndexNow: The Instant Update Button</h3>
-                    <p>
-                        Sitemaps are passive. Crawlers check them when they feel like it. IndexNow is active—you ping search engines the moment your content changes.
-                    </p>
-                    <div class="insight-quote">
-                        <p>"Sitemaps + IndexNow together provide the structure and speed search engines need to keep your content visible."</p>
-                        <cite>— Bing Webmaster Blog</cite>
-                    </div>
-                    <p>
-                        For time-sensitive content, this matters. You publish a correction, ping IndexNow, and AI knows within minutes that your content changed. Without it, you're waiting for the next crawl—which could be days.
-                    </p>
-
-                    <h2 id="authority-dilution">Why Your Competitor Gets Cited Instead</h2>
-
-                    <p>
-                        Here's a scenario that happens constantly: you have better content than your competitor. You update it more often. You know more about the topic. But AI cites them instead of you.
+                        Here's how search worked for 25 years: User searches. Sees 10 blue links. Clicks one. Lands on your page. Maybe converts.
                     </p>
                     <p>
-                        Why? Because they have one great page. You have five pretty-good pages. Their signals are concentrated. Yours are fragmented.
+                        Here's how AI search works: User asks a question. AI synthesizes an answer from multiple sources. User reads the answer. User is now informed. <em>Maybe</em> user clicks a citation to learn more.
+                    </p>
+                    <p>
+                        Welcome to the era of zero-click searches. The industry has been talking about this phenomenon for years, but AI search makes it the default, not the exception. Most queries now resolve without a single click to any website.
+                    </p>
+                    <p>
+                        See the difference? The click moved. It used to be the start of the journey. Now it's near the end.
                     </p>
 
                     <table class="data-table">
                         <thead>
-                            <tr><th>Signal Type</th><th>What Happens With Duplicates</th></tr>
+                            <tr><th>What You Measured Before</th><th>What You Should Measure Now</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Backlinks</td><td>Split across 5 pages instead of powering 1</td></tr>
-                            <tr><td>Clicks</td><td>Distributed—no single page looks popular</td></tr>
-                            <tr><td>Engagement</td><td>Scattered—AI can't tell which page people prefer</td></tr>
-                            <tr><td>Authority</td><td>Diluted—each page looks weaker than it should</td></tr>
+                            <tr><td>Impressions (how often you showed up)</td><td>Citations (how often AI mentions you)</td></tr>
+                            <tr><td>Click-through rate</td><td>Citation-to-conversion rate</td></tr>
+                            <tr><td>Traffic volume</td><td>Revenue per AI visitor</td></tr>
+                            <tr><td>Rankings for keywords</td><td>Presence in AI answers</td></tr>
                         </tbody>
                     </table>
 
-                    <p>
-                        Your competitor's one page has 100 backlinks. Your five pages have 20 each. Mathematically, you have more authority. But AI sees five weak pages vs one strong page. It cites the strong page.
-                    </p>
-
-                    <h2 id="recommendations">What to Do About It</h2>
-
-                    <h3>The Consolidation Playbook</h3>
-                    <p>
-                        Stop creating content variations. Start consolidating.
-                    </p>
-
-                    <table class="data-table">
-                        <thead>
-                            <tr><th>If you have...</th><th>Do this</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Multiple pages targeting similar keywords</td><td>Merge into one comprehensive page. Redirect the others.</td></tr>
-                            <tr><td>Syndicated content on multiple sites</td><td>Canonical tag pointing to the original. Every time.</td></tr>
-                            <tr><td>Campaign landing page variations</td><td>One primary page. Canonicals on all variations.</td></tr>
-                            <tr><td>Localized versions</td><td>Only keep if meaningfully different. Otherwise, canonical.</td></tr>
-                        </tbody>
-                    </table>
+                    <h2 id="quality-tradeoff">Why Fewer Clicks Is Actually Good News</h2>
 
                     <p>
-                        "But I need different pages for different audiences!" Maybe. But only if the content is <em>actually different</em>. If you're just changing a headline and swapping some images, AI will cluster it. Save yourself the trouble and consolidate proactively.
-                    </p>
-
-                    <h2 id="query-fan-out">AI Doesn't Search Like You Think</h2>
-
-                    <p>
-                        One more thing that changes everything: AI doesn't match your page to a single query. It runs <em>multiple</em> queries and synthesizes the results.
+                        This sounds counterintuitive, but Google's own people have been saying it:
                     </p>
 
                     <div class="insight-quote">
-                        <p>"Query fan out: AI search performs multiple incremental searches for you and synthesizes results."</p>
-                        <cite>— John Mueller, Google</cite>
+                        <p>"AI formats put people into a better state of contextual awareness—users understand better what they're getting into."</p>
+                        <cite>— Danny Sullivan, Google Search Off the Record</cite>
                     </div>
 
                     <p>
-                        Someone asks "what's the best CRM for small businesses?" Traditional search shows 10 blue links. AI search does something different: it runs sub-queries for "CRM pricing comparison," "CRM ease of use," "CRM integrations," synthesizes all the results, and gives you one answer.
+                        Translation: People who click through from AI search already know what you offer. They're not exploratory clickers. They're intentional visitors. They read about you in the AI response. They clicked because they're interested.
+                    </p>
+
+                    <div class="insight-quote">
+                        <p>"People arriving from AI formats seem to be more engaged when they get there."</p>
+                        <cite>— Danny Sullivan</cite>
+                    </div>
+
+                    <p>
+                        This is the trade-off: You get fewer visitors, but the visitors you get are better. They stay longer. They convert more. They're worth more.
                     </p>
                     <p>
-                        This means you're not competing for a keyword anymore. You're competing to be cited in a synthesis. And synthesis favors sources that are comprehensive, authoritative, and don't waste the AI's time with near-duplicate content it has to cluster away.
+                        If your business model depends on advertising revenue from page views, this is bad news. But if you actually sell something? Fewer, better-qualified visitors might be exactly what you want.
                     </p>
 
-                    <h2 id="citation-process">How This All Fits Together</h2>
+                    <h2 id="new-metrics">What You Should Actually Measure</h2>
 
                     <p>
-                        Based on everything Bing and Google have published, here's what we think happens when AI picks a citation:
+                        Your old metrics still work, but they're not enough. Here's what to add:
                     </p>
 
-                    <ol class="process-list">
-                        <li><strong>Query breakdown:</strong> AI splits your question into sub-queries</li>
-                        <li><strong>Retrieval:</strong> It fetches candidate sources for each sub-query</li>
-                        <li><strong>Clustering:</strong> Similar pages get grouped together</li>
-                        <li><strong>Selection:</strong> AI picks ONE page per cluster to represent it</li>
-                        <li><strong>Authority check:</strong> It weighs E-E-A-T signals on the selected pages</li>
-                        <li><strong>Freshness check:</strong> It considers lastmod and update signals</li>
-                        <li><strong>Synthesis:</strong> It generates a response using the winners</li>
-                        <li><strong>Citation:</strong> It attributes claims to the pages that earned it</li>
+                    <div class="metric-card">
+                        <h4>Before They Click (Citation Metrics)</h4>
+                        <p style="margin-bottom: 16px; color: var(--text-muted);">This is where visibility now happens. If you're not measuring this, you're blind.</p>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Metric</th><th>What It Tells You</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Citation Rate</td><td>How often AI mentions you when people ask about your category</td></tr>
+                                <tr><td>Citation Position</td><td>Are you first, or buried at the bottom?</td></tr>
+                                <tr><td>Citation Context</td><td>Are you described accurately? Positively?</td></tr>
+                                <tr><td>Competitor Citations</td><td>Who shows up alongside you? Who's beating you?</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="metric-card">
+                        <h4>After They Click (Quality Metrics)</h4>
+                        <p style="margin-bottom: 16px; color: var(--text-muted);">AI traffic should behave differently. Measure whether it does.</p>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Metric</th><th>What to Expect from AI Traffic</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Time on Site</td><td>Should be higher—they came with intent</td></tr>
+                                <tr><td>Bounce Rate</td><td>Should be lower—they know what they're getting</td></tr>
+                                <tr><td>Pages per Session</td><td>Should be higher—they're genuinely interested</td></tr>
+                                <tr><td>Conversion Rate</td><td>Should be much higher—they're pre-qualified</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="metric-card">
+                        <h4>What It's Worth (Revenue Metrics)</h4>
+                        <p style="margin-bottom: 16px; color: var(--text-muted);">The real question: Is AI traffic more valuable, even if there's less of it?</p>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Metric</th><th>Why It Matters</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Revenue per AI Visitor</td><td>If this is higher than traditional search, you're winning</td></tr>
+                                <tr><td>Customer LTV by Source</td><td>Do AI-acquired customers stick around longer?</td></tr>
+                                <tr><td>CAC by Source</td><td>What's it actually costing you to acquire via AI?</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 id="implementation">How to Actually Do This</h2>
+
+                    <p>
+                        This isn't theoretical. Here's how to implement it:
+                    </p>
+
+                    <ol class="step-list">
+                        <li><strong>Identify AI traffic in your analytics.</strong> Look for referrers from chatgpt.com, perplexity.ai, claude.ai, etc. Google AI Overviews are harder—they'll show up as Google referrals. You'll need to segment by behavior patterns.</li>
+                        <li><strong>Create a segment for AI traffic.</strong> Compare it against your traditional search traffic. Look at time on site, pages per session, bounce rate, and conversion rate. See if the pattern matches what we'd expect.</li>
+                        <li><strong>Start monitoring citations.</strong> You need to know where AI is mentioning you—and where it isn't. This is the new visibility metric. Tools like Fokal can help.</li>
+                        <li><strong>Update your attribution model.</strong> If AI is a touchpoint in your customer journey, you need to track it. Multi-touch attribution that ignores AI is now incomplete.</li>
                     </ol>
 
+                    <h2 id="citation-economy">Citations Are the New Impressions</h2>
+
                     <p>
-                        You can influence steps 3-6. Consolidate your content (step 3-4). Build authority on fewer pages (step 5). Keep your timestamps honest (step 6). The rest is out of your hands.
+                        In the old world, impressions measured visibility. You appeared in search results; that was an impression. The user might click, might not—but at least they saw you.
+                    </p>
+                    <p>
+                        In AI search, citations are that visibility moment. When AI mentions you while answering a question, that's your impression. The user might click through, might not—but they've heard about you.
                     </p>
 
-                    <h2 id="bottom-line">The Short Version</h2>
+                    <div class="insight-quote">
+                        <p>"Prominently cites sources so users know exactly where the information came from."</p>
+                        <cite>— Bing, Copilot Search announcement, April 2025</cite>
+                    </div>
+
                     <p>
-                        AI clusters your duplicate content and picks one page to cite. Make sure it picks the right one: consolidate aggressively, keep timestamps accurate, and stop creating keyword variations. One great page beats five okay pages every time.
+                        Bing is emphasizing this because they know citations matter. If you're not being cited, you're not getting seen—regardless of your traditional rankings.
+                    </p>
+
+                    <div class="case-study" id="rethinking">
+                        <h3>How Your Reports Should Change</h3>
+                        <div class="comparison-grid">
+                            <div class="comparison-card">
+                                <h4 style="color: var(--text-muted);">The Old Report</h4>
+                                <ul>
+                                    <li>"We ranked #1 for 500 keywords"</li>
+                                    <li>"We got 100,000 clicks from search"</li>
+                                    <li>"Our CTR improved 15%"</li>
+                                </ul>
+                            </div>
+                            <div class="comparison-card">
+                                <h4 style="color: var(--accent-green);">The New Report</h4>
+                                <ul>
+                                    <li>"We're cited in AI answers for 500 queries"</li>
+                                    <li>"AI traffic converts at 3x our average"</li>
+                                    <li>"AI-sourced customers have 40% higher LTV"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 id="recommendations">The Short Version</h2>
+
+                    <p>
+                        Your traffic might be down. That's fine—if your conversions are up and your revenue per visitor is up.
+                    </p>
+                    <p>
+                        Start measuring citations. Start segmenting AI traffic. Start looking at quality, not just quantity.
+                    </p>
+                    <p>
+                        The companies that figure this out first will stop panicking every time their traffic dips. They'll know: fewer clicks, better customers, same revenue. That's not a crisis. That's efficiency.
                     </p>
 
                     <!-- Sources -->
@@ -1313,10 +1177,9 @@
                         <h2>Sources & Methodology</h2>
                         <p class="sources-intro">We only used official sources from the companies building these systems. No speculation or third-party analysis.</p>
                         <ul>
-                            <li>Bing Webmaster Blog: "Does Duplicate Content Hurt SEO and AI Search Visibility?" (December 2025)</li>
-                            <li>Bing Webmaster Blog: "Keeping Content Discoverable with Sitemaps in AI Powered Search" (July 2025)</li>
-                            <li>Google Search Off the Record Podcast: Danny Sullivan, John Mueller</li>
-                            <li>USPTO Patent: US-20250370993-A1 (Query Routing)</li>
+                            <li>Bing Webmaster Blog: "How AI Search Is Changing the Way Conversions are Measured" (November 2025)</li>
+                            <li>Bing Search Blog: "Introducing Copilot Search in Bing" (April 2025)</li>
+                            <li>Google Search Off the Record Podcast: Danny Sullivan on engagement and conversion</li>
                         </ul>
                     </div>
 
@@ -1347,19 +1210,19 @@
                     <div class="related-section">
                         <h2>Related Research</h2>
                         <div class="related-grid">
-                            <a href="/ai-search-consensus" class="related-card">
+                            <a href="/ai-seo-research/ai-search-consensus" class="related-card">
                                 <h3>What Google & Bing Agree On</h3>
                                 <p>The 8 points both companies confirm</p>
                             </a>
-                            <a href="/ai-search-patents" class="related-card">
+                            <a href="/ai-seo-research/ai-citations" class="related-card">
+                                <h3>How LLMs Cite</h3>
+                                <p>The mechanics of AI citation selection</p>
+                            </a>
+                            <a href="/ai-seo-research/ai-search-patents" class="related-card">
                                 <h3>AI Search Patents</h3>
                                 <p>What 13 patents reveal about AI search</p>
                             </a>
-                            <a href="/ai-search-conversions" class="related-card">
-                                <h3>Conversion Metrics</h3>
-                                <p>Measuring success beyond clicks</p>
-                            </a>
-                            <a href="/insights" class="related-card">
+                            <a href="/ai-seo-research" class="related-card">
                                 <h3>All Research</h3>
                                 <p>View all Fokal Insights</p>
                             </a>
@@ -1372,7 +1235,7 @@
                         <p>See where your brand appears across ChatGPT, Perplexity, and Google AI Overviews.</p>
                         <div class="cta-buttons">
                             <button class="btn btn-primary" onclick="signInWithGoogle()">Get Started Free</button>
-                            <a href="/insights" class="btn btn-secondary">Back to Insights</a>
+                            <a href="/ai-seo-research" class="btn btn-secondary">Back to Research</a>
                         </div>
                     </div>
                 </article>
@@ -1383,14 +1246,13 @@
                 <div class="toc-card">
                     <div class="toc-title">On This Page</div>
                     <ul class="toc-list">
-                        <li><a href="#overview">The Clustering Problem</a></li>
-                        <li><a href="#duplicate-content">What Bing Said</a></li>
-                        <li><a href="#crawl-signals">Freshness Signals</a></li>
-                        <li><a href="#authority-dilution">Why Competitors Win</a></li>
-                        <li><a href="#recommendations">What to Do</a></li>
-                        <li><a href="#query-fan-out">How AI Really Searches</a></li>
-                        <li><a href="#citation-process">The Full Process</a></li>
-                        <li><a href="#bottom-line">Short Version</a></li>
+                        <li><a href="#paradigm-shift">The Confusing Report</a></li>
+                        <li><a href="#what-changed">The Old Funnel Is Dead</a></li>
+                        <li><a href="#quality-tradeoff">Why Fewer Clicks Wins</a></li>
+                        <li><a href="#new-metrics">What to Measure</a></li>
+                        <li><a href="#implementation">How to Do It</a></li>
+                        <li><a href="#citation-economy">Citations = Impressions</a></li>
+                        <li><a href="#recommendations">Short Version</a></li>
                     </ul>
                 </div>
             </aside>
@@ -1400,14 +1262,14 @@
     <div id="footer-container"></div>
     <div id="auth-modal-container"></div>
 
-    <script>window.AUTH_SOURCE = 'static_research_llm_citations';</script>
+    <script>window.AUTH_SOURCE = 'static_research_conversions';</script>
     <script src="/auth/auth-modal.js"></script>
     <script src="/components/footer.js"></script>
 
     <!-- Active TOC link highlighting -->
     <script>
         document.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('h2[id], .key-finding[id]');
+            const sections = document.querySelectorAll('h2[id]');
             const tocLinks = document.querySelectorAll('.toc-list a');
 
             let current = '';
