@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="How LLMs select citations: duplicate content, crawl signals, and URL clustering. The mechanics of AI citation selection for content creators.">
+    <meta name="description" content="AI doesn't rank your pages. It clusters them and picks ONE to cite—possibly an outdated version. Here's the weird citation behavior you need to understand.">
     <meta name="keywords" content="LLM citations, AI search citations, duplicate content SEO, canonical tags, sitemap optimization, IndexNow">
-    <meta property="og:title" content="How LLMs Select Citations | Fokal">
-    <meta property="og:description" content="The mechanics of AI citation selection—duplicate content, crawl signals, and URL clustering.">
+    <meta property="og:title" content="Why AI Might Be Citing Your Outdated Content | Fokal">
+    <meta property="og:description" content="AI clusters your pages and picks ONE to cite. If it chooses wrong, your best content is invisible.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.fokal.com/llm-citation-selection">
     <meta property="article:published_time" content="2025-12-15">
     <meta property="article:modified_time" content="2025-12-26">
     <meta property="article:author" content="Patrick Gallagher">
-    <title>How LLMs Select Citations | Fokal</title>
+    <title>Why AI Might Be Citing Your Outdated Content | Fokal</title>
 
     <link rel="icon" type="image/png" href="/fokal-favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1035,8 +1035,8 @@
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "How LLMs Select Citations",
-        "description": "The mechanics of AI citation selection—duplicate content, crawl signals, and URL clustering.",
+        "headline": "Why AI Might Be Citing Your Outdated Content",
+        "description": "AI doesn't rank your pages. It clusters them and picks ONE to cite—possibly an outdated version.",
         "author": {
             "@type": "Person",
             "name": "Patrick Gallagher",
@@ -1068,8 +1068,8 @@
     <!-- Article Header -->
     <header class="article-header">
         <span class="article-category">Fokal Research</span>
-        <h1>How LLMs Select Citations</h1>
-        <p class="article-subtitle">The mechanics of AI citation selection—duplicate content hurts you, crawl signals matter, and consolidation wins.</p>
+        <h1>Why AI Might Be Citing Your Outdated Content</h1>
+        <p class="article-subtitle">AI doesn't rank your pages like Google does. It clusters them, picks ONE to represent the group, and moves on. If it picks wrong, your best content is invisible.</p>
 
         <div class="article-meta-wrapper">
             <img src="/patrick-photo.jpg" alt="Patrick Gallagher" class="author-thumb-large">
@@ -1126,174 +1126,187 @@
                     <div class="key-takeaways-box">
                         <h3 class="takeaways-title">The Bottom Line</h3>
                         <ul class="takeaways-list">
-                            <li><strong>Duplicate content actively hurts you.</strong> LLMs cluster similar pages and pick ONE—possibly an outdated version.</li>
-                            <li><strong>Crawl signals still matter.</strong> Lastmod timestamps, sitemaps, and IndexNow help AI systems find your freshest content.</li>
-                            <li><strong>Consolidation beats fragmentation.</strong> Fewer pages with concentrated authority win over many diluted ones.</li>
-                            <li><strong>Citations are the new rankings.</strong> Being cited in AI answers matters more than traditional position #1.</li>
+                            <li><strong>AI clusters your pages.</strong> Similar content gets grouped together—then AI picks ONE page to cite. Possibly the wrong one.</li>
+                            <li><strong>Your updates might be invisible.</strong> If AI already picked an old page to represent your cluster, your new content gets ignored.</li>
+                            <li><strong>Fewer pages wins.</strong> Stop creating 47 variations. Consolidate into authoritative pages that can't be clustered away.</li>
+                            <li><strong>Lastmod timestamps matter.</strong> They're how AI knows which version is current. Get them right.</li>
                         </ul>
                     </div>
 
-                    <h2 id="overview">How Citation Selection Works</h2>
+                    <h2 id="overview">The Clustering Problem</h2>
                     <p>
-                        When an AI generates a response, it must decide which sources to cite. This process is fundamentally different from traditional ranking. LLMs cluster similar content, select representative sources, and make decisions about freshness and authority.
+                        Here's something that will ruin your day if you've been creating lots of "keyword-targeted" pages: AI search doesn't rank them. It clusters them.
                     </p>
                     <p>
-                        Understanding this process is essential for AI search visibility. Here's what the official sources tell us about how it works.
+                        Traditional SEO told you to create separate pages for "best running shoes," "top running shoes," and "running shoe reviews." Three pages, three keyword targets. Google would rank each one. You'd capture more traffic.
+                    </p>
+                    <p>
+                        AI doesn't work that way. It looks at those three pages and thinks: "These are basically the same thing." It groups them into a cluster. Then it picks <strong>one</strong> page to represent the entire cluster. The other two become invisible.
+                    </p>
+                    <p>
+                        Worse: the page it picks might be an old one. Your freshly updated content with current information? Clustered away. Your outdated page from 2023? That's the one AI is citing.
                     </p>
 
-                    <div class="key-finding" id="duplicate-content">
-                        <h3>Duplicate Content Actively Hurts AI Visibility</h3>
-                        <p>Bing's Webmaster Blog (December 2025) provided unprecedented clarity on how duplicate content affects AI search:</p>
+                    <h2 id="duplicate-content">What Bing Actually Said</h2>
+                    <p>
+                        In December 2025, Bing's Webmaster Blog published something remarkable: actual documentation of how AI search handles duplicate content. Not vague guidance—specific mechanisms.
+                    </p>
 
-                        <div class="insight-quote">
-                            <p>"LLMs cluster near-duplicate URLs and select one to represent the set—potentially an outdated version."</p>
-                            <cite>— Bing Webmaster Blog</cite>
-                        </div>
-
-                        <div class="insight-quote">
-                            <p>"Intent signals become harder to interpret when multiple pages repeat information."</p>
-                            <cite>— Bing Webmaster Blog</cite>
-                        </div>
-
-                        <div class="insight-quote">
-                            <p>"Similar pages reduce signals for matching each page to unique user needs."</p>
-                            <cite>— Bing Webmaster Blog</cite>
-                        </div>
-
-                        <div class="insight-quote">
-                            <p>"Updates take longer reaching AI-generated results when crawlers prioritize duplicate URLs."</p>
-                            <cite>— Bing Webmaster Blog</cite>
-                        </div>
+                    <div class="insight-quote">
+                        <p>"LLMs cluster near-duplicate URLs and select one to represent the set—potentially an outdated version."</p>
+                        <cite>— Bing Webmaster Blog</cite>
                     </div>
 
-                    <div class="mechanism-box">
-                        <h4>The Mechanism</h4>
-                        <ol>
-                            <li>AI systems identify similar content across URLs</li>
-                            <li>They cluster these URLs together</li>
-                            <li>They select ONE to represent the entire cluster</li>
-                            <li>The selection may favor an outdated version</li>
-                            <li>Your latest updates may be ignored</li>
-                        </ol>
+                    <p>
+                        Read that again. "Potentially an outdated version." Your 2023 blog post might be the one AI is citing, while your comprehensive 2025 update sits invisible in the same cluster.
+                    </p>
+                    <p>
+                        But it gets worse:
+                    </p>
+
+                    <div class="insight-quote">
+                        <p>"Intent signals become harder to interpret when multiple pages repeat information."</p>
+                        <cite>— Bing Webmaster Blog</cite>
                     </div>
+
+                    <p>
+                        You thought you were targeting multiple intents with multiple pages. AI thinks you're just repeating yourself. It can't tell which page matches which intent—so it guesses. And when it guesses wrong, your perfectly-targeted content gets matched to the wrong queries.
+                    </p>
+
+                    <div class="insight-quote">
+                        <p>"Updates take longer reaching AI-generated results when crawlers prioritize duplicate URLs."</p>
+                        <cite>— Bing Webmaster Blog</cite>
+                    </div>
+
+                    <p>
+                        Here's the kicker: every duplicate page you create makes the problem worse. Crawlers have limited budgets. If they're wasting time on your 47 keyword variations, they're not finding your actual updates. Your fresh content takes longer to appear in AI results—because your old content is hogging the crawler's attention.
+                    </p>
 
                     <div class="solution-box">
-                        <p><strong>The Solution:</strong> "Less is more. Clean, consolidated signals help search engines understand intent."</p>
+                        <p><strong>Bing's advice:</strong> "Less is more. Clean, consolidated signals help search engines understand intent."</p>
                     </div>
 
-                    <h2 id="crawl-signals">How Crawl Signals Affect Citation Selection</h2>
+                    <h2 id="crawl-signals">How to Tell AI Which Version Is Current</h2>
+                    <p>
+                        If AI is picking the wrong page from your cluster, it's probably because you're not giving it clear signals about which version is current. Here's what actually matters:
+                    </p>
 
                     <h3>Lastmod Timestamps</h3>
+                    <p>
+                        This is boring but important. The lastmod field in your sitemap tells crawlers when your content actually changed.
+                    </p>
                     <div class="insight-quote">
                         <p>"The lastmod field in your sitemap remains a key signal, helping Bing prioritize URLs for recrawling and reindexing."</p>
                         <cite>— Bing Webmaster Blog, July 2025</cite>
                     </div>
+                    <p>
+                        Most sites get this wrong. They set lastmod to when the sitemap was generated, not when the content changed. AI sees every page as "updated today" and has no idea which content is actually fresh.
+                    </p>
+                    <p><strong>Do this:</strong> Set lastmod to the actual date your content changed. Use ISO 8601 format. Be honest—if you just fixed a typo, don't pretend you rewrote the article.</p>
 
-                    <p><strong>Best practices:</strong></p>
-                    <ul>
-                        <li>Use ISO 8601 formatting (date and time)</li>
-                        <li>Set lastmod to actual content modification date</li>
-                        <li>Don't set lastmod to sitemap generation time</li>
-                    </ul>
-
-                    <h3>Sitemap Structure</h3>
-                    <div class="insight-quote">
-                        <p>"XML is the preferred sitemap format because it supports structured metadata like lastmod."</p>
-                        <cite>— Bing Webmaster Blog</cite>
-                    </div>
-
-                    <p><strong>Specifications:</strong></p>
-                    <ul>
-                        <li>Individual sitemaps: up to 50,000 URLs</li>
-                        <li>Sitemap index: up to 50,000 child sitemaps</li>
-                        <li>Theoretical maximum: 2.5 billion URLs per index</li>
-                    </ul>
-
-                    <h3>IndexNow</h3>
+                    <h3>IndexNow: The Instant Update Button</h3>
+                    <p>
+                        Sitemaps are passive. Crawlers check them when they feel like it. IndexNow is active—you ping search engines the moment your content changes.
+                    </p>
                     <div class="insight-quote">
                         <p>"Sitemaps + IndexNow together provide the structure and speed search engines need to keep your content visible."</p>
                         <cite>— Bing Webmaster Blog</cite>
                     </div>
-                    <p>IndexNow notifies search engines immediately when content changes—critical for time-sensitive content.</p>
+                    <p>
+                        For time-sensitive content, this matters. You publish a correction, ping IndexNow, and AI knows within minutes that your content changed. Without it, you're waiting for the next crawl—which could be days.
+                    </p>
 
-                    <h2 id="authority-dilution">Authority Signal Dilution</h2>
+                    <h2 id="authority-dilution">Why Your Competitor Gets Cited Instead</h2>
 
-                    <p>When duplicate content exists, your authority signals get fragmented:</p>
+                    <p>
+                        Here's a scenario that happens constantly: you have better content than your competitor. You update it more often. You know more about the topic. But AI cites them instead of you.
+                    </p>
+                    <p>
+                        Why? Because they have one great page. You have five pretty-good pages. Their signals are concentrated. Yours are fragmented.
+                    </p>
 
                     <table class="data-table">
                         <thead>
-                            <tr><th>Signal Type</th><th>What Happens</th></tr>
+                            <tr><th>Signal Type</th><th>What Happens With Duplicates</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Clicks</td><td>Split across multiple URLs</td></tr>
-                            <tr><td>Links</td><td>Distributed across duplicates</td></tr>
-                            <tr><td>Impressions</td><td>Fragmented</td></tr>
-                            <tr><td>Intent signals</td><td>Become ambiguous</td></tr>
-                            <tr><td>Freshness</td><td>Becomes unclear</td></tr>
-                            <tr><td>Authority</td><td>Becomes distributed</td></tr>
+                            <tr><td>Backlinks</td><td>Split across 5 pages instead of powering 1</td></tr>
+                            <tr><td>Clicks</td><td>Distributed—no single page looks popular</td></tr>
+                            <tr><td>Engagement</td><td>Scattered—AI can't tell which page people prefer</td></tr>
+                            <tr><td>Authority</td><td>Diluted—each page looks weaker than it should</td></tr>
                         </tbody>
                     </table>
 
-                    <p><strong>Result:</strong> The AI may cite a competitor with consolidated signals over your diluted content.</p>
+                    <p>
+                        Your competitor's one page has 100 backlinks. Your five pages have 20 each. Mathematically, you have more authority. But AI sees five weak pages vs one strong page. It cites the strong page.
+                    </p>
 
-                    <h2 id="recommendations">Practical Recommendations</h2>
+                    <h2 id="recommendations">What to Do About It</h2>
 
-                    <h3>Consolidation Strategy</h3>
+                    <h3>The Consolidation Playbook</h3>
+                    <p>
+                        Stop creating content variations. Start consolidating.
+                    </p>
+
                     <table class="data-table">
                         <thead>
-                            <tr><th>Situation</th><th>Solution</th></tr>
+                            <tr><th>If you have...</th><th>Do this</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Syndicated content</td><td>Canonical tag pointing to original</td></tr>
-                            <tr><td>Multiple campaign pages</td><td>One primary page + canonicals on variations</td></tr>
-                            <tr><td>Similar pages for different keywords</td><td>Merge into single comprehensive page</td></tr>
-                            <tr><td>Localized versions</td><td>Meaningful localization + hreflang tags</td></tr>
+                            <tr><td>Multiple pages targeting similar keywords</td><td>Merge into one comprehensive page. Redirect the others.</td></tr>
+                            <tr><td>Syndicated content on multiple sites</td><td>Canonical tag pointing to the original. Every time.</td></tr>
+                            <tr><td>Campaign landing page variations</td><td>One primary page. Canonicals on all variations.</td></tr>
+                            <tr><td>Localized versions</td><td>Only keep if meaningfully different. Otherwise, canonical.</td></tr>
                         </tbody>
                     </table>
 
-                    <h3>Technical Implementation</h3>
-                    <p><strong>1. Canonical Tags</strong> — Point all variations to the authoritative version.</p>
-                    <p><strong>2. Content Consolidation</strong> — Only maintain separate pages when intent clearly differs.</p>
-                    <p><strong>3. Localization</strong> — "Localize with meaningful changes (terminology, regulations, product details)." Don't just translate—adapt for local context.</p>
-                    <p><strong>4. Update Notification</strong> — Use IndexNow to notify search engines of changes immediately.</p>
+                    <p>
+                        "But I need different pages for different audiences!" Maybe. But only if the content is <em>actually different</em>. If you're just changing a headline and swapping some images, AI will cluster it. Save yourself the trouble and consolidate proactively.
+                    </p>
 
-                    <h2 id="query-fan-out">The Query Fan-Out Model</h2>
+                    <h2 id="query-fan-out">AI Doesn't Search Like You Think</h2>
+
+                    <p>
+                        One more thing that changes everything: AI doesn't match your page to a single query. It runs <em>multiple</em> queries and synthesizes the results.
+                    </p>
 
                     <div class="insight-quote">
                         <p>"Query fan out: AI search performs multiple incremental searches for you and synthesizes results."</p>
                         <cite>— John Mueller, Google</cite>
                     </div>
 
-                    <h3>Implications</h3>
-                    <ul>
-                        <li>AI doesn't just match your page to a query</li>
-                        <li>It runs multiple related searches</li>
-                        <li>It synthesizes information from multiple sources</li>
-                        <li>Your content competes at the synthesis level, not the keyword level</li>
-                    </ul>
+                    <p>
+                        Someone asks "what's the best CRM for small businesses?" Traditional search shows 10 blue links. AI search does something different: it runs sub-queries for "CRM pricing comparison," "CRM ease of use," "CRM integrations," synthesizes all the results, and gives you one answer.
+                    </p>
+                    <p>
+                        This means you're not competing for a keyword anymore. You're competing to be cited in a synthesis. And synthesis favors sources that are comprehensive, authoritative, and don't waste the AI's time with near-duplicate content it has to cluster away.
+                    </p>
 
-                    <h2 id="citation-process">The Citation Selection Process</h2>
+                    <h2 id="citation-process">How This All Fits Together</h2>
 
-                    <p>Based on our analysis of official sources, here's how LLMs likely select citations:</p>
+                    <p>
+                        Based on everything Bing and Google have published, here's what we think happens when AI picks a citation:
+                    </p>
 
                     <ol class="process-list">
-                        <li><strong>Query understanding:</strong> Parse user intent</li>
-                        <li><strong>Retrieval:</strong> Fetch candidate sources via RAG</li>
-                        <li><strong>Clustering:</strong> Group similar/duplicate content</li>
-                        <li><strong>Selection:</strong> Choose representative sources per cluster</li>
-                        <li><strong>Authority scoring:</strong> Weight by E-E-A-T signals</li>
-                        <li><strong>Freshness weighting:</strong> Consider lastmod and update frequency</li>
-                        <li><strong>Synthesis:</strong> Generate response using selected sources</li>
-                        <li><strong>Citation insertion:</strong> Attribute claims to sources</li>
+                        <li><strong>Query breakdown:</strong> AI splits your question into sub-queries</li>
+                        <li><strong>Retrieval:</strong> It fetches candidate sources for each sub-query</li>
+                        <li><strong>Clustering:</strong> Similar pages get grouped together</li>
+                        <li><strong>Selection:</strong> AI picks ONE page per cluster to represent it</li>
+                        <li><strong>Authority check:</strong> It weighs E-E-A-T signals on the selected pages</li>
+                        <li><strong>Freshness check:</strong> It considers lastmod and update signals</li>
+                        <li><strong>Synthesis:</strong> It generates a response using the winners</li>
+                        <li><strong>Citation:</strong> It attributes claims to the pages that earned it</li>
                     </ol>
 
-                    <h3>Where You Can Win</h3>
-                    <ul class="win-list">
-                        <li>Be the authoritative source in your cluster</li>
-                        <li>Have the freshest, most accurate content</li>
-                        <li>Consolidate signals on canonical URLs</li>
-                        <li>Update frequently and notify via IndexNow</li>
-                    </ul>
+                    <p>
+                        You can influence steps 3-6. Consolidate your content (step 3-4). Build authority on fewer pages (step 5). Keep your timestamps honest (step 6). The rest is out of your hands.
+                    </p>
+
+                    <h2 id="bottom-line">The Short Version</h2>
+                    <p>
+                        AI clusters your duplicate content and picks one page to cite. Make sure it picks the right one: consolidate aggressively, keep timestamps accurate, and stop creating keyword variations. One great page beats five okay pages every time.
+                    </p>
 
                     <!-- Sources -->
                     <div class="sources-section" id="sources">
@@ -1370,15 +1383,14 @@
                 <div class="toc-card">
                     <div class="toc-title">On This Page</div>
                     <ul class="toc-list">
-                        <li><a href="#overview">How It Works</a></li>
-                        <li><a href="#duplicate-content">Duplicate Content</a></li>
-                        <li><a href="#crawl-signals">Crawl Signals</a></li>
-                        <li><a href="#authority-dilution">Authority Dilution</a></li>
-                        <li><a href="#recommendations">Recommendations</a></li>
-                        <li><a href="#query-fan-out">Query Fan-Out</a></li>
-                        <li><a href="#citation-process">Citation Process</a></li>
-                        <li><a href="#sources">Sources</a></li>
-                        <li><a href="#author">About the Author</a></li>
+                        <li><a href="#overview">The Clustering Problem</a></li>
+                        <li><a href="#duplicate-content">What Bing Said</a></li>
+                        <li><a href="#crawl-signals">Freshness Signals</a></li>
+                        <li><a href="#authority-dilution">Why Competitors Win</a></li>
+                        <li><a href="#recommendations">What to Do</a></li>
+                        <li><a href="#query-fan-out">How AI Really Searches</a></li>
+                        <li><a href="#citation-process">The Full Process</a></li>
+                        <li><a href="#bottom-line">Short Version</a></li>
                     </ul>
                 </div>
             </aside>
