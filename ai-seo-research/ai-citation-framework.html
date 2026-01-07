@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The 4 signals that determine whether AI systems cite your brand. Based on patents, official guidance, and what Google and OpenAI actually reward.">
+    <meta name="keywords" content="AI citation, AI search optimization, get cited by ChatGPT, AI visibility, GEO, AEO, generative engine optimization">
+    <meta property="og:title" content="The AI Citation Framework: 4 Signals That Get Your Brand Cited | Fokal">
+    <meta property="og:description" content="Google and OpenAI optimize for exactly 4 things. Most brands are doing zero. Here's what actually gets you cited in AI search.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.fokal.com/ai-seo-research/ai-citation-framework">
+    <meta property="article:published_time" content="2026-01-07">
+    <meta property="article:modified_time" content="2026-01-07">
+    <meta property="article:author" content="Patrick Gallagher">
+    <meta property="og:image" content="https://www.fokal.com/fokal-og-image.png">
+    <title>The AI Citation Framework: 4 Signals That Get Your Brand Cited | Fokal</title>
+
+    <link rel="icon" type="image/png" href="/fokal-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <link rel="stylesheet" href="/css/mobile-standards.css">
+    <link rel="stylesheet" href="/components/header.css">
+    <link rel="stylesheet" href="/components/footer.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/auth/auth-modal.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-dark: #0E0E10;
+            --bg-panel: #161618;
+            --text-primary: #E5E9F0;
+            --text-secondary: #C6CDD8;
+            --text-muted: #9DA6B5;
+            --accent-blue: #4AC0FF;
+            --accent-green: #00E676;
+            --accent-purple: #B388FF;
+            --accent-amber: #FFA726;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .blog-breadcrumbs {
+            max-width: 1400px;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+
+        .page-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .article-layout {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 48px;
+            margin-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 40px;
+        }
+
+        .article-main { min-width: 0; }
+
+        .article-header {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 48px 32px;
+            text-align: left;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: rgba(74, 192, 255, 0.12);
+            color: var(--accent-blue);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+
+        .article-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #C6CDD8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .article-subtitle {
+            font-size: 22px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+
+        .article-meta-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 24px;
+        }
+
+        .author-thumb-large {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .article-meta-content {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .article-meta-bar {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .article-updated-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .updated-badge {
+            background: rgba(0, 230, 118, 0.12);
+            color: var(--accent-green);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .fact-checked-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(74, 192, 255, 0.12);
+            color: var(--accent-blue);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .fact-checked-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* Author Hover Card */
+        .author-hover-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .author-name-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            cursor: pointer;
+            border-bottom: 1px dotted var(--text-muted);
+            transition: color 0.2s ease;
+        }
+
+        .author-name-link:hover {
+            color: var(--accent-blue);
+            border-bottom-color: var(--accent-blue);
+        }
+
+        .author-hover-card {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 0;
+            width: 340px;
+            background: var(--bg-panel);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+
+        .author-hover-wrapper:hover .author-hover-card {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .author-card-header { display: flex; gap: 14px; margin-bottom: 14px; }
+        .author-card-photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+        .author-card-info { flex: 1; }
+        .author-card-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+        .author-card-name { font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
+        .author-card-title { font-size: 14px; color: var(--accent-blue); }
+        .author-card-bio { font-size: 14px; line-height: 1.6; color: var(--text-secondary); margin-bottom: 14px; }
+        .author-card-expertise { margin-bottom: 14px; }
+        .author-card-expertise-label { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
+        .author-card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .author-card-tag { background: rgba(74, 192, 255, 0.1); color: var(--accent-blue); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+        .author-card-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--accent-blue); text-decoration: none; }
+        .author-card-link:hover { text-decoration: underline; }
+        .author-card-link svg { width: 14px; height: 14px; fill: currentColor; }
+
+        /* Key Takeaways */
+        .key-takeaways-box {
+            background: rgba(74, 192, 255, 0.08);
+            border: 1px solid rgba(74, 192, 255, 0.2);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 40px;
+        }
+
+        .key-takeaways-box .takeaways-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin: 0 0 16px 0;
+        }
+
+        .key-takeaways-box .takeaways-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .key-takeaways-box .takeaways-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .key-takeaways-box .takeaways-list li:last-child { margin-bottom: 0; }
+
+        .key-takeaways-box .takeaways-list li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        .key-takeaways-box .takeaways-list li strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Sticky TOC */
+        .toc-sidebar {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .toc-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .toc-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .toc-list { list-style: none; padding: 0; margin: 0; }
+        .toc-list li { margin-bottom: 4px; }
+
+        .toc-list a {
+            display: block;
+            padding: 10px 14px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .toc-list a:hover,
+        .toc-list a.active {
+            background: rgba(74, 192, 255, 0.08);
+            color: var(--accent-blue);
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 18px;
+            line-height: 1.75;
+            color: var(--text-secondary);
+        }
+
+        .article-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 56px 0 24px;
+            scroll-margin-top: 100px;
+        }
+
+        .article-content h2:first-child { margin-top: 0; }
+
+        .article-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 40px 0 16px;
+        }
+
+        .article-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 28px 0 12px;
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content a {
+            color: var(--accent-blue);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .article-content a.related-card,
+        .article-content a.btn,
+        .article-content .related-card h3,
+        .article-content .related-card p {
+            text-decoration: none;
+        }
+
+        .article-content a.related-card { color: inherit; }
+
+        .article-content ul, .article-content ol {
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        /* Signal Cards */
+        .signal-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .signal-card.signal-1 { border-left: 4px solid var(--accent-blue); }
+        .signal-card.signal-2 { border-left: 4px solid var(--accent-green); }
+        .signal-card.signal-3 { border-left: 4px solid var(--accent-amber); }
+        .signal-card.signal-4 { border-left: 4px solid var(--accent-purple); }
+
+        .signal-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 16px;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+
+        .signal-1 .signal-number { background: rgba(74, 192, 255, 0.15); color: var(--accent-blue); }
+        .signal-2 .signal-number { background: rgba(0, 230, 118, 0.15); color: var(--accent-green); }
+        .signal-3 .signal-number { background: rgba(255, 167, 38, 0.15); color: var(--accent-amber); }
+        .signal-4 .signal-number { background: rgba(179, 136, 255, 0.15); color: var(--accent-purple); }
+
+        .signal-card h3 {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            margin: 0 0 8px;
+        }
+
+        .signal-card .signal-subtitle {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .signal-section {
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .signal-section h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .signal-section p {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .signal-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .signal-section li {
+            padding: 10px 0 10px 20px;
+            position: relative;
+            font-size: 15px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .signal-section li:last-child { border-bottom: none; }
+
+        .signal-section li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 18px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+
+        .signal-1 .signal-section li::before { background: var(--accent-blue); }
+        .signal-2 .signal-section li::before { background: var(--accent-green); }
+        .signal-3 .signal-section li::before { background: var(--accent-amber); }
+        .signal-4 .signal-section li::before { background: var(--accent-purple); }
+
+        .check-prompt {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .goal-box {
+            background: rgba(74, 192, 255, 0.08);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        .goal-box strong {
+            color: var(--accent-blue);
+        }
+
+        /* Quick Check Section */
+        .quick-check-box {
+            background: linear-gradient(135deg, rgba(179, 136, 255, 0.1) 0%, rgba(74, 192, 255, 0.08) 100%);
+            border: 1px solid rgba(179, 136, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 56px 0;
+        }
+
+        .quick-check-box h2 {
+            margin: 0 0 16px;
+            font-size: 28px;
+        }
+
+        .quick-check-box > p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+        }
+
+        .check-steps {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .check-step {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .check-step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: rgba(179, 136, 255, 0.2);
+            color: var(--accent-purple);
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .check-step p {
+            font-size: 14px;
+            margin: 0 0 8px;
+            color: var(--text-secondary);
+        }
+
+        .check-step .prompt {
+            font-family: 'SF Mono', 'Monaco', monospace;
+            font-size: 13px;
+            color: var(--text-primary);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+        }
+
+        /* Doesn't Matter Section */
+        .doesnt-matter-box {
+            background: rgba(17, 24, 32, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 40px 0;
+        }
+
+        .doesnt-matter-box h3 {
+            margin: 0 0 20px;
+            font-size: 20px;
+        }
+
+        .doesnt-matter-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .doesnt-matter-box li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 16px;
+        }
+
+        .doesnt-matter-box li:last-child { border-bottom: none; }
+
+        .doesnt-matter-box li strong {
+            color: var(--text-primary);
+        }
+
+        /* Sources */
+        .sources-section {
+            background: rgba(17, 24, 32, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 56px 0;
+        }
+
+        .sources-section h2 {
+            font-size: 24px;
+            margin: 0 0 12px;
+            color: var(--text-primary);
+        }
+
+        .sources-intro {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+        }
+
+        .sources-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sources-section > ul > li {
+            font-size: 14px;
+            color: var(--text-muted);
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            line-height: 1.5;
+        }
+
+        .sources-section > ul > li:last-child { border-bottom: none; }
+
+        /* Author */
+        .author-section {
+            background: linear-gradient(135deg, rgba(179, 136, 255, 0.08) 0%, rgba(74, 192, 255, 0.05) 100%);
+            border: 1px solid rgba(179, 136, 255, 0.15);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 56px 0;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .author-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(179, 136, 255, 0.3);
+        }
+
+        .author-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .author-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 4px;
+        }
+
+        .author-title {
+            font-size: 14px;
+            color: var(--accent-purple);
+            margin-bottom: 12px;
+        }
+
+        .author-bio {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .author-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .author-links a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .author-links a:hover { color: var(--accent-blue); }
+
+        .author-links svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Related & CTA */
+        .related-section { margin: 64px 0; }
+
+        .related-section h2 {
+            font-size: 28px;
+            margin-bottom: 28px;
+            color: var(--text-primary);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .related-card {
+            background: rgba(17, 24, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 24px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .related-card:hover {
+            border-color: rgba(74, 192, 255, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .related-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0 0 8px;
+            line-height: 1.4;
+        }
+
+        .related-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(74, 192, 255, 0.12) 0%, rgba(17, 24, 32, 0.9) 100%);
+            border: 1px solid rgba(74, 192, 255, 0.2);
+            border-radius: 24px;
+            padding: 56px;
+            text-align: center;
+            margin: 64px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            margin: 0 0 16px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), #3AA0D9);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(74, 192, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .article-layout { grid-template-columns: 1fr; }
+            .toc-sidebar { display: none; }
+            .related-grid { grid-template-columns: repeat(2, 1fr); }
+            .check-steps { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .blog-breadcrumbs { padding-left: 16px; padding-right: 16px; }
+            .page-container { padding: 0 16px; }
+            .article-header { padding: 32px 16px; }
+            .article-header h1 { font-size: 32px; }
+            .article-subtitle { font-size: 17px; }
+            .signal-card { padding: 28px 24px; }
+            .author-section { grid-template-columns: 1fr; text-align: center; }
+            .author-photo { margin: 0 auto; }
+            .author-links { justify-content: center; }
+            .related-grid { grid-template-columns: 1fr; }
+            .cta-section { padding: 40px 24px; }
+            .cta-buttons { flex-direction: column; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The AI Citation Framework: 4 Signals That Get Your Brand Cited",
+        "description": "Google and OpenAI optimize for exactly 4 things. Most brands are doing zero. Here's what actually gets you cited in AI search.",
+        "author": {
+            "@type": "Person",
+            "name": "Patrick Gallagher",
+            "url": "https://www.linkedin.com/in/patrickgourley/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Fokal",
+            "url": "https://www.fokal.com"
+        },
+        "datePublished": "2026-01-07",
+        "dateModified": "2026-01-07"
+    }
+    </script>
+</head>
+<body>
+    <div id="header-container"></div>
+    <script src="/components/header.js"></script>
+
+    <!-- Breadcrumb -->
+    <div class="blog-breadcrumbs">
+        <a href="/">Home</a>
+        <span class="separator">></span>
+        <a href="/ai-seo-research">AI SEO Research</a>
+        <span class="separator">></span>
+        <span class="current">AI Citation Framework</span>
+    </div>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <span class="article-category">Framework</span>
+        <h1>The AI Citation Framework</h1>
+        <p class="article-subtitle">Google and OpenAI optimize for exactly 4 things. Most brands are doing zero. Nail these, and it doesn't matter who wins the AI search war.</p>
+
+        <div class="article-meta-wrapper">
+            <img src="/patrick-photo.jpg" alt="Patrick Gallagher" class="author-thumb-large">
+            <div class="article-meta-content">
+                <div class="article-meta-bar">
+                    <span class="meta-item">Written by
+                        <span class="author-hover-wrapper">
+                            <a class="author-name-link">Patrick Gallagher</a>
+                            <div class="author-hover-card">
+                                <div class="author-card-header">
+                                    <img src="/patrick-photo.jpg" alt="Patrick Gallagher" class="author-card-photo">
+                                    <div class="author-card-info">
+                                        <div class="author-card-label">Written by</div>
+                                        <div class="author-card-name">Patrick Gallagher</div>
+                                        <div class="author-card-title">Founder & CEO, Fokal</div>
+                                    </div>
+                                </div>
+                                <p class="author-card-bio">Patrick is the founder of Fokal, helping brands understand and improve their visibility in AI-powered search.</p>
+                                <div class="author-card-expertise">
+                                    <div class="author-card-expertise-label">Patrick's expertise:</div>
+                                    <div class="author-card-tags">
+                                        <span class="author-card-tag">AI Search</span>
+                                        <span class="author-card-tag">SEO Strategy</span>
+                                        <span class="author-card-tag">Brand Visibility</span>
+                                    </div>
+                                </div>
+                                <a href="/about" class="author-card-link">
+                                    Read full profile
+                                    <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                                </a>
+                            </div>
+                        </span>
+                    </span>
+                </div>
+                <div class="article-updated-row">
+                    <span class="updated-badge">January 2026</span>
+                    <span class="fact-checked-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        Official Sources Only
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="page-container">
+        <div class="article-layout">
+            <main class="article-main">
+                <article class="article-content">
+                    <!-- Key Takeaways -->
+                    <div class="key-takeaways-box">
+                        <h3 class="takeaways-title">The 4 Signals</h3>
+                        <ul class="takeaways-list">
+                            <li><strong>Third-party validation</strong> - Mentions on sites you don't control</li>
+                            <li><strong>Entity clarity</strong> - AI knows exactly what you are</li>
+                            <li><strong>Real demand</strong> - People actually search for what you answer</li>
+                            <li><strong>Answer-ready content</strong> - Your pages directly answer specific questions</li>
+                        </ul>
+                    </div>
+
+                    <h2 id="intro">How AI Decides Who Gets Cited</h2>
+                    <p>
+                        Both Google and OpenAI are betting billions on AI search. Different approaches, same destination.
+                    </p>
+                    <p>
+                        When we analyzed their patents, job postings, and official guidance, we found they agree on exactly 4 signals. Nail these, and it doesn't matter who wins. Your brand gets cited either way.
+                    </p>
+
+                    <!-- Signal 1 -->
+                    <div class="signal-card signal-1" id="signal-1">
+                        <h3><span class="signal-number">1</span> Third-Party Validation</h3>
+                        <p class="signal-subtitle">Mentions on sites you don't control</p>
+
+                        <p>AI systems are trained to distrust self-promotion. When only <em>you</em> say you're good, that's marketing. When <em>others</em> say you're good, that's evidence.</p>
+
+                        <p>Google's guidance puts it directly: "E-E-A-T remains crucial for AI-driven search." Experience and expertise are hard to fake when they come from third parties. The more independent sources mention you, the more confident AI becomes in recommending you.</p>
+
+                        <div class="signal-section">
+                            <h4>Check It (60 seconds)</h4>
+                            <p>Open ChatGPT or Perplexity and ask:</p>
+                            <div class="check-prompt">"What do people say about [your brand]? Summarize the general sentiment from reviews and articles."</div>
+                            <p>Then ask:</p>
+                            <div class="check-prompt">"What sources are you drawing from?"</div>
+                            <p>If it only references your own website - or says it doesn't have enough information - you have a third-party problem.</p>
+                        </div>
+
+                        <div class="signal-section">
+                            <h4>Fix It</h4>
+                            <ul>
+                                <li><strong>Get quoted in industry roundups.</strong> Search "[your category] + best tools 2025" - find the articles ranking, pitch the authors for inclusion.</li>
+                                <li><strong>Publish original research others will cite.</strong> Data, surveys, benchmarks. Journalists and bloggers link to primary sources.</li>
+                                <li><strong>Appear on podcasts.</strong> Transcripts get indexed. AI reads them.</li>
+                                <li><strong>Earn reviews on comparison sites.</strong> G2, Capterra, TrustRadius, industry-specific directories.</li>
+                                <li><strong>Contribute expert commentary.</strong> HARO, Qwoted, Featured.com - anywhere journalists source quotes.</li>
+                            </ul>
+                        </div>
+
+                        <div class="goal-box">
+                            <strong>The goal:</strong> When AI searches for information about your category, your brand appears in sources you didn't write.
+                        </div>
+                    </div>
+
+                    <!-- Signal 2 -->
+                    <div class="signal-card signal-2" id="signal-2">
+                        <h3><span class="signal-number">2</span> Entity Clarity</h3>
+                        <p class="signal-subtitle">AI knows exactly what you are</p>
+
+                        <p>Large language models cluster similar pages and select one to represent the set. If your brand identity is unclear, AI might confuse you with a competitor, associate you with the wrong category, or simply leave you out because it's not confident.</p>
+
+                        <p>Bing's documentation warns: "LLMs cluster near-duplicate URLs and select one to represent the set - potentially an outdated version." If AI isn't sure what you are, it won't recommend you.</p>
+
+                        <div class="signal-section">
+                            <h4>Check It (60 seconds)</h4>
+                            <p>Ask ChatGPT:</p>
+                            <div class="check-prompt">"What is [your brand] and what do they do?"</div>
+                            <p>Then ask:</p>
+                            <div class="check-prompt">"How is [your brand] different from [top competitor]?"</div>
+                            <p><strong>Red flags:</strong> Vague descriptions, confusion with another company, outdated information, or "I don't have enough information about this brand."</p>
+                        </div>
+
+                        <div class="signal-section">
+                            <h4>Fix It</h4>
+                            <ul>
+                                <li><strong>Claim and optimize your Wikipedia page</strong> (if eligible) or Wikidata entry. AI pulls heavily from structured knowledge bases.</li>
+                                <li><strong>Consistent messaging everywhere.</strong> Same tagline, same category language, same positioning across your site, LinkedIn, Crunchbase, directories.</li>
+                                <li><strong>Schema markup.</strong> Organization schema, product schema - make it machine-readable.</li>
+                                <li><strong>Consolidate duplicate pages.</strong> Don't let AI choose the wrong representative. One canonical URL per topic.</li>
+                                <li><strong>Own your comparison positioning.</strong> Create "[Your brand] vs [Competitor]" pages so AI learns the distinction from you.</li>
+                            </ul>
+                        </div>
+
+                        <div class="goal-box">
+                            <strong>The goal:</strong> When AI needs to explain what you are, there's no ambiguity.
+                        </div>
+                    </div>
+
+                    <!-- Signal 3 -->
+                    <div class="signal-card signal-3" id="signal-3">
+                        <h3><span class="signal-number">3</span> Real Demand</h3>
+                        <p class="signal-subtitle">People actually search for what you answer</p>
+
+                        <p>AI search systems are trained on what people actually ask. If no one is asking questions in your space, AI has no reason to surface you.</p>
+
+                        <p>More importantly: AI visibility can increase even as clicks decline. The zero-click era means citations <em>are</em> the visibility - you don't need the click to win. But you need the underlying demand to exist.</p>
+
+                        <div class="signal-section">
+                            <h4>Check It (60 seconds)</h4>
+                            <p>Ask ChatGPT:</p>
+                            <div class="check-prompt">"What questions do people commonly ask about [your category]?"</div>
+                            <p>Then ask:</p>
+                            <div class="check-prompt">"When someone asks '[common question in your space]', what brands or solutions come up?"</div>
+                            <p>If your brand isn't mentioned in the answer to a question you should own - that's your gap.</p>
+                        </div>
+
+                        <div class="signal-section">
+                            <h4>Fix It</h4>
+                            <ul>
+                                <li><strong>Map the question landscape.</strong> Use AnswerThePublic, AlsoAsked, or Perplexity to see what real questions exist in your category.</li>
+                                <li><strong>Build content around actual queries.</strong> Not keywords - questions. "How do I..." / "What's the best..." / "Why does..."</li>
+                                <li><strong>Check search volume assumptions.</strong> You might be optimizing for terms no one types into AI. The queries that win in AI search are often more conversational.</li>
+                                <li><strong>Create content for adjacent problems.</strong> People might not search for your product - but they search for the problem you solve.</li>
+                            </ul>
+                        </div>
+
+                        <div class="goal-box">
+                            <strong>The goal:</strong> When someone asks a question in your space, your brand is part of the answer.
+                        </div>
+                    </div>
+
+                    <!-- Signal 4 -->
+                    <div class="signal-card signal-4" id="signal-4">
+                        <h3><span class="signal-number">4</span> Answer-Ready Content</h3>
+                        <p class="signal-subtitle">Your pages directly answer specific questions</p>
+
+                        <p>AI doesn't rank pages - it extracts answers. If your content is structured as a clear answer to a clear question, AI can quote you directly.</p>
+
+                        <p>Research from Princeton and Georgia Tech found that pages with quotations, statistics, and clear citations increase AI visibility by 30-40%. AI is looking for content it can confidently use. Vague thought leadership doesn't get cited. Specific, quotable answers do.</p>
+
+                        <div class="signal-section">
+                            <h4>Check It (60 seconds)</h4>
+                            <p>Ask ChatGPT a question your content should answer:</p>
+                            <div class="check-prompt">"[Specific question your page addresses]"</div>
+                            <p>If ChatGPT answers but doesn't mention you - your content exists but isn't answer-ready. Then ask:</p>
+                            <div class="check-prompt">"Where did you get that information?"</div>
+                            <p>If it cites a competitor or a generic source, your page isn't winning the extraction.</p>
+                        </div>
+
+                        <div class="signal-section">
+                            <h4>Fix It</h4>
+                            <ul>
+                                <li><strong>Lead with the answer.</strong> Don't bury it after 500 words of context. First paragraph should contain the direct answer.</li>
+                                <li><strong>Use the question as a heading.</strong> H2: "How much does X cost?" -> Immediate answer below.</li>
+                                <li><strong>Include quotable statistics.</strong> Original data, specific numbers, benchmarks. AI loves citing specifics.</li>
+                                <li><strong>Structure for extraction.</strong> Bullet points, numbered lists, clear definitions. Make it easy to pull a clean quote.</li>
+                                <li><strong>Add author credentials.</strong> Bylines with expertise signals. AI weighs E-E-A-T on the pages it chooses to cite.</li>
+                            </ul>
+                        </div>
+
+                        <div class="goal-box">
+                            <strong>The goal:</strong> When AI needs to answer a question in your space, your page is the one it pulls from.
+                        </div>
+                    </div>
+
+                    <!-- What Doesn't Matter -->
+                    <h2 id="doesnt-matter">What Doesn't Matter (As Much)</h2>
+
+                    <div class="doesnt-matter-box">
+                        <h3>Signals that used to matter for SEO but don't drive AI citations:</h3>
+                        <ul>
+                            <li><strong>Word count.</strong> AI doesn't care if your page is 3,000 words. It cares if you answer the question.</li>
+                            <li><strong>Backlink volume.</strong> Still matters for Google rankings, less for AI extraction. Quality and relevance of mentions > raw link count.</li>
+                            <li><strong>Exact keyword matching.</strong> AI understands semantics. It's looking for meaning, not strings.</li>
+                            <li><strong>Publishing frequency.</strong> Posting daily doesn't help if the content isn't answer-ready.</li>
+                        </ul>
+                    </div>
+
+                    <h2 id="accessibility">The Signal That Has Nothing to Do with Content</h2>
+                    <p>
+                        <strong>Accessibility.</strong>
+                    </p>
+                    <p>
+                        If AI can't crawl your site, nothing else matters.
+                    </p>
+                    <p>
+                        Perplexity has its own crawler. Bing's index feeds multiple AI systems. If you're blocking bots, using heavy JavaScript rendering without SSR, or buried behind authentication - AI literally cannot see you.
+                    </p>
+                    <p>
+                        Check your robots.txt. Check your render. Make sure you're not invisible.
+                    </p>
+
+                    <!-- Quick Check -->
+                    <div class="quick-check-box" id="quick-check">
+                        <h2>Check Your Brand in 2 Minutes</h2>
+                        <p>Open ChatGPT or Perplexity. Ask these 4 questions:</p>
+
+                        <div class="check-steps">
+                            <div class="check-step">
+                                <div class="check-step-number">1</div>
+                                <p>Tests <strong>third-party validation</strong></p>
+                                <div class="prompt">"What do people say about [your brand]?"</div>
+                            </div>
+                            <div class="check-step">
+                                <div class="check-step-number">2</div>
+                                <p>Tests <strong>entity clarity</strong></p>
+                                <div class="prompt">"What is [your brand] and how is it different from [competitor]?"</div>
+                            </div>
+                            <div class="check-step">
+                                <div class="check-step-number">3</div>
+                                <p>Tests <strong>real demand</strong></p>
+                                <div class="prompt">"What questions do people ask about [your category]?" + "What brands answer those?"</div>
+                            </div>
+                            <div class="check-step">
+                                <div class="check-step-number">4</div>
+                                <p>Tests <strong>answer-ready content</strong></p>
+                                <div class="prompt">"What's the best way to [problem you solve]?"</div>
+                            </div>
+                        </div>
+
+                        <p style="margin-top: 28px; font-size: 16px;"><strong>If you're not showing up in at least 3 of these - you have work to do.</strong></p>
+                    </div>
+
+                    <!-- Sources -->
+                    <div class="sources-section" id="sources">
+                        <h2>Sources & Methodology</h2>
+                        <p class="sources-intro">Based on analysis of official documentation from Google and Microsoft, patent filings, and peer-reviewed research.</p>
+                        <ul>
+                            <li>Bing Webmaster Blog: "Does Duplicate Content Hurt SEO and AI Search Visibility?" (December 2025)</li>
+                            <li>Bing Webmaster Blog: "Sitemaps and IndexNow" (July 2025)</li>
+                            <li>Google Search Central: Official guidance on E-E-A-T</li>
+                            <li>USPTO Patent US-20250370993-A1: Query Routing</li>
+                            <li>Princeton/Georgia Tech: "Generative Engine Optimization" research paper</li>
+                            <li>OpenAI & Google job postings and public statements</li>
+                        </ul>
+                    </div>
+
+                    <!-- Author -->
+                    <div class="author-section" id="author">
+                        <img src="/patrick-photo.jpg" alt="Patrick Gallagher" class="author-photo">
+                        <div class="author-content">
+                            <span class="author-label">Written by</span>
+                            <h3>Patrick Gallagher</h3>
+                            <p class="author-title">Founder, Fokal</p>
+                            <p class="author-bio">
+                                Patrick researches how AI systems discover, evaluate, and cite brands. He founded Fokal to help brands understand and optimize their visibility in AI search.
+                            </p>
+                            <div class="author-links">
+                                <a href="https://www.linkedin.com/in/patrick-g-96791070/" target="_blank">
+                                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <a href="https://x.com/llmvibes" target="_blank">
+                                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                    X
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related -->
+                    <div class="related-section">
+                        <h2>Related Research</h2>
+                        <div class="related-grid">
+                            <a href="/ai-seo-research/ai-citations" class="related-card">
+                                <h3>Why AI Cites Outdated Content</h3>
+                                <p>How clustering affects your visibility</p>
+                            </a>
+                            <a href="/ai-seo-research/zero-click-search" class="related-card">
+                                <h3>Zero-Click Search</h3>
+                                <p>Why traffic is down but conversions are up</p>
+                            </a>
+                            <a href="/ai-seo-research/chatgpt-vs-google" class="related-card">
+                                <h3>ChatGPT vs Google</h3>
+                                <p>Different bets, same signals</p>
+                            </a>
+                            <a href="/ai-seo-research" class="related-card">
+                                <h3>All Research</h3>
+                                <p>View all Fokal Insights</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="cta-section">
+                        <h2>Want a Deeper Check?</h2>
+                        <p>See exactly where your brand appears - and doesn't - across ChatGPT, Perplexity, and Google AI Overviews.</p>
+                        <div class="cta-buttons">
+                            <button class="btn btn-primary" onclick="signInWithGoogle()">Check Your Brand Free</button>
+                            <a href="/ai-seo-research" class="btn btn-secondary">Back to Research</a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+            <!-- Sticky TOC Sidebar -->
+            <aside class="toc-sidebar">
+                <div class="toc-card">
+                    <div class="toc-title">The Framework</div>
+                    <ul class="toc-list">
+                        <li><a href="#intro">How AI Decides</a></li>
+                        <li><a href="#signal-1">1. Third-Party Validation</a></li>
+                        <li><a href="#signal-2">2. Entity Clarity</a></li>
+                        <li><a href="#signal-3">3. Real Demand</a></li>
+                        <li><a href="#signal-4">4. Answer-Ready Content</a></li>
+                        <li><a href="#doesnt-matter">What Doesn't Matter</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#quick-check">2-Minute Check</a></li>
+                        <li><a href="#sources">Sources</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <div id="auth-modal-container"></div>
+
+    <script>window.AUTH_SOURCE = 'static_ai_citation_framework';</script>
+    <script src="/auth/auth-modal.js"></script>
+    <script src="/components/footer.js"></script>
+
+    <!-- Active TOC link highlighting -->
+    <script>
+        document.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('[id]');
+            const tocLinks = document.querySelectorAll('.toc-list a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
