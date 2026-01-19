@@ -57,6 +57,12 @@ nav.scrolled {
     align-items: center;
 }
 
+.nav-menu-buttons .nav-cta-google,
+.nav-menu-buttons .btn {
+    min-width: 160px;
+    justify-content: center;
+}
+
 .nav-menu a {
     color: var(--text-secondary);
     text-decoration: none;
