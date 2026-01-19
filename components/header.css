@@ -61,6 +61,9 @@ nav.scrolled {
 .nav-menu-buttons .btn {
     min-width: 160px;
     justify-content: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 8px;
 }
 
 .nav-menu a {
